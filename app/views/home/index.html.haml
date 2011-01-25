@@ -1,0 +1,7 @@
+%h1 Homepage catalog
+%ul
+  - @products.each do |product|
+    %li= product.title
+    %li= product.description
+    %li= number_to_currency(product.price, :unit => "Грн.", :separator => ",", :delimiter => " ", :format => "%n %u" )
+    %br

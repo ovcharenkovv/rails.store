@@ -1,4 +1,8 @@
 Store::Application.routes.draw do
+  match 'home' => 'home#index'
+
+  resources :products
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
