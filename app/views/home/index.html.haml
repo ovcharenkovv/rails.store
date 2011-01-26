@@ -1,7 +1,11 @@
 %h1 Homepage catalog
+- if notice
+  %p#notice= notice
+
 %ul
   - @products.each do |product|
     %li= product.title
     %li= product.description
     %li= number_to_currency(product.price, :unit => "Грн.", :separator => ",", :delimiter => " ", :format => "%n %u" )
+    %li= button_to 'Add to Cart', line_items_path(:product_id => product)
     %br
