@@ -5,7 +5,7 @@ class LineItemsController < ApplicationController
     @line_items = LineItem.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # index.html.haml
       format.xml  { render :xml => @line_items }
     end
   end
@@ -27,7 +27,7 @@ class LineItemsController < ApplicationController
     @line_item = LineItem.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html # new.html.haml
       format.xml  { render :xml => @line_item }
     end
   end
