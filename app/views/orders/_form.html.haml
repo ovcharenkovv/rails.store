@@ -1,0 +1,36 @@
+= form_for(@order) do |f|
+  - if @order.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@order.errors.count, "error")
+        prohibited this order from being saved:
+      %ul
+        - @order.errors.full_messages.each do |msg|
+          %li= msg
+  Report erratum
+  Prepared exclusively for Anton Fonarev
+  this copy is (B12.0 printing, January 10, 2011)
+  167
+  I TERATION G1: C APTURING
+  AN
+  O RDER
+  .field
+    = f.label :name
+    %br/
+    = f.text_field :name, :size => 40
+  .field
+    = f.label :address
+    %br/
+    = f.text_area :address, :rows => 3, :cols => 40
+  .field
+    = f.label :email
+    %br/
+    = f.email_field :email, :size => 40
+  .field
+    = f.label :pay_type
+    %br/
+    = f.select :pay_type, Order::PAYMENT_TYPES, |
+      :prompt => 'Select a payment method'      |
+  .actions
+    = f.submit 'Place Order'
+
