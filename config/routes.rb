@@ -1,4 +1,14 @@
 Store::Application.routes.draw do
+
+  resources :authors do
+    resources :products
+  end
+
+  resources :categories do
+    resources :products  
+  end
+
+
   resources :orders
 
   resources :line_items
@@ -7,9 +17,7 @@ Store::Application.routes.draw do
 
   get 'home/index'
 
-  resources :products do
-    get :who_bought, :on => :member
-  end
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -67,6 +75,6 @@ Store::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
-  root :to => 'home#index', :as => 'home'
+  root :to => 'home#index'
 
 end

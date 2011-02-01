@@ -2,9 +2,9 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.xml
   def index
-    @orders = Order.paginate :page=>params[:page], :order=>'created_at desc',
+    @orders = Order.paginate :page=>params[:page],
+                             :order=>'created_at desc',
                              :per_page => 30
-
 
     respond_to do |format|
       format.html # index.html.haml
@@ -18,7 +18,7 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html # show.html.haml
       format.xml  { render :xml => @order }
     end
   end
@@ -33,7 +33,7 @@ class OrdersController < ApplicationController
     end
     @order = Order.new
     respond_to do |format|
-      format.html # new.html.erb
+      format.html # new.html.haml
       format.xml { render :xml => @order }
     end
   end

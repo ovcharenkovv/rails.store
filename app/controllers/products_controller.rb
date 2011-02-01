@@ -1,8 +1,14 @@
 class ProductsController < ApplicationController
+  before_filter :get_category
   # GET /products
   # GET /products.xml
+
+  def get_category
+    @category = Category.find(params[:category_id])
+  end
+
   def index
-    @products = Product.all
+    @products = @category.products
 
     respond_to do |format|
       format.html # index.html.haml
@@ -13,7 +19,7 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.xml
   def show
-    @product = Product.find(params[:id])
+    @product = @category.products.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.haml
@@ -24,7 +30,7 @@ class ProductsController < ApplicationController
   # GET /products/new
   # GET /products/new.xml
   def new
-    @product = Product.new
+    @product = @category.products.new
 
     respond_to do |format|
       format.html # new.html.haml
@@ -34,17 +40,18 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
-    @product = Product.find(params[:id])
+    @product = @category.products.find(params[:id])
   end
 
   # POST /products
   # POST /products.xml
   def create
-    @product = Product.new(params[:product])
+    @product = @category.products.new(params[:product])
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to(@product, :notice => 'Product was successfully created.') }
+        flash[:notice] = 'Product was successfully created.'
+        format.html { redirect_to category_products_path(@category) }
         format.xml  { render :xml => @product, :status => :created, :location => @product }
       else
         format.html { render :action => "new" }
@@ -56,11 +63,12 @@ class ProductsController < ApplicationController
   # PUT /products/1
   # PUT /products/1.xml
   def update
-    @product = Product.find(params[:id])
+    @product = @category.products.find(params[:id])
 
     respond_to do |format|
       if @product.update_attributes(params[:product])
-        format.html { redirect_to(@product, :notice => 'Product was successfully updated.') }
+        flash[:notice] = 'Product was successfully updated.'
+        format.html { redirect_to category_products_path(@category) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -72,20 +80,13 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.xml
   def destroy
-    @product = Product.find(params[:id])
+    @product = @category.products.find(params[:id])
     @product.destroy
 
     respond_to do |format|
-      format.html { redirect_to(products_url) }
+      flash[:notice] = 'Product was successfully deleted.'
+      format.html { redirect_to category_products_path(@category) }
       format.xml  { head :ok }
-    end
-  end
-
-  def who_bought
-    @product = Product.find(params[:id])
-    respond_to do |format|
-      format.atom
-      format.xml { render :xml => @product }
     end
   end
 end

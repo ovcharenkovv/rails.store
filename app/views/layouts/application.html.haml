@@ -6,7 +6,11 @@
     = javascript_include_tag :defaults
     = csrf_meta_tag
   %body
-    .header
-      
+    %div
+      = render "carts/header_cart"
+    %div
+      = render "categories/list"
+    %div
+      = render "authors/list"
     .body
       = yield

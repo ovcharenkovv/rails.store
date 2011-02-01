@@ -9,3 +9,7 @@
     %li= number_to_currency(product.price, :unit => "Грн.", :separator => ",", :delimiter => " ", :format => "%n %u" )
     %li= button_to 'Add to Cart', line_items_path(:product_id => product)
     %br
+
+%br
+%br
+%p= will_paginate @products
