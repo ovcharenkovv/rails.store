@@ -1,9 +1,6 @@
-.cart_title Your Cart in Header
-%p Already in the cart:
-=@current_cart.total_count
+Sum:
 
-%p Sum:
 = number_to_currency(@current_cart.total_price)
-
-= button_to 'Empty cart', @current_cart, :method => :delete, :confirm => 'Are you sure?'
-= button_to "Checkout", new_order_path, :method => :get
+%p
+  = link_to 'Empty', @current_cart, :method => :delete, :confirm => 'Are you sure?'
+  = link_to "Checkout", new_order_path, :method => :get

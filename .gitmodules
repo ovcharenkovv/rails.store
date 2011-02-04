@@ -1,0 +1,6 @@
+[submodule "vendor/plugins/ruby_extensions"]
+	path = vendor/plugins/ruby_extensions
+	url = git://github.com/pjg/ruby_extensions.git
+[submodule "vendor/plugins/to_slug"]
+	path = vendor/plugins/to_slug
+	url = git://github.com/ludo/to_slug.git

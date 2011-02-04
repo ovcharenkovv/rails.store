@@ -1,0 +1,22 @@
+%h1 Listing products
+%table
+  %tr
+    %th Title
+    %th Description
+    %th Price
+    %th Category
+    %th Author
+    %th
+    %th
+    %th
+    %th  
+  - @products.each do |product|
+    %tr
+      %td= product.title.to_s
+      %td= product.description.to_s
+      %td= product.price.to_s
+      %td= product.category.name.to_s
+      %td= product.author.name.to_s
+      %td= link_to 'Show', admin_category_prodyct_path(product)
+      %td= link_to 'Edit', edit_admin_category_product_path(@category, product.id)
+      %td= link_to 'Destroy',admin_category_product, :confirm => 'Are you sure?', :method => :delete

@@ -1,21 +1,33 @@
 Store::Application.routes.draw do
 
+  devise_for :users
+
+  resources :custom_orders
+
   resources :authors do
     resources :products
   end
 
   resources :categories do
-    resources :products  
+    resources :products
   end
 
 
-  resources :orders
-
-  resources :line_items
-
-  resources :carts
+  resources :orders, :line_items, :carts
 
   get 'home/index'
+
+  match 'admin' => 'admin/dashboard#index'
+
+  namespace :admin do
+    resources :authors do
+      resources :products
+    end
+    resources :categories do
+      resources :products
+    end
+    resources :orders, :line_items, :carts, :custom_orders
+  end
 
 
 

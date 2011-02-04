@@ -1,10 +1,22 @@
 class Order < ActiveRecord::Base
   PAYMENT_TYPES = [ "Check", "Credit card", "Purchase order" ]
 
-  validates :name, :address, :email, :pay_type, :presence => true
-  validates :pay_type, :inclusion => PAYMENT_TYPES
+  validates :name,     :presence => true,
+                       :length => {:minimum => 3, :maximum => 254}
 
-  has_many :line_items, :dependent => :destroy
+  validates :address,  :presence => true,
+                       :length => {:minimum => 3, :maximum => 254}
+
+  validates :email,    :presence => true,
+                       :length => {:minimum => 3, :maximum => 254},
+                       :uniqueness => true,
+                       :format => {:with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i}
+
+  validates :pay_type, :presence => true,
+                       :inclusion => PAYMENT_TYPES
+
+  has_many :line_items,:dependent => :destroy
+
 
 
   def add_line_items_from_cart(cart)

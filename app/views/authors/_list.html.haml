@@ -1,3 +1,4 @@
-%h1 Listing authors
-- @root_authors.each do |author|
-  =link_to author.name, home_index_path(:author=>author.id)
+%h2 Listing authors
+%ul
+  - @root_authors.each do |author|
+    %li=link_to author.name, author_products_path(author)

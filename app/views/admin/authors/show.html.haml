@@ -5,5 +5,6 @@
 %p
   %b Description:
   = @author.description
-
-=link_to 'Back', authors_path
+= link_to 'Edit', edit_admin_author_path(@author)
+|
+\#{link_to 'Back', admin_authors_path}

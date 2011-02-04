@@ -1,0 +1,237 @@
+/**********************************************************************************************************************/
+/**********************************************************************************************************************/
+/**********************************************************************************************************************/
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big,
+cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd,
+ol, ul, li,fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details,
+embed,figure, figcaption, footer, header, hgroup,menu, nav, output, ruby, section, summary,time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/**********************************************************************************************************************/
+/**********************************************************************************************************************/
+/**********************************************************************************************************************/
+
+body { background-color: #fff; color: #333; }
+
+body, p, ol, ul, td {
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size:   13px;
+    line-height: 18px;
+}
+
+pre {
+    background-color: #eee;
+    padding: 10px;
+    font-size: 11px;
+}
+
+a { color: #000;text-decoration:none; }
+a:visited { color: #666; }
+a:hover { text-decoration:underline;}
+
+div.field, div.actions {
+    margin-bottom: 10px;
+}
+#notice {
+    color: green;
+}
+
+ul {
+    margin: 10px 0 0 0;
+    list-style-type: none;
+}
+
+/**********************************************************************************************************************/
+/**********************************************************************************************************************/
+/**********************************************************************************************************************/
+
+.field_with_errors {
+    padding: 2px;
+    background-color: red;
+    display: table;
+}
+
+#error_explanation {
+    width: 450px;
+    border: 2px solid red;
+    padding: 7px;
+    padding-bottom: 0;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+}
+
+#error_explanation ul li {
+    font-size: 12px;
+    list-style: square;
+}
+/**********************************************************************************************************************/
+/**********************************************************************************************************************/
+/**********************************************************************************************************************/
+.round{
+    border: 1px solid #7C7C7C;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.header {
+    width: 980px;
+    height: 100px;
+    margin: 30px auto 0 auto;
+    position: relative;
+}
+.logo{
+    height: 78px;
+    left: 10px;
+    position: absolute;
+    top: 10px;
+    width: 148px;
+}
+.cart{
+    width: 130px;
+    height: 45px;
+    bottom: 10px;
+    right: 10px;
+    position: absolute;
+}
+.wrapper{
+    width: 980px;
+    min-height: 580px;
+    margin: 10px auto 0 auto;
+    overflow:hidden;
+}
+.sidebar{
+    height: 558px;
+    width: 240px;
+    float: left;
+    margin: 10px;
+}
+.categories{
+    margin: 10px;
+}
+.authors{
+    margin: 10px;
+}
+/**********************************************************************************************************************/
+/**********************************************************************************************************************/
+/**********************************************************************************************************************/
+.content{
+    min-height: 528px;
+    padding: 15px;
+    width: 670px;
+    float: right;
+    margin:10px 10px 10px 0;
+}
+/**********************************************************************************************************************/
+/**********************************************************************************************************************/
+/**********************************************************************************************************************/
+
+.product {
+    border: 1px solid #333333;
+    float: left;
+    height: 230px;
+    margin: 5px;
+    padding: 5px;
+    width: 200px;
+    position: relative;
+}
+.product .title {
+    margin: 0 auto;
+    position:absolute;
+    left: 10px;
+    bottom: 30px;
+    color: #000;
+
+}
+
+.product .image {
+    display: block;
+    width: 180px;
+    margin: 5px auto;
+}
+.product .image img {
+    display: block;
+    height: 170px;
+    margin: 0 auto;
+    width: 170px;
+}
+
+.product .author {
+    bottom: 10px;
+    color: #6F6F6F;
+    font: 13px 'verdana';
+    height: 16px;
+    position: absolute;
+    left: 10px;
+    text-align: left;
+    width: 100px;
+}
+.product .price {
+    bottom: 10px;
+    color: #5FB434;
+    font: 14px 'verdana';
+    height: 16px;
+    position: absolute;
+    right: 10px;
+    text-align: right;
+    width: 100px;
+}
+
+
+.pagination {
+    height: 20px;
+    overflow: hidden;
+    padding: 8px 0 0;
+    text-align: center;
+    width: 670px;
+
+}
+/**********************************************************************************************************************/
+/**********************************************************************************************************************/
+/**********************************************************************************************************************/
+
+.footer{
+    width: 980px;
+    height: 60px;
+    margin: 10px auto 30px auto;
+    position: relative;
+}

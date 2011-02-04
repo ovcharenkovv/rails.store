@@ -19,5 +19,7 @@
   = @product.author.name.to_s
 = button_to 'Add to Cart', line_items_path(:product_id => @product.id)
 
-= link_to 'Back', :back
+= link_to 'Edit', edit_category_product_path(@category,@product)
+|
+\#{link_to 'Back', category_products_path}
 

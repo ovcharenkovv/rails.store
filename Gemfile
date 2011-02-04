@@ -29,7 +29,11 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+gem 'devise'
+
 gem 'haml'
 
 gem 'will_paginate', '>= 3.0.pre'
 
+gem "paperclip", "~> 2.3"
