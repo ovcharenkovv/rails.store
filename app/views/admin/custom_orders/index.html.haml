@@ -1,0 +1,21 @@
+%h1 Listing admin_custom_orders
+%table
+  %tr
+    %th Name
+    %th Description
+    %th Email
+    %th Phone
+    %th
+    %th
+    %th
+  - @admin_custom_orders.each do |admin_custom_order|
+    %tr
+      %td= admin_custom_order.name
+      %td= admin_custom_order.description
+      %td= admin_custom_order.email
+      %td= admin_custom_order.phone
+      %td= link_to 'Show', admin_custom_order
+      %td= link_to 'Edit', edit_admin_custom_order_path(admin_custom_order)
+      %td= link_to 'Destroy', admin_custom_order, :confirm => 'Are you sure?', :method => :delete
+%br/
+= link_to 'New Custom order', new_admin_custom_order_path

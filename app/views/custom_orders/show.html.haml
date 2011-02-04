@@ -1,0 +1,22 @@
+%p#notice= notice
+%p
+  %b Image:
+  = image_tag @custom_order.image.url(:thumb)
+%p
+  %b Name:
+  = @custom_order.name
+%p
+  %b Description:
+  = @custom_order.description
+%p
+  %b Email:
+  = @custom_order.email
+%p
+  %b Phone:
+  = @custom_order.phone
+%p
+  -unless @custom_order.author.nil?
+    %b Author:
+    = @custom_order.author.name.to_s 
+
+=link_to 'Back', root_path
