@@ -57,7 +57,7 @@ class Admin::ProductsController < Admin::AdminController
     respond_to do |format|
       if @product.save
         flash[:notice] = 'Product was successfully created.'
-        format.html { redirect_to category_products_path(@category) }
+        format.html { redirect_to admin_category_products_path }
         format.xml  { render :xml => @product, :status => :created, :location => @product }
       else
         format.html { render :action => "new" }
@@ -74,7 +74,7 @@ class Admin::ProductsController < Admin::AdminController
     respond_to do |format|
       if @product.update_attributes(params[:product])
         flash[:notice] = 'Product was successfully updated.'
-        format.html { redirect_to category_products_path(@category) }
+        format.html { redirect_to category_products_path }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

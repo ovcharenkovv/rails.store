@@ -73,7 +73,7 @@ class Admin::OrdersController < Admin::AdminController
 
     respond_to do |format|
       if @order.update_attributes(params[:order])
-        format.html { redirect_to(@order, :notice => 'Order was successfully updated.') }
+        format.html { redirect_to(admin_orders_url, :notice => 'Order was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -89,7 +89,7 @@ class Admin::OrdersController < Admin::AdminController
     @order.destroy
 
     respond_to do |format|
-      format.html { redirect_to(orders_url) }
+      format.html { redirect_to(admin_orders_url) }
       format.xml  { head :ok }
     end
   end

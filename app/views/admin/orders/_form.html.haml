@@ -1,4 +1,4 @@
-= form_for(@order) do |f|
+= form_for([:author,@order]) do |f|
   - if @order.errors.any?
     #error_explanation
       %h2

@@ -5,7 +5,7 @@ class Product < ActiveRecord::Base
 
   has_many :line_items
   has_many :orders, :through => :line_items
-  has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "170x170>" }
+  has_attached_file :image, :styles => { :thumb => "170x170>",:medium => "300x300>", :large => "500X500" }
 
   before_destroy :ensure_not_referenced_by_any_line_item
 
@@ -21,9 +21,6 @@ class Product < ActiveRecord::Base
 
   validates :category_id, :author_id, :presence => true
 
-  default_scope :order => 'click_count desc'
-
-
   def inc_click
     if self.click_count
       self.update_attribute(:click_count, self.click_count += 1)
@@ -32,10 +29,18 @@ class Product < ActiveRecord::Base
     end
   end
 
-
-  def self.find_products_for_sale(page,per_page)
-    find(:all, :order => "title" ).paginate :page=>page, :per_page => per_page
+  def self.find_top_products(quantity)
+    find(:all,:limit => quantity)
   end
+  
+  def self.find_hot_products(quantity)
+    where(["is_hot == (?)", '1']).limit(quantity)
+  end
+
+
+  #def self.find_products_for_sale(page,per_page)
+  #  find(:all, :order => "title" ).paginate :page=>page, :per_page => per_page
+  #end
 
   #def self.find_products_by_category(category_id,page)
   #  where(["category_id == (?)", category_id]).all.paginate :page=>page, :order=>'created_at desc', :per_page => 3

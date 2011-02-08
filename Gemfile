@@ -36,4 +36,9 @@ gem 'haml'
 
 gem 'will_paginate', '>= 3.0.pre'
 
-gem "paperclip", "~> 2.3"
+gem 'paperclip', "~> 2.3"
+
+gem 'breadcrumbs_on_rails'
+
+gem 'recaptcha', :require => 'recaptcha/rails'
+

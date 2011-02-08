@@ -31,6 +31,12 @@
     = f.label :phone
     %br/
     = f.text_field :phone
+
+  .field
+    = f.label :re_captcha
+    %br/
+    = recaptcha_tags :public_key => '6LflUcESAAAAANFfdERFut9M5MUuuY6Wlvs-WtdX'
+
   .actions
     = f.submit
 

@@ -45,7 +45,7 @@ class Admin::AuthorsController < Admin::AdminController
     respond_to do |format|
       if @author.save
         flash[:notice] = 'Author was successfully created.'
-        format.html { redirect_to(authors_url) }
+        format.html { redirect_to(admin_authors_url) }
         format.xml  { render :xml => @author, :status => :created, :location => @author }
       else
         format.html { render :action => "new" }
@@ -62,7 +62,7 @@ class Admin::AuthorsController < Admin::AdminController
     respond_to do |format|
       if @author.update_attributes(params[:author])
         flash[:notice] = 'Author was successfully updated.'
-        format.html { redirect_to(authors_url) }
+        format.html { redirect_to(admin_authors_url) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -79,7 +79,7 @@ class Admin::AuthorsController < Admin::AdminController
 
     respond_to do |format|
       flash[:notice] = 'Author was successfully deleted.'
-      format.html { redirect_to(authors_url) }
+      format.html { redirect_to(admin_authors_url) }
       format.xml  { head :ok }
     end
   end

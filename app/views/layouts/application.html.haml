@@ -2,8 +2,10 @@
 %html
   %head
     %title Store
-    = stylesheet_link_tag :all
-    = javascript_include_tag :defaults
+    =# stylesheet_link_tag :all
+    = stylesheet_link_tag "style"
+    =# javascript_include_tag :defaults
+    = yield :custom_css_js
     = csrf_meta_tag
   %body
     .header.round
@@ -17,11 +19,14 @@
           = render "categories/list"
         .authors
           = render "authors/list"
-        =link_to "Custom Order", new_custom_order_path
+        %ul.custom_order
+          %li=link_to "Custom Order", new_custom_order_path
       .content.round
+        = raw render_breadcrumbs
         .error
           - if notice
             %p#notice= notice
             %p#alert= alert
+
         = yield
     .footer.round

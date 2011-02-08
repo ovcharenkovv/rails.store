@@ -28,7 +28,7 @@ class CustomOrdersController < ApplicationController
     @custom_order = CustomOrder.new(params[:custom_order])
 
     respond_to do |format|
-      if @custom_order.save
+      if verify_recaptcha(:model => @custom_order, :message => "Oh! It's error with reCAPTCHA!") && @custom_order.save
         format.html { redirect_to(@custom_order, :notice => 'Custom order was successfully created.') }
         format.xml  { render :xml => @custom_order, :status => :created, :location => @custom_order }
       else

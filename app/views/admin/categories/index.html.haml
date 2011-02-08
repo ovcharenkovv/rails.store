@@ -12,6 +12,6 @@
       %td= category.description.to_s
       %td= link_to 'Show', admin_category_path(category)
       %td= link_to 'Edit', edit_admin_category_path(category)
-      %td= link_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete
+      %td= link_to 'Destroy', admin_category_path(category), :confirm => 'Are you sure?', :method => :delete
 %br/
 = link_to 'New Category', new_admin_category_path

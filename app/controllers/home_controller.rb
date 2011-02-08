@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @products = Product.find_products_for_sale(params[:page],6)
+    @top_products = Product.find_top_products(9)
+    @hot_products = Product.find_hot_products(3)
   end
 end

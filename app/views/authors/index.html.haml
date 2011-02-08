@@ -1,11 +1,7 @@
-%h1 Listing authors
-%table
-  %tr
-    %th Name
-    %th Description
-    %th
+%h2 Listing authors
+%ul
   - @authors.each do |author|
-    %tr
-      %td= author.name
-      %td= author.description
-      %td= link_to 'Show', author
+    %li
+      = link_to author.name, author_products_path(author)
+      %br
+      %span= author.description.to_s

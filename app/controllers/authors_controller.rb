@@ -1,6 +1,8 @@
 class AuthorsController < ApplicationController
   # GET /authors
   # GET /authors.xml
+  add_breadcrumb "Authors", :authors_path
+
   def index
     @authors = Author.all
 

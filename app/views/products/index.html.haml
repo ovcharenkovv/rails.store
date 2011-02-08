@@ -1,3 +1,9 @@
+%h2=@category.name
+
+%p
+  = link_to "Order by price", category_products_path(@category)
+  = link_to "Order by popularity ", category_products_path(@category, :sort => "popularity")
+
 - @products.each do |product|
   .product
     = link_to category_product_path(product.category_id,product) , :class => "image" do

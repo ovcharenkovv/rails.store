@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110204123524) do
+ActiveRecord::Schema.define(:version => 20110207093639) do
 
   create_table "admin_custom_orders", :force => true do |t|
     t.string   "name"
@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(:version => 20110204123524) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "click_count"
+    t.boolean  "is_hot"
   end
 
   create_table "users", :force => true do |t|

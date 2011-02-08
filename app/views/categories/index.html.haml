@@ -1,11 +1,7 @@
-%h1 Listing categories
-%table
-  %tr
-    %th Name
-    %th Description
-    %th
+%h2 Listing categories
+%ul
   - @categories.each do |category|
-    %tr
-      %td= category.name.to_s
-      %td= category.description.to_s
-      %td= link_to 'Show', category
+    %li
+      = link_to category.name, category_products_path(category)
+      %br
+      %span= category.description.to_s

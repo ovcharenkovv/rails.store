@@ -12,6 +12,6 @@
       %td= author.description
       %td= link_to 'Show', admin_author_path(author)
       %td= link_to 'Edit', edit_admin_author_path(author)
-      %td= link_to 'Destroy', admin_author, :confirm => 'Are you sure?', :method => :delete
+      %td= link_to 'Destroy', admin_author_path(author), :confirm => 'Are you sure?', :method => :delete
 %br/
 = link_to 'New Author', new_admin_author_path
