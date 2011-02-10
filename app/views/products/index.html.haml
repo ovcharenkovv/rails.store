@@ -1,8 +1,6 @@
 %h2=@category.name
 
-%p
-  = link_to "Order by price", category_products_path(@category)
-  = link_to "Order by popularity ", category_products_path(@category, :sort => "popularity")
+= render 'nav_panel'
 
 - @products.each do |product|
   .product

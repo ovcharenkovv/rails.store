@@ -9,12 +9,13 @@ class ApplicationController < ActionController::Base
 
 
   def get_root_category
-    @root_categories = Category.all
+    @root_categories = Category.root_category
   end
 
   def get_authors
     @root_authors = Author.all
   end
+  
   def get_current_cart
     @current_cart = current_cart
   end

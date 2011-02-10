@@ -11,13 +11,6 @@
         'transitionIn'	: 'none',
         'transitionOut'	: 'none'
       });
-
-      $("#cart_q").fancybox({
-          'titlePosition'		: 'inside',
-          'transitionIn'		: 'none',
-          'transitionOut'		: 'none'
-      });
-
     });
 
 %p#notice= notice
@@ -40,9 +33,4 @@
   %b Author:
   = @product.author.name.to_s
 = button_to 'Add to Cart', line_items_path(:product_id => @product.id)
-= link_to 'Back', :back
-%br
-%a#cart_q{:href => "#qq", :title => "qq"} Add to cart
-%div{:style => "display: none;"}
-  #qq{:style => "width:400px;height:100px;overflow:auto;"}
-    some text
+= link_to 'Back', session[:product_params]

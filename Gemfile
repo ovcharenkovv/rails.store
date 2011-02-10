@@ -42,3 +42,6 @@ gem 'breadcrumbs_on_rails'
 
 gem 'recaptcha', :require => 'recaptcha/rails'
 
+gem 'acts_as_tree'
+
+
