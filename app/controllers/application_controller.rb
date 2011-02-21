@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   before_filter :get_root_category, :get_authors , :get_current_cart
   layout "application"
 
-  add_breadcrumb "Home", :root_path
+  # add_breadcrumb "Главная", :root_path
 
 
   def get_root_category

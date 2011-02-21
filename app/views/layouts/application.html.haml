@@ -8,25 +8,25 @@
     = yield :custom_css_js
     = csrf_meta_tag
   %body
-    .header.round
-      .logo.round
-        = link_to "logo", root_path
-      .cart.round
+    .header
+      .logo
+        = link_to "", root_path
+      .cart
         = render "carts/header_cart"
-    .wrapper.round
-      .sidebar.round
+    .wrapper.shadow
+      .sidebar
         .categories
           = render "categories/list"
         .authors
           = render "authors/list"
         %ul.custom_order
-          %li=link_to "Custom Order", new_custom_order_path
-      .content.round
-        = raw render_breadcrumbs
+          %li=link_to "Индивидуальный заказ", new_custom_order_path
+      .content
+        .breadcrumbs
+          = raw render_breadcrumbs
         .error
           - if notice
             %p#notice= notice
             %p#alert= alert
-
         = yield
-    .footer.round
+    .footer

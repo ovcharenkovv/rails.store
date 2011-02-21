@@ -8,35 +8,33 @@
         - @custom_order.errors.full_messages.each do |msg|
           %li= msg
   .field
-    = f.label :name
+    = f.label "Ваше имя"
     %br/
     = f.text_field :name
   .field
-    = f.label :description
+    = f.label "Описание желаемого товара"
     %br/
     = f.text_area :description
   .field
-    = f.label :author
+    = f.label "Выберете исполнителя"
     %br
-    = f.collection_select :author_id, Author.find(:all), :id, :name, :prompt => "Select a Author"
+    = f.collection_select :author_id, Author.find(:all), :id, :name, :prompt => "Мастера"
   .field
-    = f.label :image
+    = f.label "Если у вас есть изображение желаемого товара, прикрепите"
     %br
     = f.file_field :image
   .field
-    = f.label :email
+    = f.label "Ваш е-мейл"
     %br/
     = f.text_field :email
   .field
-    = f.label :phone
+    = f.label "Ваш телефон"
     %br/
     = f.text_field :phone
-
   .field
-    = f.label :re_captcha
+    = f.label "Введите буквы на ресунке"
     %br/
     = recaptcha_tags :public_key => '6LflUcESAAAAANFfdERFut9M5MUuuY6Wlvs-WtdX'
-
   .actions
     = f.submit
 

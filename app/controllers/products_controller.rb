@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-  before_filter :get_category_or_author , :init_breadcrumb , :init_params
+  before_filter :get_category_or_author , :init_params
   # GET /products
   # GET /products.xml
 
@@ -20,12 +20,12 @@ class ProductsController < ApplicationController
 
   def init_breadcrumb
     if params[:category_id]
-      add_breadcrumb "Categories", :categories_path
-      add_breadcrumb "Products", :category_products_path
+      #add_breadcrumb "Категории", :categories_path
+      #add_breadcrumb "Изделия", :category_products_path
     end
     if params[:author_id]
-      add_breadcrumb "Authors", :authors_path
-      add_breadcrumb "Products", :author_products_path
+      #add_breadcrumb "Мастера", :authors_path
+      #add_breadcrumb "Изделия", :author_products_path
     end
   end
 
