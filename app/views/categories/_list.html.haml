@@ -4,3 +4,7 @@
     %li= link_to category.name, category_products_path(category)
     -if category.children.count >=1
       = render :partial=>'categories/children_list',:locals => {:child => category.children}
+  .top_left_corner
+  .top_right_corner
+  .bottom_left_corner
+  .bottom_right_corner

@@ -8,10 +8,10 @@
   :javascript
     $(document).ready(function(){
         $('#top_products').bxSlider({
-            speed: 1500,
-            pager: true,
+            speed: 1900,
+            pager: true/*,
             easing: 'easeOutBounce',
-            auto: true,
+            auto: true,*/
         });
     });
 
@@ -22,28 +22,44 @@
             pager: true
         });
     });
-%h2=t('home.welcome')
-%p=t('home.welcome_text')
-
-%h2=t('home.top_products')
-%ul#top_products
-  - @top_products.each do |product|
-    %li.product
-      .border
-        = link_to category_product_path(product.category_id,product) , :class => "image" do
-          = image_tag product.image.url(:thumb)
-        = link_to category_product_path(product.category_id,product) , :class => "title" do
-          = product.title.to_s
-        = link_to product.author.name, author_products_path(product.author_id) , :class => "author"
-        .price= number_to_currency(product.price, :unit => "Грн.", :separator => ",", :delimiter => " ", :format => "%n %u" )
-%h2=t('home.new_products')
-%ul#new_products
-  - @new_products.each do |product|
-    %li.product
-      .border
-        = link_to category_product_path(product.category_id,product) , :class => "image" do
-          = image_tag product.image.url(:thumb)
-        = link_to category_product_path(product.category_id,product) , :class => "title" do
-          = product.title.to_s
-        = link_to product.author.name, author_products_path(product.author_id) , :class => "author"
-        .price= number_to_currency(product.price, :unit => "Грн.", :separator => ",", :delimiter => " ", :format => "%n %u" )
+.welcome
+  %h3=t('home.welcome')
+  %p=t('home.welcome_text')
+.top
+  %h3=t('home.top_products')
+  #top_products
+    - @top_products.each do |product|
+      .product
+        .body
+          = link_to category_product_path(product.category_id,product) , :class => "img" do
+            = image_tag product.image.url(:thumb)
+          = link_to category_product_path(product.category_id,product) , :class => "title" do
+            %h4= product.title.to_s
+          = link_to author_products_path(product.author_id) , :class => "author" do
+            %h5=product.author.name
+        %span.price= number_to_currency(product.price, :unit => "Грн.", :separator => ",", :delimiter => " ", :format => "%n %u" )
+  .paginator
+    -#%a.back{:href => "/"} ← Назад
+    .line
+    -#%a.forward{:href => "/"} Еще →
+.new
+  %h3=t('home.new_products')
+  #new_products
+    - @new_products.each do |product|
+      .product
+        .body
+          = link_to category_product_path(product.category_id,product) , :class => "img" do
+            = image_tag product.image.url(:thumb)
+          = link_to category_product_path(product.category_id,product) , :class => "title" do
+            %h4=product.title.to_s
+          = link_to author_products_path(product.author_id) , :class => "author" do
+            %h5=product.author.name
+        %span.price= number_to_currency(product.price, :unit => "Грн.", :separator => ",", :delimiter => " ", :format => "%n %u" )
+  .paginator
+    -#%a.back{:href => "/"} ← Назад
+    .line
+    -#%a.forward{:href => "/"} Еще →
+  .top_left_corner
+  .top_right_corner
+  .bottom_left_corner
+  .bottom_right_corner

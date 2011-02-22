@@ -9,25 +9,55 @@
     = csrf_meta_tag
   %body
     .header
-      .logo
-
-        = link_to t('layouts.application.hello'), root_path
+      %h1
+        =link_to  root_path do
+          %img{:alt => "Logo", :height => "120", :src => "/images/logo.png", :width => "430"}
       .cart
         = render "carts/header_cart"
-    .wrapper.shadow
+    .content_wrap
       .sidebar
         .categories
           = render "categories/list"
-        .authors
+        .search
+          %h3 Поиск
+          %fieldset
+            %input.field{:type => "text", :value => ""}
+              %input.submit{:name => "submit", :src => "/images/search.png", :type => "image"}
+        .best
+          %h2
+            %a{:href => "/"} Специальное предложение
+          .body
+            %a.img{:href => "/"}
+              %img{:alt => "1", :src => "/images/1.jpg"}/
+            %a.title{:href => "/"}
+              %h4 Мышонок с сердцем
+            %a.author{:href => "/"}
+              %h5 Mary Jane
+          %span.price 125 Грн
+          .top_left_corner
+          .top_right_corner
+          .bottom_left_corner
+          .bottom_right_corner
+        .masters
           = render "authors/list"
-        %ul.custom_order
-          %li=link_to "Индивидуальный заказ", new_custom_order_path
       .content
         .breadcrumbs
           = raw render_breadcrumbs
-        .error
-          - if notice
-            %p#notice= notice
-            %p#alert= alert
-        = yield
+          = yield
+        -#.error
+        -#  - if notice
+        -#    %p#notice= notice
+        -#    %p#alert= alert
+        .bant
+        .heart
+        .cbottom_left_corner
+        .cbottom_right_corner
     .footer
+      %span.left_co
+        © poshstore.com.ua, 2011.
+        %br>/
+        Все права сохранены
+      %span.right_co
+        По всем вопросам обращайтесь по адресу: info@poshtore.com.ua
+        %br>/
+        или по телефону (093) 45 48 455

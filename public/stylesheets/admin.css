@@ -1,0 +1,58 @@
+/**********************************************************************************************************************/
+/**********************************************************************************************************************/
+/**********************************************************************************************************************/
+html {
+    width: 100%;
+    height: 100%;
+    color: #945730;
+    font: 13px/18px Georgia;
+}
+body {
+    height: 100%;
+    width: 100%;
+}
+div, p, form, label, input, textarea, img, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, table, td, tr {
+    padding:0;
+    margin:0;
+    font-weight:normal;
+    text-decoration:none;
+    outline:none;
+    list-style:none;
+}
+fieldset {
+    padding:0;
+    margin:0;
+    border:none;
+}
+:focus {
+    outline:none;
+}
+a, a img {
+    border:0px;
+    outline:none;
+}
+a {
+    text-decoration:underline;
+    color: #000;
+    font: bold 13px/18px Georgia;
+}
+a:hover {
+    text-decoration:none;
+}
+
+p {
+    line-height: 140%;
+}
+table{border-collapse:collapse;padding:0px;}
+
+/**********************************************************************************************************************/
+/**********************************************************************************************************************/
+/**********************************************************************************************************************/
+
+.header {
+    width:960px;
+    height: 30px;
+    margin: 5px auto;
+    border: 1px solid black;
+
+}
