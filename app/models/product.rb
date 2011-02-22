@@ -32,7 +32,11 @@ class Product < ActiveRecord::Base
   def self.find_top_products(quantity)
     find(:all,:limit => quantity, :order => 'click_count desc')
   end
-  
+
+  def self.find_new_products(quantity)
+    find(:all,:limit => quantity, :order => 'created_at desc')
+  end
+
   def self.find_hot_products(quantity)
     where(["is_hot == (?)", '1']).limit(quantity).order("created_at desc")
   end

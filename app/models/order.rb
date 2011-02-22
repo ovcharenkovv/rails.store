@@ -1,19 +1,19 @@
 class Order < ActiveRecord::Base
-  PAYMENT_TYPES = [ "Check", "Credit card", "Purchase order" ]
+  PAYMENT_TYPES = ["Наличные","Банковский перевод","Web Money" ]
+  DELIVERY_TYPES = ["Личная встреча","Новая почта","Укрпочта" ]
 
-  validates :name,     :presence => true,
-                       :length => {:minimum => 3, :maximum => 254}
+  validates :name,     :presence => true
+  validates :telephone,:presence => true
 
-  validates :address,  :presence => true,
-                       :length => {:minimum => 3, :maximum => 254}
+  #validates :email,    :format => {:with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i}
 
-  validates :email,    :presence => true,
-                       :length => {:minimum => 3, :maximum => 254},
-                       :uniqueness => true,
-                       :format => {:with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i}
 
-  validates :pay_type, :presence => true,
-                       :inclusion => PAYMENT_TYPES
+#  validates :address,  :presence => true,
+#                       :length => {:minimum => 3, :maximum => 254}
+
+
+#  validates :pay_type, :presence => true,
+#                       :inclusion => PAYMENT_TYPES
 
   has_many :line_items,:dependent => :destroy
 
@@ -27,3 +27,4 @@ class Order < ActiveRecord::Base
   end
 
 end
+

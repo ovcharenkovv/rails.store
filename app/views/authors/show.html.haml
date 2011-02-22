@@ -1,9 +1,9 @@
 %p#notice= notice
 %p
-  %b Name:
+  %b=t('authors.name')
   = @author.name
 %p
-  %b Description:
+  %b=t('authors.description')
   = @author.description
 
-=link_to 'Back', authors_path
+=link_to t('layouts.application.back'), authors_path

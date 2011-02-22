@@ -1,9 +1,9 @@
-.cart_title Your Cart
+.cart_title=t('carts.cart.title')
 %table
   = render(@cart.line_items)
   %tr.total_line
-    %td{:colspan => "2"} Total
+    %td{:colspan => "2"}=t('carts.cart.total')
     %td.total_cell= number_to_currency(@cart.total_price)
-= button_to 'Empty cart', @cart, :method => :delete, :confirm => 'Are you sure?'
-= button_to "Checkout", new_order_path, :method => :get
-= link_to 'Continue shopping', session[:product_params]
+= button_to t('carts.cart.empty'), @cart, :method => :delete, :confirm => 'Are you sure?'
+= button_to t('carts.cart.checkout'), new_order_path, :method => :get
+= link_to t('carts.cart.continue'), session[:product_params]

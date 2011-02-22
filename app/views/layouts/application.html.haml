@@ -10,7 +10,8 @@
   %body
     .header
       .logo
-        = link_to "", root_path
+
+        = link_to t('layouts.application.hello'), root_path
       .cart
         = render "carts/header_cart"
     .wrapper.shadow

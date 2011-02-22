@@ -8,35 +8,35 @@
         - @custom_order.errors.full_messages.each do |msg|
           %li= msg
   .field
-    = f.label "Ваше имя"
+    = f.label t('custom_orders.name')
     %br/
     = f.text_field :name
   .field
-    = f.label "Описание желаемого товара"
-    %br/
-    = f.text_area :description
-  .field
-    = f.label "Выберете исполнителя"
-    %br
-    = f.collection_select :author_id, Author.find(:all), :id, :name, :prompt => "Мастера"
-  .field
-    = f.label "Если у вас есть изображение желаемого товара, прикрепите"
-    %br
-    = f.file_field :image
-  .field
-    = f.label "Ваш е-мейл"
+    = f.label t('custom_orders.email')
     %br/
     = f.text_field :email
   .field
-    = f.label "Ваш телефон"
+    = f.label t('custom_orders.telephone')
     %br/
     = f.text_field :phone
   .field
-    = f.label "Введите буквы на ресунке"
+    = f.label t('custom_orders.prod_desc')
+    %br/
+    = f.text_area :description
+  .field
+    = f.label t('custom_orders.master')
+    %br
+    = f.collection_select :author_id, Author.find(:all), :id, :name, :prompt => "Мастера"
+  .field
+    = f.label t('custom_orders.image')
+    %br
+    = f.file_field :image
+  .field
+    = f.label t('custom_orders.capcha')
     %br/
     = recaptcha_tags :public_key => '6LflUcESAAAAANFfdERFut9M5MUuuY6Wlvs-WtdX'
   .actions
-    = f.submit
+    = f.submit t('custom_orders.place_order')
 
 
 

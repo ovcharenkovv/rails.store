@@ -1,9 +1,9 @@
 %p#notice= notice
 %p
-  %b Имя:
+  %b=t('categories.name')
   = @category.name.to_s
 %p
-  %b Описание:
+  %b=t('categories.description')
   = @category.description.to_s
 
-=link_to 'Back', categories_path
+=link_to t('layouts.application.back'), categories_path

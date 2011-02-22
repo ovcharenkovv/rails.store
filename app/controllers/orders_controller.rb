@@ -2,11 +2,11 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.xml
   def show
-    @order = Order.find(params[:id])
+    #@order = Order.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.haml
-      format.xml  { render :xml => @order }
+      format.xml  { render :xml => "opa" }
     end
   end
 
@@ -15,7 +15,7 @@ class OrdersController < ApplicationController
   def new
     @cart = current_cart
     if @cart.line_items.empty?
-      redirect_to root_url, :notice => "Your cart is empty"
+      redirect_to root_url, :notice => "Корзина пуста"
       return
     end
     @order = Order.new
@@ -35,7 +35,7 @@ class OrdersController < ApplicationController
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
         Notifier.order_received(@order).deliver
-        format.html { redirect_to(root_url, :notice => 'Thank you for your order.') }
+        format.html { redirect_to(order_path(@order), :notice => 'Пасибки за заказ') }
         format.xml { render :xml => @order, :status => :created,
                             :location => @order }
       else

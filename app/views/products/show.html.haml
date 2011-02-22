@@ -13,23 +13,20 @@
       });
     });
 
-%h2
-  = @product.title
-%p#notice= notice
+%h2= @product.title
 %p
   = link_to(image_tag(@product.image.url(:medium)), @product.image.url(:medium), :id => "light_box") unless @product.image.nil?
-
 %p
-  %b Описание изделия:
+  %b=t('products.description')
   = @product.description
 %p
-  %b Цена изделия:
+  %b=t('products.price')
   = @product.price
 %p
-  %b Категория:
+  %b=t('products.category')
   = @product.category.name.to_s
 %p
-  %b Мастер:
+  %b=t('products.master')
   = @product.author.name.to_s
-= button_to 'Add to Cart', line_items_path(:product_id => @product.id)
-= link_to 'Back', session[:product_params]
+= button_to t('products.add_to_cart'), line_items_path(:product_id => @product.id)
+= link_to t('layouts.application.back'), session[:product_params]

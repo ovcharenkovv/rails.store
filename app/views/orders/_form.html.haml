@@ -7,30 +7,34 @@
       %ul
         - @order.errors.full_messages.each do |msg|
           %li= msg
-  Report erratum
-  Prepared exclusively for Anton Fonarev
-  this copy is (B12.0 printing, January 10, 2011)
-  167
-  I TERATION G1: C APTURING
-  AN
-  O RDER
   .field
-    = f.label :name
+    = f.label t('orders.name')
     %br/
     = f.text_field :name, :size => 40
   .field
-    = f.label :address
+    = f.label t('orders.telephone')
     %br/
-    = f.text_area :address, :rows => 3, :cols => 40
+    = f.text_field :telephone, :size => 40
   .field
-    = f.label :email
+    = f.label t('orders.email')
     %br/
     = f.email_field :email, :size => 40
   .field
-    = f.label :pay_type
+    = f.label t('orders.address')
     %br/
-    = f.select :pay_type, Order::PAYMENT_TYPES, |
-      :prompt => 'Select a payment method'      |
+    = f.text_area :address, :rows => 3, :cols => 40
+  .field
+    = f.label t('orders.pay_type')
+    %br/
+    = f.select :pay_type, Order::PAYMENT_TYPES,
+      :prompt => 'Select'
+  .field
+    = f.label t('orders.delivery_type')
+    %br/
+    = f.select :delivery_type, Order::DELIVERY_TYPES,
+      :prompt => 'Select'
+
+
   .actions
-    = f.submit 'Place Order'
+    = f.submit t('orders.place_order')
 

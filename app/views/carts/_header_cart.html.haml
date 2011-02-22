@@ -1,6 +1,5 @@
-Sum:
-
+=t('carts.cart.sum')
 = number_to_currency(@current_cart.total_price)
 %p
-  = link_to 'Empty', @current_cart, :method => :delete, :confirm => 'Are you sure?'
-  = link_to "Checkout", new_order_path, :method => :get
+  = link_to t('carts.cart.empty'), @current_cart, :method => :delete, :confirm => 'Are you sure?'
+  = link_to t('carts.cart.checkout'), new_order_path, :method => :get
