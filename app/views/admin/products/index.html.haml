@@ -1,8 +1,28 @@
-- @products.each do |product|
-  .product
-    = link_to category_product_path(product.category_id,product) , :class => "image" do
-      = image_tag product.image.url(:thumb)
-    = link_to category_product_path(product.category_id,product) , :class => "title" do
-      = product.title.to_s
-    = link_to product.author.name, author_products_path(product.author_id) , :class => "author"
-    .price= number_to_currency(product.price, :unit => "Грн.", :separator => ",", :delimiter => " ", :format => "%n %u" )
+%h1 Listing products
+%table
+  %tr
+    %th id
+    %th Pic
+    %th Title
+    %th description
+    %th Price
+    %th Category
+    %th Author
+    %th Click
+    %th
+  - @products.each do |product|
+    %tr
+      %td= product.id
+      %td= image_tag product.image.url(:thumb)
+      %td= product.title
+      %td= product.description
+      %td= number_to_currency(product.price, :unit => "Грн.", :separator => ",", :delimiter => " ", :format => "%n %u" )
+      %td= product.category.name
+      %td= product.author.name
+      %td= product.click_count
+      %td
+        = link_to 'Edit', edit_admin_category_product_path(@category,product)
+        = link_to 'Destroy', admin_category_product_path(@category,product), :confirm => 'Are you sure?', :method => :delete
+%br/
+= link_to 'New Product', new_admin_category_product_path(@category)
+%p=# will_paginate @products

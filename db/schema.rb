@@ -10,13 +10,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110222122130) do
+ActiveRecord::Schema.define(:version => 20110224205316) do
 
   create_table "authors", :force => true do |t|
     t.string   "name"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "fullname"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "city"
+    t.string   "address"
   end
 
   create_table "carts", :force => true do |t|

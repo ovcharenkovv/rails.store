@@ -20,6 +20,10 @@
     %br
     = f.text_field :price
   .field
+    = f.label :category
+    %br
+    = f.collection_select :category_id, Category.find(:all), :id, :name, :prompt => "Select a Category"
+  .field
     = f.label :author
     %br
     = f.collection_select :author_id, Author.find(:all), :id, :name, :prompt => "Select a Author"
@@ -27,6 +31,9 @@
     = f.label :image
     %br
     = f.file_field :image
-
+  .field
+    = f.label :is_hot
+    %br
+    = f.check_box :is_hot
   .actions
     = f.submit

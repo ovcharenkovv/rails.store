@@ -2,21 +2,20 @@
 %table
   %tr
     %th Name
-    %th Address
+    %th Phone
     %th Email
+    %th Address
+    %th Delivery_type
+
     %th Pay type
-    %th
-    %th
-    %th
   - @orders.each do |order|
     %tr
-      %td= order.name
-      %td= order.address
+      %td= link_to order.name, admin_order_path(order)
+      %td= order.telephone
       %td= order.email
+      %td= order.address
       %td= order.pay_type
-      %td= link_to 'Show', admin_order_path(order)
-      %td= link_to 'Edit', edit_admin_order_path(order)
-      %td= link_to 'Destroy', admin_order_path(order), :confirm => 'Are you sure?', :method => :delete
+      %td= order.delivery_type      
 %br/
 = link_to 'New Order', new_admin_order_path
 

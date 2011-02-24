@@ -44,7 +44,25 @@ p {
     line-height: 140%;
 }
 table{border-collapse:collapse;padding:0px;}
-
+table tr td{
+    border: 1px solid black;
+}
+table tr th {
+    border: 1px solid black;
+    width: 290px;
+}
+table tr th.action {
+    width: 125px;
+}
+h1 {
+     font: 20px/40px Georgia;   
+}
+h2 {
+      font: 16px/35px Georgia;
+}
+h3 {
+      font: 14px/25px Georgia;
+}
 /**********************************************************************************************************************/
 /**********************************************************************************************************************/
 /**********************************************************************************************************************/
@@ -53,6 +71,30 @@ table{border-collapse:collapse;padding:0px;}
     width:960px;
     height: 30px;
     margin: 5px auto;
-    border: 1px solid black;
+    border: 1px solid #778899;
+
+}
+
+.wrapper {
+    width:960px;
+    height: 1000px;
+    margin: 5px auto;
+    border: 1px solid #778899;
+}
+.wrapper .sidebar {
+    width: 200px;
+    height: 990px;
+    float:left;
+    margin: 5px;
+    border: 1px solid #778899;
+    padding: 10px;
+}
+.wrapper .content {
+    width: 700px;
+    height: 990px;
+    float:right;
+    margin: 5px 5px 5px 0 ;
+    border: 1px solid #778899;
+    padding: 10px;
 
 }
