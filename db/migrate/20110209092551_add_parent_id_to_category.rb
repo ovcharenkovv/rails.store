@@ -1,6 +1,6 @@
 class AddParentIdToCategory < ActiveRecord::Migration
   def self.up
-    add_column :categories, :parent_id, :integer
+    add_column :categories, :parent_id, :integer, :default => '0'
   end
 
   def self.down

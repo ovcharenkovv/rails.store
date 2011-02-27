@@ -144,7 +144,7 @@ table{border-collapse:collapse;padding:0px;}
 .content_wrap .sidebar .categories ul li a{
     font: bold 13px/25px Georgia;
 }
-.content_wrap .sidebar .categories .has_children ul {
+.content_wrap .sidebar .categories .has_child ul {
     margin: 0 0 0 10px;
 }
 .content_wrap .sidebar .categories .top_left_corner {
@@ -388,7 +388,7 @@ table{border-collapse:collapse;padding:0px;}
     float: left;
     width: 680px;
 }
-.content_wrap .content .welcome {
+.content_wrap .content .wrap {
     border-bottom: 1px solid #E2C6B4;
     background: url("/images/welcome_border.jpg") no-repeat scroll 0 0 transparent;
     margin: 50px 0 0;
@@ -396,15 +396,17 @@ table{border-collapse:collapse;padding:0px;}
     position: relative;
     z-index: 1;
 }
-.content_wrap .content .welcome h3 {
+.content_wrap .content h3 {
     font: 20px/40px Georgia;
     color:#945730;
     text-indent: 10px;
 }
-.content_wrap .content .welcome p{
+.content_wrap .content p{
     font: 13px/18px Georgia;
     color: #4E2D18;
 }
+
+
 /**********************************************************************************************************************/
 /******************************************CONTENT NEW AND TOP PRODUCTS************************************************/
 /**********************************************************************************************************************/
@@ -562,6 +564,13 @@ table{border-collapse:collapse;padding:0px;}
     right:-2px;
     bottom: -2px;
     background: url("../images/corner_1.png") no-repeat scroll 0 0 transparent;
+}
+/**********************************************************************************************************************/
+/*******************************************CONTEN WRAP PRODUCTS*******************************************************/
+/**********************************************************************************************************************/
+
+.wrap .product_nav {
+    text-align: right;
 }
 /**********************************************************************************************************************/
 /*******************************************CONTEN WRAP BANIKI*********************************************************/

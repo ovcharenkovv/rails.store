@@ -1,7 +1,7 @@
 = form_for([:admin,@author]) do |f|
   - if @author.errors.any?
     #error_explanation
-      %h2
+      %h5
         = pluralize(@author.errors.count, "error")
         prohibited this author from being saved:
       %ul
