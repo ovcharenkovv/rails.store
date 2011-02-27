@@ -572,6 +572,106 @@ table{border-collapse:collapse;padding:0px;}
 .wrap .product_nav {
     text-align: right;
 }
+
+.content_wrap .content .catalog{
+    border: 1px solid #E2C6B4;
+    position: relative;
+    margin: 10px 0 0 0;
+    overflow: hidden;
+    padding: 10px 5px;
+}
+
+
+.content_wrap .content .catalog .product{
+    float: left;
+    height: 270px;
+    padding: 0 6px 20px 6px;
+    position: relative;
+    width: 210px;
+}
+.content_wrap .content .catalog .product .body{
+    height: 215px;
+    margin: 5px 0 0;
+    overflow: hidden;
+    width: 210px;
+    -moz-box-shadow: 0 0 4px #888;
+    -webkit-box-shadow: 0 0 4px #888;
+    box-shadow: 0 0 4px #888;
+}
+.content_wrap .content .catalog .product .body .img{
+    display: block;
+    height: 150px;
+    padding: 5px;
+    width: 200px;
+    text-align: center;
+}
+.content_wrap .content .catalog .product .body .title h4{
+    font: bold 13px/20px Georgia;
+    color: #955730;
+    text-align:center;
+    text-decoration: underline;
+}
+.content_wrap .content .catalog .product .body .title h4:hover{
+    text-decoration: none;
+}
+.content_wrap .content .catalog .product .body .author h5{
+    font: 11px/20px Tahoma;
+    color: #666666;
+    text-align:center;
+    text-decoration: underline;
+}
+.content_wrap .content .catalog .product .body .author h5:hover{
+    text-decoration: none;
+}
+
+.content_wrap .content .catalog .product .price{
+    background: url("../images/price.png") no-repeat scroll 0 0 transparent;
+    bottom: 20px;
+    color: #955730;
+    display: block;
+    font: bold 12px Georgia;
+    height: 33px;
+    left: 41px;
+    padding: 27px 0 0 48px;
+    position: absolute;
+    width: 90px;
+}
+
+
+.content_wrap .content .catalog .top_left_corner{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left:-2px;
+    top: -2px;
+    background: url("../images/corner_1.png") no-repeat scroll -16px -16px transparent;
+}
+.content_wrap .content .catalog .top_right_corner{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    right:-2px;
+    top: -2px;
+    background: url("../images/corner_1.png") no-repeat scroll 0 -16px transparent;
+}
+.content_wrap .content .catalog .bottom_left_corner{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left:-2px;
+    bottom: -2px;
+    background: url("../images/corner_1.png") no-repeat scroll -16px 0 transparent;
+}
+.content_wrap .content .catalog .bottom_right_corner{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    right:-2px;
+    bottom: -2px;
+    background: url("../images/corner_1.png") no-repeat scroll 0 0 transparent;
+}
+
+
 /**********************************************************************************************************************/
 /*******************************************CONTEN WRAP BANIKI*********************************************************/
 /**********************************************************************************************************************/
