@@ -55,20 +55,20 @@ table tr th.action {
     width: 125px;
 }
 h1 {
-     font: 20px/40px Georgia;   
+    font: 20px/40px Georgia;
 }
 h2 {
-      font: 16px/35px Georgia;
+    font: 16px/35px Georgia;
 }
 h3 {
-      font: 14px/25px Georgia;
+    font: 14px/25px Georgia;
 }
 /**********************************************************************************************************************/
 /**********************************************************************************************************************/
 /**********************************************************************************************************************/
 
 .header {
-    width:960px;
+    width:1000px;
     height: 30px;
     margin: 5px auto;
     border: 1px solid #778899;
@@ -76,25 +76,51 @@ h3 {
 }
 
 .wrapper {
-    width:960px;
-    height: 1000px;
+    width:1000px;
+    min-height: 935px;
     margin: 5px auto;
     border: 1px solid #778899;
 }
 .wrapper .sidebar {
-    width: 200px;
-    height: 990px;
+    width: 140px;
+    min-height: 900px;
     float:left;
     margin: 5px;
     border: 1px solid #778899;
     padding: 10px;
 }
 .wrapper .content {
-    width: 700px;
-    height: 990px;
+    width: 800px;
+    min-height: 900px;
     float:right;
     margin: 5px 5px 5px 0 ;
     border: 1px solid #778899;
     padding: 10px;
 
+}
+/**********************************************************************************************************************/
+/**********************************************************************************************************************/
+
+.catalog .image img {
+    height:80px;
+}
+.catalog .edit  {
+    text-align: center;
+}
+.catalog .delete  {
+    text-align: center;
+}
+.catalog .delete a  {
+    color: red !important;
+}
+.catalog th.edit {
+    width:100px;
+}
+.catalog th.delete {
+    width:90px;
+}
+
+.pagination {
+    text-align:center;
+    margin:30px;
 }

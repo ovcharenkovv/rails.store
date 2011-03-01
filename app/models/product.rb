@@ -1,20 +1,17 @@
 class Product < ActiveRecord::Base
-
+  PRODUCT_STATUS = ["Есть в наличии","Под заказ" ]
   belongs_to :category
   belongs_to :author
 
   has_many :line_items
   has_many :orders, :through => :line_items
-  has_attached_file :image, :styles => { :thumb => "200x150>",:medium => "400x300>", :large => "800X600" }
+  has_attached_file :image, :styles => { :thumb => "200x150>",:medium => "400x300>", :large => "500X375" }
 
   before_destroy :ensure_not_referenced_by_any_line_item
 
   validates :title,       :presence => true,
             :uniqueness => true,
             :length => {:minimum => 3, :maximum => 25}
-
-  validates :description, :presence => true,
-            :length => {:minimum => 3, :maximum => 254}
 
   validates :price,       :presence => true,
             :numericality => {:greater_than_or_equal_to => 0.01}

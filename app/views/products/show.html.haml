@@ -15,7 +15,7 @@
 
 %h3= @product.title
 %p
-  = link_to(image_tag(@product.image.url(:medium)), @product.image.url(:medium), :id => "light_box") unless @product.image.nil?
+  = link_to(image_tag(@product.image.url(:medium)), @product.image.url(:large), :id => "light_box") unless @product.image.nil?
 %p
   %b=t('products.description')
   = @product.description
