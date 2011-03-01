@@ -5,7 +5,7 @@ production:
   database: store_production
   pool: 5
   username: root
-  password: 
+  password:
   host: localhost
 
 development:
@@ -25,5 +25,5 @@ test:
   database: store_test
   pool: 5
   username: root
-  password: 
+  password:
   host: localhost
