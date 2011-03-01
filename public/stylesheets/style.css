@@ -406,6 +406,18 @@ table{border-collapse:collapse;padding:0px;}
     color: #4E2D18;
 }
 
+.content_wrap .content .pagination {
+    height: 25px;
+    overflow: hidden;
+    padding: 15px 0 0;
+    text-align: center;
+    width: 100%;
+    color: #000000;
+}
+.content_wrap .content .pagination a {
+    color: #4E2D18;
+}
+
 
 /**********************************************************************************************************************/
 /******************************************CONTENT NEW AND TOP PRODUCTS************************************************/

@@ -1,11 +1,11 @@
 %p.product_nav
   Сортировать по:
   - if params[:category_id]
-    = link_to "цене", category_products_path(@category, :sort => "price", :per_page =>params[:per_page] )
-    = link_to "популярности", category_products_path(@category, :sort => "popularity", :per_page =>params[:per_page] )
-    = render "products/per_page"
+    = link_to "Цене", category_products_path(@category, :sort => "price", :per_page =>params[:per_page] )
+    = link_to "Популярности", category_products_path(@category, :sort => "popularity", :per_page =>params[:per_page] )
+    =# render "products/per_page"
   - elsif params[:author_id]
-    = link_to "цене", author_products_path(@category, :sort => "price", :per_page =>params[:per_page] )
-    = link_to "популярности", author_products_path(@category, :sort => "popularity", :per_page =>params[:per_page] )
-    = render "products/per_page"
+    = link_to "Цене", author_products_path(@category, :sort => "price", :per_page =>params[:per_page] )
+    = link_to "Популярности", author_products_path(@category, :sort => "popularity", :per_page =>params[:per_page] )
+    =# render "products/per_page"
 
