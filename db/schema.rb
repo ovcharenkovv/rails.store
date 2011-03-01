@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110222122130) do
+ActiveRecord::Schema.define(:version => 20110227143923) do
 
   create_table "admin_custom_orders", :force => true do |t|
     t.string   "name"
@@ -26,6 +26,11 @@ ActiveRecord::Schema.define(:version => 20110222122130) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "fullname"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "city"
+    t.string   "address"
   end
 
   create_table "carts", :force => true do |t|
@@ -73,6 +78,7 @@ ActiveRecord::Schema.define(:version => 20110222122130) do
     t.datetime "updated_at"
     t.string   "delivery_type"
     t.string   "telephone"
+    t.string   "status",        :default => "new"
   end
 
   create_table "products", :force => true do |t|
@@ -80,7 +86,7 @@ ActiveRecord::Schema.define(:version => 20110222122130) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "price"
+    t.decimal  "price",              :precision => 10, :scale => 0
     t.integer  "category_id"
     t.integer  "author_id"
     t.string   "image_file_name"
@@ -89,6 +95,7 @@ ActiveRecord::Schema.define(:version => 20110222122130) do
     t.datetime "image_updated_at"
     t.integer  "click_count"
     t.boolean  "is_hot"
+    t.string   "status",                                            :default => "Есть в наличии"
   end
 
   create_table "users", :force => true do |t|

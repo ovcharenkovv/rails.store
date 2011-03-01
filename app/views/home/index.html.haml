@@ -22,9 +22,9 @@
             pager: true
         });
     });
-.welcome
-  %h3=t('home.welcome')
-  %p=t('home.welcome_text')
+
+%h3=t('home.welcome')
+%p=t('home.welcome_text')
 .top
   %h3=t('home.top_products')
   #top_products
@@ -42,6 +42,10 @@
     -#%a.back{:href => "/"} ← Назад
     .line
     -#%a.forward{:href => "/"} Еще →
+  .top_left_corner
+  .top_right_corner
+  .bottom_left_corner
+  .bottom_right_corner
 .new
   %h3=t('home.new_products')
   #new_products

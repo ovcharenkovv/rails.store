@@ -6,5 +6,5 @@
   %b Description:
   = @category.description.to_s
 = link_to 'Edit', edit_admin_category_path(@category)
-|
-\#{link_to t('layouts.application.back'), admin_categories_path}
+= link_to t('layouts.application.back'), admin_categories_path
+= link_to "Products", admin_category_products_path(@category)

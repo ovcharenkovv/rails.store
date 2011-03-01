@@ -1,7 +1,7 @@
 = form_for @custom_order, :html => { :multipart => true } do |f|
   - if @custom_order.errors.any?
     #error_explanation
-      %h2
+      %h5
         = pluralize(@custom_order.errors.count, "error")
         prohibited this custom_order from being saved:
       %ul

@@ -41,8 +41,9 @@
         .masters
           = render "authors/list"
       .content
-        .breadcrumbs
-          = raw render_breadcrumbs
+        .wrap
+          =#.breadcrumbs
+          =#  = raw render_breadcrumbs
           = yield
         -#.error
         -#  - if notice

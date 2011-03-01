@@ -1,7 +1,7 @@
 = form_for([:admin,@author]) do |f|
   - if @author.errors.any?
     #error_explanation
-      %h2
+      %h5
         = pluralize(@author.errors.count, "error")
         prohibited this author from being saved:
       %ul
@@ -11,6 +11,26 @@
     = f.label :name
     %br/
     = f.text_field :name
+  .field
+    = f.label :fullname
+    %br/
+    = f.text_field :fullname
+  .field
+    = f.label :email
+    %br/
+    = f.text_field :email
+  .field
+    = f.label :phone
+    %br/
+    = f.text_field :phone
+  .field
+    = f.label :city
+    %br/
+    = f.text_field :city
+  .field
+    = f.label :address
+    %br/
+    = f.text_field :address      
   .field
     = f.label :description
     %br/

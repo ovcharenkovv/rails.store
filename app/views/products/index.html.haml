@@ -1,14 +1,20 @@
-%h2=@category.name
+%h3=@category.name
 
 = render 'nav_panel'
-
-- @products.each do |product|
-  .product
-    = link_to category_product_path(product.category_id,product) , :class => "image" do
-      = image_tag product.image.url(:thumb)
-    = link_to category_product_path(product.category_id,product) , :class => "title" do  
-      = product.title.to_s
-    = link_to product.author.name, author_products_path(product.author_id) , :class => "author"
-    .price= number_to_currency(product.price, :unit => "Грн.", :separator => ",", :delimiter => " ", :format => "%n %u" )
+.catalog
+  - @products.each do |product|
+    .product
+      .body
+        = link_to category_product_path(product.category_id,product) , :class => "img" do
+          = image_tag product.image.url(:thumb)
+        = link_to category_product_path(product.category_id,product) , :class => "title" do
+          %h4= product.title.to_s
+        = link_to author_products_path(product.author_id) , :class => "author" do
+          %h5=product.author.name
+      %span.price= number_to_currency(product.price, :unit => "Грн.", :separator => ",", :delimiter => " ", :format => "%n %u" )
+  .top_left_corner
+  .top_right_corner
+  .bottom_left_corner
+  .bottom_right_corner
 
 %p= will_paginate @products

@@ -3,14 +3,34 @@
   %b Name:
   = @order.name
 %p
-  %b Address:
-  = @order.address
+  %b Phone:
+  = @order.telephone
 %p
   %b Email:
   = @order.email
 %p
-  %b Pay type:
+  %b Address:
+  = @order.address
+%p
+  %b Pay_type:
   = @order.pay_type
-= link_to 'Edit', edit_admin_order_path(@order)
-|
-\#{link_to 'Back', admin_orders_path}
+%p
+  %b Delivery_type:
+  = @order.delivery_type
+%br
+%p
+  %b Products Are:
+  - @line_items.each do |li|
+    %br
+    -product = Product.find(li.id)
+    %b=li.quantity
+    =" x "
+    = link_to product.title, admin_category_product_path(product.category.id,product)
+    =product.author.name
+    =product.category.name
+    ='SUM:'
+    %b=product.price*li.quantity
+
+%br
+
+= link_to 'Back', admin_orders_path
