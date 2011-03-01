@@ -12,6 +12,15 @@
 
 ActiveRecord::Schema.define(:version => 20110227143923) do
 
+  create_table "admin_custom_orders", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "email"
+    t.string   "phone"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "authors", :force => true do |t|
     t.string   "name"
     t.text     "description"
