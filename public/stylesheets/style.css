@@ -715,7 +715,44 @@ table{border-collapse:collapse;padding:0px;}
     bottom: -2px;
     background: url("../images/corner_1.png") no-repeat scroll 0 0 transparent;
 }
-
+/**********************************************************************************************************************/
+/*******************************************PRODUCT SHOW **************************************************************/
+/**********************************************************************************************************************/
+.wrap .border {
+    height: 300px;
+    padding: 8px;
+    width: 400px;
+    float: left;
+    -moz-box-shadow: 0 0 8px #888;
+    -webkit-box-shadow: 0 0 8px #888;
+    box-shadow: 0 0 8px #888;
+}
+.wrap .important {
+    color: #4E2D18;
+    float: left;
+    font: 12px 'Verdana';
+    height: 300px;
+    padding: 35px 0 0;
+    text-align: center;
+    width: 240px;
+}
+.wrap .important .price {
+    color: #4E2D18;
+    display: block;
+    font: 40px/60px 'Verdana';
+}
+.wrap .important .add_to_cart {
+    background: url("../images/cart.png") no-repeat scroll 0 0 transparent;
+    color: #4E2D18;
+    display: block;
+    font: 12px 'arial';
+    height: 32px;
+    margin: 15px auto 0;
+    overflow: hidden;
+    padding: 140px 0 0;
+    text-align: center;
+    width: 140px;
+}
 
 /**********************************************************************************************************************/
 /*******************************************CONTEN WRAP BANIKI*********************************************************/
