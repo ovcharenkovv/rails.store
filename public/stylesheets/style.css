@@ -50,6 +50,7 @@ table{border-collapse:collapse;padding:0px;}
     display: block;
     height: 220px;
     width: 1200px;
+    position:relative;
 }
 .header h1{
     width: 430px;
@@ -64,6 +65,38 @@ table{border-collapse:collapse;padding:0px;}
     height: 50px;
     padding: 48px 133px 0 0;
     width: 200px;
+}
+.header .social_network {
+    background: url("../images/social_network.png") no-repeat scroll 0 0 transparent;
+    bottom: -23px;
+    height: 90px;
+    position: absolute;
+    right: 230px;
+    width: 180px;
+}
+.header .social_network a{
+    display: block;
+    text-indent: 200px;
+    float: left;
+    overflow:hidden;
+}
+.header .social_network a.twitter{
+    background: url("../images/twitter_facebook_icon.png") no-repeat scroll 0 0 transparent;
+    height: 60px;
+    margin: 7px 0 0 28px;
+    width: 67px;
+}
+.header .social_network a.facebook{
+    background: url("../images/twitter_facebook_icon.png") no-repeat scroll -65px 0 transparent;
+    height: 60px;
+    margin: 9px 0 0 0;
+    width: 60px;
+}
+.header .social_network a.twitter:hover{
+    background: url("../images/twitter_facebook_icon.png") no-repeat scroll 0 -60px transparent;
+}
+.header .social_network a.facebook:hover{
+    background: url("../images/twitter_facebook_icon.png") no-repeat scroll -65px -60px transparent;
 }
 .field_with_errors {
     padding: 2px;
@@ -750,4 +783,7 @@ table{border-collapse:collapse;padding:0px;}
     text-align: right;
     top: 10px;
     width: 560px;
+}
+.right_co a {
+    color: #955730;
 }

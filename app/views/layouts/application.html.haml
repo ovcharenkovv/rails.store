@@ -7,6 +7,8 @@
     =# javascript_include_tag :defaults
     = yield :custom_css_js
     = csrf_meta_tag
+    %link{:href => "/favicon.ico", :rel => "icon", :type => "image/x-icon"}
+    %link{:href => "/favicon.ico", :rel => "shortcut icon", :type => "image/x-icon"}
   %body
     .header
       %h1
@@ -14,6 +16,9 @@
           %img{:alt => "Logo", :height => "120", :src => "/images/logo.png", :width => "430"}
       .cart
         = render "carts/header_cart"
+      .social_network
+        =link_to "Twitter", "http://twitter.com/poshstore", {:class=>"twitter"}
+        =link_to "Facebook", "http://facebook.com/poshstore", {:class=>"facebook"}
     .content_wrap
       .sidebar
         .categories
@@ -55,10 +60,14 @@
         .cbottom_right_corner
     .footer
       %span.left_co
-        © poshstore.com.ua, 2011.
+        ©
+        =link_to "poshstore.com.ua", :root
+        , 2011.
         %br>/
         Все права сохранены
       %span.right_co
-        По всем вопросам обращайтесь по адресу: info@poshtore.com.ua
+        По всем вопросам обращайтесь по адресу:&nbsp;
+        =mail_to "poshstoreua@gmail.com"
         %br>/
         или по телефону (093) 45 48 455
+=render "layouts/analytics"
