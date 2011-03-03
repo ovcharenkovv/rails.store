@@ -1,15 +1,24 @@
 - content_for :custom_css_js do
-  =# javascript_include_tag "http://code.jquery.com/jquery-latest.js"
   = stylesheet_link_tag 'jquery.fancybox-1.3.4'
-  =# javascript_include_tag "jquery-1.5.min"
+  = stylesheet_link_tag "bx_styles"
+
   = javascript_include_tag "jquery-1.4.3.min"
   = javascript_include_tag "jquery.fancybox-1.3.4.pack"
   = javascript_include_tag "jquery.mousewheel-3.0.4.pack"
+  = javascript_include_tag "jquery.bxSlider.min"
+  = javascript_include_tag "jquery.easing.1.3"
   :javascript
     $(document).ready(function() {
       $("a#light_box").fancybox({
         'transitionIn'	: 'none',
         'transitionOut'	: 'none'
+      });
+
+      $('#top_products').bxSlider({
+        speed: 1900,
+        pager: true/*,
+        easing: 'easeOutBounce',
+        auto: true,*/
       });
     });
 
@@ -20,15 +29,30 @@
   %b=t('products.price')
   %span.price= @product.price.to_s+' грн.'
   = link_to t('products.add_to_cart'), line_items_path(:product_id => @product.id), {:class=>"add_to_cart"}  
-%p
-  %b=t('products.description')
-  = @product.description
+.product_description
+  -if @product.description.length > 5
+    %p
+      %b=t('products.description')
+      = @product.description
+  %p
+    %b=t('products.category')
+    = @product.category.name.to_s
+  %p
+    %b=t('products.master')
+    = @product.author.name.to_s
 
-%p
-  %b=t('products.category')
-  = @product.category.name.to_s
-%p
-  %b=t('products.master')
-  = @product.author.name.to_s
+.top
+  %h3=t('products.see_also_products')
+  #top_products
+    = render :partial => "products/horizontal_list", :locals => { :products => @see_also_products }
+  .paginator
+    -#%a.back{:href => "/"} ← Назад
+    .line
+    -#%a.forward{:href => "/"} Еще →
+  .top_left_corner
+  .top_right_corner
+  .bottom_left_corner
+  .bottom_right_corner
+
 
 =# link_to t('layouts.application.back'), session[:product_params]

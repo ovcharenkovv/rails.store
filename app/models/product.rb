@@ -38,6 +38,12 @@ class Product < ActiveRecord::Base
     where(["is_hot == (?)", '1']).limit(quantity).order("created_at desc")
   end
 
+  def self.find_see_also_products(quantity,category)
+    where( :category_id=>category ).limit(quantity).order("click_count desc")
+  end
+
+
+
 
   #def self.find_products_for_sale(page,per_page)
   #  find(:all, :order => "title" ).paginate :page=>page, :per_page => per_page

@@ -28,21 +28,21 @@
           %fieldset
             %input.field{:type => "text", :value => ""}
               %input.submit{:name => "submit", :src => "/images/search.png", :type => "image"}
-        .best
-          %h2
-            %a{:href => "/"} Специальное предложение
-          .body
-            %a.img{:href => "/"}
-              %img{:alt => "1", :src => "/images/1.jpg"}/
-            %a.title{:href => "/"}
-              %h4 Мышонок с сердцем
-            %a.author{:href => "/"}
-              %h5 Mary Jane
-          %span.price 125 Грн
-          .top_left_corner
-          .top_right_corner
-          .bottom_left_corner
-          .bottom_right_corner
+        -#.best
+        -#  %h2
+        -#    %a{:href => "/"} Специальное предложение
+        -#  .body
+        -#    %a.img{:href => "/"}
+        -#      %img{:alt => "1", :src => "/images/1.jpg"}/
+        -#    %a.title{:href => "/"}
+        -#      %h4 Мышонок с сердцем
+        -#    %a.author{:href => "/"}
+        -#      %h5 Mary Jane
+        -#  %span.price 125 Грн
+        -#  .top_left_corner
+        -#  .top_right_corner
+        -#  .bottom_left_corner
+        -#  .bottom_right_corner
         .masters
           = render "authors/list"
       .content

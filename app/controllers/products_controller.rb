@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
     if params[:per_page]
       @per_page = params[:per_page]
     else
-      @per_page = 12
+      @per_page = 9
     end
 
     if params[:sort]=='popularity'
@@ -65,6 +65,8 @@ class ProductsController < ApplicationController
     @product = @category.products.find(params[:id])
 
     @product.inc_click
+
+    @see_also_products = Product.find_see_also_products(9,@category.id)
 
     respond_to do |format|
       format.html # show.html.haml

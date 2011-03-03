@@ -134,7 +134,7 @@ table{border-collapse:collapse;padding:0px;}
 .content_wrap {
     display: block;
     width: 960px;
-    height: 1390px;
+    height: 1100px;
     margin: 0 auto;
     background: #fff url("../images/content_bg.jpg") no-repeat scroll 0 0 ;
     position: relative;
@@ -346,7 +346,7 @@ table{border-collapse:collapse;padding:0px;}
 .content_wrap .sidebar .masters {
     border: 1px solid #E4C6AB;
     height: 222px;
-    margin: 80px 0 0 20px;
+    margin: 45px 0 0 20px;
     padding: 15px 5px 25px 20px;
     position: relative;
     width: 185px;
@@ -430,12 +430,15 @@ table{border-collapse:collapse;padding:0px;}
     z-index: 1;
 }
 .content_wrap .content h3 {
-    font: 20px/40px Georgia;
+    font: 22px/45px Georgia;
     color:#945730;
     text-indent: 10px;
 }
-.content_wrap .content p{
-    font: 13px/18px Georgia;
+.content_wrap .content p {
+     font: 13px/20px Georgia;   
+}
+.content_wrap .content p.welcome{
+    font: 15px/22px Georgia;
     color: #4E2D18;
 }
 
@@ -723,6 +726,7 @@ table{border-collapse:collapse;padding:0px;}
     padding: 8px;
     width: 400px;
     float: left;
+    margin: 10px 0 0;
     -moz-box-shadow: 0 0 8px #888;
     -webkit-box-shadow: 0 0 8px #888;
     box-shadow: 0 0 8px #888;
@@ -730,11 +734,12 @@ table{border-collapse:collapse;padding:0px;}
 .wrap .important {
     color: #4E2D18;
     float: left;
-    font: 12px 'Verdana';
-    height: 300px;
+    font: 12px 'arial';
+    height: 280px;
     padding: 35px 0 0;
     text-align: center;
     width: 240px;
+    margin: 10px 0 0;
 }
 .wrap .important .price {
     color: #4E2D18;
@@ -745,7 +750,7 @@ table{border-collapse:collapse;padding:0px;}
     background: url("../images/cart.png") no-repeat scroll 0 0 transparent;
     color: #4E2D18;
     display: block;
-    font: 12px 'arial';
+    font: 18px 'arial';
     height: 32px;
     margin: 15px auto 0;
     overflow: hidden;
@@ -753,7 +758,13 @@ table{border-collapse:collapse;padding:0px;}
     text-align: center;
     width: 140px;
 }
-
+.wrap .product_description {
+    clear: both;
+    padding: 15px 10px;
+}
+.wrap .product_description p{
+    margin: 0 0 10px;
+}
 /**********************************************************************************************************************/
 /*******************************************CONTEN WRAP BANIKI*********************************************************/
 /**********************************************************************************************************************/
