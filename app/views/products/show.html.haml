@@ -28,7 +28,8 @@
 .important
   %b=t('products.price')
   %span.price= @product.price.to_s+' грн.'
-  = link_to t('products.add_to_cart'), line_items_path(:product_id => @product.id), {:class=>"add_to_cart"}  
+  =button_to t('products.add_to_cart'), line_items_path(:product_id => @product.id), {:class=>"add_to_cart"}
+
 .product_description
   -if @product.description.length > 5
     %p

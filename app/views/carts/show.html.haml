@@ -1,9 +1,14 @@
-.cart_title=t('carts.cart.title')
-%table
+%h3.cart_title=t('carts.cart.title')
+%table.cart_table
   = render(@cart.line_items)
-  %tr.total_line
-    %td{:colspan => "2"}=t('carts.cart.total')
-    %td.total_cell= number_to_currency(@cart.total_price)
-= button_to t('carts.cart.empty'), @cart, :method => :delete, :confirm => 'Are you sure?'
-= button_to t('carts.cart.checkout'), new_order_path, :method => :get
-= link_to t('carts.cart.continue'), session[:product_params]
+.total_price_block
+  %span.total_text=t('carts.cart.total')
+  %span.total_price=@cart.total_price.to_s
+  %span.total_text=" грн."
+.button_area
+  = link_to t('carts.cart.continue'), session[:product_params], :class=>"back"
+  = button_to t('carts.cart.empty'), @cart, :method => :delete, :confirm => 'Are you sure?', :class=>"empty_cart"
+  .cart
+.happy_button
+  = button_to t('carts.cart.checkout'), new_order_path, :method => :get, :class=> "submit"
+

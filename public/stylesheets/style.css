@@ -43,6 +43,14 @@ p {
     line-height: 140%;
 }
 table{border-collapse:collapse;padding:0px;}
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner {
+    padding: 0px 2px 0px 2px;
+    border: 1px dotted transparent;
+}
 /**********************************************************************************************************************/
 /**********************************************************************************************************************/
 
@@ -435,7 +443,7 @@ table{border-collapse:collapse;padding:0px;}
     text-indent: 10px;
 }
 .content_wrap .content p {
-     font: 13px/20px Georgia;   
+    font: 13px/20px Georgia;
 }
 .content_wrap .content p.welcome{
     font: 15px/22px Georgia;
@@ -748,15 +756,22 @@ table{border-collapse:collapse;padding:0px;}
 }
 .wrap .important .add_to_cart {
     background: url("../images/cart.png") no-repeat scroll 0 0 transparent;
+    border: medium none;
     color: #4E2D18;
+    cursor: pointer;
     display: block;
     font: 18px 'arial';
-    height: 32px;
+    height: 170px;
     margin: 15px auto 0;
     overflow: hidden;
-    padding: 140px 0 0;
+    padding: 120px 0 0;
     text-align: center;
+    text-decoration: underline;
     width: 140px;
+    outline: medium none;
+}
+.wrap .important .add_to_cart:hover {
+    text-decoration: none;
 }
 .wrap .product_description {
     clear: both;
@@ -800,6 +815,155 @@ table{border-collapse:collapse;padding:0px;}
     right: -21px;
     width: 60px;
 }
+
+/**********************************************************************************************************************/
+/*******************************************cart_table*********************************************************/
+/**********************************************************************************************************************/
+
+h3.cart_title {
+    font: 26px/40px 'Verdana' !important;
+    color: #000!important;
+}
+.cart_table {
+    margin: 10px 0 20px 10px;
+    font: 15px/25px 'Verdana';
+}
+.cart_table td{
+    text-align: left;
+}
+
+.cart_table .quantity{
+    width: 40px;
+}
+.cart_table .title{
+    width: 300px;
+}
+.cart_table .item_price{
+    text-align: right;
+    width: 70px;
+}
+
+.total_price_block {
+    margin: 10px 0 20px 10px;
+}
+.total_price_block .total_text{
+    font: 22px/40px 'Verdana';
+}
+.total_price_block .total_price {
+    font: 40px/40px 'Verdana';
+}
+.button_area {
+    height: 55px;
+    position: relative;
+    width: 665px;
+
+}
+.button_area .back{
+    color: #90542E;
+    display: block;
+    font: 18px/24px 'Verdana';
+    height: 30px;
+    left: 10px;
+    position: absolute;
+    top: 10px;
+    width: 210px;
+}
+
+form.button_to .empty_cart{
+    background: none repeat scroll 0 0 transparent;
+    border: none;
+    color: #90542E;
+    display: inline-block;
+    font: 18px/24px 'Verdana';
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 30px;
+    text-align: left;
+    text-decoration: underline;
+    top: 7px;
+    width: 200px;
+    cursor: pointer;
+}
+
+form.button_to .empty_cart:hover{
+    text-decoration: none !important;
+}
+.button_area .cart {
+    background: url("../images/cart.png") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 129px;
+    position: absolute;
+    right: 85px;
+    top: -140px;
+    width: 122px;
+}
+
+
+.happy_button .submit{
+    background: url("../images/order_buton.png") no-repeat scroll 0 0 transparent;
+    border: 1px solid;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: block;
+    font: 25px 'arial';
+    height: 78px;
+    margin: 20px 142px;
+    outline: medium none;
+    overflow: hidden;
+    text-align: center;
+    width: 317px;
+}
+.happy_button .submit:hover{
+    text-decoration:underline;
+
+}
+/**********************************************************************************************************************/
+/*******************************************happy_form*********************************************************************/
+/**********************************************************************************************************************/
+.happy_form {
+    margin: 0 0 0 10px;
+
+}
+.happy_form label {
+        color: #4E2D18;
+    font: 14px/24px 'Verdana';
+}
+.happy_form input{
+    border: 1px solid #936147;
+    height: 22px;
+    width: 300px;
+}
+.happy_form textarea {
+    border: 1px solid #936147;
+    height: 44px;
+    width: 300px;
+}
+.happy_form select {
+    border: 1px solid #936147;
+    width: 300px;
+}
+.happy_form .field {
+    margin: 15px 0 0 0;
+}
+.happy_form .actions {
+    margin: 20px 0 0 0;
+}
+.happy_form #order_submit {
+    background: url("../images/order_buton.png") no-repeat scroll 0 0 transparent;
+    border: 1px solid;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: block;
+    font: 25px 'arial';
+    height: 78px;
+    outline: medium none;
+    overflow: hidden;
+    text-align: center;
+    width: 317px;
+}
+
 /**********************************************************************************************************************/
 /*******************************************FOOTER*********************************************************************/
 /**********************************************************************************************************************/
