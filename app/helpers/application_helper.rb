@@ -25,4 +25,26 @@ module ApplicationHelper
       'Not available'
     end
   end
+  def store_title(param)
+    ret = 'Магазин ексклюзивных изделий РoshStore.com.ua'
+    if param[:category_id]
+      ret += ' | '
+      ret += Category.find(param[:category_id]).name.to_s
+    end
+    if param[:author_id]
+      ret += ' | '
+      ret += Author.find(param[:author_id]).name.to_s
+    end
+    if param[:controller]=='products'
+      if param[:id] && !param[:cart_id]
+        ret += ' | '
+        ret += Product.find(param[:id]).title.to_s
+        ret += ' | '
+        ret += Product.find(param[:id]).price.to_s+'грн.'
+      end
+    end
+
+    ret
+
+  end
 end

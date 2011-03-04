@@ -16,6 +16,7 @@ ru:
       empty: "Очистить корзину"
       empty_shot: "Очистить"
       checkout: "Оформить заказ"
+      checkout_short: "Заказать"
       show: "Показать"
       continue: "Продолжить покупки"
 

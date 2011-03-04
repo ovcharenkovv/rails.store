@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title Store
+    %title=store_title(params)
     =# stylesheet_link_tag :all
     = stylesheet_link_tag "style"
     =# javascript_include_tag :defaults
@@ -9,6 +9,8 @@
     = csrf_meta_tag
     %link{:href => "/favicon.ico", :rel => "icon", :type => "image/x-icon"}
     %link{:href => "/favicon.ico", :rel => "shortcut icon", :type => "image/x-icon"}
+    %meta{:content => "handmade, хендмейд, ручная работа, сережки, кольца, браслеты, подвески, игрушки,подушки, текстиль, термопластика, полимерная глина, декупаж, интернет-магазин, Черкассы", :name => "keywords"}
+    %meta{:content => "Здесь вы найдете уникальные украшения: сережки, кольца, браслеты; аксессуары; игрушки и массу других товаров.", :name => "description"}
   %body
     .header
       %h1
@@ -67,7 +69,7 @@
         Все права сохранены
       %span.right_co
         По всем вопросам обращайтесь по адресу:&nbsp;
-        =mail_to "poshstorua@gmail.com"
+        =mail_to "poshstoreua@gmail.com"
         %br>/
         или по телефону (093) 45 48 455
 =render "layouts/analytics"
