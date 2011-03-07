@@ -577,10 +577,10 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     bottom: 0;
     color: #955730;
     display: block;
-    font: bold 12px Georgia;
+    font: bold 13px Georgia;
     height: 33px;
     left: 41px;
-    padding: 27px 0 0 48px;
+    padding: 27px 0 0 54px;
     position: absolute;
     width: 90px;
 }
