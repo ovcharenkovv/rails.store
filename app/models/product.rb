@@ -42,8 +42,17 @@ class Product < ActiveRecord::Base
     where( :category_id=>category ).limit(quantity).order("click_count desc")
   end
 
-
-
+#  def self.find_see_also_random_products(quantity,category)
+#    @see_also_products = where( :category_id=>category ).limit(quantity).order("click_count desc")
+#
+#    if @see_also_products.count > 3
+#      @see_also_products
+#    else
+#      @category = Category.where(["parent_id != (?)", ''])
+#      @category[rand(@category.count.to_i)]
+#    end
+#
+#  end
 
   #def self.find_products_for_sale(page,per_page)
   #  find(:all, :order => "title" ).paginate :page=>page, :per_page => per_page

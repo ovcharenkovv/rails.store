@@ -33,7 +33,7 @@ a, a img {
 }
 a {
     text-decoration:underline;
-    color: #000;
+    color: #955730;
 }
 a:hover {
     text-decoration:none;
@@ -184,6 +184,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 .content_wrap .sidebar .categories ul li a{
     font: bold 13px/25px Georgia;
+    color:#000;
 }
 .content_wrap .sidebar .categories .has_child ul {
     margin: 0 0 0 10px;
@@ -733,6 +734,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     padding: 8px;
     width: 400px;
     float: left;
+    text-align:center;
     margin: 10px 0 0;
     -moz-box-shadow: 0 0 8px #888;
     -webkit-box-shadow: 0 0 8px #888;
