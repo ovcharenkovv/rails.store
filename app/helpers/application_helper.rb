@@ -26,7 +26,7 @@ module ApplicationHelper
     end
   end
   def store_title(param)
-    ret = 'Магазин эксклюзивных изделий РoshStore.com.ua'
+    ret = 'Магазин хендмейд изделий РoshStore.com.ua'
     if param[:category_id]
       ret += ' | '
       ret += Category.find(param[:category_id]).name.to_s
