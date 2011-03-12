@@ -717,6 +717,11 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 
 .wrap .product_nav {
     text-align: right;
+
+}
+.wrap .product_nav a{
+    margin: 0 2px;
+    font: 14px/20px Georgia !important;
 }
 
 .content_wrap .content .catalog{

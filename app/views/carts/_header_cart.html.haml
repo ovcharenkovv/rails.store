@@ -1,6 +1,7 @@
-=t('carts.cart.sum')
-= number_to_currency(@current_cart.total_price)
-%p
-  =# link_to t('carts.cart.empty_shot'), @current_cart, :method => :delete, :confirm => 'Are you sure?'
-  = link_to t('carts.cart.show'), @current_cart
-  = link_to t('carts.cart.checkout_short'), new_order_path, :method => :get
+-if @current_cart.total_price == 0
+  ="Ваша корзина пуста"
+-else
+  =t('carts.cart.sum')
+  = @current_cart.total_price.to_s+" грн."
+  %p
+    = link_to t('carts.cart.checkout'), new_order_path, :method => :get
