@@ -34,12 +34,7 @@ class OrdersController < ApplicationController
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
-
-        if !@order.email.nil?
-          Notifier.order_received(@order).deliver
-        end
-
-
+        Notifier.order_received(@order).deliver
         Notifier.order_send1(@order).deliver
         Notifier.order_send2(@order).deliver
 
