@@ -66,12 +66,23 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     padding: 20px 0 0  120px;
     float: left;
 }
+.header h2.slogan {
+    color: #FFFFFF;
+    display: block;
+    font: 15px Verdana;
+    height: 30px;
+    left: 178px;
+    position: absolute;
+    top: 87px;
+    width: 255px;
+
+}
 .header .cart {
     color: #955730;
     float: right;
     font: bold 13px/20px Georgia;
     height: 50px;
-    padding: 48px 133px 0 0;
+    padding: 52px 140px 0 0;
     width: 200px;
 }
 
@@ -118,6 +129,29 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     padding: 2px;
     background-color: red;
     display: table;
+}
+
+.phones {
+    color: #FFFFFF;
+    display: block;
+    font-size: 17px;
+    height: 45px;
+    left: 553px;
+    padding: 2px 0 0 48px;
+    position: absolute;
+    top: 169px;
+    width: 160px;
+}
+.phones_ico {
+    display: block;
+    background: url("../images/phone.png") no-repeat scroll 0 0 transparent;
+    position: absolute;
+    left:0;
+    top:0;
+    width:70px;
+    height:78px;
+
+
 }
 /**********************************************************************************************************************/
 /**********************************************************************************************************************/
