@@ -11,7 +11,7 @@ class Notifier < ActionMailer::Base
 
   def order_received(order)
     @order = order
-    mail :to => order.email, :subject => 'Заказ на Posh Store'
+    mail :to => @order.email, :subject => 'Заказ на Posh Store'
   end
   def order_send1(order)
     @order = order
