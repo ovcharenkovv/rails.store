@@ -74,6 +74,14 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     padding: 48px 133px 0 0;
     width: 200px;
 }
+
+.header .cart  .showcart {
+    height: 75px;
+    position: absolute;
+    right: 347px;
+    top: 32px;
+    width: 68px;
+}
 .header .social_network {
     background: url("../images/social_network.png") no-repeat scroll 0 0 transparent;
     bottom: -23px;
@@ -927,18 +935,24 @@ h1.cart_title {
 .cart_table td{
     text-align: left;
 }
-
+.cart_table .pic {
+    width: 80px;
+}
+.cart_table .pic img{
+    height: 50px;
+}
 .cart_table .quantity{
-    width: 40px;
+       font-size: 12px;
+    width: 90px;
 }
 .cart_table .title{
     width: 300px;
 }
 .cart_table .item_price{
+    font-weight: bold;
     text-align: right;
     width: 70px;
 }
-
 .total_price_block {
     margin: 10px 0 20px 10px;
 }
@@ -986,16 +1000,6 @@ form.button_to .empty_cart{
 form.button_to .empty_cart:hover{
     text-decoration: none !important;
 }
-.button_area .cart {
-    background: url("../images/cart.png") no-repeat scroll 0 0 transparent;
-    display: block;
-    height: 129px;
-    position: absolute;
-    right: 85px;
-    top: -140px;
-    width: 122px;
-}
-
 
 .happy_button .submit{
     background: url("../images/order_buton.png") no-repeat scroll 0 0 transparent;

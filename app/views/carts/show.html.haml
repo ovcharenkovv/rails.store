@@ -1,4 +1,28 @@
-%h3.cart_title=t('carts.cart.title')
+- content_for :custom_css_js do
+  = stylesheet_link_tag 'jquery.fancybox-1.3.4'
+  = stylesheet_link_tag "bx_styles"
+
+  = javascript_include_tag "jquery-1.4.3.min"
+  = javascript_include_tag "jquery.fancybox-1.3.4.pack"
+  = javascript_include_tag "jquery.mousewheel-3.0.4.pack"
+  = javascript_include_tag "jquery.bxSlider.min"
+  = javascript_include_tag "jquery.easing.1.3"
+  :javascript
+    $(document).ready(function() {
+      $("a#light_box").fancybox({
+        'transitionIn'	: 'none',
+        'transitionOut'	: 'none'
+      });
+
+      $('#top_products').bxSlider({
+        speed: 1900,
+        pager: true/*,
+        easing: 'easeOutBounce',
+        auto: true,*/
+      });
+    });
+
+%h1.cart_title=t('carts.cart.title')
 %table.cart_table
   = render(@cart.line_items)
 .total_price_block
