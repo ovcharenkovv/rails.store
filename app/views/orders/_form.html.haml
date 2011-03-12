@@ -26,13 +26,11 @@
   .field
     = f.label t('orders.pay_type')
     %br/
-    = f.select :pay_type, Order::PAYMENT_TYPES,
-      :prompt => 'Select'
+    = f.select :pay_type, Order::PAYMENT_TYPES, :prompt => 'Выберите'
   .field
     = f.label t('orders.delivery_type')
     %br/
-    = f.select :delivery_type, Order::DELIVERY_TYPES,
-      :prompt => 'Select'
+    = f.select :delivery_type, Order::DELIVERY_TYPES, :prompt => 'Выберите'
 
 
   .actions

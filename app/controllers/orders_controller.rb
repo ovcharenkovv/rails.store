@@ -35,7 +35,7 @@ class OrdersController < ApplicationController
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
         #Notifier.order_received(@order).deliver
-        #Notifier.order_send1(@order).deliver
+        Notifier.order_send1(@order).deliver
         #Notifier.order_send1(@order).deliver
 
         format.html { redirect_to(order_path(@order), :notice => 'Пасибки за заказ') }

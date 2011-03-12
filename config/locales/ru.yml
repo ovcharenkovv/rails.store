@@ -58,7 +58,7 @@ ru:
     email: "Ваш е-мейл"
     pay_type: "Способ оплаты"
     delivery_type:  "Способ доставки"
-    place_order: "Годится"
+    place_order: "Заказать"
 
   products:
     description: "Описание изделия:"
