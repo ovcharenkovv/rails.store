@@ -942,11 +942,11 @@ h1.cart_title {
     height: 50px;
 }
 .cart_table .quantity{
-       font-size: 12px;
-    width: 90px;
+    font-size: 12px;
+    width: 70px;
 }
 .cart_table .title{
-    width: 300px;
+    width: 360px;
 }
 .cart_table .item_price{
     font-weight: bold;
