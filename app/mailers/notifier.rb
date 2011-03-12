@@ -11,15 +11,15 @@ class Notifier < ActionMailer::Base
 
   def order_received(order)
     @order = order
-    mail :to => order.email, :subject => 'Pragmatic Store Order Confirmation'
+    mail :to => order.email, :subject => 'Заказ на Posh Store'
   end
   def order_send1(order)
     @order = order
-    mail :to => 'ovcharenkovv@gmail.com', :subject => 'Pragmatic Store Order Confirmation'
+    mail :to => 'ovcharenkovv@gmail.com', :subject => 'Заказ на Posh Store'
   end
   def order_send2(order)
     @order = order
-    mail :to => 'lavrovanna@yandex.ru', :subject => 'Pragmatic Store Order Confirmation'
+    mail :to => 'lavrovanna@yandex.ru', :subject => 'Заказ на Posh Store'
   end
 
 
@@ -31,7 +31,7 @@ class Notifier < ActionMailer::Base
 
   def order_shipped(order)
     @order = order
-    mail :to => order.email, :subject => 'Pragmatic Store Order Shipped'
+    mail :to => order.email, :subject => 'Заказ на Posh Store'
   end
 
 

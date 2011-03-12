@@ -1,8 +1,6 @@
-<h3>Pragmatic Order Shipped</h3>
-<p>
-  This is just to let you know that we've shipped your recent order:
-</p>
-<table>
-  <tr><th colspan="2" >Qty</th><th>Description</th></tr>
-  <%= render @order.line_items %>
-</table>
+<h1>Уважаемый <%= @order.name %></h1>
+<p>Большое спасибо Вам за заказ.<br />
+Вы заказали следующие изделия:</p>
+<p><%= render @order.line_items %></p>
+<p>В течении 24 часов мы обязательно с Вами свяжемся для уточнения деталей.</p>
+
