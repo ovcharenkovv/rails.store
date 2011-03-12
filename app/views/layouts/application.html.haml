@@ -13,9 +13,8 @@
     %meta{:content => "Здесь вы найдете уникальные украшения: сережки, кольца, браслеты; аксессуары; игрушки и массу других товаров.", :name => "description"}
   %body
     .header
-      %h1
-        =link_to  root_path do
-          %img{:alt => "Logo", :height => "120", :src => "/images/logo.png", :width => "430"}
+      =link_to  root_path, :class=>"logo" do
+        %img{:alt => "Logo", :height => "120", :src => "/images/logo.png", :width => "430"}
       .cart
         = render "carts/header_cart"
       .social_network

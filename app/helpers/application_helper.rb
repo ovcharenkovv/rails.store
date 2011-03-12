@@ -26,25 +26,25 @@ module ApplicationHelper
     end
   end
   def store_title(param)
-    ret = 'Магазин хендмейд изделий РoshStore.com.ua'
-    if param[:category_id]
-      ret += ' | '
-      ret += Category.find(param[:category_id]).name.to_s
-    end
-    if param[:author_id]
-      ret += ' | '
-      ret += Author.find(param[:author_id]).name.to_s
-    end
+    ret=""
     if param[:controller]=='products'
       if param[:id] && !param[:cart_id]
-        ret += ' | '
         ret += Product.find(param[:id]).title.to_s
-        ret += ' | '
+        ret += ' - '
         ret += Product.find(param[:id]).price.to_s+'грн.'
+        ret += ' | '
       end
     end
+    if param[:category_id]
+      ret += Category.find(param[:category_id]).name.to_s
+      ret += ' | '
+    end
+    if param[:author_id]
+      ret += Author.find(param[:author_id]).name.to_s
+      ret += ' | '
+    end
+    ret += 'Магазин хендмейд изделий РoshStore.com.ua'
 
     ret
-
   end
 end

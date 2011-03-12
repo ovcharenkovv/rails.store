@@ -60,7 +60,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     width: 1200px;
     position:relative;
 }
-.header h1{
+.header .logo{
     width: 430px;
     height: 120px;
     padding: 20px 0 0  120px;
@@ -227,7 +227,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .content_wrap .sidebar .search {
     margin: 20px 0 0 35px;
 }
-.content_wrap .sidebar .search h3{
+.content_wrap .sidebar .search h1{
     font: 20px/35px Georgia;
     color: #945730;
 }
@@ -500,10 +500,10 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 
 .content_wrap .sidebar .banners .banners_list a  {
-   display: block;
+    display: block;
 }
 .content_wrap .sidebar .banners .banners_list a img{
-   display: block;
+    display: block;
     width:165px;
 }
 /**********************************************************************************************************************/
@@ -521,10 +521,16 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     position: relative;
     z-index: 1;
 }
-.content_wrap .content h3 {
+.content_wrap .content h1 {
     font: 22px/45px Georgia;
     color:#945730;
     text-indent: 10px;
+}
+.content_wrap .content h1 a{
+    text-decoration: none;
+}
+.content_wrap .content h1 a:hover{
+    text-decoration: underline;
 }
 .content_wrap .content p {
     font: 13px/20px Georgia;
@@ -905,7 +911,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 /*******************************************cart_table*********************************************************/
 /**********************************************************************************************************************/
 
-h3.cart_title {
+h1.cart_title {
     font: 26px/40px 'Verdana' !important;
     color: #000!important;
 }
@@ -1012,7 +1018,7 @@ form.button_to .empty_cart:hover{
 
 }
 .happy_form label {
-        color: #4E2D18;
+    color: #4E2D18;
     font: 14px/24px 'Verdana';
 }
 .happy_form input{
