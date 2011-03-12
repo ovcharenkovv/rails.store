@@ -25,11 +25,11 @@
       .sidebar
         .categories
           = render "categories/list"
-        .search
-          %h3 Поиск
-          %fieldset
-            %input.field{:type => "text", :value => ""}
-              %input.submit{:name => "submit", :src => "/images/search.png", :type => "image"}
+        -#.search
+        -#  %h3 Поиск
+        -#  %fieldset
+        -#    %input.field{:type => "text", :value => ""}
+        -#      %input.submit{:name => "submit", :src => "/images/search.png", :type => "image"}
         -#.best
         -#  %h2
         -#    %a{:href => "/"} Специальное предложение
@@ -47,6 +47,10 @@
         -#  .bottom_right_corner
         .masters
           = render "authors/list"
+
+        .banners
+
+          = render "layouts/banners"
       .content
         .wrap
           =#.breadcrumbs
@@ -61,15 +65,5 @@
         .cbottom_left_corner
         .cbottom_right_corner
     .footer
-      %span.left_co
-        ©
-        =link_to "poshstore.com.ua", :root
-        , 2011.
-        %br>/
-        Все права сохранены
-      %span.right_co
-        По всем вопросам обращайтесь по адресу:&nbsp;
-        =mail_to "poshstoreua@gmail.com"
-        %br>/
-        или по телефону (093) 45 48 455
+      = render "layouts/footer"
 =render "layouts/analytics"

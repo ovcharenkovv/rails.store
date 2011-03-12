@@ -183,7 +183,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     margin: 10px 0 0;
 }
 .content_wrap .sidebar .categories ul li a{
-    font: bold 13px/25px Georgia;
+    font: bold 13px/24px Georgia;
     color:#000;
 }
 .content_wrap .sidebar .categories .has_child ul {
@@ -354,7 +354,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 /**********************************************************************************************************************/
 .content_wrap .sidebar .masters {
     border: 1px solid #E4C6AB;
-    margin: 45px 0 0 20px;
+    margin: 30px 0 0 20px;
     padding: 15px 5px 25px 20px;
     position: relative;
     width: 185px;
@@ -375,7 +375,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     margin: 10px 0 0;
 }
 .content_wrap .sidebar .masters ul li a{
-    font: bold 13px/25px Georgia;
+    font: bold 13px/23px Georgia;
     color: #955730;
 }
 .content_wrap .sidebar .masters .top_left_corner {
@@ -422,6 +422,90 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     position: absolute;
     width: 80px;
 }
+
+
+
+/**********************************************************************************************************************/
+/************************************SIDEBAR BANNERS*******************************************************************/
+/**********************************************************************************************************************/
+.content_wrap .sidebar .banners {
+    border: 1px solid #E4C6AB;
+    margin: 30px 0 0 20px;
+    padding: 15px 5px 25px 20px;
+    position: relative;
+    width: 185px;
+}
+.content_wrap .sidebar .banners h2 {
+    text-align: center;
+}
+.content_wrap .sidebar .banners h2 a {
+    font: 20px/24px Georgia;
+    color: #90542E;
+    text-decoration:none;
+}
+.content_wrap .sidebar .banners h2 a:hover {
+    text-decoration: underline;
+}
+
+.content_wrap .sidebar .banners ul {
+    margin: 10px 0 0;
+}
+.content_wrap .sidebar .banners ul li a{
+    font: bold 13px/23px Georgia;
+    color: #955730;
+}
+.content_wrap .sidebar .banners .top_left_corner {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left:-2px;
+    top: -2px;
+    background: url("../images/corner_1.png") no-repeat scroll -16px -16px transparent;
+}
+.content_wrap .sidebar .banners .top_right_corner {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    right:-2px;
+    top: -2px;
+    background: url("../images/corner_1.png") no-repeat scroll 0 -16px transparent;
+}
+.content_wrap .sidebar .banners .bottom_left_corner {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left:-2px;
+    bottom: -2px;
+    background: url("../images/corner_1.png") no-repeat scroll -16px 0 transparent;
+}
+.content_wrap .sidebar .banners .bottom_right_corner {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    right:-2px;
+    bottom: -2px;
+    background: url("../images/corner_1.png") no-repeat scroll 0 0 transparent;
+}
+.content_wrap .sidebar .banners .price{
+    background: url("../images/price.png") no-repeat scroll 0 0 transparent;
+    bottom: -51px;
+    color: #955730;
+    display: block;
+    font: bold 13px Georgia;
+    height: 33px;
+    left: 32px;
+    padding: 28px 0 0 54px;
+    position: absolute;
+    width: 80px;
+}
+
+.content_wrap .sidebar .banners .banners_list a  {
+   display: block;
+}
+.content_wrap .sidebar .banners .banners_list a img{
+   display: block;
+    width:165px;
+}
 /**********************************************************************************************************************/
 /*****************************************CONTENT WRAP*****************************************************************/
 /**********************************************************************************************************************/
@@ -446,7 +530,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     font: 13px/20px Georgia;
 }
 .content_wrap .content p.welcome{
-    font: 15px/22px Georgia;
+    font: 15px/20px Georgia;
     color: #4E2D18;
 }
 
@@ -470,7 +554,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .content_wrap .content .top{
     border: 1px solid #E2C6B4;
     position: relative;
-    margin: 30px 0 0 0;
+    margin: 25px 0 0 0;
 }
 .content_wrap .content .new h3,
 .content_wrap .content .top h3{
