@@ -417,7 +417,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     margin: 10px 0 0;
 }
 .content_wrap .sidebar .masters ul li a{
-    font: bold 13px/23px Georgia;
+    font: bold 13px/22px Georgia;
     color: #955730;
 }
 .content_wrap .sidebar .masters .top_left_corner {
@@ -495,6 +495,9 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .content_wrap .sidebar .banners ul li a{
     font: bold 13px/23px Georgia;
     color: #955730;
+}
+.content_wrap .sidebar .banners ul li {
+    margin: 0 0 5px;
 }
 .content_wrap .sidebar .banners .top_left_corner {
     position: absolute;
@@ -1132,4 +1135,13 @@ form.button_to .empty_cart:hover{
 }
 .right_co a {
     color: #955730;
+}
+
+.footer_banners {
+    height: 31px;
+    left: 381px;
+    opacity: 0.4;
+    position: absolute;
+    top: 70px;
+    width: 568px;
 }
