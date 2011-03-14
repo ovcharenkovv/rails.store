@@ -11,5 +11,19 @@
   или по телефону (093) 45 48 455
 
 .footer_banners
-  %a{:href => "http://uashop.org/"}
+  %a{:href => "http://uashop.org/", :target => "_blank",}
     %img{:alt => "UAShop.org", :border => "0", :height => "31", :src => "http://uashop.org/fl33x81-2.gif", :width => "88"}/
+  %a{:href => "http://www.shoplist.com.ua", :target => "_blank", :title => "Каталог интернет-магазинов Украины"}
+    %img{:alt => "Каталог интернет-магазинов Украины", :border => "0", :src => "http://www.shoplist.com.ua/shoplist_small.gif"}/  
+  %a{:href => "http://0472.com.ua", :target => "_blank", :title => "еркассы OnLine - Рейтинг Черкасских сайтов"}
+    %img{:alt => "Черкассы OnLine - Рейтинг Черкасских сайтов", :height => "31", :border => "0", :src => "http://0472.com.ua/images/pic/button0472.gif"}/
+  %script{:language => "JavaScript"}
+    function uashops_voice(num)
+    { window.open('http://www.uashops.com/voice.php?userid=7685&voice='+num,'','width=500,height=400,scrollbars=no,location=no,toolbar=no,directories=no,status=no,menubar=no,resizable=no')}
+  %img{:border => "0", :height => "31", :src => "http://top.uashops.com/img/voice4.gif", :usemap => "#uashops", :width => "88"}
+  %map{:name => "uashops"}
+    %area{:coords => "2,16,17,29", :href => "javascript: uashops_voice(1)", :shape => "RECT", :title => "\320\243\320\266\320\260\321\201\320\275\320\276"}
+    %area{:coords => "18,16,34,29", :href => "javascript: uashops_voice(2)", :shape => "RECT", :title => "\320\235\320\265\321\203\320\264\320\276\320\262\320\273\320\265\321\202\320\262\320\276\321\200\320\270\321\202\320\265\320\273\321\214\320\275\320\276"}
+    %area{:coords => "35,16,52,29", :href => "javascript: uashops_voice(3)", :shape => "RECT", :title => "\320\243\320\264\320\276\320\262\320\273\320\265\321\202\320\262\320\276\321\200\320\270\321\202\320\265\320\273\321\214\320\275\320\276"}
+    %area{:coords => "53,16,69,29", :href => "javascript: uashops_voice(4)", :shape => "RECT", :title => "\320\245\320\276\321\200\320\276\321\210\320\276"}
+    %area{:coords => "70,16,86,29", :href => "javascript: uashops_voice(5)", :shape => "RECT", :title => "\320\236\321\202\320\273\320\270\321\207\320\275\320\276"}
