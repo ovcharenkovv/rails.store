@@ -71,11 +71,10 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     display: block;
     font: 15px Verdana;
     height: 30px;
-    left: 178px;
+    left: 168px;
     position: absolute;
-    top: 87px;
-    width: 255px;
-
+    top: 85px;
+    width: 266px;
 }
 .header .cart {
     color: #955730;

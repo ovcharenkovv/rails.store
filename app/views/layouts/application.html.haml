@@ -9,13 +9,13 @@
     = csrf_meta_tag
     %link{:href => "/favicon.ico", :rel => "icon", :type => "image/x-icon"}
     %link{:href => "/favicon.ico", :rel => "shortcut icon", :type => "image/x-icon"}
-    %meta{:content => "handmade, хендмейд, ручная работа, сережки, кольца, браслеты, подвески, игрушки,подушки, текстиль, термопластика, полимерная глина, декупаж, интернет-магазин, Черкассы", :name => "keywords"}
-    %meta{:content => "Здесь вы найдете уникальные украшения: сережки, кольца, браслеты; аксессуары; игрушки и массу других товаров.", :name => "description"}
+    %meta{:content => "ручная работа, подарки handmade, хендмейд,хенд мейд  сережки, кольца, браслеты, подвески, игрушки,подушки, текстиль, термопластика, полимерная глина, декупаж, интернет-магазин, Черкассы", :name => "keywords"}
+    %meta{:content => "Здесь вы найдете изделия ручной работы: сережки, кольца, браслеты; аксессуары; игрушки и массу других товаров.", :name => "description"}
   %body
     .header
       =link_to  root_path, :class=>"logo" do
         %img{:alt => "Logo", :height => "120", :src => "/images/logo.png", :width => "430"}
-      %h2.slogan="Магазин хендмейд изделий"
+      %h2.slogan="Магазин изделий ручной работы"
       .cart
         = render "carts/header_cart"
       .phones

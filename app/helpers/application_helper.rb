@@ -43,7 +43,7 @@ module ApplicationHelper
       ret += Author.find(param[:author_id]).name.to_s
       ret += ' | '
     end
-    ret += 'Магазин хендмейд изделий РoshStore.com.ua'
+    ret += 'Магазин изделий ручной работы РoshStore.com.ua'
 
     ret
   end
