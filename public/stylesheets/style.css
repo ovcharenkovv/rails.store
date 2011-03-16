@@ -69,12 +69,12 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .header h2.slogan {
     color: #FFFFFF;
     display: block;
-    font: 15px Verdana;
+    font: 15px verdana;
     height: 30px;
-    left: 168px;
+    left: 166px;
     position: absolute;
     top: 85px;
-    width: 266px;
+    width: 280px;
 }
 .header .cart {
     color: #955730;
