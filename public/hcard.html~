@@ -1,0 +1,16 @@
+<div class="vcard">
+ <div>
+   <span class="category">Кафе</span>
+   <span class="fn org">Ромашка</span>
+ </div>
+ <div class="adr">
+   <span class="locality">г. Солнечный</span>,
+   <span class="street-address">просп. Романтиков, д. 21</span>
+ </div>
+ <div>Телефон: <span class="tel">+7 (890) 123-45-67</span></div>
+ <div>Мы работаем <span class="workhours">ежедневно с 11:00 до 24:00</span>
+   <span class="url">
+     <span class="value-title" title="http://www.romashka-cafe.ru"> </span>
+   </span>
+ </div>
+</div>
