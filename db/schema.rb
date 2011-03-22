@@ -10,16 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110227143923) do
-
-  create_table "admin_custom_orders", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.string   "email"
-    t.string   "phone"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(:version => 20110322184353) do
 
   create_table "authors", :force => true do |t|
     t.string   "name"
@@ -96,6 +87,7 @@ ActiveRecord::Schema.define(:version => 20110227143923) do
     t.integer  "click_count"
     t.boolean  "is_hot"
     t.string   "status",                                            :default => "Есть в наличии"
+    t.decimal  "author_price",       :precision => 10, :scale => 0
   end
 
   create_table "users", :force => true do |t|

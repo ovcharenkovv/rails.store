@@ -16,9 +16,14 @@
     %br
     = f.text_area :description
   .field
-    = f.label :price
+    = f.label :author_price
     %br
-    = f.text_field :price
+    = f.text_field :author_price
+  -if params[:action]=='edit'
+    .field
+      = f.label :price
+      %br
+      = f.text_field :price
   .field
     = f.label :image
     %br

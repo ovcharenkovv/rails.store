@@ -8,13 +8,14 @@ class Product < ActiveRecord::Base
   has_attached_file :image, :styles => { :thumb => "200x150>",:medium => "400x300>", :large => "500X375" }
 
   before_destroy :ensure_not_referenced_by_any_line_item
+  before_create :generate_price
 
   validates :title,       :presence => true,
             :uniqueness => true,
             :length => {:minimum => 3, :maximum => 25}
 
-  validates :price,       :presence => true,
-            :numericality => {:greater_than_or_equal_to => 0.01}
+#  validates :price,       :presence => true,
+#            :numericality => {:greater_than_or_equal_to => 0.01}
 
   validates :category_id, :author_id, :presence => true
 
@@ -40,6 +41,14 @@ class Product < ActiveRecord::Base
 
   def self.find_see_also_products(quantity,category)
     where( :category_id=>category ).limit(quantity).order("click_count desc")
+  end
+
+  def generate_price
+    if self.author_price < 30
+      self.price =  self.author_price+10
+    else
+      self.price =  self.author_price+(self.author_price*0.3)
+    end
   end
 
 #  def self.find_see_also_random_products(quantity,category)
