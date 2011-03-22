@@ -37,7 +37,7 @@
   -if @product.description.length > 5
     %p
       %b=t('products.description')
-      = @product.description
+      = raw @product.description
   -#%p
   -#  %b=t('products.category')
   -#  = @product.category.name.to_s
