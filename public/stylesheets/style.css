@@ -183,7 +183,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .content_wrap {
     display: block;
     width: 960px;
-    height: 1295px;
+    height: 1111px;
     margin: 0 auto;
     background: #fff url("../images/content_bg.jpg") no-repeat scroll 0 0 ;
     position: relative;
