@@ -49,6 +49,7 @@ gem 'acts_as_tree'
 
 gem 'sitemap_generator'
 
+gem 'whenever', :require => false
 
 
 
