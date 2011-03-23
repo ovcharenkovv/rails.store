@@ -43,7 +43,7 @@ module ApplicationHelper
       ret += Author.find(param[:author_id]).name.to_s
       ret += ' | '
     end
-    ret += 'Магазин изделий ручной работы РoshStore.com.ua'
+    ret += 'Магазин изделий ручной работы, ручная работа, handmade, рукоделие, поделки, украшения, ексклюзив, хендмейд'
 
     ret
   end

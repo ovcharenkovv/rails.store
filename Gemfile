@@ -47,6 +47,8 @@ gem 'recaptcha', :require => 'recaptcha/rails'
 
 gem 'acts_as_tree'
 
+gem 'sitemap_generator'
+
 
 
 
