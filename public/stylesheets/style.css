@@ -888,10 +888,12 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     float: left;
     font: 12px 'arial';
     height: 280px;
-    padding: 35px 0 0;
+    padding: 15px 0 0;
     text-align: center;
     width: 240px;
-    margin: 10px 0 0;
+}
+.wrap .important .share{
+    margin:25px 0 0;
 }
 .wrap .important .price {
     color: #4E2D18;
