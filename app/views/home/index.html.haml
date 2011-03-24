@@ -50,3 +50,10 @@
   .top_right_corner
   .bottom_left_corner
   .bottom_right_corner
+.random
+  %h3=t('home.random_products')
+  = render :partial => "products/random_products", :locals => { :products => @random_products }
+  .top_left_corner
+  .top_right_corner
+  .bottom_left_corner
+  .bottom_right_corner

@@ -5,7 +5,7 @@ class Product < ActiveRecord::Base
 
   has_many :line_items
   has_many :orders, :through => :line_items
-  has_attached_file :image, :styles => { :thumb => "200x150>",:medium => "400x300>", :large => "500X375" }
+  has_attached_file :image, :styles => { :small=> "125x94", :thumb => "200x150>",:medium => "400x300>", :large => "500X375" }
 
   before_destroy :ensure_not_referenced_by_any_line_item
   before_create :generate_price
@@ -33,6 +33,10 @@ class Product < ActiveRecord::Base
 
   def self.find_new_products(quantity)
     find(:all,:limit => quantity, :order => 'created_at desc')
+  end
+
+  def self.find_random_products (quantity,except)
+     where(["id NOT IN (?)", except]).order("RAND()").limit(quantity)
   end
 
   def self.find_hot_products(quantity)

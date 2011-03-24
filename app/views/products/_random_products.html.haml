@@ -1,0 +1,7 @@
+%ul
+  - products.each do |product|
+    %li
+      = link_to category_product_path(product.category_id,product) , :class => "img" do
+        = image_tag product.image.url(:small), :alt => product.category.name+' '+product.title, :title => 'handmade '+product.category.name
+      -#= link_to category_product_path(product.category_id,product) , :class => "title" do
+      -#  %h4= product.title.to_s

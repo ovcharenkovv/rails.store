@@ -107,7 +107,7 @@
 .bx-prev {
     background: none repeat scroll 0 0 transparent;
     color: #955730;
-    font: bold 13px/17px Georgia;
+    font: bold 14px/17px Georgia;
     height: 20px;
     left: 15px !important;
     text-align: left;
@@ -118,13 +118,13 @@
 .bx-next {
     background: none repeat scroll 0 0 transparent;
     color: #955730;
-    font: bold 13px/17px Georgia;
+    font: bold 14px/17px Georgia;
     height: 20px;
     right: 0 !important;
     text-align: left;
     text-indent: 0;
     top: 290px;
-    width: 50px;
+    width: 55px;
 }
 .bx-pager {
     display: none !important;

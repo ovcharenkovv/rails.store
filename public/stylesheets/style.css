@@ -183,7 +183,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .content_wrap {
     display: block;
     width: 960px;
-    height: 1111px;
+    height: 1498px;
     margin: 0 auto;
     background: #fff url("../images/content_bg.jpg") no-repeat scroll 0 0 ;
     position: relative;
@@ -194,7 +194,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 
 .products_wrap {
-      height: 1376px;
+    height: 1376px;
 }
 /**********************************************************************************************************************/
 /************************************SIDEBAR CATEGORIES****************************************************************/
@@ -605,19 +605,22 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 /******************************************CONTENT NEW AND TOP PRODUCTS************************************************/
 /**********************************************************************************************************************/
 .content_wrap .content .new,
-.content_wrap .content .top{
+.content_wrap .content .top,
+.content_wrap .content .random{
     border: 1px solid #E2C6B4;
     position: relative;
     margin: 25px 0 0 0;
 }
 .content_wrap .content .new h3,
-.content_wrap .content .top h3{
+.content_wrap .content .top h3,
+.content_wrap .content .random h3{
     color: #945730;
     font: 20px/55px Georgia;
     text-indent: 25px;
 }
 .content_wrap .content .new #new_products,
-.content_wrap .content .top #top_products
+.content_wrap .content .top #top_products,
+.content_wrap .content .random #random_products
 {
     overflow: hidden;
 }
@@ -656,9 +659,9 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .content_wrap .content .top .paginator .line{
     background: none repeat scroll 0 0 #955730;
     height: 1px;
-    left: 108px;
+    left: 105px;
     position: absolute;
-    top: 12px;
+    top: 10px;
     width: 473px;
 }
 .content_wrap .content .new .product,
@@ -724,7 +727,8 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     width: 90px;
 }
 .content_wrap .content .new .top_left_corner,
-.content_wrap .content .top .top_left_corner{
+.content_wrap .content .top .top_left_corner,
+.content_wrap .content .random .top_left_corner{
     position: absolute;
     width: 16px;
     height: 16px;
@@ -733,7 +737,8 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     background: url("../images/corner_1.png") no-repeat scroll -16px -16px transparent;
 }
 .content_wrap .content .new .top_right_corner,
-.content_wrap .content .top .top_right_corner{
+.content_wrap .content .top .top_right_corner,
+.content_wrap .content .random .top_right_corner{
     position: absolute;
     width: 16px;
     height: 16px;
@@ -742,7 +747,8 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     background: url("../images/corner_1.png") no-repeat scroll 0 -16px transparent;
 }
 .content_wrap .content .new .bottom_left_corner,
-.content_wrap .content .top .bottom_left_corner{
+.content_wrap .content .top .bottom_left_corner,
+.content_wrap .content .random .bottom_left_corner{
     position: absolute;
     width: 16px;
     height: 16px;
@@ -751,13 +757,38 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     background: url("../images/corner_1.png") no-repeat scroll -16px 0 transparent;
 }
 .content_wrap .content .new .bottom_right_corner,
-.content_wrap .content .top .bottom_right_corner{
+.content_wrap .content .top .bottom_right_corner,
+.content_wrap .content .random .bottom_right_corner{
     position: absolute;
     width: 16px;
     height: 16px;
     right:-2px;
     bottom: -2px;
     background: url("../images/corner_1.png") no-repeat scroll 0 0 transparent;
+}
+
+.content_wrap .content .random ul {
+    margin: 0 15px 15px;
+
+}
+.content_wrap .content .random ul li {
+    display: inline-block;
+    height: 94px;
+    overflow: hidden;
+    -moz-box-shadow: 0 0 2px #888;
+    -webkit-box-shadow: 0 0 2px#888;
+    box-shadow: 0 0 2px #888;
+
+}
+.content_wrap .content .random ul li a {
+    opacity: 0.85;
+
+}
+.content_wrap .content .random ul li a:hover {
+    opacity: 1;
+}
+.content_wrap .content .random ul li a img{
+    width: 125px;
 }
 /**********************************************************************************************************************/
 /*******************************************CONTEN WRAP PRODUCTS*******************************************************/
