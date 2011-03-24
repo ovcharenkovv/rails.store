@@ -779,7 +779,6 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     -moz-box-shadow: 0 0 2px #888;
     -webkit-box-shadow: 0 0 2px#888;
     box-shadow: 0 0 2px #888;
-
 }
 .content_wrap .content .random ul li a {
     opacity: 0.85;
