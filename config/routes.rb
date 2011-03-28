@@ -1,5 +1,8 @@
 Store::Application.routes.draw do
 
+#  resources :articles
+  match '/:slug' => 'articles#show'
+
   devise_for :users
 
   resources :custom_orders
@@ -26,7 +29,7 @@ Store::Application.routes.draw do
     resources :categories do
       resources :products
     end
-    resources :orders, :line_items, :carts, :custom_orders
+    resources :orders, :line_items, :carts, :custom_orders, :articles
   end
 
 

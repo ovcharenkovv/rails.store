@@ -10,7 +10,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110322184353) do
+ActiveRecord::Schema.define(:version => 20110328144414) do
+
+  create_table "admin_custom_orders", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "email"
+    t.string   "phone"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "articles", :force => true do |t|
+    t.string   "title"
+    t.string   "meta_k"
+    t.string   "meta_d"
+    t.text     "body"
+    t.string   "slug"
+    t.integer  "views"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "authors", :force => true do |t|
     t.string   "name"

@@ -5,7 +5,7 @@ class Admin::CustomOrdersController < Admin::AdminController
     @admin_custom_orders = Admin::CustomOrder.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # index.html.haml
       format.xml  { render :xml => @admin_custom_orders }
     end
   end
@@ -16,7 +16,7 @@ class Admin::CustomOrdersController < Admin::AdminController
     @admin_custom_order = Admin::CustomOrder.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html # show.html.haml
       format.xml  { render :xml => @admin_custom_order }
     end
   end
