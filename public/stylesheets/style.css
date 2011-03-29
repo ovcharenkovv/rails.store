@@ -1157,7 +1157,7 @@ form.button_to .empty_cart:hover{
 
 }
 .body p {
-   margin: 5px 0 0;
+    margin: 5px 0 0;
 
 }
 .body ul {
@@ -1169,6 +1169,60 @@ form.button_to .empty_cart:hover{
     margin: 5px 0 0;
 
 }
+/**********************************************************************************************************************/
+/*******************************************BANNERS ********************************************************************/
+/**********************************************************************************************************************/
+
+.body .r190x190 {
+    overflow:hidden;
+}
+
+.body .r190x190 .left{
+    width: 340px;
+    float: left;
+
+}
+.body .r190x190 .right{
+    width: 340px;
+    float: left;
+}
+
+
+
+.body .r240x400 {
+    overflow:hidden;
+}
+.body .r240x400 .left{
+    width: 340px;
+    float: left;
+
+}
+.body .r240x400 .right{
+    width: 340px;
+    float: left;
+}
+
+.body .r468x60{
+
+}
+.body .r468x60 .left{
+
+}
+.body .r468x60 .right{
+
+}
+
+body .r728x90 {
+
+}
+body .728x90 .left{
+
+}
+body .728x90 .right{
+
+}
+
+
 
 
 
