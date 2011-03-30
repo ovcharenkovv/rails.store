@@ -1175,6 +1175,12 @@ form.button_to .empty_cart:hover{
 
 .body .r190x190 {
     overflow:hidden;
+    padding: 10px 0 30px;
+    border-bottom: 1px solid #E2C6B4;
+}
+.body .r190x190 textarea {
+    height: 70px;
+    width: 255px;
 }
 
 .body .r190x190 .left{
@@ -1187,10 +1193,14 @@ form.button_to .empty_cart:hover{
     float: left;
 }
 
-
-
 .body .r240x400 {
     overflow:hidden;
+    padding: 10px 0 30px;
+    border-bottom: 1px solid #E2C6B4;
+}
+.body .r240x400 textarea {
+    height: 70px;
+    width: 255px;
 }
 .body .r240x400 .left{
     width: 340px;
@@ -1203,7 +1213,13 @@ form.button_to .empty_cart:hover{
 }
 
 .body .r468x60{
-
+    overflow:hidden;
+    padding: 10px 0 30px;
+    border-bottom: 1px solid #E2C6B4;
+}
+.body .r468x60 textarea {
+    height: 60px;
+    width: 200px;
 }
 .body .r468x60 .left{
 
@@ -1213,12 +1229,18 @@ form.button_to .empty_cart:hover{
 }
 
 body .r728x90 {
+    overflow:hidden;
+    padding: 10px 0 30px;
+    border-bottom: 1px solid #E2C6B4;
+}
+.body .r728x90 textarea {
+    height: 45px;
+    width: 675px;
+}
+body .r728x90 .left{
 
 }
-body .728x90 .left{
-
-}
-body .728x90 .right{
+body .r728x90 .right{
 
 }
 
