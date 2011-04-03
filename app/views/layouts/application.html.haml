@@ -26,9 +26,12 @@
         %span="(093) 45 48 455"
         %br
         %span="(098) 61 34 192"
+      .order_shipping
+        =link_to "Оплата и Доставка", "/payment_shipping"
       .social_network
         =link_to "Twitter", "http://twitter.com/poshstore", {:class=>"twitter"}
         =link_to "Facebook", "http://www.facebook.com/pages/Poshstore/128906457181659?sk=wall", {:class=>"facebook"}
+
     -if params[:controller]=='products'
       .content_wrap.products_wrap
         .sidebar

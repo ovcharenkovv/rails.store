@@ -93,12 +93,14 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     width: 68px;
 }
 .header .social_network {
-    background: url("../images/social_network.png") no-repeat scroll 0 0 transparent;
-    bottom: -23px;
+/*background: url("../images/social_network.png") no-repeat scroll 0 0 transparent;*/
+    -moz-border-radius: 15px 15px 15px 15px;
+    background: none repeat scroll 0 0 #F4E0C2;
+    bottom: -44px;
     height: 90px;
     position: absolute;
-    right: 230px;
-    width: 180px;
+    right: 236px;
+    width: 146px;
 }
 .header .social_network a{
     display: block;
@@ -109,13 +111,13 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .header .social_network a.twitter{
     background: url("../images/twitter_facebook_icon.png") no-repeat scroll 0 0 transparent;
     height: 60px;
-    margin: 7px 0 0 28px;
+    margin: -4px 0 0 10px;
     width: 67px;
 }
 .header .social_network a.facebook{
     background: url("../images/twitter_facebook_icon.png") no-repeat scroll -65px 0 transparent;
     height: 60px;
-    margin: 9px 0 0 0;
+    margin: 2px 0 0;
     width: 60px;
 }
 .header .social_network a.twitter:hover{
@@ -130,18 +132,18 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     display: table;
 }
 
-.phones {
+.header .phones {
     color: #FFFFFF;
     display: block;
     font-size: 17px;
     height: 45px;
-    left: 553px;
+    left: 300px;
     padding: 2px 0 0 48px;
     position: absolute;
     top: 169px;
     width: 160px;
 }
-.phones_ico {
+.header .phones_ico {
     display: block;
     background: url("../images/phone.png") no-repeat scroll 0 0 transparent;
     position: absolute;
@@ -149,8 +151,18 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     top:0;
     width:70px;
     height:78px;
-
-
+}
+.header .order_shipping {
+    -moz-border-radius: 15px 15px 15px 15px;
+    background: none repeat scroll 0 0 #F4E0C2;
+    display: block;
+    height: 70px;
+    left: 604px;
+    padding: 15px;
+    position: absolute;
+    text-align: center;
+    top: 174px;
+    width: 175px;
 }
 /**********************************************************************************************************************/
 /**********************************************************************************************************************/
