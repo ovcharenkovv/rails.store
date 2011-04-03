@@ -30,13 +30,13 @@ SitemapGenerator::Sitemap.add_links do |sitemap|
   #sitemap.add categories_path, :priority => 0.7, :changefreq => 'daily'
 
   Category.find_each do |category|
-    sitemap.add category_path(category), :lastmod => category.updated_at
+    sitemap.add category_path(category), :lastmod => category.updated_at , :priority => 0.9
   end
 
   Product.find_each do |product|
     sitemap.add category_product_path(product.category_id,product),
                 :lastmod => product.updated_at ,
-                :priority => 0.9 ,
+                :priority => 0.5 ,
                 :changefreq => 'daily'
   end
 
