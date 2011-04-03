@@ -13,8 +13,10 @@ class ProductsController < ApplicationController
 
     if params[:sort]=='popularity'
       @sort = 'click_count desc'
-    else
+    elsif params[:sort]=='price'
       @sort = 'price'
+    else
+      @sort = 'created_at desc'
     end
   end
 
