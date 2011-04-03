@@ -1036,7 +1036,7 @@ h1.cart_title {
 .cart_table .item_price{
     font-weight: bold;
     text-align: right;
-    width: 70px;
+    width: 90px;
 }
 .total_price_block {
     margin: 10px 0 20px 10px;
