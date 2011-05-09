@@ -798,6 +798,8 @@ body .r728x90 .right{
     width: 960px;
     height: 100px;
     clear: both;
+    position:relative;
+    z-index:1;
 }
 
 .content_wrap .footer  .left_co {
