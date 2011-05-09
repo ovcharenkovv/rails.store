@@ -24,6 +24,10 @@
       = f.label :price
       %br
       = f.text_field :price
+    .field
+      = f.label :category
+      %br
+      = f.collection_select :category_id, Category.find(:all), :id, :name
   .field
     = f.label :image
     %br

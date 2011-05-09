@@ -1,0 +1,22 @@
+%p#notice= notice
+%p
+  %b Name:
+  = @comment.name
+%p
+  %b Email:
+  = @comment.email
+%p
+  %b Body:
+  = @comment.body
+%p
+  %b Publish:
+  = @comment.publish
+%p
+  %b Rating:
+  = @comment.rating
+%p
+  %b Product:
+  = @comment.product_id
+= link_to 'Edit', edit_comment_path(@comment)
+|
+\#{link_to 'Back', comments_path}

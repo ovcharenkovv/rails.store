@@ -1,16 +1,22 @@
 Store::Application.routes.draw do
 
+  resources :comments
+
 #  resources :articles
   devise_for :users
 
   resources :custom_orders
 
   resources :authors do
-    resources :products
+    resources :products do
+      resources :comments
+    end
   end
 
   resources :categories do
-    resources :products
+    resources :products do
+      resources :comments
+    end
   end
 
 
@@ -22,10 +28,14 @@ Store::Application.routes.draw do
 
   namespace :admin do
     resources :authors do
-      resources :products
+      resources :products do
+        resources :comments
+      end
     end
     resources :categories do
-      resources :products
+      resources :products do
+        resources :comments
+      end
     end
     resources :orders, :line_items, :carts, :custom_orders, :articles
   end

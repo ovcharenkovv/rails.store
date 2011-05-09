@@ -1,7 +1,6 @@
 - content_for :custom_css_js do
   = stylesheet_link_tag 'jquery.fancybox-1.3.4'
   = stylesheet_link_tag "bx_styles"
-
   = javascript_include_tag "jquery-1.4.3.min"
   = javascript_include_tag "jquery.fancybox-1.3.4.pack"
   = javascript_include_tag "jquery.mousewheel-3.0.4.pack"
@@ -24,6 +23,12 @@
 
 %h1.cart_title=t('carts.cart.title')
 %table.cart_table
+  %tr.theader
+    %th.foto=t('carts.cart.foto')
+    %th=t('carts.cart.name')
+    %th=t('carts.cart.quantity')
+    %th.price=t('carts.cart.price')
+
   = render(@cart.line_items)
 .total_price_block
   %span.total_text=t('carts.cart.total')

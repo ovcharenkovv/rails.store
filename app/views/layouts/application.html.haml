@@ -15,111 +15,26 @@
     %meta{:name=>"yandex-verification", :content=>"6498203c1ef19b1d"}
     %meta{:content => "ljGmqSSSKi-W1Ybo_zV7bRYXLAzlCyMt3C7FuDvmDuY", :name => "google-site-verification"}
   %body
-    .header
-      =link_to  root_path, :class=>"logo" do
-        %img{:alt => "Logo", :height => "120", :src => "/images/logo.png", :width => "430"}
-      %h2.slogan="Магазин изделий ручной работы"
-      .cart
+    .wrap
+      .header
+        =link_to  root_path, :class=>"logo" do
+          %img{:alt => "Logo", :height => "89", :src => "/images/logo.png", :width => "309"}
+          %h2="Магазин изделий ручной работы"
+        = render "layouts/nav"
         = render "carts/header_cart"
-      .phones
-        .phones_ico
-        %span="(093) 45 48 455"
-        %br
-        %span="(098) 61 34 192"
-      .order_shipping
-        =link_to "Оплата и Доставка", "/payment_shipping"
-      .social_network
-        =link_to "Twitter", "http://twitter.com/poshstore", {:class=>"twitter"}
-        =link_to "Facebook", "http://www.facebook.com/pages/Poshstore/128906457181659?sk=wall", {:class=>"facebook"}
 
-    -if params[:controller]=='products'
-      .content_wrap.products_wrap
-        .sidebar
-          .categories
-            = render "categories/list"
-          -#.search
-          -#  %h3 Поиск
-          -#  %fieldset
-          -#    %input.field{:type => "text", :value => ""}
-          -#      %input.submit{:name => "submit", :src => "/images/search.png", :type => "image"}
-          -#.best
-          -#  %h2
-          -#    %a{:href => "/"} Специальное предложение
-          -#  .body
-          -#    %a.img{:href => "/"}
-          -#      %img{:alt => "1", :src => "/images/1.jpg"}/
-          -#    %a.title{:href => "/"}
-          -#      %h4 Мышонок с сердцем
-          -#    %a.author{:href => "/"}
-          -#      %h5 Mary Jane
-          -#  %span.price 125 Грн
-          -#  .top_left_corner
-          -#  .top_right_corner
-          -#  .bottom_left_corner
-          -#  .bottom_right_corner
-          .masters
-            = render "authors/list"
-
-          .banners
-
-            = render "layouts/banners"
-        .content
-          .wrap
-            =#.breadcrumbs
-            =#  = raw render_breadcrumbs
-            = yield
-          -#.error
-          -#  - if notice
-          -#    %p#notice= notice
-          -#    %p#alert= alert
-          .bant
-          .heart
-          .cbottom_left_corner
-          .cbottom_right_corner
-    -else
       .content_wrap
         .sidebar
           .categories
             = render "categories/list"
-          -#.search
-          -#  %h3 Поиск
-          -#  %fieldset
-          -#    %input.field{:type => "text", :value => ""}
-          -#      %input.submit{:name => "submit", :src => "/images/search.png", :type => "image"}
-          -#.best
-          -#  %h2
-          -#    %a{:href => "/"} Специальное предложение
-          -#  .body
-          -#    %a.img{:href => "/"}
-          -#      %img{:alt => "1", :src => "/images/1.jpg"}/
-          -#    %a.title{:href => "/"}
-          -#      %h4 Мышонок с сердцем
-          -#    %a.author{:href => "/"}
-          -#      %h5 Mary Jane
-          -#  %span.price 125 Грн
-          -#  .top_left_corner
-          -#  .top_right_corner
-          -#  .bottom_left_corner
-          -#  .bottom_right_corner
           .masters
             = render "authors/list"
-
           .banners
-
             = render "layouts/banners"
         .content
-          .wrap
-            =#.breadcrumbs
-            =#  = raw render_breadcrumbs
-            = yield
-          -#.error
-          -#  - if notice
-          -#    %p#notice= notice
-          -#    %p#alert= alert
-          .bant
-          .heart
-          .cbottom_left_corner
-          .cbottom_right_corner
-    .footer
-      = render "layouts/footer"
+          = yield
+        .footer
+          = render "layouts/footer"
+        .top_bant
+        .bottom_bant
 =render "layouts/analytics"

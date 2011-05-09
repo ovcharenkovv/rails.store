@@ -19,6 +19,10 @@ ru:
       checkout_short: "Заказать"
       show: "Показать"
       continue: "Продолжить покупки"
+      foto: "Фото"
+      name: "Название(категория)"
+      quantity: "Кол."
+      price: "Цена"
 
   categories:
     title: "Категории:"
@@ -53,10 +57,10 @@ ru:
   orders:
     title: "Оформление Заказа"
     befor_text: ""
-    name: "Ваше имя"
+    name: "Имя Фамилия (для отправки почтой)"
     telephone: "Контактный телефон"
-    address: "Ваш адрес: (Область,Город,Улица)"
-    email: "Ваш е-мейл"
+    address: "Почтовый адрес: (Область, Город, Улица, Индекс)"
+    email: "Е-мейл"
     pay_type: "Способ оплаты"
     delivery_type:  "Способ доставки"
     place_order: "Заказать"
@@ -68,6 +72,9 @@ ru:
     master: "Мастер:"
     add_to_cart: "В корзину"
     see_also_products: "Смотрите также"
+    description_tab: "Описание"
+    comments_tab: "Отзывы"
+    status: "Статус:"
 
   layouts:
     application:

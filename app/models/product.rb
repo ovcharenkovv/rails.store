@@ -5,6 +5,7 @@ class Product < ActiveRecord::Base
 
   has_many :line_items
   has_many :orders, :through => :line_items
+  has_many :comments
   has_attached_file :image, :styles => { :small=> "125x94", :thumb => "200x150>",:medium => "400x300>", :large => "500X375" }
 
   before_destroy :ensure_not_referenced_by_any_line_item
@@ -44,11 +45,12 @@ class Product < ActiveRecord::Base
   end
 
   def self.find_see_also_products(quantity,category,except)
-    where( :category_id=>category ).where(["id NOT IN (?)", except]).limit(quantity).order("click_count desc")
+#    where( :category_id=>category ).where(["id NOT IN (?)", except]).limit(quantity).order("click_count desc")
+    where( :category_id=>category ).where(["id NOT IN (?)", except]).limit(quantity).order("RAND()")
   end
 
   def generate_price
-    if self.author_price < 30
+    if self.author_price < 34
       self.price =  self.author_price+10
     else
       self.price =  self.author_price+(self.author_price*0.3)

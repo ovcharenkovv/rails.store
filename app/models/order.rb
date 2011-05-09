@@ -1,6 +1,6 @@
 class Order < ActiveRecord::Base
-  PAYMENT_TYPES = ["Наличные","Банковский перевод","Web Money" ]
-  DELIVERY_TYPES = ["Личная встреча","Новая почта","Укрпочта" ]
+  PAYMENT_TYPES = ["Перевод на карту Приватбанка","Наложеный платеж" ]
+  DELIVERY_TYPES = ["Новая почта","Укрпочта","Личная встреча" ]
 
   validates :name,     :presence => true
   validates :telephone,:presence => true

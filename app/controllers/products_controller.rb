@@ -68,7 +68,7 @@ class ProductsController < ApplicationController
 
     @product.inc_click
 
-    @see_also_products = Product.find_see_also_products(9,@category.id,@product)
+    @see_also_products = Product.find_see_also_products(18,@category.id,@product)
 
     respond_to do |format|
       format.html # show.html.haml

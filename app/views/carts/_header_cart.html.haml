@@ -1,9 +1,7 @@
 -if @current_cart.total_price == 0
-  ="Ваша корзина пуста"
+  = link_to '' ,:class=>"cart" do
+    Корзина пуста :(
 -else
-  =t('carts.cart.sum')
-  = @current_cart.total_price.to_s+" грн."
-  %p
-    =# link_to t('carts.cart.empty_shot'), @current_cart, :method => :delete, :confirm => 'Are you sure?'
-    = link_to "", @current_cart , :class=>"showcart"
-    = link_to t('carts.cart.checkout_short'), new_order_path, :method => :get
+  = link_to  @current_cart , :class=>"cart" do
+    =t('carts.cart.sum')
+    = @current_cart.total_price.to_s+" грн."

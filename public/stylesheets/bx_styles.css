@@ -59,7 +59,7 @@
 /*next/prev button hover state*/
 .bx-next:hover,
 .bx-prev:hover {
-    background-position: 0 0;
+    opacity:0.7;
 }
 
 /*pager links hover and active states*/
@@ -101,30 +101,28 @@
 }
 
 .bx-window {
-    width: 660px !important;
+    width: 670px !important;
 }
 
 .bx-prev {
-    background: none repeat scroll 0 0 transparent;
-    color: #955730;
-    font: bold 14px/17px Georgia;
-    height: 20px;
-    left: 15px !important;
-    text-align: left;
-    text-indent: 0;
-    top: 290px;
-    width: 100px;
+    background: url("../images/arrow.png") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 72px;
+    left: -21px !important;
+    overflow: hidden;
+    text-indent: -1000px;
+    top: 80px;
+    width: 22px;
 }
 .bx-next {
-    background: none repeat scroll 0 0 transparent;
-    color: #955730;
-    font: bold 14px/17px Georgia;
-    height: 20px;
-    right: 0 !important;
-    text-align: left;
-    text-indent: 0;
-    top: 290px;
-    width: 55px;
+    background: url("../images/arrow.png") no-repeat scroll -22px 0 transparent;
+    display: block;
+    height: 72px;
+    overflow: hidden;
+    right: -53px !important;
+    text-indent: -1000px;
+    top: 80px;
+    width: 22px;
 }
 .bx-pager {
     display: none !important;
