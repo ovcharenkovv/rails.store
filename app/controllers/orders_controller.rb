@@ -38,7 +38,7 @@ class OrdersController < ApplicationController
         Notifier.order_send1(@order).deliver
         Notifier.order_send2(@order).deliver
 
-        format.html { redirect_to(order_path(@order), :notice => 'Пасибки за заказ') }
+        format.html { redirect_to('/happy', :notice => 'Пасибки за заказ') }
         format.xml { render :xml => @order, :status => :created,
                             :location => @order }
       else
