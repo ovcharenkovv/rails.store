@@ -8,7 +8,7 @@ class Product < ActiveRecord::Base
   has_many :comments
   has_attached_file :image, :styles => { :small=> "125x94", :thumb => "200x150>",:medium => "400x300>", :large => "500X375" }
 
-  before_destroy :ensure_not_referenced_by_any_line_item
+#  before_destroy :ensure_not_referenced_by_any_line_item
   before_create :generate_price
 
   validates :title,       :presence => true,
