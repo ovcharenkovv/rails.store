@@ -91,7 +91,7 @@ class Admin::ProductsController < Admin::AdminController
 
     respond_to do |format|
       flash[:notice] = 'Product was successfully deleted.'
-      format.html { redirect_to admin_category_products_path }
+      format.html { redirect_to :back }
       format.xml  { head :ok }
     end
   end
