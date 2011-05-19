@@ -1,4 +1,5 @@
 %li.has_children
   %ul
+    -child = child.sort_by { |child| child.ordering }
     -child.each do |category|
       %li= link_to category.name, category_products_path(category)
