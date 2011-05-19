@@ -3,13 +3,13 @@
   %tr
     %th Name
     %th Parent
-    %th Description
+    %th Ordering
     %th.action
   - @categories.each do |category|
     %tr
       %td= link_to category.name.to_s, admin_category_products_path(category)
       %td= category.parent.name unless category.parent.nil?
-      %td= category.description.to_s
+      %td= category.ordering.to_s
       %td
         = link_to 'Edit', edit_admin_category_path(category)
         = link_to 'Destroy', admin_category_path(category), :confirm => 'Are you sure?', :method => :delete
