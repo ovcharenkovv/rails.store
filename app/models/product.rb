@@ -50,10 +50,10 @@ class Product < ActiveRecord::Base
   end
 
   def generate_price
-    if self.author_price < 34
-      self.price =  self.author_price+10
+    if self.author_price < 45
+      self.price =  self.author_price+15
     else
-      self.price =  self.author_price+(self.author_price*0.3)
+      self.price =  self.author_price+(self.author_price*0.35)
     end
   end
 
