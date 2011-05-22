@@ -2,9 +2,11 @@ class Admin::OrdersController < Admin::AdminController
   # GET /orders
   # GET /orders.xml
   def index
-    @orders = Order.paginate :page=>params[:page],
-                             :order=>'created_at desc',
-                             :per_page => 30
+    if (params[:status] == 'all')||(params[:status].nil?)
+      @orders = Order.paginate :page=>params[:page], :order=>'created_at desc',:per_page => 30
+    else
+      @orders = Order.where(:status=>params[:status]).paginate :page=>params[:page], :order=>'created_at desc',:per_page => 30
+    end
 
     respond_to do |format|
       format.html # index.html.haml
@@ -21,6 +23,26 @@ class Admin::OrdersController < Admin::AdminController
     respond_to do |format|
       format.html # show.html.haml
       format.xml  { render :xml => @order }
+    end
+  end
+
+  def edit
+    @order = Order.find(params[:id])
+    @line_items = LineItem.where(:order_id=>params[:id])
+  end
+
+  def update
+    @order = Order.find(params[:id])
+
+    respond_to do |format|
+      if @order.update_attributes(params[:order])
+        flash[:notice] = 'Order was successfully updated.'
+        format.html { redirect_to admin_orders_path}
+        format.xml  { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @order.errors, :status => :unprocessable_entity }
+      end
     end
   end
 

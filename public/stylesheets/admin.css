@@ -125,3 +125,15 @@ h3 {
     text-align:center;
     margin: 10px 30px;
 }
+.orders_sort {
+    text-align:right;
+    margin: 0 0 10px;
+
+}
+.orders_sort a {
+    margin: 0 10px;
+    font-weight: bold;
+}
+.field {
+    margin: 0 0 10px;
+}
