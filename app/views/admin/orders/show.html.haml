@@ -22,7 +22,7 @@
   %b Products Are:
   - @line_items.each do |li|
     %br
-    -product = Product.find(li.id)
+    -product = Product.find(li.product_id)
     %b=li.quantity
     =" x "
     = link_to product.title, admin_category_product_path(product.category.id,product)
