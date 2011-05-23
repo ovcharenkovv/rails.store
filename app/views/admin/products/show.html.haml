@@ -17,9 +17,8 @@
 %p
   %b Author:
   = @product.author.name.to_s
-= button_to 'Add to Cart', line_items_path(:product_id => @product.id)
 
-= link_to 'Edit', edit_category_product_path(@category,@product)
+= link_to 'Edit', edit_admin_category_product_path(@category,@product)
 |
-\#{link_to 'Back', category_products_path}
+\#{link_to 'Back', admin_category_products_path}
 

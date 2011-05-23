@@ -37,7 +37,7 @@ class Admin::OrdersController < Admin::AdminController
     respond_to do |format|
       if @order.update_attributes(params[:order])
         flash[:notice] = 'Order was successfully updated.'
-        format.html { redirect_to admin_orders_path}
+        format.html { redirect_to admin_orders_path(:status=>'new')}
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

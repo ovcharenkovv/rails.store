@@ -5,7 +5,7 @@
     %th ID
     %th Name
     %th Phone
-    %th Email
+    -#%th Email
     %th Address
     -#%th Delivery_type
     %th Order date:
@@ -16,7 +16,7 @@
       %td= link_to order.id, admin_order_path(order)
       %td= link_to order.name, admin_order_path(order)
       %td= order.telephone
-      %td= order.email
+      -#%td= order.email
       %td= order.address
       -#%td= order.delivery_type
       %td= order.created_at

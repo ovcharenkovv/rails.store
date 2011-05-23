@@ -20,17 +20,33 @@
 %br
 %p
   %b Products Are:
-  - @line_items.each do |li|
-    %br
-    -product = Product.find(li.product_id)
-    %b=li.quantity
-    =" x "
-    = link_to product.title, admin_category_product_path(product.category.id,product)
-    =product.author.name
-    =product.category.name
-    ='SUM:'
-    %b=product.price*li.quantity
+  %table
+    %tr
+      %th Name
+      %th Quantity
+      %th Author
+      %th Category
+      %th Price
+      %th Author Price
+      %th Wages
+    - @line_items.each do |li|
+      %tr
+        -product = Product.find(li.product_id)
+        %td=link_to product.title, admin_category_product_path(product.category.id,product)
+        %td=li.quantity
+        %td=product.author.name
+        %td=product.category.name
+        %td=product.price*li.quantity
+        %td=product.author_price*li.quantity unless product.author_price.nil?
+        %td=(product.price*li.quantity)-(product.author_price*li.quantity) unless product.author_price.nil?
+        -@tsum = @tsum.to_i+product.price*li.quantity.to_i
+        -if !product.author_price.nil?
+          -@asum =@asum.to_i+product.author_price*li.quantity.to_i
 
-%br
+    %tr
+      %td{:colspan => "4",:style=>"border:0px!important;"}
+      %td.green=@tsum.to_i
+      %td.green=@asum.to_i
+      %td.green=@tsum.to_i-@asum.to_i
 
 = link_to 'Back', admin_orders_path

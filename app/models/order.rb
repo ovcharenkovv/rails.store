@@ -1,7 +1,7 @@
 class Order < ActiveRecord::Base
   PAYMENT_TYPES = ["Перевод на карту Приватбанка","Наложеный платеж" ]
-  DELIVERY_TYPES = ["Новая почта","Укрпочта","Личная встреча" ]
-  ORDER_STATUS = ["new","paid","sent","closed" ]
+  DELIVERY_TYPES = ["Новая почта","Укрпочта","Автолюкс" ]
+  ORDER_STATUS = ["new","paid","sent","success","refused","closed"]
 
   validates :name,     :presence => true
   validates :telephone,:presence => true
