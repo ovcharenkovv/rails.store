@@ -7,7 +7,7 @@
     %th Email
     %th Address
     %th Delivery_type
-    %th Pay type
+    -#%th Pay type
     %th Status
   - @orders.each do |order|
     %tr
@@ -15,8 +15,8 @@
       %td= order.telephone
       %td= order.email
       %td= order.address
-      %td= order.pay_type
       %td= order.delivery_type
+      -#%td= order.pay_type
       %td= link_to order.status.to_s, edit_admin_order_path(order)
 %br/
 = link_to 'New Order', new_admin_order_path
