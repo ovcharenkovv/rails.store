@@ -1,4 +1,5 @@
 class Admin::ArticlesController < Admin::AdminController
+  uses_tiny_mce
   # GET /articles
   # GET /articles.xml
   def index

@@ -51,5 +51,7 @@ gem 'sitemap_generator'
 
 gem 'whenever', :require => false
 
+gem 'tiny_mce'
+
 
 

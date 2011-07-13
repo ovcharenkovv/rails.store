@@ -1,5 +1,6 @@
 class Admin::ProductsController < Admin::AdminController
   before_filter :get_category_or_author
+  uses_tiny_mce
   # GET /products
   # GET /products.xml
 
