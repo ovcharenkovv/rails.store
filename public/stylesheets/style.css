@@ -773,7 +773,42 @@ body .r728x90 .right{
 }
 
 
+/**********************************************************************************************************************/
+/*******************************************ARTICLE BODY***************************************************************/
+/**********************************************************************************************************************/
+.content_wrap .content .body h2{
+    border: medium none;
+    display: block;
+    font-size: 22px;
+    margin: 25px 0 10px;
+    padding: 0;
+}
+.content_wrap .content .body h3{
+    border: medium none;
+    display: inline;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+.content_wrap .content .body ul{
+    padding: 0 0 0 20px;
 
+}
+.content_wrap .content .body ul li{
+    list-style:circle;
+    font-size:14px;
+    padding:0 0 3px 0;
+}
+.content_wrap .content .body a {
+    font-style:italic;
+    text-decoration:underline;
+    font-weight:bold;
+    cursor:pointer;
+}
+.content_wrap .content .body a:hover {
+  text-decoration: none;
+}
 /**********************************************************************************************************************/
 /*******************************************FOOTER*********************************************************************/
 /**********************************************************************************************************************/
