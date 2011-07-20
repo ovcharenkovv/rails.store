@@ -7,7 +7,7 @@ class Product < ActiveRecord::Base
   has_many :orders, :through => :line_items
   has_many :comments
   has_attached_file :image,
-                    :styles => { :small=> "125x94#", :thumb => "200x150#",:medium => "400x300#", :large => "500X375" },
+                    :styles => { :small=> "125x94#", :thumb => "200x150#",:medium => "400x300#", :large => "800X600" },
                     :convert_options => { :small =>"-quality 60",:thumb =>"-quality 70",:medium=>"-quality 85" }
 
   before_destroy :ensure_not_referenced_by_any_line_item
