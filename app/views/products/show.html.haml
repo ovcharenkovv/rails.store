@@ -1,21 +1,22 @@
 - content_for :custom_css_js do
   = stylesheet_link_tag 'jquery.fancybox-1.3.4'
   = stylesheet_link_tag "bx_styles"
-  = stylesheet_link_tag "jquery-ui-1.8.11.custom"
+  -#= stylesheet_link_tag "jquery-ui-1.8.11.custom"
 
   = javascript_include_tag "jquery-1.4.3.min"
   =# javascript_include_tag "jquery-1.5.1.min"
   = javascript_include_tag "jquery.fancybox-1.3.4.pack"
+  =# javascript_include_tag "jquery.fancybox-1.3.4"
   = javascript_include_tag "jquery.mousewheel-3.0.4.pack"
   = javascript_include_tag "jquery.bxSlider.min"
   =# javascript_include_tag "jquery.easing.1.3"
-  = javascript_include_tag "jquery-ui-1.8.11.custom.min"
+  =# javascript_include_tag "jquery-ui-1.8.11.custom.min"
 
   :javascript
     $(document).ready(function() {
       $("a#light_box").fancybox({
-        'transitionIn'	: 'none',
-        'transitionOut'	: 'none'
+        'transitionIn'		: 'none',
+        'transitionOut'		: 'none'
       });
 
       $('#top_products').bxSlider({
@@ -25,13 +26,12 @@
         auto: true,*/
       });
 
-      $( "#tabs" ).tabs();
     });
 
     function share42(f,u,t){if(!u)u=location.href;if(!t)t=document.title;u=encodeURIComponent(u);t=encodeURIComponent(t);var s=new Array('#" onclick="window.open(\'http://vkontakte.ru/share.php?url='+u+'\', \'_blank\', \'scrollbars=0, resizable=1, menubar=0, left=200, top=200, width=554, height=421, toolbar=0, status=0\');return false" title="Поделиться В Контакте"','http://www.odnoklassniki.ru/dk?st.cmd=addShare&st._surl='+u+'&title='+t+'" title="Добавить в Одноклассники"','http://twitter.com/share?text='+t+'&url='+u+'" title="Добавить в Twitter"','http://www.facebook.com/sharer.php?u='+u+'&t='+t+'" title="Поделиться в Facebook"','http://connect.mail.ru/share?url='+u+'&title='+t+'" title="Поделиться в Моем Мире@Mail.Ru"');for(i=0;i<s.length;i++)document.write('<a style="display:inline-block;width:24px;height:24px;margin:0 7px 0 0;background:url(http://'+f+'icons.png) -'+24*i+'px 0" href="'+s[i]+'" target="_blank"></a>')}
 
 %h1
-  =link_to @product.category.name.to_s, category_product_path(@product.category,@product)
+  =link_to @product.category.name.to_s, category_path(@product.category)
   =" / "
   = @product.title
 .border
@@ -47,7 +47,7 @@
 .product_description
   %p
     %b=t('products.master')
-    = @product.author.name.to_s
+    = link_to @product.author.name.to_s , author_products_path(@product.author)
   %p
     %b=t('products.status')
     = @product.status.to_s

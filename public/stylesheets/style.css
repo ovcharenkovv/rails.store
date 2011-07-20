@@ -867,19 +867,3 @@ body .r728x90 .right{
     width: 568px;
     display: none;
 }
-
-
-#fancybox-content {
-    width:800px !important;
-    height: 600px !important;
-
-}
-#fancybox-content img{
-    width:800px !important;
-    height: 600px !important;
-}
-#fancybox-close
-{
-    right: -315px !important;
-    top: -14px !important;
-}
