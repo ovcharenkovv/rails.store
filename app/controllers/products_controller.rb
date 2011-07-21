@@ -20,17 +20,6 @@ class ProductsController < ApplicationController
     end
   end
 
-  def init_breadcrumb
-    if params[:category_id]
-      #add_breadcrumb "Категории", :categories_path
-      #add_breadcrumb "Изделия", :category_products_path
-    end
-    if params[:author_id]
-      #add_breadcrumb "Мастера", :authors_path
-      #add_breadcrumb "Изделия", :author_products_path
-    end
-  end
-
   def get_category_or_author
     if params[:category_id]
       @category = Category.find(params[:category_id])
@@ -49,9 +38,9 @@ class ProductsController < ApplicationController
     session[:product_params]=params
 
     if params[:category_id]
-      @products = Product.where(:category_id => @categories ).paginate :page=>params[:page], :order=>@sort, :per_page => @per_page
+      @products = Product.where(:category_id => @categories, :published => true ).paginate :page=>params[:page], :order=>@sort, :per_page => @per_page
     elsif params[:author_id]
-      @products = Product.where(:author_id => @categories ).paginate :page=>params[:page], :order=>@sort, :per_page => @per_page
+      @products = Product.where(:author_id => @categories , :published => true).paginate :page=>params[:page], :order=>@sort, :per_page => @per_page
     end
 
 
@@ -66,13 +55,16 @@ class ProductsController < ApplicationController
   def show
     @product = @category.products.find(params[:id])
 
-    @product.inc_click
+    if @product.published?
+      @product.inc_click
+      @see_also_products = Product.find_see_also_products(18,@category.id,@product)
 
-    @see_also_products = Product.find_see_also_products(18,@category.id,@product)
-
-    respond_to do |format|
-      format.html # show.html.haml
-      format.xml  { render :xml => @product }
+      respond_to do |format|
+        format.html # show.html.haml
+        format.xml  { render :xml => @product }
+      end
+    else
+       redirect_to root_path
     end
   end
 end

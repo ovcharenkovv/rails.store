@@ -32,6 +32,8 @@
     = f.label :image
     %br
     = f.file_field :image
+    %br
+    = image_tag @product.image.url(:thumb)
   .field
     = f.label :author
     %br
@@ -41,8 +43,8 @@
     %br
     = f.select :status, Product::PRODUCT_STATUS, :prompt => 'Есть в наличии'
   .field
-    = f.label :is_hot
+    = f.label :published
     %br
-    = f.check_box :is_hot
+    = f.check_box :published
   .actions
     = f.submit

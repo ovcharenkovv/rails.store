@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110523205554) do
+ActiveRecord::Schema.define(:version => 20110721201718) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -50,15 +50,22 @@ ActiveRecord::Schema.define(:version => 20110523205554) do
   end
 
   create_table "comments", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.text     "body"
-    t.boolean  "publish"
+    t.string   "title",            :limit => 50, :default => ""
+    t.string   "user_name",        :limit => 50, :default => ""
+    t.string   "user_email",       :limit => 50, :default => ""
+    t.text     "comment"
     t.integer  "rating"
-    t.integer  "product_id"
+    t.boolean  "published",                      :default => true
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "comments", ["commentable_id"], :name => "index_comments_on_commentable_id"
+  add_index "comments", ["commentable_type"], :name => "index_comments_on_commentable_type"
+  add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
 
   create_table "custom_orders", :force => true do |t|
     t.string   "name"
@@ -95,6 +102,28 @@ ActiveRecord::Schema.define(:version => 20110523205554) do
     t.string   "status",        :default => "new"
   end
 
+  create_table "post_categories", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "posts", :force => true do |t|
+    t.string   "title"
+    t.string   "meta_k"
+    t.string   "meta_d"
+    t.string   "master"
+    t.integer  "rating"
+    t.string   "slug"
+    t.integer  "post_category_id"
+    t.boolean  "can_comment",      :default => true
+    t.boolean  "present_footer",   :default => true
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "products", :force => true do |t|
     t.string   "title"
     t.text     "description"
@@ -111,7 +140,7 @@ ActiveRecord::Schema.define(:version => 20110523205554) do
     t.boolean  "is_hot"
     t.string   "status",                                            :default => "Есть в наличии"
     t.decimal  "author_price",       :precision => 10, :scale => 0
-    t.boolean  "is_publish",                                        :default => true
+    t.boolean  "published",                                         :default => true
   end
 
   create_table "users", :force => true do |t|
