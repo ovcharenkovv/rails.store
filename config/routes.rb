@@ -4,11 +4,11 @@ Store::Application.routes.draw do
   resources :articles
 #  resources :custom_orders
 
-  resources :post_categories do
-    resources :posts do
-      resource :comments, :only => [:create]
-    end
-  end
+#  resources :post_categories do
+#    resources :posts do
+#      resource :comments, :only => [:create]
+#    end
+#  end
 
   resources :authors do
     resources :products
@@ -40,7 +40,10 @@ Store::Application.routes.draw do
 
   match 'admin' => 'admin/dashboard#index'
 
-  match '/:slug' => 'articles#show'
+#  match '/:slug' => 'articles#show'
+  match '/:post_category_slug/' => 'posts#index', :as => :short_cat_posts
+  match '/:post_category_slug/:post_slug' => 'posts#show', :as => :short_post
+  match '/:post_category_slug/:post_slug/comment' => 'comments#create', :as => :add_comment
 
   root :to => 'home#index'
 

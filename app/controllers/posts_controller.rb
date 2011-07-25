@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_filter :get_category
 
   def get_category
-    @post_category = PostCategory.find_by_slug!(params[:post_category_id])
+    @post_category = PostCategory.find_by_slug!(params[:post_category_slug])
   end
   # GET /posts
   # GET /posts.xml
@@ -18,7 +18,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.xml
   def show
-    @post = @post_category.posts.find_by_slug!(params[:id])
+    @post = @post_category.posts.find_by_slug!(params[:post_slug])
     @comment = @post.comments.build
     @post.comments.pop
 

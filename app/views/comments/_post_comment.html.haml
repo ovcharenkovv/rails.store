@@ -15,7 +15,7 @@
 
   -#- form_for [commentable, @comment],{:url => {:anchor => 'comment_form'}} do |f|
   -#- form_for [commentable, @comment] do |f|
-  - form_for @comment, :url => post_category_post_comments_path(@post_category, post,@comment,:anchor => "comment_form") do |f|
+  - form_for @comment, :url => add_comment_path(@post_category, post,@comment,:anchor => "comment_form") do |f|
     .field
       = f.label :user_name
       = f.text_field :user_name

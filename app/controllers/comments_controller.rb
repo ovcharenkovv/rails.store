@@ -1,13 +1,13 @@
 class CommentsController < ApplicationController
 
   def create
-    @post_category = PostCategory.find_by_slug!(params[:post_category_id])
+    @post_category = PostCategory.find_by_slug!(params[:post_category_slug])
     @commentable = Comment.find_commentable(params[:commentable_type], params[:commentable_id])
     if @commentable
       @comment = @commentable.comments.build(params[:comment])
       if @comment.save
         flash[:notice] = "Спасибо за коментарий"
-        redirect_to :controller => @commentable.class.name.underscore.downcase.pluralize, :action => 'show', :id => @commentable.slug, :anchor => 'comment_form'
+        redirect_to :controller => @commentable.class.name.underscore.downcase.pluralize, :action => 'show', :id => @commentable.slug, :anchor => 'comment_list'
 #        redirect_to @commentable, :anchor => "comment_list", :notice => "Спасибо за коментарий"
       else
         flash.now[:notice] = "Заполните пожалуйста правельно все поля"  # edited 10/28/10 use 'flash.now' instead of 'flash'
