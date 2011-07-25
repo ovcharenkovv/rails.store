@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @post.title
+%p
+  %b Meta k:
+  = @post.meta_k
+%p
+  %b Meta d:
+  = @post.meta_d
+%p
+  %b Vote:
+  = @post.rating
+%p
+  %b Slug:
+  = @post.slug
+%p
+  %b Body:
+  = @post.body
+
+= link_to 'Edit', edit_admin_post_category_post_path(@post_category, @post)
+\|
+= link_to 'Back', admin_post_category_posts_path (@post_category)

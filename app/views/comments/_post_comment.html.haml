@@ -1,0 +1,32 @@
+-if post.can_comment
+  %a{:name => "comment_list"}
+  %h4 Коментарии
+  - Comment.find_all_by_commentable_id(post.id).each do |с|
+    %p= с.user_name
+    %p= с.created_at.strftime("%a %b %d")
+    %p= с.user_email
+    %p= с.comment
+    %br
+
+  %a{:name => "comment_form"}
+  %h4 Оставте свой коментарий
+  - if notice
+    %p#notice= notice
+
+  -#- form_for [commentable, @comment],{:url => {:anchor => 'comment_form'}} do |f|
+  -#- form_for [commentable, @comment] do |f|
+  - form_for @comment, :url => post_category_post_comments_path(@post_category, post,@comment,:anchor => "comment_form") do |f|
+    .field
+      = f.label :user_name
+      = f.text_field :user_name
+    .field
+      = f.label :user_email
+      = f.text_field :user_email
+    .field
+      = f.label :comment
+      = f.text_area :comment
+    = hidden_field_tag  :post_id,  post.id
+    = hidden_field_tag  :commentable_id,  post.id
+    = hidden_field_tag  :commentable_type, post.type
+    .actions
+      = f.submit t('custom_orders.place_order')

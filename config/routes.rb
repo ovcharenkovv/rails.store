@@ -1,22 +1,21 @@
 Store::Application.routes.draw do
 
-  resources :comments
-
-#  resources :articles
   devise_for :users
+  resources :articles
+#  resources :custom_orders
 
-  resources :custom_orders
-
-  resources :authors do
-    resources :products do
-      resources :comments
+  resources :post_categories do
+    resources :posts do
+      resource :comments, :only => [:create]
     end
   end
 
+  resources :authors do
+    resources :products
+  end
+
   resources :categories do
-    resources :products do
-      resources :comments
-    end
+    resources :products
   end
 
 
@@ -24,22 +23,26 @@ Store::Application.routes.draw do
 
   get 'home/index'
 
-  match 'admin' => 'admin/dashboard#index'
-
   namespace :admin do
-    resources :authors do
-      resources :products do
-        resources :comments
+    resources :post_categories do
+      resources :posts do
+        resource :comments
       end
+    end
+    resources :authors do
+      resources :products
     end
     resources :categories do
-      resources :products do
-        resources :comments
-      end
+      resources :products
     end
-    resources :orders, :line_items, :carts, :custom_orders, :articles
+    resources :orders, :line_items, :carts, :articles
   end
 
+  match 'admin' => 'admin/dashboard#index'
+
+  match '/:slug' => 'articles#show'
+
+  root :to => 'home#index'
 
 
   # The priority is based upon order of creation:
@@ -98,10 +101,5 @@ Store::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
-
-  match '/:slug' => 'articles#show'
-
-  root :to => 'home#index'
-
 
 end

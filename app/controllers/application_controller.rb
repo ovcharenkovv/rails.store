@@ -1,12 +1,7 @@
 class ApplicationController < ActionController::Base
-  include BreadcrumbsOnRails::ControllerMixin
-
   protect_from_forgery
   before_filter :get_root_category, :get_authors , :get_current_cart
   layout "application"
-
-  # add_breadcrumb "Главная", :root_path
-
 
   def get_root_category
     @root_categories = Category.root_category

@@ -1,0 +1,16 @@
+= form_for ([:admin, @post_category]) do |f|
+  -if @post_category.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@post_category.errors.count, "error")} prohibited this post_category from being saved:"
+      %ul
+        - @post_category.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :description
+    = f.text_area :description
+  .actions
+    = f.submit 'Save'

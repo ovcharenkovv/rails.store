@@ -1,0 +1,6 @@
+- @posts.each do |post|
+  %h3=link_to post.title, post_category_post_path(@post_category,post)
+  .post_body=raw post.short_body
+  %p= link_to 'Читать дальше >>', post_category_post_path(@post_category,post)
+  = render :partial => "posts/post_footer", :locals => { :post => post }
+

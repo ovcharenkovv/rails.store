@@ -1,0 +1,27 @@
+%h1 Listing posts
+
+%table
+  %tr
+    %th Title
+    %th Meta k
+    %th Meta d
+    %th Vote
+    %th Slug
+    %th Body
+    %th
+    %th
+
+  - @posts.each do |post|
+    %tr
+      %td= link_to post.title, admin_post_category_post_path(@post_category, post)
+      %td= post.meta_k
+      %td= post.meta_d
+      %td= post.rating
+      %td= post.slug
+      %td= post.body[0..255]
+      %td= link_to 'Edit', edit_admin_post_category_post_path(@post_category, post)
+      %td= link_to 'Destroy', admin_post_category_post_path(@post_category, post), :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Post', new_admin_post_category_post_path

@@ -8,8 +8,6 @@
     %th Author
     %th Clc
     %th Price
-    %th.edit EDIT
-    %th.delete DEL    
   - @products.each do |product|
     %tr
       %td= product.id
@@ -21,10 +19,6 @@
       %td= product.author.name
       %td= product.click_count
       %td= number_to_currency(product.price, :unit => "", :separator => ",", :delimiter => " ", :format => "%n %u" )
-      %td.edit
-        = link_to 'Edit', edit_admin_category_product_path(@category,product)
-      %td.delete
-        = link_to 'Delete', admin_category_product_path(@category,product), :confirm => 'Are you sure?', :method => :delete
 %br/
 = link_to 'New Product', new_admin_category_product_path(@category)
 %p= will_paginate @products

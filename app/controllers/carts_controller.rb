@@ -1,10 +1,7 @@
 class CartsController < ApplicationController
 
-  # add_breadcrumb "Корзина", :cart_path
-
   # GET /carts
   # GET /carts.xml
-
   def index
     @carts = Cart.all
 

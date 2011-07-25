@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
+
   # GET /categories
   # GET /categories.xml
-  # add_breadcrumb "Категории", :categories_path
   def index
     @categories = Category.all
 

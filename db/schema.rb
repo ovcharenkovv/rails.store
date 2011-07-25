@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20110721201718) do
     t.datetime "updated_at"
     t.integer  "parent_id"
     t.integer  "ordering"
+    t.text     "short_body",  :null => false
   end
 
   create_table "comments", :force => true do |t|
@@ -105,6 +106,7 @@ ActiveRecord::Schema.define(:version => 20110721201718) do
   create_table "post_categories", :force => true do |t|
     t.string   "name"
     t.text     "description"
+    t.string   "slug"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -115,11 +117,12 @@ ActiveRecord::Schema.define(:version => 20110721201718) do
     t.string   "meta_d"
     t.string   "master"
     t.integer  "rating"
-    t.string   "slug"
     t.integer  "post_category_id"
     t.boolean  "can_comment",      :default => true
     t.boolean  "present_footer",   :default => true
+    t.text     "short_body"
     t.text     "body"
+    t.string   "slug"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

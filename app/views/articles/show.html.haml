@@ -1,6 +1,3 @@
-
--if @article.nil?
--else
+-if !@article.nil?
   %h1= @article.title
-  %div.body
-    =raw @article.body
+  %div.body=raw @article.body

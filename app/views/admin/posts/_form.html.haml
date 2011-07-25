@@ -1,0 +1,35 @@
+= form_for([:admin,@post_category,@post]) do |f|
+  -if @post.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@post.errors.count, "error")} prohibited this post from being saved:"
+      %ul
+        - @post.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :meta_k
+    = f.text_field :meta_k
+  .field
+    = f.label :meta_d
+    = f.text_field :meta_d
+  .field
+    = f.label :master
+    = f.text_field :master
+  .field
+    = f.label :can_comment
+    = f.check_box :can_comment
+  .field
+    = f.label :present_footer
+    = f.check_box :present_footer
+  .field
+    = f.label :short_body
+    %br/
+    = f.text_area :short_body ,{:class => "mceEditor"}
+  .field
+    = f.label :body
+    = f.text_area :body,{:class => "mceEditor"}
+  .actions
+    = f.submit 'Save'

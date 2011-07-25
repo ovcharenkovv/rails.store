@@ -31,17 +31,17 @@ gem 'mysql'
 #   gem 'webrat'
 # end
 
+#gem 'acts-as-taggable-on'
+
 gem 'jquery-rails'
 
 gem 'devise'
 
-gem 'haml'
+gem 'haml-rails'
 
 gem 'will_paginate', '>= 3.0.pre'
 
 gem 'paperclip', "~> 2.3"
-
-gem 'breadcrumbs_on_rails'
 
 gem 'recaptcha', :require => 'recaptcha/rails'
 
@@ -52,6 +52,10 @@ gem 'sitemap_generator'
 gem 'whenever', :require => false
 
 gem 'tiny_mce'
+
+gem 'acts_as_commentable'
+
+gem 'russian'
 
 
 
