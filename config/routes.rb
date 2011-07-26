@@ -1,14 +1,6 @@
 Store::Application.routes.draw do
 
   devise_for :users
-  resources :articles
-#  resources :custom_orders
-
-#  resources :post_categories do
-#    resources :posts do
-#      resource :comments, :only => [:create]
-#    end
-#  end
 
   resources :authors do
     resources :products
@@ -21,32 +13,28 @@ Store::Application.routes.draw do
 
   resources :orders, :line_items, :carts
 
-  get 'home/index'
-
   namespace :admin do
-    resources :post_categories do
-      resources :posts do
-        resource :comments
-      end
-    end
+    resources :orders, :line_items, :carts
     resources :authors do
       resources :products
     end
     resources :categories do
       resources :products
     end
-    resources :orders, :line_items, :carts, :articles
+    resources :post_categories do
+      resources :posts do
+        resource :comments
+      end
+    end
+    
   end
-
   match 'admin' => 'admin/dashboard#index'
 
-#  match '/:slug' => 'articles#show'
-  match '/:post_category_slug/' => 'posts#index', :as => :short_cat_posts
-  match '/:post_category_slug/:post_slug' => 'posts#show', :as => :short_post
   match '/:post_category_slug/:post_slug/comment' => 'comments#create', :as => :add_comment
+  match '/:post_category_slug/:post_slug' => 'posts#show', :as => :short_post
+  match '/:post_category_slug' => 'posts#index', :as => :short_cat_posts
 
   root :to => 'home#index'
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
