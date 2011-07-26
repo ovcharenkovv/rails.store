@@ -5,7 +5,6 @@ class Post < ActiveRecord::Base
   acts_as_commentable
 
   before_create :create_slug
-  before_update :create_slug
 
   def to_param
     slug
@@ -15,7 +14,4 @@ class Post < ActiveRecord::Base
     self.slug = self.title.parameterize
   end
 
-#  def create_short_body
-#    self.short_body = self.body[0..400]
-#  end
 end
