@@ -47,7 +47,6 @@ ActiveRecord::Schema.define(:version => 20110721201718) do
     t.datetime "updated_at"
     t.integer  "parent_id"
     t.integer  "ordering"
-    t.text     "short_body",  :null => false
   end
 
   create_table "comments", :force => true do |t|
