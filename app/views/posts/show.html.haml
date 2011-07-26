@@ -1,4 +1,8 @@
-%h1= @post.title
+%h1
+  -if @post.post_category.slug.to_s != 'content'
+    =link_to @post.post_category.name.to_s, short_cat_posts_url(@post.post_category)
+    =" / "
+  = @post.title
 .post_body=raw @post.body
--#= render :partial => "posts/post_footer", :locals => { :post => @post }
--#= render :partial => "comments/post_comment", :locals => { :post => @post }
+= render :partial => "posts/post_footer", :locals => { :post => @post }
+= render :partial => "comments/post_comment", :locals => { :post => @post }

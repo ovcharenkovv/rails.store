@@ -1,5 +1,4 @@
 - @posts.each do |post|
-  -#%h3=link_to post.title, post_category_post_path(@post_category,post)
   %h3=link_to post.title, short_post_url(@post_category,post)
   .post_body=raw post.short_body
   %p= link_to 'Читать дальше >>', short_post_url(@post_category,post)

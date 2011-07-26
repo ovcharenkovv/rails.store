@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
         redirect_to :controller => @commentable.class.name.underscore.downcase.pluralize, :action => 'show', :id => @commentable.slug, :anchor => 'comment_list'
 #        redirect_to @commentable, :anchor => "comment_list", :notice => "Спасибо за коментарий"
       else
-        flash.now[:notice] = "Заполните пожалуйста правельно все поля"  # edited 10/28/10 use 'flash.now' instead of 'flash'
+        flash.now[:notice] = "Заполните пожалуйста все поля правильно"  # edited 10/28/10 use 'flash.now' instead of 'flash'
         render_error_page
       end
     else

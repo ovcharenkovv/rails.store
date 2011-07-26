@@ -703,113 +703,264 @@ form.button_to .empty_cart:hover{
 /*******************************************BANNERS ********************************************************************/
 /**********************************************************************************************************************/
 
-.body .r190x190 {
+.post_body .r190x190 {
     overflow:hidden;
     padding: 10px 0 30px;
     border-bottom: 1px solid #E2C6B4;
 }
-.body .r190x190 textarea {
+.post_body .r190x190 textarea {
     height: 70px;
     width: 255px;
 }
 
-.body .r190x190 .left{
-    width: 340px;
-    float: left;
-
-}
-.body .r190x190 .right{
+.post_body .r190x190 .left{
     width: 340px;
     float: left;
 }
-
-.body .r240x400 {
+.post_body .r190x190 .right{
+    width: 340px;
+    float: left;
+}
+.post_body .r240x400 {
     overflow:hidden;
     padding: 10px 0 30px;
     border-bottom: 1px solid #E2C6B4;
 }
-.body .r240x400 textarea {
+.post_body .r240x400 textarea {
     height: 70px;
     width: 255px;
 }
-.body .r240x400 .left{
-    width: 340px;
-    float: left;
-
-}
-.body .r240x400 .right{
+.post_body .r240x400 .left{
     width: 340px;
     float: left;
 }
-
-.body .r468x60{
+.post_body .r240x400 .right{
+    width: 340px;
+    float: left;
+}
+.post_body .r468x60{
     overflow:hidden;
     padding: 10px 0 30px;
     border-bottom: 1px solid #E2C6B4;
 }
-.body .r468x60 textarea {
+.post_body .r468x60 textarea {
     height: 60px;
     width: 200px;
 }
-.body .r468x60 .left{
 
-}
-.body .r468x60 .right{
-
-}
-
-body .r728x90 {
+post_body .r728x90 {
     overflow:hidden;
     padding: 10px 0 30px;
     border-bottom: 1px solid #E2C6B4;
 }
-.body .r728x90 textarea {
+.post_body .r728x90 textarea {
     height: 45px;
     width: 675px;
-}
-body .r728x90 .left{
-
-}
-body .r728x90 .right{
-
 }
 
 
 /**********************************************************************************************************************/
 /*******************************************ARTICLE BODY***************************************************************/
 /**********************************************************************************************************************/
-.content_wrap .content .body h2{
+.content_wrap .content .post_body h2{
     border: medium none;
     display: block;
-    font-size: 22px;
-    margin: 25px 0 10px;
+    font-size: 20px;
+    margin: 20px 0 10px;
     padding: 0;
 }
-.content_wrap .content .body h3{
+.content_wrap .content .post_body h3{
     border: medium none;
-    display: inline;
-    font-size: 15px;
-    font-weight: bold;
-    margin: 0;
+    font-size: 17px;
+    margin: 20px 0 10px;
     padding: 0;
 }
-.content_wrap .content .body ul{
+.content_wrap .content .post_body p {
+    margin: 5px 0 0;
+}
+.content_wrap .content .post_body ul{
+    margin: 5px 0 0;
     padding: 0 0 0 20px;
 
 }
-.content_wrap .content .body ul li{
-    list-style:circle;
+.content_wrap .content .post_body ul li{
+    list-style: disc outside none;
     font-size:14px;
     padding:0 0 3px 0;
 }
-.content_wrap .content .body a {
+.content_wrap .content .post_body a {
     text-decoration:underline;
     font-weight:bold;
     cursor:pointer;
 }
-.content_wrap .content .body a:hover {
+.content_wrap .content .post_body a:hover {
     text-decoration: none;
 }
+
+.content_wrap .content .post_body .shadow {
+    display: inline-block;
+    font-size: 0;
+    margin: 15px 0;
+    padding: 7px;
+    -moz-box-shadow: 0 0 5px #888;
+    -webkit-box-shadow: 0 0 5px#888;
+    box-shadow: 0 0 5px #888;
+}
+.content_wrap .content .post_body .shadow img {
+    border:1px solid #ccc;
+}
+.content_wrap .content .post_footer{
+    border-bottom: 1px solid #BBBCBD;
+    border-top: 1px solid #BBBCBD;
+    height: 20px;
+    margin: 20px 0 60px;
+    padding: 6px;
+    position:relative;
+
+
+}
+/*******************************************************************************************************************/
+.content_wrap .content .post_footer .post_separator {
+    background: url("../images/blog_sprite.png") no-repeat scroll 0 0 transparent;
+    height: 20px;
+    left: 325px;
+    position: absolute;
+    top: 47px;
+    width: 38px;
+}
+.content_wrap .content .post_footer .published{
+    float: left;
+}
+.content_wrap .content .post_footer .vcard.author.full {
+    float: left;
+    margin: 0 20px;
+}
+.content_wrap .content .post_footer .vcard.author.full a {
+    font-size: 14px;
+}
+.content_wrap .content .post_footer .vcard.author.full .ico {
+    background: url("../images/blog_sprite.png") no-repeat scroll -39px -1px transparent;
+    float: left;
+    height: 15px;
+    margin: 3px;
+    width: 13px;
+}
+.content_wrap .content .post_footer .comments{
+    float: right;
+    margin: 0 20px;
+}
+.content_wrap .content .post_footer .comments a{
+    font-size: 14px;
+}
+.content_wrap .content .post_footer .comments .ico{
+    background: url("../images/blog_sprite.png") no-repeat scroll -53px 0 transparent;
+    float: left;
+    height: 15px;
+    margin: 3px;
+    width: 13px;
+}
+.content_wrap .content .post_footer .share_links{
+    float: right;
+}
+.content_wrap .content .post_footer .share_links a{
+    background: url("../images/blog_sprite.png") no-repeat;
+    display: block;
+    float:left;
+    height:20px;
+    width: 21px;
+    margin: 0 3px;
+}
+.content_wrap .content .post_footer .share_links a:hover{
+    opacity:0.4;
+}
+.content_wrap .content .post_footer .share_links .twitter{
+    background-position: -90px 0;
+}
+.content_wrap .content .post_footer .share_links .vkontakte{
+    background-position: -113px 0;
+}
+.content_wrap .content .post_footer .share_links .facebook{
+    background-position: -67px 0;
+}
+/**********************************************************************************************************************/
+.content_wrap .content .post_comments_list {
+}
+.content_wrap .content .post_comments_list h3 {
+    border-bottom: 1px solid #333333;
+    font-size: 22px;
+    margin: 0;
+    padding: 0 0 5px;
+}
+.content_wrap .content .post_comments_list ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #BBBCBD;
+}
+.content_wrap .content .post_comments_list ul li .head {
+    overflow: hidden;
+}
+.content_wrap .content .post_comments_list ul li .head .user_name {
+    float: left;
+}
+.content_wrap .content .post_comments_list ul li .head .created_at {
+    float: right;
+    margin: 0 20px;
+}
+.content_wrap .content .post_comments_list ul li p.comment {
+    font-size: 12px;
+    margin: 3px 0 0;
+
+}
+.content_wrap .content .post_comments_form {
+    margin: 50px 0 0;
+}
+.content_wrap .content .post_comments_form h3 {
+    border-bottom: 1px solid #333333;
+    font-size: 22px;
+    margin: 0 0 10px;
+    padding: 0 0 5px;
+}
+.content_wrap .content .post_comments_form #notice {
+    color: red;
+}
+.content_wrap .content .post_comments_form .field {
+    margin:10px 0 0 ;
+}
+.content_wrap .content .post_comments_form .field label {
+    display: block;
+
+}
+.content_wrap .content .post_comments_form .field input {
+    border: 1px solid #646464;
+    border-radius: 4px 4px 4px 4px;
+    font-size: 12px;
+    height: 16px;
+    padding: 4px;
+    width: 250px;
+}
+.content_wrap .content .post_comments_form .field textarea {
+    border: 1px solid #646464;
+    border-radius: 4px 4px 4px 4px;
+    font-size: 12px;
+    height: 80px;
+    padding: 4px;
+    width: 670px;
+}
+.content_wrap .content .post_comments_form .actions {
+    margin: 10px 0;
+}
+.content_wrap .content .post_comments_form .submit_blue {
+    background: url("../images/submit_blue.jpg") no-repeat scroll left bottom transparent;
+    border: medium none;
+    color: white;
+    cursor: pointer;
+    font: 14px 'Arial';
+    height: 40px;
+    width: 176px;
+}
+.content_wrap .content .post_comments_form .submit_blue:hover {
+    opacity:0.8;
+}
+
 /**********************************************************************************************************************/
 /*******************************************FOOTER*********************************************************************/
 /**********************************************************************************************************************/
