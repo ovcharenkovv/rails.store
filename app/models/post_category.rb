@@ -3,7 +3,6 @@ class PostCategory < ActiveRecord::Base
   validates :name, :presence => true,
             :uniqueness => true
   before_create :create_slug
-  before_update :create_slug
 
   def to_param
     slug
