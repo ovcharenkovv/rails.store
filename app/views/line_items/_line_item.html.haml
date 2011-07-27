@@ -13,3 +13,5 @@
       = line_item.quantity.to_s+" шт."
     %td.item_price
       = line_item.total_price.to_s+" грн."
+    %td.remove
+      = button_to '', line_item_path(line_item), :method => :delete, :confirm => 'Are you sure?', :class=>"remove"

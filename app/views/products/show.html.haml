@@ -55,28 +55,9 @@
     %p
       %b=t('products.description')
       = raw @product.description
-
--#.product_description
--#  %div#tabs
--#    %ul
--#      %li=link_to t('products.description_tab') ,  '#description_tab'
--#      %li=link_to t('products.comments_tab'), '#comments_tab'
--#    %div#description_tab
--#      %p
--#        =t('products.master')
--#        = @product.author.name.to_s
--#    -if @product.description.length > 5
--#      %p
--#        =t('products.description')
--#        = raw @product.description
--#    %div#comments_tab
--#      when an unknown printer took a galley of type and scrambled it to make a
-
 .top
   %h3=t('products.see_also_products')
   #top_products
     = render :partial => "products/horizontal_list", :locals => { :products => @see_also_products }
   .paginator
     .line
-
-=# link_to t('layouts.application.back'), session[:product_params]

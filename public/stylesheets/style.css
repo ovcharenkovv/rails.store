@@ -485,41 +485,6 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .share a:hover {
     opacity:0.7;
 }
-/**********************************************************************************************************************/
-/*******************************************CONTEN WRAP BANIKI*********************************************************/
-/**********************************************************************************************************************/
-.content_wrap .bant {
-    background: url("../images/bant.jpg") no-repeat scroll 0 0 transparent;
-    height: 235px;
-    position: absolute;
-    right: -120px;
-    top: -22px;
-    width: 236px;
-}
-.content_wrap .heart {
-    background: url("../images/heart.png") no-repeat scroll 0 0 transparent;
-    height: 84px;
-    position: absolute;
-    left: 20px;
-    top: -2px;
-    width: 59px;
-}
-.content_wrap .cbottom_left_corner {
-    background: url("../images/corner_3.png") no-repeat scroll -60px 0 transparent;
-    bottom: -12px;
-    height: 54px;
-    left: -21px;
-    position: absolute;
-    width: 60px;
-}
-.content_wrap .cbottom_right_corner {
-    background: url("../images/corner_3.png") no-repeat scroll 0 0 transparent;
-    bottom: -12px;
-    height: 54px;
-    position: absolute;
-    right: -21px;
-    width: 60px;
-}
 
 /**********************************************************************************************************************/
 /*******************************************cart_table*********************************************************/
@@ -556,6 +521,27 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     text-align: right;
     width: 90px;
 }
+.cart_table .remove{
+    width: 35px;
+}
+.cart_table .remove input.remove{
+    background: url("../images/remove.png") no-repeat scroll 0 0 transparent;
+    border: 0 none;
+    cursor: pointer;
+    display: block;
+    font-size: 0;
+    height: 17px;
+    margin: 0 5px;
+    outline: medium none;
+    overflow: hidden;
+    padding:0;
+    width: 14px;
+    float:right;
+}
+.cart_table .remove input.remove:hover{
+    background: url("../images/remove_hover.png") no-repeat scroll 0 0 transparent;
+}
+
 .cart_table tr {
     border-bottom: 1px solid #d2c9c4;
 }
