@@ -1,18 +1,18 @@
 -if post.can_comment
   .post_comments_list
     %a{:name => "comment_list"}
-    %h3="коментарии (#{Comment.find_all_by_commentable_id(post.id).count})"
+    %h3="комментарий (#{Comment.find_all_by_commentable_id(post.id).count})"
     %ul
-      - Comment.find_all_by_commentable_id(post.id).each do |с|
+      - Comment.find_all_by_commentable_id(post.id).each do |comm|
         %li
           %p.head
-            =mail_to(с.user_email, с.user_name,{:class=>'user_name'})
-            %span.created_at=Russian::strftime (с.created_at, "%d %B %Y" )
-          %p.comment= с.comment
+            =mail_to('#', comm.user_name,{:class=>'user_name'})
+            %span.created_at=Russian::strftime (comm.created_at, "%d %B %Y" )
+          %p.comment= comm.comment
 
   .post_comments_form
     %a{:name => "comment_form"}
-    %h3 добавте коментарий:
+    %h3 добавьте комментарий:
     - if notice
       %p#notice= notice
     - form_for @comment, :url => add_comment_path(@post_category, post,@comment,:anchor => "comment_form") do |f|
@@ -23,7 +23,7 @@
         = f.label "E-mail:"
         = f.text_field :user_email
       .field
-        = f.label "Коментарий:"
+        = f.label "Комментарий:"
         = f.text_area :comment
       = hidden_field_tag  :post_id,  post.id
       = hidden_field_tag  :commentable_id,  post.id
