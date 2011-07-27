@@ -645,23 +645,24 @@ form.button_to .empty_cart:hover{
 }
 .happy_form input{
     border: 1px solid #646464;
-    border-radius: 10px 10px 10px 10px;
-    height: 32px;
-    padding: 0 5px;
+    border-radius: 5px 5px 5px 5px;
+    height: 22px;
+    padding: 5px;
     width: 400px;
 }
 .happy_form textarea {
     border: 1px solid #646464;
-    border-radius: 10px 10px 10px 10px;
-    height: 64px;
-    padding: 0 5px;
+    border-radius: 5px 5px 5px 5px;
+    height: 54px;
+    padding: 5px;
     width: 400px;
 }
 .happy_form select {
+    background: none repeat scroll 0 0 white;
     border: 1px solid #646464;
-    border-radius: 10px 10px 10px 10px;
-    height: 32px;
-    padding: 4px;
+    border-radius: 5px 5px 5px 5px;
+    height: 30px;
+    padding: 5px;
     width: 410px;
 }
 .happy_form .field {
