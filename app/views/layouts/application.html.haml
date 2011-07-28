@@ -1,6 +1,9 @@
 !!!
 %html
   %head
+    /[if lte IE 7]
+      :javascript
+        location.replace("/ie7.html");
     %title=store_title(params)
     =# stylesheet_link_tag :all
     = stylesheet_link_tag "style"
