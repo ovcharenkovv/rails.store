@@ -4,11 +4,12 @@
     %h3="комментариев (#{Comment.find_all_by_commentable_id(post.id).count})"
     %ul
       - Comment.find_all_by_commentable_id(post.id).each do |comm|
-        %li
-          %p.head
-            =mail_to('#', comm.user_name,{:class=>'user_name'})
-            %span.created_at=Russian::strftime (comm.created_at, "%d %B %Y" )
-          %p.comment= comm.comment
+        - if comm.published?
+          %li
+            %p.head
+              =mail_to('#', comm.user_name,{:class=>'user_name'})
+              %span.created_at=Russian::strftime (comm.created_at, "%d %B %Y" )
+            %p.comment= comm.comment
 
   .comments_form
     %a{:name => "comment_form"}
