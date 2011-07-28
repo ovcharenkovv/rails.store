@@ -16,7 +16,7 @@ Store::Application.routes.draw do
   resources :orders, :line_items, :carts
 
   namespace :admin do
-    resources :orders, :line_items, :carts
+    resources :orders, :line_items, :carts, :comments
     resources :authors do
       resources :products
     end
@@ -24,9 +24,7 @@ Store::Application.routes.draw do
       resources :products
     end
     resources :post_categories do
-      resources :posts do
-        resource :comments
-      end
+      resources :posts 
     end
     
   end

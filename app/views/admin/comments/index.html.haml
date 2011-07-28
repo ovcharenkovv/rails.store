@@ -1,0 +1,19 @@
+%h1 Listing comments
+%table
+  %tr
+    %th published
+    %th user_name
+    %th commentable_type
+    %th commentable_id
+    %th comment
+
+  - @comments.each do |comment|
+    %tr
+      %td= comment.published
+      %td= link_to comment.user_name, edit_admin_comment_path(comment)
+      %td= comment.commentable_type
+      %td= comment.commentable_id
+      %td= comment.comment[0..255]
+
+%br/
+= link_to 'New comment', new_admin_comment_path

@@ -1,0 +1,23 @@
+%p#notice= notice
+%p
+  %b user_name:
+  = @comment.user_name
+%p
+  %b user_email:
+  = @comment.user_email
+%p
+  %b comment:
+  = @comment.comment
+%p
+  %b published:
+  = @comment.published
+%p
+  %b commentable_type:
+  = @comment.commentable_type
+%p
+  %b commentable_id:
+  = @comment.commentable_id
+
+= link_to 'Edit', edit_admin_comment_path(@comment)
+|
+\#{link_to 'Back', admin_comments_path}
