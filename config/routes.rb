@@ -7,7 +7,9 @@ Store::Application.routes.draw do
   end
 
   resources :categories do
-    resources :products
+    resources :products do
+      resource :comments, :only => [:create] 
+    end
   end
 
 

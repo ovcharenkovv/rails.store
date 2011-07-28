@@ -1,0 +1,31 @@
+.comments_list
+  %a{:name => "comment_list"}
+  %h3="отзывов (#{Comment.find_all_by_commentable_id(commentable_entity.id).count})"
+  %ul
+    - Comment.find_all_by_commentable_id(commentable_entity.id).each do |comm|
+      %li
+        %p.head
+          =mail_to('#', comm.user_name,{:class=>'user_name'})
+          %span.created_at=Russian::strftime (comm.created_at, "%d %B %Y" )
+        %p.comment= comm.comment
+
+.comments_form
+  %a{:name => "comment_form"}
+  %h3 добавьте отзыв:
+  - if notice
+    %p#notice= notice
+  - form_for @comment, :url => category_product_comments_path(commentable_entity.category, commentable_entity,@comment,:anchor => "comment_form") do |f|
+    .field
+      = f.label "Имя:"
+      = f.text_field :user_name
+    .field
+      = f.label "E-mail:"
+      = f.text_field :user_email
+    .field
+      = f.label "Отзыв:"
+      = f.text_area :comment
+    = hidden_field_tag  :product_id,  commentable_entity.id
+    = hidden_field_tag  :commentable_id,  commentable_entity.id
+    = hidden_field_tag  :commentable_type, commentable_entity.type
+    .actions
+      = f.submit 'ОТПРАВИТЬ', :class=>"submit_blue"

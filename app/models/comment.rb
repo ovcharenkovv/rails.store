@@ -8,7 +8,8 @@ class Comment < ActiveRecord::Base
   validates :user_name,:presence => true,
                        :length => {:minimum => 3, :maximum => 254}
 
-  validates :comment,  :presence => true
+  validates :comment,  :presence => true,
+                       :length => {:minimum => 2, :maximum => 1500}
 
   validates :user_email,:presence => true,
                        :length => {:minimum => 3, :maximum => 254},

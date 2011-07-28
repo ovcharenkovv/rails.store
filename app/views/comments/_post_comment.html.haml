@@ -1,7 +1,7 @@
 -if post.can_comment
-  .post_comments_list
+  .comments_list
     %a{:name => "comment_list"}
-    %h3="комментарий (#{Comment.find_all_by_commentable_id(post.id).count})"
+    %h3="комментариев (#{Comment.find_all_by_commentable_id(post.id).count})"
     %ul
       - Comment.find_all_by_commentable_id(post.id).each do |comm|
         %li
@@ -10,12 +10,12 @@
             %span.created_at=Russian::strftime (comm.created_at, "%d %B %Y" )
           %p.comment= comm.comment
 
-  .post_comments_form
+  .comments_form
     %a{:name => "comment_form"}
     %h3 добавьте комментарий:
     - if notice
       %p#notice= notice
-    - form_for @comment, :url => add_comment_path(@post_category, post,@comment,:anchor => "comment_form") do |f|
+    - form_for @comment, :url => add_comment_path(PostCategory.find_by_slug!(params[:post_category_slug]), post,@comment,:anchor => "comment_form") do |f|
       .field
         = f.label "Имя:"
         = f.text_field :user_name

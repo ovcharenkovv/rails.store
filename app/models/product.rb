@@ -8,6 +8,7 @@ class Product < ActiveRecord::Base
   has_attached_file :image,
                     :styles => { :small=> "125x94#", :thumb => "200x150#",:medium => "400x300#", :large => "800X600" },
                     :convert_options => { :small =>"-quality 50",:thumb =>"-quality 57",:medium=>"-quality 85" }
+  acts_as_commentable
 
   before_destroy :ensure_not_referenced_by_any_line_item
   before_create :generate_price

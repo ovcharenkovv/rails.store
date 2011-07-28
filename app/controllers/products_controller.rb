@@ -54,10 +54,11 @@ class ProductsController < ApplicationController
 # GET /products/1.xml
   def show
     @product = @category.products.find(params[:id])
+    @comment = @product.comments.build
+    @product.comments.pop
 
     if @product.published?
       @product.inc_click
-      @see_also_products = Product.find_see_also_products(18,@category.id,@product)
 
       respond_to do |format|
         format.html # show.html.haml

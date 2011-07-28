@@ -870,53 +870,53 @@ post_body .r728x90 {
     background-position: -67px 0;
 }
 /**********************************************************************************************************************/
-.content_wrap .content .post_comments_list {
-}
-.content_wrap .content .post_comments_list h3 {
+
+.content_wrap .content .comments_list h3 {
     border-bottom: 1px solid #333333;
     font-size: 22px;
     margin: 0;
     padding: 0 0 5px;
 }
-.content_wrap .content .post_comments_list ul li {
+.content_wrap .content .comments_list ul li {
     padding: 10px 0;
     border-bottom: 1px solid #BBBCBD;
 }
-.content_wrap .content .post_comments_list ul li .head {
+.content_wrap .content .comments_list ul li .head {
     overflow: hidden;
 }
-.content_wrap .content .post_comments_list ul li .head .user_name {
+.content_wrap .content .comments_list ul li .head .user_name {
     float: left;
 }
-.content_wrap .content .post_comments_list ul li .head .created_at {
+.content_wrap .content .comments_list ul li .head .created_at {
     float: right;
     margin: 0 20px;
 }
-.content_wrap .content .post_comments_list ul li p.comment {
+.content_wrap .content .comments_list ul li p.comment {
     font-size: 12px;
     margin: 3px 0 0;
+    overflow: hidden;
 
 }
-.content_wrap .content .post_comments_form {
+.content_wrap .content .comments_form {
     margin: 50px 0 0;
 }
-.content_wrap .content .post_comments_form h3 {
+.content_wrap .content .comments_form h3 {
     border-bottom: 1px solid #333333;
     font-size: 22px;
     margin: 0 0 10px;
     padding: 0 0 5px;
 }
-.content_wrap .content .post_comments_form #notice {
+.content_wrap .content .comments_form #notice {
     color: red;
 }
-.content_wrap .content .post_comments_form .field {
+.content_wrap .content .comments_form .field {
     margin:10px 0 0 ;
 }
-.content_wrap .content .post_comments_form .field label {
+.content_wrap .content .comments_form .field label {
     display: block;
 
 }
-.content_wrap .content .post_comments_form .field input {
+.content_wrap .content .comments_form .field input {
     border: 1px solid #646464;
     border-radius: 4px 4px 4px 4px;
     font-size: 12px;
@@ -924,18 +924,21 @@ post_body .r728x90 {
     padding: 4px;
     width: 250px;
 }
-.content_wrap .content .post_comments_form .field textarea {
+.content_wrap .content .comments_form .field textarea {
     border: 1px solid #646464;
     border-radius: 4px 4px 4px 4px;
     font-size: 12px;
     height: 80px;
     padding: 4px;
-    width: 670px;
+    width: 680px;
 }
-.content_wrap .content .post_comments_form .actions {
+.content_wrap .content .product_comment .comments_form .field textarea {
+    width: 650px;
+}
+.content_wrap .content .comments_form .actions {
     margin: 10px 0;
 }
-.content_wrap .content .post_comments_form .submit_blue {
+.content_wrap .content .comments_form .submit_blue {
     background: url("../images/submit_blue.jpg") no-repeat scroll left bottom transparent;
     border: medium none;
     color: white;
@@ -944,8 +947,11 @@ post_body .r728x90 {
     height: 40px;
     width: 176px;
 }
-.content_wrap .content .post_comments_form .submit_blue:hover {
+.content_wrap .content .comments_form .submit_blue:hover {
     opacity:0.8;
+}
+.content_wrap .content .product_comment {
+    margin: 40px 15px 0;
 }
 
 /**********************************************************************************************************************/
