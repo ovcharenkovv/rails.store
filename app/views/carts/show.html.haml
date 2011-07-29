@@ -36,7 +36,7 @@
   %span.total_price=@cart.total_price.to_s
   %span.total_text=" грн."
 .button_area
-  = link_to t('carts.cart.continue'), session[:product_params], :class=>"back"
+  = link_to t('carts.cart.continue'), category_products_path(session[:product_category_id]), :class=>"back"
   = button_to t('carts.cart.empty'), @cart, :method => :delete, :confirm => 'Are you sure?', :class=>"empty_cart"
   .cart
 .happy_button

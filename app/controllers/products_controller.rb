@@ -35,8 +35,6 @@ class ProductsController < ApplicationController
   end
 
   def index
-    session[:product_params]=params
-
     if params[:category_id]
       @products = Product.where(:category_id => @categories, :published => true ).paginate :page=>params[:page], :order=>@sort, :per_page => @per_page
     elsif params[:author_id]
@@ -53,6 +51,8 @@ class ProductsController < ApplicationController
 # GET /products/1
 # GET /products/1.xml
   def show
+    session[:product_category_id]=params[:category_id]
+
     @product = @category.products.find(params[:id])
     @comment = @product.comments.build
     @product.comments.pop
