@@ -5,7 +5,7 @@ class Admin::OrdersController < Admin::AdminController
     if (params[:status] == 'all')||(params[:status].nil?)
       @orders = Order.paginate :page=>params[:page], :order=>'created_at desc',:per_page => 30
     else
-      @orders = Order.where(:status=>params[:status]).paginate :page=>params[:page], :order=>'created_at desc',:per_page => 30
+      @orders = Order.where(:status=>params[:status]).paginate :page=>params[:page], :order=>'created_at desc',:per_page => 50
     end
 
     respond_to do |format|

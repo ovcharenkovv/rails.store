@@ -4,11 +4,11 @@ class PostsController < ApplicationController
   def get_category
     @post_category = PostCategory.find_by_slug!(params[:post_category_slug])
   end
+
   # GET /posts
   # GET /posts.xml
   def index
-    @posts = @post_category.posts.find(:all ,:order=>'created_at desc')
-
+    @posts = @post_category.posts.find(:all ,:order=>'created_at desc').paginate :page=>params[:page], :per_page => '8'
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @posts }
