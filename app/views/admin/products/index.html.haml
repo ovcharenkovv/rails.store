@@ -10,9 +10,10 @@
     %th Price
   - @products.each do |product|
     %tr
-      %td= product.id
+      %td
+        = product.id
       %td.image
-        =link_to edit_admin_category_product_path(@category,product) do
+        =link_to edit_admin_category_product_path(@category,product), :name => product.id do
           = image_tag product.image.url(:small), :class=> product.published ? 'images' : 'kill'
       %td= product.title
       %td= product.description.to_s[0..100]

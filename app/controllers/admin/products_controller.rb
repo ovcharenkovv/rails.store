@@ -15,6 +15,7 @@ class Admin::ProductsController < Admin::AdminController
   end
 
   def index
+    session[:product_page]=params[:page]
     @products = @category.products.paginate :page=>params[:page], :per_page => 100
 
     respond_to do |format|
@@ -75,7 +76,8 @@ class Admin::ProductsController < Admin::AdminController
     respond_to do |format|
       if @product.update_attributes(params[:product])
         flash[:notice] = 'Product was successfully updated.'
-        format.html { redirect_to admin_category_products_path}
+        format.html { redirect_to :action => 'index', :anchor => params[:id], :page=>session[:product_page]}
+        session[:product_params]
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

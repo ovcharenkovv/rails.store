@@ -8,13 +8,19 @@
         - @product.errors.full_messages.each do |msg|
           %li= msg
   .field
+    = f.label :published
+    %br
+    = f.check_box :published
+  .field
     = f.label :title
     %br
     = f.text_field :title
   .field
-    = f.label :description
     %br
-    = f.text_area :description,{:class => "mceEditor"}
+    = image_tag @product.image.url(:thumb)
+    = f.label :image
+    %br
+    = f.file_field :image
   .field
     = f.label :author_price
     %br
@@ -29,12 +35,6 @@
       %br
       = f.collection_select :category_id, Category.find(:all), :id, :name
   .field
-    = f.label :image
-    %br
-    = f.file_field :image
-    %br
-    = image_tag @product.image.url(:thumb)
-  .field
     = f.label :author
     %br
     = f.collection_select :author_id, Author.find(:all), :id, :name, :prompt => "Выбрать автора"
@@ -43,8 +43,8 @@
     %br
     = f.select :status, Product::PRODUCT_STATUS, :prompt => 'Есть в наличии'
   .field
-    = f.label :published
+    = f.label :description
     %br
-    = f.check_box :published
+    = f.text_area :description,{:class => "mceEditor"}
   .actions
     = f.submit
