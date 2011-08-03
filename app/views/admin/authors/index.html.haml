@@ -9,7 +9,7 @@
     %th.action
   - @authors.each do |author|
     %tr
-      %td= link_to author.name, admin_author_path(author)
+      %td= link_to author.name, admin_author_products_path(author)
       %td= author.fullname
       %td= author.email
       %td= author.phone
