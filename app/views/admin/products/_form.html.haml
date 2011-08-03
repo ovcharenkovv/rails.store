@@ -17,7 +17,7 @@
     = f.text_field :title
   .field
     %br
-    = image_tag @product.image.url(:thumb)
+    =# image_tag @product.image.url(:thumb)
     = f.label :image
     %br
     = f.file_field :image
@@ -30,6 +30,8 @@
       = f.label :price
       %br
       = f.text_field :price
+    .field
+      %span#calc Calc 
     .field
       = f.label :category
       %br
