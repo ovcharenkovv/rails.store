@@ -9,7 +9,7 @@
 
   - @comments.each do |comment|
     %tr
-      %td= link_to comment.published, edit_admin_comment_path(comment)
+      %td= link_to comment.published.to_s, edit_admin_comment_path(comment)
       %td= comment.user_name
       %td= comment.commentable_type
       %td= comment.commentable_id
