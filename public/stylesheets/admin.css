@@ -147,3 +147,15 @@ h3 {
     font-weight:bold;
     color: green;
 }
+#calc {
+    background: url("../images/refresh.png") repeat scroll 0 0 transparent;
+    display: block;
+    height: 16px;
+    overflow: hidden;
+    text-indent: 1000px;
+    width: 16px;
+    margin:15px 0;
+}
+#calc:hover {
+    opacity: 0.7;
+}

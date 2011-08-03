@@ -12,24 +12,16 @@
     var p_price_obj = jQuery('#product_price');
 
     if (!a_price) {
-    alert(a_price);
-    }
-
-    if (!a_price) {
       if (p_price <= 60) {
         a_price_obj.val(p_price-15);
-        alert('p<60');
       }else {
-        a_price_obj.val(Math.round(p_price-(p_price*0.35)));
-        alert('p>60');
+        a_price_obj.val(Math.round(p_price/1.35));
       }
     }else{
       if (a_price <= 45) {
         p_price_obj.val(a_price+15);
-        alert('a<45');
       }else {
         p_price_obj.val(Math.round(a_price+a_price*0.35));
-        alert('a>45');
       }
     }
 
