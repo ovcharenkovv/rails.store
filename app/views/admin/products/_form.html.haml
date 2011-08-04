@@ -17,7 +17,7 @@
     = f.text_field :title
   .field
     %br
-    =# image_tag @product.image.url(:thumb)
+    = image_tag @product.image.url(:thumb)
     = f.label :image
     %br
     = f.file_field :image
