@@ -33,11 +33,20 @@ SitemapGenerator::Sitemap.add_links do |sitemap|
     sitemap.add category_path(category), :lastmod => category.updated_at , :priority => 0.9
   end
 
-  Product.find_each do |product|
+#  Product.find_each do |product|
+  Product.where(:published => true ).each do |product| 
     sitemap.add category_product_path(product.category_id,product),
                 :lastmod => product.updated_at ,
                 :priority => 0.5 ,
                 :changefreq => 'daily'
   end
+
+  Post.where(:post_category_id => 2).each do |post|
+    sitemap.add short_post_path('master-class',post),
+                :lastmod => post.updated_at ,
+                :priority => 0.5 ,
+                :changefreq => 'daily'
+  end
+
 
 end
