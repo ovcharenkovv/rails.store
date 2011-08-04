@@ -4,16 +4,17 @@
     /[if lte IE 7]
       :javascript
         location.replace("/ie7.html");
-    %title=store_title(params)
-    =# stylesheet_link_tag :all
+    %title=meta_title(params)
+    %meta{:name => "keywords",    :content => meta_keywords(params)}
+    %meta{:name => "description", :content => meta_description(params)}
+
     = stylesheet_link_tag "style"
+    =# stylesheet_link_tag :all
     =# javascript_include_tag :defaults
-    = yield :custom_css_js
-    = csrf_meta_tag
     %link{:href => "/favicon.ico", :rel => "icon", :type => "image/x-icon"}
     %link{:href => "/favicon.ico", :rel => "shortcut icon", :type => "image/x-icon"}
-    %meta{:content => "ручная работа, подарки handmade, хендмейд, хенд мейд  сережки, кольца, браслеты, подвески, игрушки,подушки, текстиль, термопластика, полимерная глина, декупаж, интернет-магазин, Черкассы", :name => "keywords"}
-    %meta{:content => "Здесь вы найдете изделия ручной работы хендмейд : сережки, кольца, браслеты; аксессуары; игрушки и массу других товаров.", :name => "description"}
+    = yield :custom_css_js
+    = csrf_meta_tag
     %meta{:name=>"yandex-verification", :content=>"6f54cc299f439f71"}
     %meta{:name=>"yandex-verification", :content=>"6498203c1ef19b1d"}
     %meta{:content => "vC-2kwBjQ1ltjfSaJNBz2O1ScxV8QUvD9HvuOhk421I", :name => "google-site-verification"}

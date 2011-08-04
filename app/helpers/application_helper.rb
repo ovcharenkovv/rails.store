@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def store_title(param)
+  def meta_title(param)
     ret=""
     if param[:controller]=='products'
       if param[:id] && !param[:cart_id]
@@ -33,8 +33,67 @@ module ApplicationHelper
       ret += ' | '
     end
 
-    ret += 'Магазин изделий ручной работы hand made'
+    ret += 'PoshStore - магазин изделий ручной работы, хендмейд эксклюзива, авторские работы.'
 
     ret
+  end
+
+  def meta_keywords(param)
+    ret=""
+
+    if param[:category_id]
+      ret += Category.find(param[:category_id]).name
+      ret += ', '
+    end
+
+    if param[:post_slug]
+      ret += Post.find_by_slug!(params[:post_slug]).title
+      ret += ', '
+    end
+
+    if param[:post_category_slug]
+      ret += PostCategory.find_by_slug!(params[:post_category_slug]).name
+      ret += ', '
+    end
+
+    if param[:controller]=='products'
+      if param[:id] && !param[:cart_id]
+        ret += Product.find(param[:id]).title
+        ret += ', '
+      end
+    end
+    ret += 'ручная работа, купить, интернет-магазин, черкассы, handmade, хендмейд, хенд мейд, полимерная глина, декупаж, бижутерия '
+
+    ret
+  end
+
+  def meta_description(param)
+    ret=""
+    if param[:post_slug]
+      ret += 'Здесь вы найдете изделия ручной работы и мастер-классы по изготовлению | '
+      ret += Post.find_by_slug!(params[:post_slug]).title
+    else
+      ret += 'Здесь можно купить изделия ручной работы, '
+
+      if param[:category_id]
+        ret += Category.find(param[:category_id]).name
+        ret += ', '
+      end
+
+      ret += 'хендмейд бижутерия, авторские обложки для паспорта, наклейки, '
+
+      if param[:controller]=='products'
+        if param[:id] && !param[:cart_id]
+          ret += Product.find(param[:id]).title.to_s
+          ret += ', '
+        end
+      end
+
+      ret += 'и массу других товаров.'
+
+    end
+
+    ret
+
   end
 end
