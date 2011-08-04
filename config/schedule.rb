@@ -1,3 +1,3 @@
-every 2.days, :at => '12:00am' do
+every 12.hours, :at => 30 do
   rake "-s sitemap:refresh"
 end
