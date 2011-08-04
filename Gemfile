@@ -40,3 +40,5 @@ gem 'tiny_mce'
 gem 'acts_as_commentable'
 
 gem 'russian'
+
+gem 'newrelic_rpm'
