@@ -182,10 +182,14 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 /**********************************************************************************************************************/
 /**********************************************************************************************************************/
 .content_wrap {
+    position: relative;
     margin:0 0 35px;
     background: #fff url(../images/bg_body.jpg) bottom left repeat-y;
-    border-radius: 25px;
-    position: relative;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
+
     -moz-box-shadow: 0 0 4px #000;
     -webkit-box-shadow: 0 0 4px#000;
     box-shadow: 0 0 4px #000;

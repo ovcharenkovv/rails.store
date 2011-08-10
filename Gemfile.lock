@@ -47,7 +47,7 @@ GEM
       activesupport (~> 3.0)
       haml (~> 3.0)
       railties (~> 3.0)
-    i18n (0.6.0)
+    i18n (0.5.0)
     jquery-rails (1.0.12)
       railties (~> 3.0)
       thor (~> 0.14)
@@ -109,6 +109,7 @@ DEPENDENCIES
   acts_as_tree
   devise
   haml-rails
+  i18n (= 0.5.0)
   jquery-rails
   mysql
   newrelic_rpm

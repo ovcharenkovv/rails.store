@@ -1,16 +1,20 @@
 - content_for :custom_css_js do
-  = stylesheet_link_tag 'jquery.fancybox-1.3.4'
-  = stylesheet_link_tag "bx_styles"
+  = stylesheet_link_tag 'jquery.fancybox-1.3.4_c'
+  = stylesheet_link_tag "bx_styles_c"
+
+
   = javascript_include_tag "jquery-1.4.3.min"
   = javascript_include_tag "jquery.fancybox-1.3.4.pack"
   = javascript_include_tag "jquery.mousewheel-3.0.4.pack"
-  = javascript_include_tag "jquery.bxSlider.min"
-  = javascript_include_tag "jquery.easing.1.3"
+  = javascript_include_tag "jquery.easing-1.3.pack"
+
   :javascript
     $(document).ready(function() {
       $("a#light_box").fancybox({
-        'transitionIn'	: 'none',
-        'transitionOut'	: 'none'
+        'transitionIn' : 'elastic',
+        'transitionOut' : 'elastic',
+        'easingIn' : 'easeOutBack',
+        'easingOut' : 'easeInBack'
       });
 
       $('#top_products').bxSlider({
