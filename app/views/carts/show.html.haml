@@ -41,8 +41,11 @@
   %span.total_text=" грн."
 .button_area
   = link_to t('carts.cart.continue'), category_products_path(session[:product_category_id]), :class=>"back"
-  = button_to t('carts.cart.empty'), @cart, :method => :delete, :confirm => 'Are you sure?', :class=>"empty_cart"
-  .cart
+  = button_to t('carts.cart.empty'), line_item_path(@cart.line_items.last), :method => :delete, :confirm => 'Are you sure?', :class=>"empty_cart"
+
+  -#TODO Demmmm ArgumentError wrong number of arguments (0 for 1)
+  =# button_to t('carts.cart.empty'), @cart, :method => :delete, :confirm => 'Are you sure?', :class=>"empty_cart"
+
 .happy_button
   = button_to t('carts.cart.checkout'), new_order_path, :method => :get, :class=> "submit"
 

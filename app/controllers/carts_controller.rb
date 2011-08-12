@@ -19,11 +19,15 @@ class CartsController < ApplicationController
       @cart = Cart.find(params[:id])
     rescue ActiveRecord::RecordNotFound
       logger.error "Attempt to access invalid cart #{params[:id]}"
-      redirect_to home_index_path, :notice => 'Invalid cart'
+      redirect_to root_path, :notice => 'Invalid cart'
     else
-      respond_to do |format|
-        format.html # show.html.haml
-        format.xml { render :xml => @cart }
+      if @cart.line_items.count == 0
+        redirect_to root_path, :notice => 'Invalid cart'
+      else
+        respond_to do |format|
+          format.html # show.html.haml
+          format.xml { render :xml => @cart }
+        end
       end
     end
   end
