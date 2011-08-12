@@ -240,7 +240,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     font-size:14px;
 }
 .content_wrap .sidebar ul li a:hover{
-    opacity:0.6;
+    opacity:0.8;
 }
 /**********************************************************************************************************************/
 /************************************SIDEBAR MASTERS*******************************************************************/
@@ -261,7 +261,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 .content_wrap .sidebar .masters ul li a{
     color:#000;
-    font-size:16px;
+    font-size:15px;
 }
 /**********************************************************************************************************************/
 /************************************SIDEBAR BANNERS*******************************************************************/
@@ -328,7 +328,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 
 .content_wrap .content .new .product, .content_wrap .content .top .product {
     float: left;
-    height: 245px;
+    height: 234px;
     padding: 0 7px;
     position: relative;
     width: 210px !important;

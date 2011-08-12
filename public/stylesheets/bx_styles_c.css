@@ -11,8 +11,8 @@
 .bx-captions{text-align:center;font-size:12px;padding:7px 0;color:#666;}
 .bx-auto{text-align:center;padding-top:15px;}
 .bx-auto a{color:#666;font-size:12px;}
-.bx-wrapper{margin:0 10px;width:640px !important;}
+.bx-wrapper{margin:0 10px;width:670px !important;height: 234px !important;}
 .bx-window{width:670px !important;}
-.bx-prev{background:url("../images/arrow.png") no-repeat scroll 0 0 transparent;display:block;height:72px;left:-21px !important;overflow:hidden;text-indent:-1000px;top:80px;width:22px;}
-.bx-next{background:url("../images/arrow.png") no-repeat scroll -22px 0 transparent;display:block;height:72px;overflow:hidden;right:-53px !important;text-indent:-1000px;top:80px;width:22px;}
+.bx-prev{background:url("../images/arrow.png") no-repeat scroll 0 0 transparent;display:block;height:72px;left:-22px !important;overflow:hidden;text-indent:-1000px;top:80px;width:22px;}
+.bx-next{background:url("../images/arrow.png") no-repeat scroll -22px 0 transparent;display:block;height:72px;overflow:hidden;right:-22px !important;text-indent:-1000px;top:80px;width:22px;}
 .bx-pager{display:none !important;}
