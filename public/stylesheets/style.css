@@ -1012,9 +1012,10 @@ post_body .r728x90 {
     width: 600px;
 }
 .contactus_bg {
-    background: url("../images/contactus_bg.jpg") no-repeat scroll -3px bottom transparent;
-    height: 422px;
-    padding: 310px 90px 0 55px;
+    background: url("../images/contactus_bg.jpg") no-repeat scroll -2px bottom transparent;
+    height: 435px;
+    padding: 306px 90px 0 55px;
+    width: 555px;
 }
 
 .contactus_bg p {
