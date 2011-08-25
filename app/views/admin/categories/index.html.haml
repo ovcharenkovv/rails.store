@@ -12,5 +12,6 @@
       %td= category.ordering.to_s
       %td
         = link_to 'Edit', edit_admin_category_path(category)
+        = link_to ' / Destroy', admin_category_path(category), :confirm => 'Are you sure?', :method => :delete unless category.parent.nil?
 %br/
 = link_to 'New Category', new_admin_category_path

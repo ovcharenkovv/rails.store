@@ -16,5 +16,7 @@
       %td= author.city
       %th
         = link_to 'Edit', edit_admin_author_path(author)
+        = ' / '
+        = link_to 'Destroy', admin_author_path(author), :confirm => 'Are you sure?', :method => :delete
 %br/
 = link_to 'New Author', new_admin_author_path

@@ -9,11 +9,9 @@
     = include_tiny_mce_if_needed
   %body
     .header
-      =# link_to "home", admin_path
+      .menu
+        = render "admin/dashboard/menu"
     .wrapper
-      .sidebar
-        .menu
-          = render "admin/dashboard/menu"
       .content
         .error
           - if notice

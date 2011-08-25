@@ -250,7 +250,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     display:block;
     color: #000000;
     font-size: 23px;
-    padding: 30px 10px 20px 23px;
+    padding: 30px 10px 10px 23px;
 }
 .content_wrap .sidebar .masters ul{
 

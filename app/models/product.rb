@@ -17,9 +17,6 @@ class Product < ActiveRecord::Base
             :uniqueness => true,
             :length => {:minimum => 3, :maximum => 25}
 
-#  validates :price,       :presence => true,
-#            :numericality => {:greater_than_or_equal_to => 0.01}
-
   validates :category_id, :author_id, :presence => true
 
   def inc_click
