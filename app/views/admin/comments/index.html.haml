@@ -6,6 +6,7 @@
     %th commentable_type
     %th commentable_id
     %th comment
+    %th action
 
   - @comments.each do |comment|
     %tr
@@ -14,6 +15,12 @@
       %td= comment.commentable_type
       %td= comment.commentable_id
       %td= comment.comment[0..255]
+      %td
+        -case comment.commentable_type
+        -when 'Post'
+          = link_to 'replay', short_post_path(Post.find(comment.commentable_id).post_category.slug, Post.find(comment.commentable_id).slug , :anchor => "comment_list")
+        -when 'Product'
+          = link_to "replay", category_product_path(Product.find(comment.commentable_id).category, comment.commentable_id , :anchor => 'comment_list')
 
 %br/
 = link_to 'New comment', new_admin_comment_path
