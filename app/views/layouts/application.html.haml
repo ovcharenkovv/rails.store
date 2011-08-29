@@ -22,7 +22,10 @@
       .header
         =link_to  root_url, :class=>"logo" do
           %img{:alt => "Logo", :height => "89", :src => "/images/logo.png", :width => "309"}
-          %h2="Магазин изделий ручной работы"
+          -if params[:controller]=='home'
+            %h1="Магазин изделий ручной работы"
+          -else
+            %h2="Магазин изделий ручной работы"
         = render "layouts/nav"
         = render "carts/header_cart"
       .content_wrap
