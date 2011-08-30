@@ -16,6 +16,17 @@
         'easingIn' : 'easeOutBack',
         'easingOut' : 'easeInBack'
       });
+      /*
+      var delivery_price = parseInt($("#shipment_price").html());
+      var cart_price = parseInt($("#total_price").html());
+      $("#total_price").html(delivery_price+cart_price);
+
+      $("#shipment_button").change(function(){
+        var delivery_price = parseInt($(this).val());
+        $("#shipment_price").html(delivery_price);
+        $("#total_price").html(delivery_price+cart_price);
+      });
+      */
     });
 
 %h1.cart_title=t('carts.cart.title')
@@ -26,11 +37,15 @@
     %th=t('carts.cart.quantity')
     %th.price=t('carts.cart.price')
     %th
-
   = render(@cart.line_items)
+  -#%tr
+  -#  %td{:colspan => "5"}
+  -#    =select_tag "shipment_button", options_for_select( Order::DELIVERY_TYPES_PRICE , Order::DELIVERY_TYPES_PRICE.first)
+  -#    %span#shipment_price=15
+
 .total_price_block
   %span.total_text=t('carts.cart.total')
-  %span.total_price=@cart.total_price.to_s
+  %span#total_price=@cart.total_price.to_s
   %span.total_text=" грн."
 .button_area
   = link_to t('carts.cart.continue'), category_products_path(session[:product_category_id]), :class=>"back"

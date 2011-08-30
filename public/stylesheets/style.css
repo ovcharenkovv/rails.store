@@ -579,7 +579,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .total_price_block .total_text{
     font-size: 22px;
 }
-.total_price_block .total_price {
+.total_price_block #total_price {
     font-size: 40px;
 }
 .button_area {
