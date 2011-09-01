@@ -79,14 +79,16 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     width:310px;
     height:100px;
 }
-.header .logo h2 {
+.header .logo h2,
+.header .logo h1{
     display:block;
     font-size: 18px;
     margin: -10px 0;
     color:#fff;
     text-shadow: 3px 3px 3px #000;
-
 }
+
+
 .header .logo:hover {
     text-decoration:none;
 }
@@ -182,10 +184,14 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 /**********************************************************************************************************************/
 /**********************************************************************************************************************/
 .content_wrap {
+    position: relative;
     margin:0 0 35px;
     background: #fff url(../images/bg_body.jpg) bottom left repeat-y;
-    border-radius: 25px;
-    position: relative;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
+
     -moz-box-shadow: 0 0 4px #000;
     -webkit-box-shadow: 0 0 4px#000;
     box-shadow: 0 0 4px #000;
@@ -236,7 +242,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     font-size:14px;
 }
 .content_wrap .sidebar ul li a:hover{
-    opacity:0.6;
+    opacity:0.8;
 }
 /**********************************************************************************************************************/
 /************************************SIDEBAR MASTERS*******************************************************************/
@@ -246,7 +252,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     display:block;
     color: #000000;
     font-size: 23px;
-    padding: 30px 10px 20px 23px;
+    padding: 30px 10px 10px 23px;
 }
 .content_wrap .sidebar .masters ul{
 
@@ -257,7 +263,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 .content_wrap .sidebar .masters ul li a{
     color:#000;
-    font-size:16px;
+    font-size:15px;
 }
 /**********************************************************************************************************************/
 /************************************SIDEBAR BANNERS*******************************************************************/
@@ -324,7 +330,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 
 .content_wrap .content .new .product, .content_wrap .content .top .product {
     float: left;
-    height: 245px;
+    height: 234px;
     padding: 0 7px;
     position: relative;
     width: 210px !important;
@@ -573,7 +579,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .total_price_block .total_text{
     font-size: 22px;
 }
-.total_price_block .total_price {
+.total_price_block #total_price {
     font-size: 40px;
 }
 .button_area {
@@ -612,6 +618,7 @@ form.button_to .empty_cart{
     width: 200px;
     cursor: pointer;
     color:#4A587B;
+    font-family: 'CentryGothic',verdana;
 }
 
 form.button_to .empty_cart:hover{
@@ -1005,4 +1012,15 @@ post_body .r728x90 {
     height: 40px;
     margin: 59px 0 0 25px;
     width: 600px;
+}
+.contactus_bg {
+    background: url("../images/contactus_bg.jpg") no-repeat scroll -2px bottom transparent;
+    height: 435px;
+    padding: 306px 90px 0 55px;
+    width: 555px;
+}
+
+.contactus_bg p {
+    font-size: 18px;
+    line-height: 25px;
 }

@@ -73,11 +73,14 @@ class Admin::CategoriesController < Admin::AdminController
   # DELETE /categories/1.xml
   def destroy
     @category = Category.find(params[:id])
-    @category.destroy
 
     respond_to do |format|
-      format.html { redirect_to(admin_categories_url) }
-      format.xml  { head :ok }
+      if @category.products.count == 0
+        @category.destroy
+        format.html { redirect_to(admin_categories_url) }
+      else
+        format.html { redirect_to(admin_categories_url, :notice => 'This category have > 0 count of product. Delete first this product ' ) }
+      end
     end
   end
 end

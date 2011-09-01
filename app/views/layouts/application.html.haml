@@ -15,14 +15,17 @@
     %meta{:name=>"yandex-verification", :content=>"6f54cc299f439f71"}
     %meta{:name=>"yandex-verification", :content=>"6498203c1ef19b1d"}
     %meta{:content => "vC-2kwBjQ1ltjfSaJNBz2O1ScxV8QUvD9HvuOhk421I", :name => "google-site-verification"}
-    = yield :custom_css_js
     = csrf_meta_tag
+    = yield :custom_css_js
   %body
     .wrap
       .header
         =link_to  root_url, :class=>"logo" do
           %img{:alt => "Logo", :height => "89", :src => "/images/logo.png", :width => "309"}
-          %h2="Магазин изделий ручной работы"
+          -if params[:controller]=='home'
+            %h1="Магазин изделий ручной работы"
+          -else
+            %h2="Магазин изделий ручной работы"
         = render "layouts/nav"
         = render "carts/header_cart"
       .content_wrap

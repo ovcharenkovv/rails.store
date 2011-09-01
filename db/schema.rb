@@ -12,17 +12,6 @@
 
 ActiveRecord::Schema.define(:version => 20110721201718) do
 
-  create_table "articles", :force => true do |t|
-    t.string   "title"
-    t.string   "meta_k"
-    t.string   "meta_d"
-    t.text     "body"
-    t.string   "slug"
-    t.integer  "views"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "authors", :force => true do |t|
     t.string   "name"
     t.text     "description"
@@ -47,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20110721201718) do
     t.datetime "updated_at"
     t.integer  "parent_id"
     t.integer  "ordering"
+    t.text     "short_body",  :null => false
   end
 
   create_table "comments", :force => true do |t|
@@ -126,7 +116,7 @@ ActiveRecord::Schema.define(:version => 20110721201718) do
     t.datetime "image_updated_at"
     t.integer  "click_count"
     t.boolean  "is_hot"
-    t.string   "status",                                            :default => "Есть в наличи\320\270"
+    t.string   "status",                                            :default => "Есть в наличии"
     t.decimal  "author_price",       :precision => 10, :scale => 0
     t.boolean  "published",                                         :default => true
   end

@@ -1,24 +1,32 @@
 - content_for :custom_css_js do
-  = stylesheet_link_tag 'jquery.fancybox-1.3.4'
-  = stylesheet_link_tag "bx_styles"
+  = stylesheet_link_tag 'jquery.fancybox-1.3.4_c'
+  = stylesheet_link_tag "bx_styles_c"
+
+
   = javascript_include_tag "jquery-1.4.3.min"
   = javascript_include_tag "jquery.fancybox-1.3.4.pack"
   = javascript_include_tag "jquery.mousewheel-3.0.4.pack"
-  = javascript_include_tag "jquery.bxSlider.min"
-  = javascript_include_tag "jquery.easing.1.3"
+  = javascript_include_tag "jquery.easing-1.3.pack"
+
   :javascript
     $(document).ready(function() {
       $("a#light_box").fancybox({
-        'transitionIn'	: 'none',
-        'transitionOut'	: 'none'
+        'transitionIn' : 'elastic',
+        'transitionOut' : 'elastic',
+        'easingIn' : 'easeOutBack',
+        'easingOut' : 'easeInBack'
       });
+      /*
+      var delivery_price = parseInt($("#shipment_price").html());
+      var cart_price = parseInt($("#total_price").html());
+      $("#total_price").html(delivery_price+cart_price);
 
-      $('#top_products').bxSlider({
-        speed: 1900,
-        pager: true/*,
-        easing: 'easeOutBounce',
-        auto: true,*/
+      $("#shipment_button").change(function(){
+        var delivery_price = parseInt($(this).val());
+        $("#shipment_price").html(delivery_price);
+        $("#total_price").html(delivery_price+cart_price);
       });
+      */
     });
 
 %h1.cart_title=t('carts.cart.title')
@@ -29,16 +37,23 @@
     %th=t('carts.cart.quantity')
     %th.price=t('carts.cart.price')
     %th
-
   = render(@cart.line_items)
+  -#%tr
+  -#  %td{:colspan => "5"}
+  -#    =select_tag "shipment_button", options_for_select( Order::DELIVERY_TYPES_PRICE , Order::DELIVERY_TYPES_PRICE.first)
+  -#    %span#shipment_price=15
+
 .total_price_block
   %span.total_text=t('carts.cart.total')
-  %span.total_price=@cart.total_price.to_s
+  %span#total_price=@cart.total_price.to_s
   %span.total_text=" грн."
 .button_area
   = link_to t('carts.cart.continue'), category_products_path(session[:product_category_id]), :class=>"back"
-  = button_to t('carts.cart.empty'), @cart, :method => :delete, :confirm => 'Are you sure?', :class=>"empty_cart"
-  .cart
+  = button_to t('carts.cart.empty'), line_item_path(@cart.line_items.last), :method => :delete, :confirm => 'Are you sure?', :class=>"empty_cart"
+
+  -#TODO Demmmm ArgumentError wrong number of arguments (0 for 1)
+  =# button_to t('carts.cart.empty'), @cart, :method => :delete, :confirm => 'Are you sure?', :class=>"empty_cart"
+
 .happy_button
   = button_to t('carts.cart.checkout'), new_order_path, :method => :get, :class=> "submit"
 
