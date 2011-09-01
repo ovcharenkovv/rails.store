@@ -5,32 +5,32 @@
 
   :javascript
     $(document).ready(function(){
-        $('#top_products').bxSlider({
-            speed: 300,
-            pager: true,
-            auto: true
+      $('#top_products').bxSlider({
+        speed: 300,
+        pager: true,
+        auto: true
 
-        });
+      });
     });
 
   :javascript
     $(document).ready(function(){
-        $('#new_products').bxSlider({
-            speed: 100,
-            pager: true
-        });
+      $('#new_products').bxSlider({
+        speed: 100,
+        pager: true
+      });
     });
 
 -#%h1=t('home.welcome')
 -#%p.welcome=raw t('home.welcome_text')
 .top
-  %h3=t('home.top_products')
+  %h3=link_to t('home.top_products'), "home/top"
   #top_products
     = render :partial => "products/horizontal_list", :locals => { :products => @top_products }
 .new
-  %h3=t('home.new_products')
+  %h3=link_to t('home.new_products'), "home/new"
   #new_products
     = render :partial => "products/horizontal_list", :locals => { :products => @new_products }
 .random
-  %h3=t('home.random_products')
+  %h3=link_to t('home.random_products'), "home/rnd"
   = render :partial => "products/random_products", :locals => { :products => @random_products }

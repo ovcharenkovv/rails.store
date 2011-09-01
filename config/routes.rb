@@ -30,9 +30,14 @@ Store::Application.routes.draw do
   end
   match 'admin' => 'admin/dashboard#index'
 
+  match '/home/:slug' => 'home#show'
+  
   match '/:post_category_slug/:post_slug/comment' => 'comments#create', :as => :add_comment
   match '/:post_category_slug/:post_slug' => 'posts#show', :as => :short_post
   match '/:post_category_slug' => 'posts#index', :as => :short_cat_posts
+
+  match '/:post_category_slug' => 'posts#index', :as => :short_cat_posts
+
 
   root :to => 'home#index'
 
