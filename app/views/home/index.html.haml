@@ -20,17 +20,18 @@
             pager: true
         });
     });
-
--#%h1=t('home.welcome')
--#%p.welcome=raw t('home.welcome_text')
-.top
-  %h3=t('home.top_products')
-  #top_products
-    = render :partial => "products/horizontal_list", :locals => { :products => @top_products }
-.new
-  %h3=t('home.new_products')
-  #new_products
-    = render :partial => "products/horizontal_list", :locals => { :products => @new_products }
-.random
-  %h3=t('home.random_products')
-  = render :partial => "products/random_products", :locals => { :products => @random_products }
+-cache 'home' do
+  -@top_products = Product.find_top_products(16)
+  -@new_products = Product.find_new_products(14)
+  -@random_products = Product.find_random_products(20,@top_products+@new_products)
+  .top
+    %h3=t('home.top_products')
+    #top_products
+      = render :partial => "products/horizontal_list", :locals => { :products => @top_products }
+  .new
+    %h3=t('home.new_products')
+    #new_products
+      = render :partial => "products/horizontal_list", :locals => { :products => @new_products }
+  .random
+    %h3=t('home.random_products')
+    = render :partial => "products/random_products", :locals => { :products => @random_products }

@@ -30,12 +30,13 @@
         = render "carts/header_cart"
       .content_wrap
         .sidebar
-          .categories
-            = render "categories/list"
-          .masters
-            = render "authors/list"
-          .banners
-            = render "layouts/banners"
+          -cache 'sidebar' do
+            .categories
+              = render "categories/list"
+            .masters
+              = render "authors/list"
+            .banners
+              = render "layouts/banners"
         .content
           = yield
         .footer

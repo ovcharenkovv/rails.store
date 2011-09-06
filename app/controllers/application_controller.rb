@@ -1,15 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  before_filter :get_root_category, :get_authors , :get_current_cart
+  before_filter  :get_current_cart
   layout "application"
-
-  def get_root_category
-    @root_categories = Category.root_category
-  end
-
-  def get_authors
-    @root_authors = Author.all
-  end
 
   def get_current_cart
     @current_cart = current_cart

@@ -1,5 +1,5 @@
 %h3=t('authors.title')
 =#link_to t('authors.title'), :authors
 %ul
-  - @root_authors.each do |author|
+  - Author.all.each do |author|
     %li=link_to author.name, author_products_path(author)
