@@ -17,6 +17,7 @@
     %meta{:content => "vC-2kwBjQ1ltjfSaJNBz2O1ScxV8QUvD9HvuOhk421I", :name => "google-site-verification"}
     = csrf_meta_tag
     = yield :custom_css_js
+    = render "layouts/add_favorite"
   %body
     .wrap
       .header
@@ -28,6 +29,7 @@
             %h2="Магазин изделий ручной работы"
         = render "layouts/nav"
         = render "carts/header_cart"
+        = link_to 'Добавить в избраное', '#', :onclick => 'return add_favorite(this);', :class=> "add_favorite" 
       .content_wrap
         .sidebar
           -cache 'sidebar' do

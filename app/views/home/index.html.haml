@@ -5,20 +5,20 @@
 
   :javascript
     $(document).ready(function(){
-        $('#top_products').bxSlider({
-            speed: 300,
-            pager: true,
-            auto: true
+      $('#top_products').bxSlider({
+        speed: 300,
+        pager: true,
+        auto: true
 
-        });
+      });
     });
 
   :javascript
     $(document).ready(function(){
-        $('#new_products').bxSlider({
-            speed: 100,
-            pager: true
-        });
+      $('#new_products').bxSlider({
+        speed: 100,
+        pager: true
+      });
     });
 -cache 'home' do
   -@top_products = Product.find_top_products(16)

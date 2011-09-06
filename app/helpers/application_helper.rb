@@ -33,7 +33,7 @@ module ApplicationHelper
       ret += ' | '
     end
 
-    ret += 'PoshStore - магазин изделий ручной работы, хендмейд эксклюзива, авторские работы.'
+    ret += 'PoshStore - магазин изделий ручной работы, handmade бижутериии, авторские работы.'
 
     ret
   end
@@ -62,7 +62,7 @@ module ApplicationHelper
         ret += ', '
       end
     end
-    ret += 'ручная работа, купить, интернет-магазин, черкассы, handmade, хендмейд, хенд мейд, полимерная глина, декупаж, бижутерия '
+    ret += 'ручная работа, бижутерия, hand made, handmade, хенд мейд, купить, интернет-магазин, полимерная бижутерия, декупаж'
 
     ret
   end
@@ -80,7 +80,7 @@ module ApplicationHelper
         ret += ', '
       end
 
-      ret += 'хендмейд бижутерия, авторские обложки для паспорта, наклейки, '
+      ret += 'хендмейд бижутерия, handmade украшения, открытки ручной работы, '
 
       if param[:controller]=='products'
         if param[:id] && !param[:cart_id]
