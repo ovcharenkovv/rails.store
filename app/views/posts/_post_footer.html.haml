@@ -1,7 +1,7 @@
 -if post.present_footer
   .post_footer
     .published
-      %span=Russian::strftime (post.created_at, "%d %B %Y" )
+      %span=Russian::strftime(post.created_at, "%d %B %Y" )
     .vcard.author.full
       %a.fn.nickname.url{:href => "#", :title => "Автор текста"}
         .ico

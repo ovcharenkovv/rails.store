@@ -22,7 +22,7 @@
       });
 
       $('#top_products').bxSlider({
-        speed: 500,
+        speed: 300,
         pager: true/*,
         easing: 'easeOutBounce',
         auto: true,*/
@@ -33,7 +33,7 @@
     function share42(f,u,t){if(!u)u=location.href;if(!t)t=document.title;u=encodeURIComponent(u);t=encodeURIComponent(t);var s=new Array('#" onclick="window.open(\'http://vkontakte.ru/share.php?url='+u+'\', \'_blank\', \'scrollbars=0, resizable=1, menubar=0, left=200, top=200, width=554, height=421, toolbar=0, status=0\');return false" title="Поделиться В Контакте"','http://www.odnoklassniki.ru/dk?st.cmd=addShare&st._surl='+u+'&title='+t+'" title="Добавить в Одноклассники"','http://twitter.com/share?text='+t+'&url='+u+'" title="Добавить в Twitter"','http://www.facebook.com/sharer.php?u='+u+'&t='+t+'" title="Поделиться в Facebook"','http://connect.mail.ru/share?url='+u+'&title='+t+'" title="Поделиться в Моем Мире@Mail.Ru"');for(i=0;i<s.length;i++)document.write('<a style="display:inline-block;width:24px;height:24px;margin:0 7px 0 0;background:url(http://'+f+'icons.png) -'+24*i+'px 0" href="'+s[i]+'" target="_blank"></a>')}
 
 %h1
-  =link_to @product.category.name.to_s, category_products_path(@product.category)
+  =link_to @category.name.to_s, category_products_path(@category)
   =" / "
   = @product.title
 .border
@@ -60,6 +60,6 @@
 .top
   %h3=t('products.see_also_products')
   #top_products
-    = render :partial => "products/horizontal_list", :locals => { :products => Product.find_see_also_products(6,@product.category.id,@product) }
+    = render :partial => "products/horizontal_list", :locals => { :products => Product.find_see_also_products(6,@category,@product) }
 .product_comment
   = render :partial => "comments/product_comment", :locals => { :commentable_entity => @product }      

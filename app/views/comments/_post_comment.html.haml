@@ -8,7 +8,7 @@
           %li
             %p.head
               =mail_to('#', comm.user_name,{:class=>'user_name'})
-              %span.created_at=Russian::strftime (comm.created_at, "%d %B %Y" )
+              %span.created_at=Russian::strftime(comm.created_at, "%d %B %Y" )
             %p.comment= comm.comment
 
   .comments_form
@@ -28,6 +28,6 @@
         = f.text_area :comment
       = hidden_field_tag  :post_id,  post.id
       = hidden_field_tag  :commentable_id,  post.id
-      = hidden_field_tag  :commentable_type, post.type
+      = hidden_field_tag  :commentable_type, post.class.name
       .actions
         = f.submit 'ОТПРАВИТЬ', :class=>"submit_blue"
