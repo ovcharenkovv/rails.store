@@ -16,7 +16,6 @@ class ProductSweeper < ActionController::Caching::Sweeper
   private
 
   def expire_cache_for(product)
-    # Прекращает фрагмент
     expire_fragment('home_products')
     expire_fragment('top_products')
     expire_fragment('new_products')

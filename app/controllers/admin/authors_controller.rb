@@ -1,4 +1,6 @@
 class Admin::AuthorsController < Admin::AdminController
+  cache_sweeper :author_sweeper, :only => [:create, :update, :destroy]
+
   # GET /authors
   # GET /authors.xml
   def index

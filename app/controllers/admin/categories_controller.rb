@@ -1,4 +1,6 @@
 class Admin::CategoriesController < Admin::AdminController
+  cache_sweeper :category_sweeper, :only => [:create, :update, :destroy]
+
   # GET /categories
   # GET /categories.xml
   def index
