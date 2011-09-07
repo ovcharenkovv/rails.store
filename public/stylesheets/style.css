@@ -631,7 +631,7 @@ form.button_to .empty_cart:hover{
     color: #FFFFFF;
     cursor: pointer;
     display: block;
-    font-family: CentryGothic;
+    font-family: 'CentryGothic',verdana;
     font-size: 21px;
     height: 50px;
     margin: 0 200px;
