@@ -1,20 +1,31 @@
-%h1
-  =link_to "Главная", root_path
-  =" / "
-  =@title
+-cache params[:slug]+'_products' do
+  -case params[:slug]
+    -when 'top'
+      -@title="30 популярных товаров"
+      -@products = Product.find_top_products(30)
+    -when 'new'
+      -@title="30 новинок"
+      -@products = Product.find_new_products(30)
+    -when 'rnd'
+      -@title="30 случаных товаров"
+      -@products = Product.find_random_products(30,'')
+    -else
+      -@product_title=""
+      -@products = Product.find_new_products(30)
 
+  %h1
+    =link_to "Главная", root_path
+    =" / "
+    =@title
 
-
-.catalog
-  - @products.each do |product|
-    .product
-      .body
-        = link_to category_product_path(product.category_id,product) , :class => "img" do
-          = image_tag product.image.url(:thumb),  :alt => product.category.name+' '+product.title, :title => product.title
-        = link_to category_product_path(product.category_id,product) , :class => "title" do
-          %h4= product.title.to_s
-        = link_to author_products_path(product.author_id) , :class => "author" do
-          %h5=product.author.name
-        %span.price= product.price.to_s+" Грн."
-  =# will_paginate @products ,:previous_label=>"« Назад ", :next_label=>" Вперед »"
-
+  .catalog
+    - @products.each do |product|
+      .product
+        .body
+          = link_to category_product_path(product.category_id,product) , :class => "img" do
+            = image_tag product.image.url(:thumb),  :alt => product.category.name+' '+product.title, :title => product.title
+          = link_to category_product_path(product.category_id,product) , :class => "title" do
+            %h4= product.title.to_s
+          = link_to author_products_path(product.author_id) , :class => "author" do
+            %h5=product.author.name
+          %span.price= product.price.to_s+" Грн."

@@ -20,7 +20,7 @@
         pager: true
       });
     });
--cache 'home' do
+-cache 'home_products' do
   -@top_products = Product.find_top_products(12)
   -@new_products = Product.find_new_products(9)
   -@random_products = Product.find_random_products(20,@top_products+@new_products)
