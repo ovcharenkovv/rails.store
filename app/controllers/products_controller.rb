@@ -36,9 +36,9 @@ class ProductsController < ApplicationController
 
   def index
     if params[:category_id]
-      @products = Product.where(:category_id => @categories, :published => true ).paginate :page=>params[:page], :order=>@sort, :per_page => @per_page
+      @products = Product.includes(:author).includes(:category).where(:category_id => @categories,:published => true).paginate :page=>params[:page], :order=>@sort, :per_page => @per_page
     elsif params[:author_id]
-      @products = Product.where(:author_id => @categories , :published => true).paginate :page=>params[:page], :order=>@sort, :per_page => @per_page
+      @products = Product.includes(:author).includes(:category).where(:author_id => @categories , :published => true).paginate :page=>params[:page], :order=>@sort, :per_page => @per_page
     end
 
 

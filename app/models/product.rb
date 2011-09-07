@@ -29,25 +29,25 @@ class Product < ActiveRecord::Base
 
   def self.find_top_products(quantity)
 #    find(:all,:limit => quantity, :order => 'click_count desc')
-    where(:published => true).order("click_count desc").limit(quantity)
+    includes(:author).includes(:category).where(:published => true).order("click_count desc").limit(quantity)
   end
 
   def self.find_new_products(quantity)
-    where(:published => true).order("created_at desc").limit(quantity)
+    includes(:author).includes(:category).where(:published => true).order("created_at desc").limit(quantity)
 #    find(:all,:limit => quantity, :order => 'created_at desc')
   end
 
   def self.find_random_products (quantity,except)
-     where(:published => true).where(["id NOT IN (?)", except]).order("RAND()").limit(quantity)
+     includes(:author).includes(:category).where(:published => true).where(["id NOT IN (?)", except]).order("RAND()").limit(quantity)
   end
 
   def self.find_hot_products(quantity)
-    where(:published => true).where(["is_hot == (?)", '1']).limit(quantity).order("created_at desc")
+    includes(:author).includes(:category).where(:published => true).where(["is_hot == (?)", '1']).limit(quantity).order("created_at desc")
   end
 
   def self.find_see_also_products(quantity,category,except)
 #    where( :category_id=>category ).where(["id NOT IN (?)", except]).limit(quantity).order("click_count desc")
-    where( :category_id=>category,:published => true ).where(["id NOT IN (?)", except]).limit(quantity).order("RAND()")
+    includes(:author).includes(:category).where( :category_id=>category,:published => true ).where(["id NOT IN (?)", except]).limit(quantity).order("RAND()")
   end
 
   def generate_price

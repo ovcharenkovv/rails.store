@@ -15,7 +15,7 @@
   %h3 добавьте отзыв:
   - if notice
     %p#notice= notice
-  - form_for @comment, :url => category_product_comments_path(commentable_entity.category, commentable_entity,@comment,:anchor => "comment_form") do |f|
+  = form_for @comment, :url => category_product_comments_path(commentable_entity.category, commentable_entity,@comment,:anchor => "comment_form") do |f|
     .field
       = f.label "Имя:"
       = f.text_field :user_name
