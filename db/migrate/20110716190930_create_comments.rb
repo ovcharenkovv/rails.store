@@ -6,7 +6,7 @@ class CreateComments < ActiveRecord::Migration
       t.string :user_email, :limit => 50, :default => ""
       t.text :comment
       t.integer :rating
-      t.boolean :published, :default => true
+      t.boolean :published, :default => false
       t.references :commentable, :polymorphic => true
       t.references :user
       t.timestamps
