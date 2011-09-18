@@ -134,7 +134,7 @@ h3 {
     height: 30px;
 
 }
-.orders_sort a {
+.orders_sort a, .cool_buton {
     display:block;
     float:left;
     margin:0 15px 0 0;
@@ -153,7 +153,7 @@ h3 {
     padding:5px 10px 6px 7px; /* Links */
 }
 
-.orders_sort a:hover{
+.orders_sort a:hover, .cool_buton:hover{
     background-color:#dff4ff;
     border:1px solid #c2e1ef;
     color:#336699;
@@ -198,4 +198,8 @@ h3 {
 }
 .menu ul li a:hover{
     opacity: 0.8;
+}
+.post_check_wrap {
+    margin:15px 0;
+    padding-bottom: 20px;
 }

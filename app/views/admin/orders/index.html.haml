@@ -24,11 +24,7 @@
       %td= order.created_at
       -#%td= order.pay_type
       %td= link_to order.status.to_s, edit_admin_order_path(order)
-.check
-  %br
-  ="Проверить посылку: "
-  =link_to "Новая почта", "http://novaposhta.ua/frontend/tracking", :target=>"_blank"
-  |
-  =link_to "Укрпочта", "http://www.ukrposhta.com/www/upost.nsf/search_post", :target=>"_blank"
-
 %p= will_paginate @orders
+%div.post_check_wrap
+  =link_to "Новая почта проверка", "http://novaposhta.ua/frontend/tracking",:class=>"cool_buton", :target=>"_blank"
+  =link_to "Укрпочта проверка", "http://www.ukrposhta.com/www/upost.nsf/search_post",:class=> "cool_buton", :target=>"_blank"
