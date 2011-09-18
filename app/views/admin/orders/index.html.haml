@@ -7,7 +7,8 @@
     %th Phone
     -#%th Email
     %th Address
-    -#%th Delivery_type
+    %th Delivery_type
+    %th shipment_id
     %th Order date:
     -#%th Pay type
     %th Status
@@ -18,11 +19,16 @@
       %td= order.telephone
       -#%td= order.email
       %td= order.address
-      -#%td= order.delivery_type
+      %td= order.delivery_type
+      %td= order.shipment_id
       %td= order.created_at
       -#%td= order.pay_type
       %td= link_to order.status.to_s, edit_admin_order_path(order)
-%br/
-= link_to 'New Order', new_admin_order_path
+.check
+  %br
+  ="Проверить посылку: "
+  =link_to "Новая почта", "http://novaposhta.ua/frontend/tracking", :target=>"_blank"
+  |
+  =link_to "Укрпочта", "http://www.ukrposhta.com/www/upost.nsf/search_post", :target=>"_blank"
 
 %p= will_paginate @orders

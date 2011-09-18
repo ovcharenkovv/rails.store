@@ -10,7 +10,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110721201718) do
+ActiveRecord::Schema.define(:version => 20110918134706) do
+
+  create_table "articles", :force => true do |t|
+    t.string   "title"
+    t.string   "meta_k"
+    t.string   "meta_d"
+    t.text     "body"
+    t.string   "slug"
+    t.integer  "views"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "authors", :force => true do |t|
     t.string   "name"
@@ -36,7 +47,6 @@ ActiveRecord::Schema.define(:version => 20110721201718) do
     t.datetime "updated_at"
     t.integer  "parent_id"
     t.integer  "ordering"
-    t.text     "short_body",  :null => false
   end
 
   create_table "comments", :force => true do |t|
@@ -57,6 +67,20 @@ ActiveRecord::Schema.define(:version => 20110721201718) do
   add_index "comments", ["commentable_type"], :name => "index_comments_on_commentable_type"
   add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
 
+  create_table "custom_orders", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "email"
+    t.string   "phone"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "author_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
   create_table "line_items", :force => true do |t|
     t.integer  "product_id"
     t.integer  "cart_id"
@@ -76,6 +100,7 @@ ActiveRecord::Schema.define(:version => 20110721201718) do
     t.string   "delivery_type"
     t.string   "telephone"
     t.string   "status",        :default => "new"
+    t.string   "shipment_id"
   end
 
   create_table "post_categories", :force => true do |t|

@@ -1,7 +1,7 @@
 %p.orders_sort
   = link_to "New", admin_orders_path(:status => "new" )
-  = link_to "Paid", admin_orders_path(:status => "paid" )
   = link_to "Payment waiting", admin_orders_path(:status => "payment_waiting" )
+  = link_to "Paid", admin_orders_path(:status => "paid" )
   = link_to "Sent", admin_orders_path(:status => "sent" )
   = link_to "Success", admin_orders_path(:status => "success" )
   = link_to "Refused", admin_orders_path(:status => "refused" )
