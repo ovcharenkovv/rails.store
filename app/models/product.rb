@@ -1,3 +1,4 @@
+require 'paperclip_processors/watermark'
 class Product < ActiveRecord::Base
   PRODUCT_STATUS = ["Есть в наличии","Под заказ" ]
   belongs_to :category
@@ -5,9 +6,41 @@ class Product < ActiveRecord::Base
 
   has_many :line_items
   has_many :orders, :through => :line_items
+#  has_attached_file :image,
+#                    :styles => { :small=> "125x94#", :thumb => "200x150#",:medium => "400x300#", :large => "800X600" },
+#                    :convert_options => { :small =>"-quality 50",:thumb =>"-quality 65",:medium=>"-quality 85" }
+
   has_attached_file :image,
-                    :styles => { :small=> "125x94#", :thumb => "200x150#",:medium => "400x300#", :large => "800X600" },
-                    :convert_options => { :small =>"-quality 50",:thumb =>"-quality 65",:medium=>"-quality 85" }
+                    :styles => {
+                        :small=>{
+                            :geometry       => "125x94#",
+                            :quality        => "50"
+                        },
+                        :thumb =>{
+                            :processors     => [:watermark],
+                            :geometry       => "200x150>",
+                            :quality        => "65",
+                            :watermark_path => Rails.root.join('public/images/watermark.png'),
+                            :position       => "Center"
+                        },
+                        :medium =>{
+                            :processors     => [:watermark],
+                            :geometry       => "400x300#",
+                            :quality        => "85",
+                            :watermark_path => Rails.root.join('public/images/watermark.png'),
+                            :position       => "Center"
+                        },
+                        :large=>{
+                            :processors     => [:watermark],
+                            :geometry       => "800X600>",
+                            :watermark_path => Rails.root.join('public/images/watermark.png'),
+                            :position       => "Center"
+
+                        }
+                    }
+
+
+
   acts_as_commentable
 
   before_destroy :ensure_not_referenced_by_any_line_item
@@ -38,7 +71,7 @@ class Product < ActiveRecord::Base
   end
 
   def self.find_random_products (quantity,except)
-     includes(:author).includes(:category).where(:published => true).where(["id NOT IN (?)", except]).order("RAND()").limit(quantity)
+    includes(:author).includes(:category).where(:published => true).where(["id NOT IN (?)", except]).order("RAND()").limit(quantity)
   end
 
   def self.find_hot_products(quantity)
