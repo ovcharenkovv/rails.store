@@ -20,21 +20,21 @@ class Product < ActiveRecord::Base
                             :processors     => [:watermark],
                             :geometry       => "200x150>",
                             :quality        => "65",
-                            :watermark_path => Rails.root.join('public/images/watermark.png'),
-                            :position       => "Center"
+                            :watermark_path => Rails.root.join('public/images/watermark_thumb.png'),
+                            :position       => "SouthEast"
                         },
                         :medium =>{
                             :processors     => [:watermark],
                             :geometry       => "400x300#",
                             :quality        => "85",
-                            :watermark_path => Rails.root.join('public/images/watermark.png'),
-                            :position       => "Center"
+                            :watermark_path => Rails.root.join('public/images/watermark_medium.png'),
+                            :position       => "SouthEast"
                         },
                         :large=>{
                             :processors     => [:watermark],
-                            :geometry       => "800X600>",
-                            :watermark_path => Rails.root.join('public/images/watermark.png'),
-                            :position       => "Center"
+                            :geometry       => "800X600#",
+                            :watermark_path => Rails.root.join('public/images/watermark_large.png'),
+                            :position       => "SouthEast"
 
                         }
                     }
