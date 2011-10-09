@@ -25,9 +25,12 @@ class Notifier < ActionMailer::Base
     @order = order
     mail :to => order.email, :subject => 'Заказ на Posh Store'
   end
-  def comment_admin_send (comment)
+  def comment_admin1_send (comment)
     @comment = comment
     mail :to => 'ovcharenkovv@gmail.com', :subject => 'Коментарий на Posh Store'
+  end
+  def comment_admin2_send (comment)
+    @comment = comment
     mail :to => 'lavrovanna@yandex.ru', :subject => 'Коментарий на Posh Store'
   end
   def comment_user_send (comment)
