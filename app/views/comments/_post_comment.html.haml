@@ -22,7 +22,7 @@
         = f.text_field :user_name, :value => user_signed_in? ? "Betty" : nil
       .field
         = f.label "E-mail:"
-        = f.text_field :user_email, :value => user_signed_in? ? "poshstoreua@gmail.com" : nil
+        = f.text_field :user_email, :value => user_signed_in? ? params[:r_email] : nil
       .field
         = f.label "Комментарий:"
         = f.text_area :comment

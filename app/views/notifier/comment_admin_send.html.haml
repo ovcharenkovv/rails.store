@@ -1,0 +1,10 @@
+%h1 Коментарий на Poshstore
+%p =@comment.comment
+%br
+%p
+  -case @comment.commentable_type
+    -when 'Post'
+      = link_to 'линка', short_post_path(Post.find(@comment.commentable_id).post_category.slug, Post.find(@comment.commentable_id).slug , :anchor => "comment_list")
+    -when 'Product'
+      = link_to "линка", category_product_path(Product.find(@comment.commentable_id).category, @comment.commentable_id , :anchor => 'comment_list')
+

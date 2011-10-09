@@ -21,18 +21,18 @@ class Notifier < ActionMailer::Base
     @order = order
     mail :to => 'lavrovanna@yandex.ru', :subject => 'Заказ на Posh Store'
   end
-
-
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.notifier.order_shipped.subject
-  #
-
   def order_shipped(order)
     @order = order
     mail :to => order.email, :subject => 'Заказ на Posh Store'
   end
-
+  def comment_admin_send (comment)
+    @comment = comment
+    mail :to => 'ovcharenkovv@gmail.com', :subject => 'Коментарий на Posh Store'
+    mail :to => 'lavrovanna@yandex.ru', :subject => 'Коментарий на Posh Store'
+  end
+  def comment_user_send (comment)
+    @comment = comment
+    mail :to => comment.user_email, :subject => 'Коментарий на Posh Store'
+  end
 
 end
