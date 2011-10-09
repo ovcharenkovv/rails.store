@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
     if @commentable
       @comment = @commentable.comments.build(params[:comment])
       if @comment.save
-        flash[:notice] = "Спасибо за коментарий"
+        flash[:notice] = "Спасибо за комментарий! После модерации он появится на сайте!"
         redirect_to :controller => @commentable.class.name.underscore.downcase.pluralize, :action => 'show', :id => @commentable.id, :anchor => 'comment_form'
       else
         flash.now[:notice] = "Заполните пожалуйста все поля правильно"

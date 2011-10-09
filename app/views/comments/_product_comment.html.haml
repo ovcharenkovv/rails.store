@@ -1,6 +1,6 @@
 .comments_list
   %a{:name => "comment_list"}
-  %h3="отзывов (#{Comment.find_all_by_commentable_id(commentable_entity.id).count})"
+  %h3="отзывов (#{Comment.comments_count(commentable_entity.id)})"
   %ul
     - Comment.find_all_by_commentable_id(commentable_entity.id).each do |comm|
       - if comm.published?
@@ -18,15 +18,16 @@
   = form_for @comment, :url => category_product_comments_path(commentable_entity.category, commentable_entity,@comment,:anchor => "comment_form") do |f|
     .field
       = f.label "Имя:"
-      = f.text_field :user_name
+      = f.text_field :user_name, :value => user_signed_in? ? "Betty" : nil
     .field
       = f.label "E-mail:"
-      = f.text_field :user_email
+      = f.text_field :user_email, :value => user_signed_in? ? "poshstoreua@gmail.com" : nil
     .field
       = f.label "Отзыв:"
       = f.text_area :comment
     = hidden_field_tag  :product_id,  commentable_entity.id
     = hidden_field_tag  :commentable_id,  commentable_entity.id
     = hidden_field_tag  :commentable_type, commentable_entity.class.name
+    = hidden_field_tag  "comment[published]", true unless !user_signed_in?
     .actions
       = f.submit 'ОТПРАВИТЬ', :class=>"submit_blue"

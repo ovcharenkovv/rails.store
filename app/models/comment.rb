@@ -28,5 +28,9 @@ class Comment < ActiveRecord::Base
     commentable_str.constantize.find(commentable_id)
   end
 
+  def self.comments_count (commentable_id)
+    where(:published=>true).where(:commentable_id=>commentable_id).count
+  end
+
 
 end

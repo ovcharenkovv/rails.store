@@ -13,5 +13,5 @@
     .comments
       =link_to short_post_url(post.post_category,post, :anchor => 'comment_list') do
         .ico
-        %span="комментарий (#{Comment.find_all_by_commentable_id(post.id).count})"
+        %span="комментарий (#{ Comment.comments_count(post.id)})"
     .post_separator
