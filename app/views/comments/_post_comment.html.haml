@@ -29,6 +29,7 @@
       = hidden_field_tag  :post_id,  post.id
       = hidden_field_tag  :commentable_id,  post.id
       = hidden_field_tag  :commentable_type, post.class.name
-      = hidden_field_tag  "comment[published]", true unless !user_signed_in?
+      -if user_signed_in?
+        = hidden_field_tag  "comment[parent_id]", Comment.child_id(params[:r_email]).id unless  Comment.child_id(params[:r_email]).nil?
       .actions
         = f.submit 'ОТПРАВИТЬ', :class=>"submit_blue"

@@ -20,6 +20,6 @@
       %td
         -case comment.commentable_type
         -when 'Post'
-          = link_to 'replay', short_post_path(Post.find(comment.commentable_id).post_category.slug, Post.find(comment.commentable_id).slug , :anchor => "comment_list")
+          = link_to 'replay', short_post_path(Post.find(comment.commentable_id).post_category.slug, Post.find(comment.commentable_id).slug , :anchor => "comment_list", :r_email=>comment.user_email)
         -when 'Product'
           = link_to "replay", category_product_path(Product.find(comment.commentable_id).category, comment.commentable_id , :anchor => 'comment_list', :r_email=>comment.user_email)

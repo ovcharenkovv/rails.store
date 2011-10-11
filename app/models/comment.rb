@@ -32,5 +32,19 @@ class Comment < ActiveRecord::Base
     where(:published=>true).where(:commentable_id=>commentable_id).count
   end
 
+  def publish_self
+    self.published  = true
+  end
+  def self.publish_parent(parent_id)
+    if parent_id
+      parent = find(parent_id)
+      parent.publish_self
+      parent.save
+    end
+  end
+  def self.child_id(r_email)
+     where(:user_email=>r_email).last
+  end
+
 
 end

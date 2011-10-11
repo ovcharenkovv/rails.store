@@ -4,6 +4,16 @@ class CommentsController < ApplicationController
     @commentable = Comment.find_commentable(params[:commentable_type], params[:commentable_id])
     if @commentable
       @comment = @commentable.comments.build(params[:comment])
+
+      if user_signed_in?
+        @comment.publish_self
+        Comment.publish_parent(params[:comment][:parent_id])
+#        if params[:comment][:parent_id]
+#          @parent = Comment.find(params[:comment][:parent_id])
+#          @parent.publish_self
+#          @parent.save
+#        end
+      end
       if @comment.save
         Notifier.comment_admin1_send(@comment).deliver
         Notifier.comment_admin2_send(@comment).deliver
