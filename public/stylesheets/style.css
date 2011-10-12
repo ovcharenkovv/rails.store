@@ -123,10 +123,10 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     background-color:#E5E3CB;
 }
 .header .nav li.new span {
-        background-color:#E5E3CB;
+    background-color:#E5E3CB;
 }
 .header .nav li.new:hover span {
-        background-color:#999;
+    background-color:#999;
 }
 .header  .cart {
     background: url("../images/header_cart_place.png") no-repeat scroll left top transparent;
@@ -964,6 +964,27 @@ post_body .r728x90 {
 }
 .content_wrap .content .product_comment {
     margin: 40px 15px 0;
+}
+/******************************************payment_shipping****************************************************************************/
+.payment_shipping tr {
+    border-bottom: 1px solid gray;
+}
+.payment_shipping td.title{
+    vertical-align: top;
+    text-align: center;
+}
+.payment_shipping td.title h2{
+    padding: 0 20px !important;
+}
+.payment_shipping td.title img {
+    padding: 0 0 25px;
+}
+
+.payment_shipping td.description{
+    vertical-align: top;
+}
+.payment_shipping td.description ul{
+    padding: 20px 0 25px 40px !important;
 }
 
 /**********************************************************************************************************************/
