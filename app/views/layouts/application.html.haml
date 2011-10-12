@@ -29,7 +29,6 @@
             %h2="Магазин изделий ручной работы"
         = render "layouts/nav"
         = render "carts/header_cart"
-        = link_to 'Добавить в избраное', '#', :onclick => 'return add_favorite(this);', :class=> "add_favorite" 
       .content_wrap
         .sidebar
           -cache 'sidebar' do
