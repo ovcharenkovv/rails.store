@@ -18,8 +18,8 @@ class Product < ActiveRecord::Base
                         },
                         :thumb =>{
                             :processors     => [:watermark],
-                            :geometry       => "200x150>",
-                            :quality        => "65",
+                            :geometry       => "200x150#",
+                            :quality        => "60",
                             :watermark_path => Rails.root.join('public/images/watermark_thumb.png'),
                             :position       => "SouthEast"
                         },
