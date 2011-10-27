@@ -14,14 +14,11 @@ class Product < ActiveRecord::Base
                     :styles => {
                         :small=>{
                             :geometry       => "125x94#",
-                            :quality        => "50"
+                            :quality        => "40"
                         },
                         :thumb =>{
-                            :processors     => [:watermark],
                             :geometry       => "200x150#",
-                            :quality        => "60",
-                            :watermark_path => Rails.root.join('public/images/watermark_thumb.png'),
-                            :position       => "SouthEast"
+                            :quality        => "50",
                         },
                         :medium =>{
                             :processors     => [:watermark],

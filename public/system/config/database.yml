@@ -1,0 +1,29 @@
+production:
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  database: store_production
+  pool: 5
+  username: root
+  password: good2go
+  host: localhost
+
+development:
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  database: store_development
+  pool: 5
+  username: root
+  password: good2go
+  host: localhost
+
+test:
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  database: store_test
+  pool: 5
+  username: root
+  password: good2go
+  host: localhost
