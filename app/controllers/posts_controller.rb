@@ -1,3 +1,4 @@
+require 'will_paginate/array'
 class PostsController < ApplicationController
   before_filter :get_category
 
