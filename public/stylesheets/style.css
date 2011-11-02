@@ -11,7 +11,7 @@ body {
     width: 100%;
     height: 100%;
     margin: 12px 0 0;
-    background: #666 url(../images/bg_bottom_stripe.png) bottom left repeat-x;
+    background: url(../images/bg3.jpg) top center repeat-x;
     /*font-family: 'CentryGothic', verdana;*/
     font-family: 'Verdana', sans-serif;
 

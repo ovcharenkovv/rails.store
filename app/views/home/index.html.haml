@@ -21,8 +21,8 @@
       });
     });
 -cache 'home_products' do
-  -@top_products = Product.find_top_products(9)
-  -@new_products = Product.find_new_products(6)
+  -@top_products = Product.find_top_products(7)
+  -@new_products = Product.find_new_products(5)
   -@random_products = Product.find_random_products(25,@top_products+@new_products)
   .top
     %h3=link_to t('home.top_products') , 'home/top'
