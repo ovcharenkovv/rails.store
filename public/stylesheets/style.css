@@ -1,7 +1,7 @@
-@font-face {
-    font-family: 'CentryGothic';
-    src: url(../images/gothic.ttf);
-}
+/*@font-face {*/
+    /*font-family: 'CentryGothic';*/
+    /*src: url(../images/gothic.ttf);*/
+/*}*/
 
 html {
     background: url("../images/bg_top_stripe.png") repeat-x scroll left top #666666;
@@ -12,7 +12,8 @@ body {
     height: 100%;
     margin: 12px 0 0;
     background: #666 url(../images/bg_bottom_stripe.png) bottom left repeat-x;
-    font-family: 'CentryGothic', verdana;
+    /*font-family: 'CentryGothic', verdana;*/
+    font-family: 'Verdana', sans-serif;
 
 }
 div, p, form, label, input, textarea, img, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, table, td, tr {
@@ -618,7 +619,7 @@ form.button_to .empty_cart{
     width: 200px;
     cursor: pointer;
     color:#4A587B;
-    font-family: 'CentryGothic',verdana;
+    font-family: 'Verdana';
 }
 
 form.button_to .empty_cart:hover{
@@ -631,7 +632,7 @@ form.button_to .empty_cart:hover{
     color: #FFFFFF;
     cursor: pointer;
     display: block;
-    font-family: 'CentryGothic',verdana;
+    font-family: 'Verdana';
     font-size: 21px;
     height: 50px;
     margin: 0 200px;
