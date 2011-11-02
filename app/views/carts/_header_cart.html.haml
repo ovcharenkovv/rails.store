@@ -3,5 +3,6 @@
     Корзина пуста :(
 -else
   = link_to  @current_cart , :class=>"cart" do
+    ="(#{@current_cart.line_items.count})"
     =t('carts.cart.sum')
     = @current_cart.total_price.to_s+" грн."
