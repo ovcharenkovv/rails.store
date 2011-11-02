@@ -1,5 +1,7 @@
-%h1=@category.name
-
+%h1
+  -if params[:author_id]
+    ='Работы мастера'
+  =@category.name
 = render 'nav_panel'
 .catalog
   - @products.each do |product|
