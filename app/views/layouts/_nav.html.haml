@@ -1,10 +1,11 @@
 %ul.nav
-  %li.new
+  %li{:class=> params[:post_category_slug]=='master-class' ? 'new':''}
     =link_to "Мастер-клаcсы", short_cat_posts_url('master-class')
     %span
-  %li
+
+  %li{:class=> params[:post_slug]=='payment_shipping' ? 'new':''}
     =link_to "Оплата Доставка", short_post_url('content','payment_shipping')
     %span
-  %li
+  %li{:class=> params[:post_slug]=='contactus' ? 'new':''}
     = link_to 'На связи', short_post_url('content','contactus')
     %span
