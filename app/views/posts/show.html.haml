@@ -1,3 +1,7 @@
+- content_for :custom_css_js do
+  %script{:src => "http://userapi.com/js/api/openapi.js?34", :type => "text/javascript"}
+  :javascript
+    VK.init({apiId: 2665924, onlyWidgets: true});
 %h1
   -if @post.post_category.slug.to_s != 'content'
     =link_to @post.post_category.name.to_s, short_cat_posts_url(@post.post_category)
@@ -5,4 +9,4 @@
   = @post.title
 .post_body=raw @post.body
 = render :partial => "posts/post_footer", :locals => { :post => @post }
-= render :partial => "comments/post_comment", :locals => { :post => @post }
+= render :partial => "comments/vkontakte"

@@ -1,4 +1,7 @@
 - content_for :custom_css_js do
+  %script{:src => "http://userapi.com/js/api/openapi.js?34", :type => "text/javascript"}
+  :javascript
+    VK.init({apiId: 2665924, onlyWidgets: true});
   = stylesheet_link_tag 'jquery.fancybox-1.3.4_c'
   = stylesheet_link_tag "bx_styles_c"
   -#= stylesheet_link_tag "jquery-ui-1.8.11.custom"
@@ -61,5 +64,4 @@
   %h3=t('products.see_also_products')
   #top_products
     = render :partial => "products/horizontal_list", :locals => { :products => Product.find_see_also_products(6,@category,@product) }
-.product_comment
-  = render :partial => "comments/product_comment", :locals => { :commentable_entity => @product }      
+  = render :partial => "comments/vkontakte"

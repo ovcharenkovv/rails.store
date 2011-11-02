@@ -11,7 +11,7 @@
       %a.vkontakte{:href => "http://vkontakte.ru/share.php?url=#{short_post_url(post.post_category,post)}", :onclick => "window.open(this.href, 'Опубликовать ссылку на пост в Вконтакте', 'width=800,height=300'); return false", :title => "Опубликовать ссылку на пост в ВКонтакте"}
       %a.facebook{:href => "http://www.facebook.com/sharer.php?u=#{short_post_url(post.post_category,post)}", :onclick => "window.open(this.href, 'Опубликовать ссылку на пост в Facebook', 'width=800,height=300'); return false", :title => "Опубликовать ссылку на пост в Facebook"}
     .comments
-      =link_to short_post_url(post.post_category,post, :anchor => 'comment_list') do
+      =link_to short_post_url(post.post_category,post, :anchor => 'vk_comments') do
         .ico
-        %span="комментарий (#{ Comment.comments_count(post.id)})"
+        %span="комментарий"
     .post_separator
