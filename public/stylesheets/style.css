@@ -71,7 +71,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     margin: 0 auto;
 }
 .header {
-    height: 114px;
+    height: 125px;
     position: relative;
 
 }
@@ -83,13 +83,14 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .header .logo h2,
 .header .logo h1{
     display:block;
-    font-size: 18px;
-    margin: -10px 0;
+    font-size: 16px;
     color:#fff;
-    text-shadow: 3px 3px 3px #000;
+    margin: -12px 0 0 10px;
+    text-shadow: 2px 2px 2px #000000;
 }
 .header .logo {
     text-decoration: none !important;
+    padding: 15px 0 0 0;
 }
 
 
@@ -101,14 +102,14 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     height: 30px;
     position: absolute;
     right: 80px;
-    top: 81px;
+    top: 94px;
 }
 .header .nav li{
     display: inline-block;
     margin: 0 15px;
 }
 .header .nav li a{
-    font-size: 20px;
+    font-size: 19px;
     color:#fff;
     text-decoration: none;
 }
@@ -138,7 +139,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     height: 36px;
     padding: 10px 0 0 60px;
     position: absolute;
-    right: 100px;
+    right: 0px;
     top: -4px;
     width: 170px;
 }
@@ -219,7 +220,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     border-bottom: 1px solid #666666;
     color: #000000;
     display: block;
-    font-size: 23px;
+    font-size: 22px;
     margin: 20px 0 0;
     padding: 0 10px 15px 30px;
 }
@@ -229,7 +230,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 .content_wrap .sidebar .categories ul li{
     display: block;
-    padding: 5px 10px 5px 23px;
+    padding: 5px 5px 5px 20px;
     border-bottom: 1px solid #666;
 }
 .content_wrap .sidebar .categories ul li a{
@@ -255,7 +256,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .content_wrap .sidebar .masters h3 {
     display:block;
     color: #000000;
-    font-size: 23px;
+    font-size: 22px;
     padding: 30px 10px 10px 23px;
 }
 .content_wrap .sidebar .masters ul{
@@ -267,7 +268,8 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 .content_wrap .sidebar .masters ul li a{
     color:#000;
-    font-size:15px;
+    font-size:14px;
+    line-height: 23px;
 }
 /**********************************************************************************************************************/
 /************************************SIDEBAR BANNERS*******************************************************************/
@@ -316,7 +318,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     display:block;
     border-bottom: 1px solid #666666;
     color: #000000;
-    font-size: 23px;
+    font-size: 22px;
     padding: 20px 10px 15px;
     margin: 0 0 10px;
 }
@@ -324,7 +326,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     display:block;
     border-bottom: 1px solid #666666;
     color: #000000;
-    font-size: 23px;
+    font-size: 22px;
     padding: 20px 10px 15px;
     margin: 0 0 10px;
 }
@@ -423,6 +425,9 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     margin: 0 2px;
     text-decoration: underline;
 }
+.wrap .product_nav a.selected{
+    color: #990000;
+}
 .wrap .product_nav a:hover{
     text-decoration: none ;
 }
@@ -512,7 +517,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     text-align: left;
 }
 .cart_table .pic {
-    width: 80px;
+    width: 90px;
 }
 .cart_table .pic img{
     height: 55px;
