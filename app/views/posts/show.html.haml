@@ -9,4 +9,5 @@
   = @post.title
 .post_body=raw @post.body
 = render :partial => "posts/post_footer", :locals => { :post => @post }
-= render :partial => "comments/vkontakte"
+-if @post.can_comment
+  = render :partial => "comments/vkontakte"
