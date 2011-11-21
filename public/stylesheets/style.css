@@ -1000,7 +1000,7 @@ post_body .r728x90 {
 /*******************************************FOOTER*********************************************************************/
 /**********************************************************************************************************************/
 .top_bant {
-    background: url("../images/top_bant.png") no-repeat scroll left bottom transparent;
+    background: url("../images/top_bant2.png") no-repeat scroll left bottom transparent;
     height: 103px;
     position: absolute;
     right: -35px;
@@ -1054,6 +1054,22 @@ post_body .r728x90 {
     font-size: 17px;
     font-size: 17px;
     line-height: 25px;
+}
+#products_search .s_wrap {
+    background: url("../images/serch_input.jpg") no-repeat scroll left top transparent;
+    display: block;
+    height: 25px;
+    position: absolute;
+    right: 20px;
+    top: 21px;
+    width: 183px;
+}
+#products_search .s_wrap .input{
+    border: medium none;
+    margin: 4px;
+    width: 150px;
+    float: left;
+
 }
 /***********************************************************************************************************************/
 /***********************************************************************************************************************/

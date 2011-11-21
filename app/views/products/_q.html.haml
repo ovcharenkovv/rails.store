@@ -1,0 +1,6 @@
+-form_tag params[:category_id] ? category_products_path : author_products_path, :method => 'get', :id => "products_search" do
+  .s_wrap
+    = text_field_tag :q, params[:q] , :class=>'input', :name => "q", :onblur => "if (this.value == '') { this.value='Search'", :onfocus => "if (this.value == 'найти...') { this.value='';};", :type => "text", :value => "найти..."
+  #products
+    = render 'products'
+

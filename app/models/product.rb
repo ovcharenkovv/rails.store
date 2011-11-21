@@ -49,6 +49,27 @@ class Product < ActiveRecord::Base
 
   validates :category_id, :author_id, :presence => true
 
+  def self.search(q)
+    if q
+      where('products.title LIKE :q OR products.id = :q  ',{:q => "#{q}%"})
+    else
+      scoped
+    end
+  end
+
+
+  #def self.search(q,in_category,categories,sort,page,per_page)
+  #  if q
+  #    includes(:author).includes(:category).where('products.title LIKE :q OR products.id = :q  ',{:q => "#{q}%"},:published => true).paginate :page=>page, :order=>sort, :per_page => per_page
+  #  else
+  #    if in_category
+  #      includes(:author).includes(:category).where(:category_id => categories,:published => true).paginate :page=>page, :order=>sort, :per_page => per_page
+  #    else
+  #      includes(:author).includes(:category).where(:author_id => categories,:published => true).paginate :page=>page, :order=>sort, :per_page => per_page
+  #    end
+  #  end
+  #end
+
   def inc_click
     if self.click_count
       self.update_attribute(:click_count, self.click_count += 1)
