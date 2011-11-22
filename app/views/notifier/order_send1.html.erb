@@ -12,6 +12,3 @@ Delivery_type:<%= @order.delivery_type %>
 <p>Customer ordered the following items:</p>
 
 <p><%= render :template => 'line_items/_mail_line_item',:locals => { :line_items  => @order.line_items  }  %></p>
-
-
-<p>We'll its work! congratulations !</p>
