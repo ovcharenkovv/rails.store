@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111123152427) do
+ActiveRecord::Schema.define(:version => 20111123215250) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(:version => 20111123152427) do
     t.string   "user_email",       :limit => 50, :default => ""
     t.text     "comment"
     t.integer  "rating"
-    t.integer  "published",                      :default => 0
+    t.boolean  "published",                      :default => false
     t.integer  "commentable_id"
     t.string   "commentable_type"
     t.integer  "user_id"
@@ -101,9 +101,10 @@ ActiveRecord::Schema.define(:version => 20111123152427) do
     t.datetime "updated_at"
     t.string   "delivery_type"
     t.string   "telephone"
-    t.string   "status",        :default => "new"
+    t.string   "status",                                       :default => "new"
     t.string   "shipment_id"
     t.text     "note"
+    t.decimal  "spent",         :precision => 10, :scale => 0
   end
 
   create_table "post_categories", :force => true do |t|

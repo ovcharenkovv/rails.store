@@ -1,6 +1,7 @@
 class Order < ActiveRecord::Base
   PAYMENT_TYPES = ["Перевод на карту Приватбанка","Наложеный платеж" ]
   DELIVERY_TYPES = ["Новая почта - 20 грн.","Укрпочта - 20 грн.","Автолюкс - 20 грн." ]
+  DELIVERY_PRICE = 20
 #  DELIVERY_TYPES_PRICE = [["Укрпочта", "15"], ["Новая почта", "20"] , ["Автолюкс", "20"]]
   ORDER_STATUS = ["new", "payment_waiting" , "paid","sent","success","refused","closed"]
 

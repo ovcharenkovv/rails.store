@@ -29,6 +29,42 @@
     %br
     = f.text_field :shipment_id
   .field
+    = f.label :spent
+    %br
+    = f.text_field :spent
+  %p
+    %b Products Are:
+    %table
+      %tr
+        %th Name
+        %th Quantity
+        %th Author
+        %th Category
+        %th Price
+        %th Author Price
+        %th Wages
+      - @order.line_items.each do |li|
+        %tr
+          -product = Product.find(li.product_id)
+          %td=link_to product.title, admin_category_product_path(product.category.id,product)
+          %td=li.quantity
+          %td=product.author.name
+          %td=product.category.name
+          %td=product.price*li.quantity
+          %td=product.author_price*li.quantity unless product.author_price.nil?
+          %td=(product.price*li.quantity)-(product.author_price*li.quantity) unless product.author_price.nil?
+          -@tsum = @tsum.to_i+product.price*li.quantity.to_i
+          -if !product.author_price.nil?
+            -@asum =@asum.to_i+product.author_price*li.quantity.to_i
+      %tr
+        %td{:colspan => "4",:style=>"border:0px!important;"}
+        %td.green=@tsum.to_i
+        %td.green=@asum.to_i
+        %td.green=@tsum.to_i-@asum.to_i
+
+
+
+  .field
     = f.label :note
     %br
     = f.text_area :note

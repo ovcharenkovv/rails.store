@@ -45,11 +45,22 @@
         -@tsum = @tsum.to_i+product.price*li.quantity.to_i
         -if !product.author_price.nil?
           -@asum =@asum.to_i+product.author_price*li.quantity.to_i
-
     %tr
       %td{:colspan => "4",:style=>"border:0px!important;"}
       %td.green=@tsum.to_i
       %td.green=@asum.to_i
       %td.green=@tsum.to_i-@asum.to_i
+    %tr
+      %td{:colspan => "4",:style=>"border:0px!important;"}
+      %td.red="+#{Order::DELIVERY_PRICE}"
+      %td.red
+      %td.red="-#{@order.spent.to_i}"
+    %tr
+      %td{:colspan => "4",:style=>"border:0px!important;"}
+      %td.red=@tsum.to_i+Order::DELIVERY_PRICE
+      %td.red
+      %td.red=@tsum.to_i-@asum.to_i-@order.spent.to_i
 .actions
+  = link_to 'Edit', edit_admin_order_path(@order),:class=>"cool_buton"
   = link_to 'Back', admin_orders_path,:class=>"cancel"
+
