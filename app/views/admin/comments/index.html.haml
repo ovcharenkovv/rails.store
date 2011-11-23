@@ -1,25 +1,31 @@
-%h1 Listing comments
-%table
-  %tr
-    %th published
-    %th user_name
-    %th email
-    %th commentable_type
-    %th comment
-    %th
-    %th
+- content_for :custom_css_js do
+  %script{:src => "http://userapi.com/js/api/openapi.js?34", :type => "text/javascript"}
+  :javascript
+    VK.init({apiId: 2665924, onlyWidgets: true});
 
-  - @comments.each do |comment|
-    %tr
-      %td= link_to comment.published.to_s, edit_admin_comment_path(comment)
-      %td= comment.user_name
-      %td= comment.user_email
-      %td= comment.commentable_type
-      %td= comment.comment[0..255]
-      %td= link_to 'Destroy', admin_comment_path(comment.id), :confirm => 'Are you sure?', :method => :delete
-      %td
-        -case comment.commentable_type
-        -when 'Post'
-          = link_to 'replay', short_post_path(Post.find(comment.commentable_id).post_category.slug, Post.find(comment.commentable_id).slug , :anchor => "comment_list", :r_email=>comment.user_email)
-        -when 'Product'
-          = link_to "replay", category_product_path(Product.find(comment.commentable_id).category, comment.commentable_id , :anchor => 'comment_list', :r_email=>comment.user_email)
+%h1 Listing comments
+= render :partial => "comments/vkontakte"
+-#%table
+-#  %tr
+-#    %th published
+-#    %th user_name
+-#    %th email
+-#    %th commentable_type
+-#    %th comment
+-#    %th
+-#    %th
+-#
+-#  - @comments.each do |comment|
+-#    %tr
+-#      %td= link_to comment.published.to_s, edit_admin_comment_path(comment)
+-#      %td= comment.user_name
+-#      %td= comment.user_email
+-#      %td= comment.commentable_type
+-#      %td= comment.comment[0..255]
+-#      %td= link_to 'Destroy', admin_comment_path(comment.id), :confirm => 'Are you sure?', :method => :delete
+-#      %td
+-#        -case comment.commentable_type
+-#        -when 'Post'
+-#          = link_to 'replay', short_post_path(Post.find(comment.commentable_id).post_category.slug, Post.find(comment.commentable_id).slug , :anchor => "comment_list", :r_email=>comment.user_email)
+-#        -when 'Product'
+-#          = link_to "replay", category_product_path(Product.find(comment.commentable_id).category, comment.commentable_id , :anchor => 'comment_list', :r_email=>comment.user_email)
