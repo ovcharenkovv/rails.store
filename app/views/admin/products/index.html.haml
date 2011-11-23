@@ -1,4 +1,6 @@
 %h1 Listing products
+.rest_buttons
+  =link_to 'New Product', new_admin_category_product_path(@category),:class=>"cool_buton"
 %table.catalog
   %tr
     %th.id id
@@ -20,6 +22,4 @@
       %td= product.author.name
       %td= product.click_count
       %td= number_to_currency(product.price, :unit => "", :separator => ",", :delimiter => " ", :format => "%n %u" )
-%br/
-= link_to 'New Product', new_admin_category_product_path(@category)
 %p= will_paginate @products

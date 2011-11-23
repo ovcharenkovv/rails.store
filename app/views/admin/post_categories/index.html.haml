@@ -1,5 +1,6 @@
 %h1 Listing post_categories
-
+.rest_buttons
+  = link_to 'New Post category', new_admin_post_category_path,:class=>"cool_buton"
 %table
   %tr
     %th Name
@@ -14,7 +15,3 @@
       %td= post_category.slug
       %td
         = link_to 'Edit', edit_admin_post_category_path(post_category)
-
-%br
-
-= link_to 'New Post category', new_admin_post_category_path
