@@ -135,7 +135,7 @@ h3 {
     height: 30px;
 
 }
-.orders_sort a, .cool_buton {
+.orders_sort a, .cool_buton, .actions input, .actions a.cancel  {
     display:block;
     float:left;
     margin:0 15px 0 0;
@@ -152,7 +152,11 @@ h3 {
     padding:5px 10px 6px 7px; /* Links */
 }
 
-.orders_sort a:hover, .cool_buton:hover{
+.actions a.cancel {
+    border:1px solid red;
+}
+
+.orders_sort a:hover, .cool_buton:hover , .actions input:hover , .actions .cancel:hover{
     background-color:#dff4ff;
     border:1px solid #565656;
     color:#336699;
@@ -205,4 +209,9 @@ h3 {
 .rest_buttons {
     margin: 0 0 10px;
     overflow: hidden;
+}
+
+.actions {
+    position: relative;
+    margin: 0 0 40px;
 }

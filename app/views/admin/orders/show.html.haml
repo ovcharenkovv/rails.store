@@ -51,5 +51,5 @@
       %td.green=@tsum.to_i
       %td.green=@asum.to_i
       %td.green=@tsum.to_i-@asum.to_i
-
-= link_to 'Back', admin_orders_path
+.actions
+  = link_to 'Back', admin_orders_path,:class=>"cancel"
