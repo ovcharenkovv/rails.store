@@ -47,7 +47,7 @@ class Product < ActiveRecord::Base
             :uniqueness => true,
             :length => {:minimum => 3, :maximum => 25}
 
-  validates :category_id, :author_id, :presence => true
+  validates :category_id, :author_id, :author_price, :presence => true
 
   def self.search(q)
     if q

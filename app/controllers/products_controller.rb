@@ -71,4 +71,28 @@ class ProductsController < ApplicationController
        redirect_to root_path
     end
   end
+
+  def new
+    @product = @category.products.new
+
+    respond_to do |format|
+      format.html # new.html.haml
+      format.xml  { render :xml => @product }
+    end
+  end
+
+  def create
+    @product = @category.products.new(params[:product])
+
+    respond_to do |format|
+      if @product.save
+        flash[:notice] = 'Product was successfully created.'
+        format.html { redirect_to category_products_path }
+      else
+        format.html { render :action => "new" }
+      end
+    end
+  end
+
+
 end
