@@ -15,6 +15,11 @@
     = f.label :encrypted_password
     %br/
     = f.text_field :encrypted_password
+  .field
+    = f.label :author
+    %br
+    = f.collection_select :author_id, Author.find(:all), :id, :name, :include_blank => 'none'
+
 
   .actions
     = f.submit
