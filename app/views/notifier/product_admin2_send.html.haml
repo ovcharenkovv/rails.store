@@ -1,0 +1,25 @@
+%h1 Продукт на Poshstore
+%p
+  Автор:
+  %br
+  = link_to @product.author.name.to_s , author_products_url(@product.author)
+%p
+  Имя товара:
+  %br
+  = link_to @product.title , admin_author_product_url(:admin,@product.author)
+%p
+  Категория:
+  %br
+  = link_to @product.category.name.to_s , category_products_url(@product.category)
+%p
+  Цена автора:
+  %br
+  =@product.author_price
+%p
+  Описание:
+  %br
+  =@product.description
+%p
+  Изображение:
+  %br
+  = image_tag(@product.image.url(:medium)) unless @product.image.nil?

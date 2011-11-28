@@ -87,7 +87,8 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        flash[:notice] = 'Product was successfully created.'
+        Notifier.product_admin1_send(@product).deliver
+        Notifier.product_admin2_send(@product).deliver
         format.html { redirect_to category_products_path }
       else
         format.html { render :action => "new" }
