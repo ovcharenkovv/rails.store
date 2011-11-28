@@ -6,7 +6,7 @@
 %p
   Имя товара:
   %br
-  = link_to @product.title, edit_admin_category_product_url(:admin, @product.category_id, @product )
+  = link_to @product.title, edit_admin_category_product_url(@product.category_id, @product )
 %p
   Категория:
   %br

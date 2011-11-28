@@ -6,9 +6,6 @@ class Product < ActiveRecord::Base
 
   has_many :line_items
   has_many :orders, :through => :line_items
-#  has_attached_file :image,
-#                    :styles => { :small=> "125x94#", :thumb => "200x150#",:medium => "400x300#", :large => "800X600" },
-#                    :convert_options => { :small =>"-quality 50",:thumb =>"-quality 65",:medium=>"-quality 85" }
 
   has_attached_file :image,
                     :styles => {
@@ -35,8 +32,6 @@ class Product < ActiveRecord::Base
 
                         }
                     }
-
-
 
   acts_as_commentable
 

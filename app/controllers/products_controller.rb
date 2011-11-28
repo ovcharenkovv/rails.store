@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
 
+  cache_sweeper :product_sweeper, :only => [:create, :update, :destroy]
+
   before_filter :get_category_or_author , :init_params
   # GET /products
   # GET /products.xml
