@@ -74,6 +74,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = @category.products.new
+    authorize! :create, @product
 
     respond_to do |format|
       format.html # new.html.haml

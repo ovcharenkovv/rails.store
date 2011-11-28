@@ -44,3 +44,5 @@ gem 'i18n' , '0.5.0'
 gem 'russian'
 
 gem 'newrelic_rpm'
+
+gem "cancan"

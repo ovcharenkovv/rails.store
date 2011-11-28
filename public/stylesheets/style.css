@@ -186,6 +186,9 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     font-size: 12px;
     list-style: square;
 }
+.red{
+    color: #ff0000;
+}
 /**********************************************************************************************************************/
 /**********************************************************************************************************************/
 .content_wrap {
@@ -651,8 +654,32 @@ form.button_to .empty_cart:hover{
 }
 .happy_button .submit:hover{
     opacity: 0.9;
-
 }
+
+.happy_form .actions input, .happy_form .actions a.cancel {
+    display:block;
+    float:left;
+    margin:0 15px 0 0;
+    background-color:#f5f5f5;
+    border:1px solid #565656;
+    font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+    font-size:14px;
+    line-height:130%;
+    text-decoration:none;
+    font-weight:bold;
+    color:#565656;
+    cursor:pointer;
+    padding:5px 10px 6px 7px; /* Links */
+}
+.happy_form .actions a.cancel {
+    border:1px solid red;
+}
+.happy_form .actions input:hover, .happy_form .actions a.cancel:hover{
+    background-color:#dff4ff;
+    border:1px solid #565656;
+    color:#336699;
+}
+
 /**********************************************************************************************************************/
 /*******************************************happy_form*********************************************************************/
 /**********************************************************************************************************************/
@@ -661,27 +688,26 @@ form.button_to .empty_cart:hover{
 
 }
 .happy_form label {
-    font-size: 16px;
-    line-height: 32px;
+    font-size: 15px;
+    line-height: 25px;
 }
-.happy_form input{
+.happy_form input[type=text], .happy_form input[type=email], .happy_form input[type=password]{
     border: 1px solid #646464;
-    border-radius: 5px 5px 5px 5px;
-    height: 22px;
+    border-radius: 3px 3px 3px 3px;
     padding: 5px;
     width: 400px;
 }
 .happy_form textarea {
     border: 1px solid #646464;
-    border-radius: 5px 5px 5px 5px;
-    height: 54px;
+    border-radius: 3px 3px 3px 3px;
+    height: 80px;
     padding: 5px;
     width: 400px;
 }
 .happy_form select {
     background: none repeat scroll 0 0 white;
     border: 1px solid #646464;
-    border-radius: 5px 5px 5px 5px;
+    border-radius: 3px 3px 3px 3px;
     height: 30px;
     padding: 5px;
     width: 410px;

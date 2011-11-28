@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
   before_filter  :get_current_cart
   layout "application"
 
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url
+  end
+
   def get_current_cart
     @current_cart = current_cart
   end

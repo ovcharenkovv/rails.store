@@ -20,6 +20,10 @@
     %br
     = f.collection_select :author_id, Author.find(:all), :id, :name, :include_blank => 'none'
 
+  .field
+    = f.label :role
+    %br
+    = f.collection_select :role, User::ROLES, :to_s, :humanize , :include_blank => 'none'
 
   .actions
     = f.submit

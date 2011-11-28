@@ -1,4 +1,6 @@
 %p.product_nav
+  -if can? :update, @product
+    = link_to "Добавить товар",new_category_product_path(@category),:class=>"red", :style=>"margin: 0 280px 0 0;"
   Сортировать по:
   - if params[:category_id]
     = link_to "Цене", category_products_path(@category, :sort => "price", :per_page => params[:per_page] ), :class=>params[:sort]=='price' ? "selected":"normal"
