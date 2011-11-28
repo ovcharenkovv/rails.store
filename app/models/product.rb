@@ -47,7 +47,7 @@ class Product < ActiveRecord::Base
             :uniqueness => true,
             :length => {:minimum => 3, :maximum => 25}
   validates :category_id, :author_id, :author_price, :presence => true
-  validates_numericality_of :author_price
+  validates_numericality_of :author_price, :greater_than_or_equal_to => 15, :less_than_or_equal_to => 254
   validates_attachment_presence :image
 
   def self.search(q)

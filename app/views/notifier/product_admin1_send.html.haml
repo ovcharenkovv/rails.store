@@ -6,7 +6,7 @@
 %p
   Имя товара:
   %br
-  = link_to @product.title , admin_author_product_url(:admin,@product.author)
+  = link_to @product.title, edit_admin_category_product_url(:admin, @product.category_id, @product )
 %p
   Категория:
   %br
@@ -22,4 +22,4 @@
 %p
   Изображение:
   %br
-  = image_tag(@product.image.url(:medium)) unless @product.image.nil?
+  = image_tag "http://poshstore.com.ua"+(@product.image.url(:thumb))
