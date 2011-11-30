@@ -39,11 +39,11 @@ class Notifier < ActionMailer::Base
   end
   def product_admin1_send(product,action)
     @product = product
-    mail :to => 'ovcharenkovv@gmail.com', :subject => action == 'create' ? 'Добавлен новый товар' : 'Отредактирован тоар'
+    mail :to => 'ovcharenkovv@gmail.com', :subject => action == 'create' ? 'Добавлен новый товар' : 'Отредактирован товар'
   end
   def product_admin2_send(product,action)
     @product = product
-    mail :to => 'lavrovanna@yandex.ru', :subject => action =='create' ? 'Добавлен новый товар' : 'Отредактирован тоар'
+    mail :to => 'lavrovanna@yandex.ru', :subject => action =='create' ? 'Добавлен новый товар' : 'Отредактирован товар'
   end
 
 end
