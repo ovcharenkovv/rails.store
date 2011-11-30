@@ -9,10 +9,10 @@
           - @product.errors.full_messages.each do |msg|
             %li= msg
     -if params[:action]=='edit'
-      -#.field
-      -#  = f.label "Внимание, убрав галочку и нажав 'Сохранить' товар удалиться !"
-      -#  %br
-      -#  = f.check_box :published
+      .field
+        = f.label "Внимание, убрав галочку и нажав 'Сохранить' товар удалится !"
+        %br
+        = f.check_box :published
       .field
         = f.label "Категория"
         %br

@@ -1,6 +1,6 @@
 /*@font-face {*/
-    /*font-family: 'CentryGothic';*/
-    /*src: url(../images/gothic.ttf);*/
+/*font-family: 'CentryGothic';*/
+/*src: url(../images/gothic.ttf);*/
 /*}*/
 
 html {
@@ -12,7 +12,7 @@ body {
     height: 100%;
     margin: 12px 0 0;
     background: url(../images/bg3.jpg) top center repeat-x;
-    /*font-family: 'CentryGothic', verdana;*/
+/*font-family: 'CentryGothic', verdana;*/
     font-family: 'Verdana', sans-serif;
 
 }
@@ -415,6 +415,27 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 .content_wrap .content .random ul li a img{
     width: 125px;
+}
+
+.content_wrap .content #products .product .actions {
+    height: 32px;
+    position: absolute;
+    right: 12px;
+    top: 172px;
+    width: 34px;
+}
+.content_wrap .content #products .product .actions .edit{
+    display: block;
+    float: left;
+    background: url(../images/edit_icon.png) bottom left no-repeat;
+    width:32px;
+    height:32px;
+    margin: 0 5px 0 0;
+    border: 1px solid transparent;
+}
+.content_wrap .content #products .product .actions .edit:hover{
+    opacity: 0.6;
+    border: 1px solid gray;
 }
 /**********************************************************************************************************************/
 /*******************************************CONTEN WRAP PRODUCTS*******************************************************/

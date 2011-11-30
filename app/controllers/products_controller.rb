@@ -72,7 +72,7 @@ class ProductsController < ApplicationController
         format.xml  { render :xml => @product }
       end
     else
-       redirect_to root_path
+      redirect_to root_path
     end
   end
 
