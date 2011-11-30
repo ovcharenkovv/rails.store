@@ -3,8 +3,6 @@ class ProductsController < ApplicationController
   cache_sweeper :product_sweeper, :only => [:create, :update, :destroy]
 
   before_filter :get_category_or_author , :init_params
-  # GET /products
-  # GET /products.xml
 
   def init_params
     if params[:per_page]
@@ -36,6 +34,12 @@ class ProductsController < ApplicationController
     end
   end
 
+  def notify_us(action)
+    Notifier.product_admin1_send(@product,action).deliver
+    Notifier.product_admin2_send(@product,action).deliver
+  end
+
+
   def index
     if params[:category_id]
       @products = Product.includes(:author).includes(:category).where(:category_id => @categories,:published => true).search(params[:q]).paginate :page=>params[:page], :order=>@sort, :per_page => @per_page
@@ -53,8 +57,6 @@ class ProductsController < ApplicationController
     #end
   end
 
-# GET /products/1
-# GET /products/1.xml
   def show
     session[:product_category_id]=params[:category_id]
 
@@ -84,13 +86,17 @@ class ProductsController < ApplicationController
     end
   end
 
+  def edit
+    @product = @category.products.find(params[:id])
+    authorize! :create, @product
+  end
+
   def create
     @product = @category.products.new(params[:product])
 
     respond_to do |format|
       if @product.save
-        Notifier.product_admin1_send(@product).deliver
-        Notifier.product_admin2_send(@product).deliver
+        notify_us params[:action]
         format.html { redirect_to category_products_path }
       else
         format.html { render :action => "new" }
@@ -98,5 +104,17 @@ class ProductsController < ApplicationController
     end
   end
 
+  def update
+    @product = Product.find(params[:id])
+
+    respond_to do |format|
+      if @product.update_attributes(params[:product])
+        notify_us params[:action]
+        format.html { redirect_to category_products_path }
+      else
+        format.html { render :action => "edit" }
+      end
+    end
+  end
 
 end

@@ -37,6 +37,7 @@ class Product < ActiveRecord::Base
 
   before_destroy :ensure_not_referenced_by_any_line_item
   before_create :generate_price
+  before_save :generate_price
 
   validates :title,       :presence => true,
             :uniqueness => true,

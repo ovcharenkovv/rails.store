@@ -37,13 +37,13 @@ class Notifier < ActionMailer::Base
     @comment = comment
     mail :to => comment.user_email, :subject => 'Коментарий на Posh Store'
   end
-  def product_admin1_send(product)
+  def product_admin1_send(product,action)
     @product = product
-    mail :to => 'ovcharenkovv@gmail.com', :subject => 'Добавлен новый товар'
+    mail :to => 'ovcharenkovv@gmail.com', :subject => action == 'create' ? 'Добавлен новый товар' : 'Отредактирован тоар'
   end
-  def product_admin2_send(product)
+  def product_admin2_send(product,action)
     @product = product
-    mail :to => 'lavrovanna@yandex.ru', :subject => 'Добавлен новый товар'
+    mail :to => 'lavrovanna@yandex.ru', :subject => action =='create' ? 'Добавлен новый товар' : 'Отредактирован тоар'
   end
 
 end

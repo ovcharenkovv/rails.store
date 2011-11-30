@@ -8,35 +8,30 @@
         %ul
           - @product.errors.full_messages.each do |msg|
             %li= msg
-    -#.field
-    -#  = f.label :published
-    -#  %br
-    -#  = f.check_box :published
+    -if params[:action]=='edit'
+      -#.field
+      -#  = f.label "Внимание, убрав галочку и нажав 'Сохранить' товар удалиться !"
+      -#  %br
+      -#  = f.check_box :published
+      .field
+        = f.label "Категория"
+        %br
+        = f.collection_select :category_id, Category.non_root_category, :id, :name
+      %br
+      = image_tag @product.image.url(:thumb)
+
+    .field
+      = f.label "Картинка  (размер 800х600 или 400х300)"
+      %br
+      = f.file_field :image, :style=>"color:#630; background:#ffc none; font-size:120%; font-family:Courier,monospace; font-weight:bold;"
     .field
       = f.label "Заголовок изделие (уникальное поле )"
       %br
       = f.text_field :title
     .field
-      %br
-      = f.label "Картинка  (размер 800х600 или 400х300)"
-      %br
-      = f.file_field :image, :style=>"color:#630; background:#ffc none; font-size:120%; font-family:Courier,monospace; font-weight:bold;"
-    .field
       = f.label "Цена автора (без наценки)"
       %br
       = f.text_field :author_price
-
-    -#-if params[:action]=='edit'
-    -#  .field
-    -#    = f.label :price
-    -#    %br
-    -#    = f.text_field :price
-    -#  .field
-    -#    %span#calc Calc
-    -#  .field
-    -#    = f.label :category
-    -#    %br
-    -#    = f.collection_select :category_id, Category.find(:all), :id, :name
     .field
       = f.label "Описание товара (чем больше тем лучше)"
       %br
@@ -44,5 +39,5 @@
 
     =hidden_field_tag 'product[author_id]', current_user.is_admin? ? '2' : current_user.author.id
     .actions
-      = f.submit "Создать"
+      = f.submit "Сохранить"
       = link_to "Отмена", :back, :class=>"cancel"

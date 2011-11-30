@@ -8,4 +8,8 @@
       = link_to author_products_path(product.author_id) , :class => "author" do
         %h5=product.author.name
       %span.price= product.price.to_s+" Грн."
+    .actions
+      -if can? :update, @product
+        = link_to "edit",edit_category_product_path(@category,product),:class=>"edit"
+
 = will_paginate @products ,:previous_label=>"« Назад ", :next_label=>" Вперед »"
