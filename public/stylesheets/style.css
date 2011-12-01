@@ -863,6 +863,7 @@ post_body .r728x90 {
 }
 .content_wrap .content .post_body .shadow img {
     border:1px solid #ccc;
+    width: 670px;
 }
 .content_wrap .content .post_footer{
     border-bottom: 1px solid #BBBCBD;
