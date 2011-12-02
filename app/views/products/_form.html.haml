@@ -16,7 +16,7 @@
       .field
         = f.label "Категория"
         %br
-        = f.collection_select :category_id, Category.non_root_category, :id, :name
+        = f.collection_select :category_id, Category.without_children, :id, :name
       %br
       = image_tag @product.image.url(:thumb)
 
