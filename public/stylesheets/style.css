@@ -417,14 +417,22 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     width: 125px;
 }
 
-.content_wrap .content #products .product .actions {
+.content_wrap .content #products .product .actions{
     height: 32px;
     position: absolute;
     right: 12px;
     top: 172px;
     width: 34px;
 }
-.content_wrap .content #products .product .actions .edit{
+.content .border .actions {
+    height: 32px;
+    position: absolute;
+    right: 7px;
+    top: 275px;
+    width: 34px;
+}
+.content_wrap .content #products .product .actions .edit,
+.content .border .actions .edit{
     display: block;
     float: left;
     background: url(../images/edit_icon.png) bottom left no-repeat;
@@ -433,7 +441,9 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     margin: 0 5px 0 0;
     border: 1px solid transparent;
 }
-.content_wrap .content #products .product .actions .edit:hover{
+.content_wrap .content #products .product .actions .edit:hover,
+.content .border .actions .edit:hover
+{
     opacity: 0.6;
     border: 1px solid gray;
 }
@@ -481,6 +491,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     float: left;
     text-align:center;
     margin: 10px 0 0;
+    position: relative;
     -moz-box-shadow: 0 0 8px #888;
     -webkit-box-shadow: 0 0 8px #888;
     box-shadow: 0 0 8px #888;

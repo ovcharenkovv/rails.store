@@ -10,7 +10,6 @@
       %span.price= product.price.to_s+" Грн."
     -if can? :update, product
       .actions
-        -#-if product.author_id == current_user.author_id
         = link_to "",edit_category_product_path(product.category_id,product),:class=>"edit", :title=>"Редактировать."
 
 
