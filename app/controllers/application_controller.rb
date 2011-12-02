@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   layout "application"
 
   rescue_from CanCan::AccessDenied do |exception|
+    Rails.logger.debug "Access denied on #{exception.action} #{exception.subject.inspect}"
     redirect_to root_url
   end
 

@@ -1,5 +1,5 @@
 %p.product_nav
-  -if can? :create, @product
+  -if (can? :create, Product)&&(params[:author_id].nil?)
     = link_to "Добавить товар",new_category_product_path(@category),:class=>"red", :style=>"margin: 0 280px 0 0;"
   Сортировать по:
   - if params[:category_id]
