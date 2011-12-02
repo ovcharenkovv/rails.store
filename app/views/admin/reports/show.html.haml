@@ -1,7 +1,13 @@
+- form_tag admin_report_path, :method => 'get' do
+  = text_field_tag :from, params[:from]
+  = text_field_tag :to, params[:to]
+  = submit_tag "Search", :name => nil
+
+
 %p
   %b Name:
   = @report.name
 %p
   %b Result:
-  = Order.where(@report.param).count
-
+  -if params[:from] && params[:to]
+    = Order.where(@report.param).where("created_at BETWEEN '#{params[:from].to_datetime.to_formatted_s(:db)}' AND '#{params[:to].to_datetime.to_formatted_s(:db)}'").count
