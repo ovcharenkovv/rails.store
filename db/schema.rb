@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111128101900) do
+ActiveRecord::Schema.define(:version => 20111202172536) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -148,6 +148,13 @@ ActiveRecord::Schema.define(:version => 20111128101900) do
     t.string   "status",                                            :default => "Есть в наличии"
     t.decimal  "author_price",       :precision => 10, :scale => 0
     t.boolean  "published",                                         :default => true
+  end
+
+  create_table "reports", :force => true do |t|
+    t.string   "name"
+    t.string   "param"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|

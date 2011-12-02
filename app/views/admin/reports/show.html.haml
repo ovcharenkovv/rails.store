@@ -1,0 +1,7 @@
+%p
+  %b Name:
+  = @report.name
+%p
+  %b Result:
+  = Order.where(@report.param).count
+
