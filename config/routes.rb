@@ -1,5 +1,4 @@
 Store::Application.routes.draw do
-
   devise_for :users do
     get "/login" => "devise/sessions#new"
     get "/logout" => "devise/sessions#destroy"
@@ -19,7 +18,7 @@ Store::Application.routes.draw do
   resources :orders, :line_items, :carts
 
   namespace :admin do
-    resources :orders, :line_items, :carts, :comments, :users
+    resources :orders, :line_items, :carts, :comments, :users, :reports
     resources :authors do
       resources :products
     end

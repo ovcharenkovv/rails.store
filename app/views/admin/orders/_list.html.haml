@@ -1,0 +1,22 @@
+%table
+  %tr
+    %th Status
+    %th ID
+    %th Name
+    %th Phone
+    %th Address
+    %th Spent
+    %th shipment_id
+    %th Order date:
+
+  - @orders.each do |order|
+    %tr
+      %td= link_to order.status.to_s, edit_admin_order_path(order)
+      %td= link_to order.id, admin_order_path(order)
+      %td= link_to order.name, admin_order_path(order)
+      %td= order.telephone
+      %td= order.address
+      %td= order.spent
+      %td= order.shipment_id
+      %td= order.created_at
+

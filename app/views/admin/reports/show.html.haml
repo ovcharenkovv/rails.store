@@ -1,0 +1,51 @@
+.actions
+  = link_to "All reports", admin_reports_path, :class=>"cancel"
+
+- form_tag admin_report_path, :method => 'get' do
+  = text_field_tag :from, params[:from]
+  = text_field_tag :to, params[:to]
+  = submit_tag "Search", :name => nil
+-from = params[:from].to_datetime.to_formatted_s(:db) unless params[:from].blank?
+-to = params[:to].to_datetime.to_formatted_s(:db) unless params[:to].blank?
+%h1=@report.name.capitalize
+%p
+  -if from && to
+    -case @report.name
+      -when "by_status"
+        -@orders = Order.by_status(from,to)
+        = render "admin/orders/list", :locals => {:orders => @orders}
+        %h3.red="Новых            :  #{@orders.where(:status=>'new').count}"
+        %h3.red="Успешных         :  #{@orders.where(:status=>'success').count}"
+        %h3.red="Ожидают проплаты :  #{@orders.where(:status=>'payment_waiting').count}"
+        %h3.red="Проплаченые      :  #{@orders.where(:status=>'paid').count}"
+        %h3.red="Отправленые      :  #{@orders.where(:status=>'sent').count}"
+        %h3.red="Передумали       :  #{@orders.where(:status=>'refused').count}"
+        %h3.red="Закрытые         :  #{@orders.where(:status=>'closed').count}"
+
+      -when "by_spent"
+        -@orders =Order.by_spent(from,to)
+        = render "admin/orders/list", :locals => {:orders => @orders}
+        %h2.red="Сумма курєру':  #{@orders.sum(:spent)}"
+      -when "wages"
+        -@orders =Order.wages(from,to)
+        = render "admin/orders/list", :locals => {:orders => @orders}
+        -@orders_count              = 0
+        -@products_count            = 0
+        -@products_price_sum        = 0
+        -@products_author_price_sum = 0
+        -@products_spent_sum        = 0
+        -@orders.each do |order|
+          -order.line_items.each do |line_item|
+            -@products_count += 1
+            -@products_price_sum += line_item.product.price unless line_item.product.nil?
+            -@products_author_price_sum += line_item.product.author_price unless line_item.product.nil?
+          -@orders_count += 1
+          -@products_price_sum += Order::DELIVERY_PRICE
+          -@products_spent_sum += order.spent.to_i
+
+        %h3.red="Продано товаров    : #{@products_count}"
+        %h3.red="Успешных проддаж   : #{@orders_count}"
+        %h3.red="Выручка от продаж  : #{@products_price_sum}"
+        %h3.red="Оплата мастерам    : #{@products_author_price_sum}"
+        %h3.red="Росходы курєру     : #{@products_spent_sum}"
+        %h1.red="Общий доход        : #{@products_price_sum-@products_author_price_sum-@products_spent_sum}"
