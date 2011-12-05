@@ -21,13 +21,23 @@ class Order < ActiveRecord::Base
 
   has_many :line_items,:dependent => :destroy
 
-
-
   def add_line_items_from_cart(cart)
     cart.line_items.each do |item|
       item.cart_id = nil
       line_items << item
     end
+  end
+
+  def self.by_status(from,to)
+    where("created_at BETWEEN '#{from}' AND '#{to}'").order(:status)
+  end
+
+  def self.by_spent(from,to)
+    where("created_at BETWEEN '#{from}' AND '#{to}'").where('spent >=0')
+  end
+
+  def self.wages(from,to)
+    where("created_at BETWEEN '#{from}' AND '#{to}'").where(:status=>'success')
   end
 
 end
