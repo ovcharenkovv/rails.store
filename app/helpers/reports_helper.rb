@@ -58,7 +58,7 @@ module ReportsHelper
     @wages_array = Hash.new
     while from_beginning_date != to_beginning_date
       #from_beginning_date.strftime("%B").to_s
-      @wages_array[from_beginning_date.month] = calc_wages_for_period(from_beginning_date.to_formatted_s(:db) ,to_end_date.to_formatted_s(:db))
+      @wages_array[from_beginning_date.month+1] = calc_wages_for_period(from_beginning_date.to_formatted_s(:db) ,to_end_date.to_formatted_s(:db))
       from_beginning_date = from_beginning_date.next_month
       to_end_date = to_end_date.next_month.at_end_of_month
     end
