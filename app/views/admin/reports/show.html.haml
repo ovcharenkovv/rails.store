@@ -8,18 +8,31 @@
 -from = params[:from].to_datetime.to_formatted_s(:db) unless params[:from].blank?
 -to = params[:to].to_datetime.to_formatted_s(:db) unless params[:to].blank?
 %h1=@report.name.capitalize
-%p
-  -if from && to
-    -case @report.name
-      -when "by_status"
-        -@orders = Order.by_status(from,to)
-        = render "admin/orders/list"
-        = puts_status_report @orders
-      -when "by_spent"
-        -@orders =Order.by_spent(from,to)
-        = render "admin/orders/list"
-        = puts_spent_report @orders
-      -when "wages"
-        -@orders =Order.wages(from,to)
-        = render "admin/orders/list"
-        = puts_wages_report @orders
+-if from && to
+  -case @report.name
+    -when "by_status"
+      -@orders = Order.by_status(from,to)
+      = render "admin/orders/list"
+      = puts_status_report @orders
+    -when "by_spent"
+      -@orders =Order.by_spent(from,to)
+      = render "admin/orders/list"
+      = puts_spent_report @orders
+    -when "wages"
+      -@orders =Order.wages(from,to)
+      = render "admin/orders/list"
+      = puts_wages_report @orders
+    -when "dynamics_of_wages"
+      -@orders =Order.wages(from,to)
+      #chart_div
+      - content_for :custom_css_js do
+        %script{:src => "https://www.google.com/jsapi", :type => "text/javascript"}
+        :javascript
+          google.load("visualization", "1", {packages:["corechart"]});
+          google.setOnLoadCallback(drawChart);
+          function drawChart() {
+            var data = new google.visualization.DataTable();
+            #{chart_data_table(params[:from].to_datetime, params[:to].to_datetime)}
+            var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+            chart.draw(data, {width: 950, height: 500, title: 'Dynamics Of Wages'});
+          }
