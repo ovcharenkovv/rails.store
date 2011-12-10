@@ -1,20 +1,13 @@
-/*@font-face {*/
-/*font-family: 'CentryGothic';*/
-/*src: url(../images/gothic.ttf);*/
-/*}*/
-
 html {
-    background: url("../images/bg_top_stripe.png") repeat-x scroll left top #666666;
+    background: url("../images/skins/winter/top_stripe_bg.jpg") repeat-x scroll left top #333;
 }
 body {
     padding:0 0 12px;
     width: 100%;
     height: 100%;
     margin: 12px 0 0;
-    background: url(../images/bg3.jpg) top center repeat-x;
-/*font-family: 'CentryGothic', verdana;*/
+    background: url("../images/skins/winter/main_bg.jpg") top center repeat-x;
     font-family: 'Verdana', sans-serif;
-
 }
 div, p, form, label, input, textarea, img, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, table, td, tr {
     padding:0;
@@ -53,8 +46,8 @@ a {
 }
 a:hover {
     text-decoration:none;
+    color:#990000;
 }
-
 table{border-collapse:collapse;padding:0px;}
 button::-moz-focus-inner,
 input[type="reset"]::-moz-focus-inner,
@@ -92,17 +85,16 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     text-decoration: none !important;
     padding: 15px 0 0 0;
 }
-
-
 .header .logo:hover {
     text-decoration:none;
+    opacity:0.9;
 }
 .header .nav {
     display: block;
     height: 30px;
     position: absolute;
     right: 80px;
-    top: 94px;
+    top: 97px;
 }
 .header .nav li{
     display: inline-block;
@@ -115,6 +107,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 .header .nav li a:hover {
     opacity:1;
+    color:
 }
 .header .nav li span{
     display: block;
@@ -125,16 +118,16 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     box-shadow: 0 0 3px #000;
 }
 .header .nav li:hover span {
-    background-color:#E5E3CB;
+    background-color:#990000;
 }
 .header .nav li.new span {
-    background-color:#E5E3CB;
+    background-color:#990000;
 }
 .header .nav li.new:hover span {
     background-color:#999;
 }
 .header  .cart {
-    background: url("../images/header_cart_place.png") no-repeat scroll left top transparent;
+    background: url("../images/skins/winter/header_cart_place.png") no-repeat scroll left top transparent;
     display: block;
     height: 36px;
     padding: 10px 0 0 60px;
@@ -159,7 +152,6 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     background-color: red;
     display: table;
 }
-
 /**********************************************************************************************************************/
 /**********************************************************************************************************************/
 #error_explanation {
@@ -170,7 +162,6 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     margin-bottom: 20px;
     background-color: #f0f0f0;
 }
-
 #error_explanation h2 {
     text-align: left;
     font-weight: bold;
@@ -181,7 +172,6 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     background-color: #c00;
     color: #fff;
 }
-
 #error_explanation ul li {
     font-size: 12px;
     list-style: square;
@@ -199,7 +189,6 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     -webkit-border-radius: 20px;
     -khtml-border-radius: 20px;
     border-radius: 20px;
-
     -moz-box-shadow: 0 0 4px #000;
     -webkit-box-shadow: 0 0 4px#000;
     box-shadow: 0 0 4px #000;
@@ -250,12 +239,12 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     font-size:14px;
 }
 .content_wrap .sidebar ul li a:hover{
-    opacity:0.8;
+    text-decoration: underline;
+    color:#990000 !important;
 }
 /**********************************************************************************************************************/
 /************************************SIDEBAR MASTERS*******************************************************************/
 /**********************************************************************************************************************/
-
 .content_wrap .sidebar .masters h3 {
     display:block;
     color: #000000;
@@ -270,9 +259,13 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     padding: 0 10px 0 23px;
 }
 .content_wrap .sidebar .masters ul li a{
-    color:#000;
-    font-size:14px;
-    line-height: 23px;
+    color: #000;
+    font-size: 14px;
+    line-height: 20px;
+    text-decoration: none;
+}
+.content_wrap .sidebar .masters ul li a:hover{
+    text-decoration:underline;
 }
 /**********************************************************************************************************************/
 /************************************SIDEBAR BANNERS*******************************************************************/
@@ -313,7 +306,6 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     padding: 0 20px;
     width: 688px;
 }
-
 /**********************************************************************************************************************/
 /******************************************CONTENT NEW AND TOP PRODUCTS************************************************/
 /**********************************************************************************************************************/
@@ -336,18 +328,16 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .content_wrap .content h1 a:hover {
     opacity: 0.7;
 }
-
 .content_wrap .content .new .product, .content_wrap .content .top .product {
     float: left;
-    height: 234px;
+    height: 240px;
     padding: 0 7px;
     position: relative;
     width: 210px !important;
 }
-
 .content_wrap .content .product {
     float: left;
-    height: 229px;
+    height: 237px;
     padding: 7px 7px 0;
     position: relative;
     width: 210px;
@@ -355,13 +345,12 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .content_wrap .content .product .body{
     overflow: hidden;
     width: 210px;
-    height: 222px;
+    height: 230px;
     margin: 5px 0 0;
     -moz-box-shadow: 0 0 4px #888;
     -webkit-box-shadow: 0 0 4px#888;
     box-shadow: 0 0 4px #888;
 }
-
 .content_wrap .content .product .img {
     display: block;
     height: 150px;
@@ -372,7 +361,6 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .content_wrap .content .product .img:hover {
     opacity:0.9;
 }
-
 .content_wrap .content .product .title h4 {
     font-size: 14px;
     margin: 0 5px;
@@ -390,10 +378,8 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     margin: 0 5px;
     text-align: right;
 }
-
 .content_wrap .content .random ul {
     margin:15px;
-
 }
 .content_wrap .content .random ul li {
     display: block;
@@ -408,7 +394,6 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 .content_wrap .content .random ul li a {
     opacity: 0.85;
-
 }
 .content_wrap .content .random ul li a:hover {
     opacity: 1;
@@ -416,7 +401,6 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .content_wrap .content .random ul li a img{
     width: 125px;
 }
-
 .content_wrap .content #products .product .actions{
     height: 32px;
     position: absolute;
@@ -497,35 +481,37 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     box-shadow: 0 0 8px #888;
 }
 .wrap .important {
-    color: #4E2D18;
+    color: #666;
     float: left;
-    font-size: 12px ;
+    font: 14px/20px verdana ;
     height: 280px;
     padding: 15px 0 0;
     text-align: center;
     width: 240px;
 }
 .wrap .important .share{
-    margin:15px 0 0;
+    color: #000;
+    font: 14px/30px verdana;
+    margin: 98px 0 0;
 }
 .wrap .important .price {
-    color: #4E2D18;
+    color: #990000;
     display: block;
-    font-size: 40px;
+    font: bold 33px/55px verdana;
 }
 .wrap .important .add_to_cart {
-    background: url("../images/cart.png") no-repeat scroll 0 0 transparent;
-    border: 0 none;
+     background: url("../images/skins/winter/by_button_on_cart.png") no-repeat scroll 0 0 transparent;
+    border: medium none;
+    color: white;
     cursor: pointer;
-    display: block;
-    font-size: 25px;
-    height: 210px;
-    margin: 0 auto 0;
+    font-size: 23px;
+    height: 70px;
+    margin: 15px auto 0;
     outline: medium none;
     overflow: hidden;
-    padding: 165px 0 0 15px;
+    padding: -31px 0 0 15px;
     text-align: center;
-    width: 152px;
+    width: 171px;
 }
 .wrap .important .add_to_cart:hover {
     opacity: 0.7;
@@ -540,7 +526,6 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .share a:hover {
     opacity:0.7;
 }
-
 /**********************************************************************************************************************/
 /*******************************************cart_table*********************************************************/
 /**********************************************************************************************************************/
@@ -596,7 +581,6 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .cart_table .remove input.remove:hover{
     background: url("../images/remove_hover.png") no-repeat scroll 0 0 transparent;
 }
-
 .cart_table tr {
     border-bottom: 1px solid #d2c9c4;
 }
@@ -630,7 +614,6 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     height: 55px;
     position: relative;
     width: 665px;
-
 }
 .button_area .back{
     display: block;
@@ -670,19 +653,18 @@ form.button_to .empty_cart:hover{
 }
 
 .happy_button .submit{
-    background: url("../images/happy.png") no-repeat scroll 0 0 transparent;
+    background: url("../images/skins/winter/by_button_on_order.png") no-repeat scroll 0 2px transparent;
     border: medium none;
     color: #FFFFFF;
     cursor: pointer;
     display: block;
-    font-family: 'Verdana';
-    font-size: 21px;
-    height: 50px;
-    margin: 0 200px;
+    font: 20px verdana;
+    height: 52px;
+    margin: 0 212px;
     outline: medium none;
     overflow: hidden;
     text-align: center;
-    width: 236px;
+    width: 220px;
 }
 .happy_button .submit:hover{
     opacity: 0.9;
@@ -711,7 +693,6 @@ form.button_to .empty_cart:hover{
     border:1px solid #565656;
     color:#336699;
 }
-
 /**********************************************************************************************************************/
 /*******************************************happy_form*********************************************************************/
 /**********************************************************************************************************************/
@@ -751,24 +732,22 @@ form.button_to .empty_cart:hover{
     margin: 20px 0 0 0;
 }
 .happy_form #order_submit {
-    background: url("../images/happy.png") no-repeat scroll 0 0 transparent;
+    background: url("../images/skins/winter/by_button_on_order.png") no-repeat scroll 0 2px transparent;
     border: medium none;
     color: #FFFFFF;
     cursor: pointer;
     display: block;
-    font-size: 23px;
+    font: 20px verdana;
     height: 52px;
-    margin: 0 0 0 80px;
+    margin: 0 87px 0;
     outline: medium none;
     overflow: hidden;
     text-align: center;
-    width: 236px;
+    width: 220px;
 }
-
 /**********************************************************************************************************************/
 /*******************************************BANNERS ********************************************************************/
 /**********************************************************************************************************************/
-
 .post_body .r190x190 {
     overflow:hidden;
     padding: 10px 0 30px;
@@ -823,8 +802,6 @@ post_body .r728x90 {
     height: 45px;
     width: 675px;
 }
-
-
 /**********************************************************************************************************************/
 /*******************************************ARTICLE BODY***************************************************************/
 /**********************************************************************************************************************/
@@ -883,8 +860,6 @@ post_body .r728x90 {
     margin: 20px 0 60px;
     padding: 6px;
     position:relative;
-
-
 }
 /*******************************************************************************************************************/
 .content_wrap .content .post_footer .post_separator {
@@ -975,7 +950,6 @@ post_body .r728x90 {
     font-size: 12px;
     margin: 3px 0 0;
     overflow: hidden;
-
 }
 .content_wrap .content .comments_form {
     margin: 50px 0 0;
@@ -1054,19 +1028,17 @@ post_body .r728x90 {
 .payment_shipping td.description ul{
     padding: 20px 0 25px 40px !important;
 }
-
 /**********************************************************************************************************************/
 /*******************************************FOOTER*********************************************************************/
 /**********************************************************************************************************************/
 .top_bant {
-    background: url("../images/top_bant2.png") no-repeat scroll left bottom transparent;
-    height: 103px;
+    background: url("../images/skins/winter/top_bant.png") no-repeat scroll left bottom transparent;
+    height: 128px;
     position: absolute;
-    right: -35px;
-    top: -28px;
-    width: 124px;
+    right: -33px;
+    top: -12px;
+    width: 94px;
 }
-
 .bottom_bant {
     background: url("../images/bottom_bant.png") no-repeat scroll left bottom transparent;
     bottom: -42px;
@@ -1083,7 +1055,6 @@ post_body .r728x90 {
     position:relative;
     z-index:1;
 }
-
 .content_wrap .footer  .left_co {
     color: #666666;
     display: block;
@@ -1108,10 +1079,8 @@ post_body .r728x90 {
     padding: 306px 90px 0 55px;
     width: 555px;
 }
-
 .contactus_bg p {
-    font-size: 17px;
-    font-size: 17px;
+    font-size: 14px;
     line-height: 25px;
 }
 #products_search .s_wrap {
@@ -1128,7 +1097,6 @@ post_body .r728x90 {
     margin: 4px;
     width: 150px;
     float: left;
-
 }
 /***********************************************************************************************************************/
 /***********************************************************************************************************************/
@@ -1146,7 +1114,7 @@ post_body .r728x90 {
 .bx-captions{text-align:center;font-size:12px;padding:7px 0;color:#666;}
 .bx-auto{text-align:center;padding-top:15px;}
 .bx-auto a{color:#666;font-size:12px;}
-.bx-wrapper{margin:0 10px;width:670px !important;height: 255px !important;}
+.bx-wrapper{margin:0 10px;width:670px !important;height: 245px !important;}
 .bx-window{width:670px !important;}
 .bx-prev{background:url("../images/arrow.png") no-repeat scroll 0 0 transparent;display:block;height:72px;left:-22px !important;overflow:hidden;text-indent:-1000px;top:80px;width:22px;}
 .bx-next{background:url("../images/arrow.png") no-repeat scroll -22px 0 transparent;display:block;height:72px;overflow:hidden;right:-22px !important;text-indent:-1000px;top:80px;width:22px;}
@@ -1154,7 +1122,6 @@ post_body .r728x90 {
 /***********************************************************************************************************************/
 /***********************************************************************************************************************/
 /***********************************************************************************************************************/
-
 #fancybox-loading{position:fixed;top:50%;left:50%;width:40px;height:40px;margin-top:-20px;margin-left:-20px;cursor:pointer;overflow:hidden;z-index:1104;display:none;}
 #fancybox-loading div{position:absolute;top:0;left:0;width:40px;height:480px;background-image:url('/images/fancybox/fancybox.png');}
 #fancybox-overlay{position:absolute;top:0;left:0;width:100%;z-index:1100;display:none;}
