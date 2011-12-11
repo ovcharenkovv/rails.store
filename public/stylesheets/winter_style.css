@@ -362,8 +362,11 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     opacity:0.9;
 }
 .content_wrap .content .product .title h4 {
+    display: block;
     font-size: 14px;
+    height: 22px;
     margin: 0 5px;
+    overflow: hidden;
 }
 .content_wrap .content .product .author h5 {
     font-size: 11px;
