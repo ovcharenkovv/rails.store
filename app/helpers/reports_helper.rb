@@ -67,12 +67,14 @@ module ReportsHelper
 
   def chart_data_table from, to
     wages_array(from, to)
-    header = "data.addColumn('string', 'Month');data.addColumn('number', 'Wages'); data.addRows(#{@wages_array.count});"
+    header = "data.addColumn('string', 'Month'); data.addColumn('number', 'Wages'); data.addColumn('number', 'Expenses'); data.addColumn('number', 'Delta'); data.addRows(#{@wages_array.count});"
     @chart_data_table = ""
     @x = 0
     @wages_array.each do |key,value|
       @chart_data_table+=" data.setValue(#{@x}, 0, '#{Date::MONTHNAMES[key]}');"
       @chart_data_table+=" data.setValue(#{@x}, 1, #{value});"
+      @chart_data_table+=" data.setValue(#{@x}, 2, #{Expense.for_month(key).sum(&:amount)});"
+      #@chart_data_table+=" data.setValue(#{@x}, 3, #{value-Expense.for_month(key).sum(&:amount)});"
       @x += 1
     end
     @chart_data_table = header + @chart_data_table

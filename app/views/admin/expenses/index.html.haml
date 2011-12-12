@@ -1,0 +1,23 @@
+%h1 Listing expenses
+
+%table
+  %tr
+    %th Amount
+    %th Description
+    %th Date
+    %th
+
+  - @expenses.each do |expense|
+    %tr
+      %td= expense.amount
+      %td= expense.description
+      %td= expense.created_at
+      %td
+        = link_to 'Show', [:admin,expense]
+        =' | '
+        = link_to 'Edit', edit_admin_expense_path(expense)
+        =' | '
+        = link_to 'Destroy',[:admin,expense] , :confirm => 'Are you sure?', :method => :delete
+
+%br
+= link_to 'New Expense', new_admin_expense_path
