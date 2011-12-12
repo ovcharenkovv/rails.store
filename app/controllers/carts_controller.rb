@@ -83,12 +83,10 @@ class CartsController < ApplicationController
   # DELETE /carts/1
   # DELETE /carts/1.xml
 
-  def destroy                                                                                                    ll
-    @cart = current_cart
-    @cart.destroy
-    session[:cart_id] = nil
+  def destroy
+    current_cart.line_items.destroy_all
     respond_to do |format|
-      format.html { redirect_to(root_path, :notice => 'Your cart is currently empty') }
+      format.html { redirect_to(root_path) }
       format.xml { head :ok }
     end
   end
