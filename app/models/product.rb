@@ -76,8 +76,15 @@ class Product < ActiveRecord::Base
   end
 
   def self.find_top_products(quantity)
-#    find(:all,:limit => quantity, :order => 'click_count desc')
-    includes(:author).includes(:category).where(:published => true).order("click_count desc").limit(quantity)
+    #find(:all,:limit => quantity, :order => 'click_count desc')
+    #includes(:author).includes(:category).where(:published => true).order("click_count desc").limit(quantity)
+    #where('products.id = line_items.product_id and line_items.order_id is not null').group('count(products.id)').limit(quantity)
+    find_by_sql("SELECT products.*
+                FROM products, line_items
+                WHERE products.id = line_items.product_id AND line_items.order_id is not null
+                GROUP BY products.id
+                ORDER BY count(product_id) desc
+                LIMIT #{quantity};")
   end
 
   def self.find_new_products(quantity)
@@ -118,17 +125,17 @@ class Product < ActiveRecord::Base
 #
 #  end
 
-  #def self.find_products_for_sale(page,per_page)
-  #  find(:all, :order => "title" ).paginate :page=>page, :per_page => per_page
-  #end
+#def self.find_products_for_sale(page,per_page)
+#  find(:all, :order => "title" ).paginate :page=>page, :per_page => per_page
+#end
 
-  #def self.find_products_by_category(category_id,page)
-  #  where(["category_id == (?)", category_id]).all.paginate :page=>page, :order=>'created_at desc', :per_page => 3
-  #end
+#def self.find_products_by_category(category_id,page)
+#  where(["category_id == (?)", category_id]).all.paginate :page=>page, :order=>'created_at desc', :per_page => 3
+#end
 
 
   private
-  # ensure that there are no line items referencing this product
+# ensure that there are no line items referencing this product
   def ensure_not_referenced_by_any_line_item
     if line_items.count.zero?
       return true
