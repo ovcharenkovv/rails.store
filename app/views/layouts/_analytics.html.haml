@@ -33,15 +33,28 @@
   var kribleCode = '0b3d3a195ac6bf676a874fc60f429e99';
   document.write('<scr'+'ipt type="text/javascript" src="http://chat.krible.ru/code/'+kribleCode+'.js"></scr'+'ipt>');
 
--#/ Start of Zopim Live Chat Script
--#:javascript
--#  window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=
--#  z.s=d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o
--#  ){z.set._.push(o)};$.setAttribute('charset','utf-8');$.async=!0;z.set.
--#  _=[];$.src=('https:'==d.location.protocol?'https://ssl':'http://cdn')+
--#  '.zopim.com/?DMWzFhUVIUwQk6yvChE8aBBupeD0sZjE';$.type='text/java'+s;z.
--#  t=+new Date;z._=[];e.parentNode.insertBefore($,e)})(document,'script')
--#
--#  $zopim(function() {
--#    $zopim.livechat.setLanguage('ru');
--#  });
+:javascript
+  reformal_wdg_domain    = "poshstore";
+  reformal_wdg_mode    = 0;
+  reformal_wdg_title   = "PoshStore";
+  reformal_wdg_ltitle  = "Помогите нам стать лучше.";
+  reformal_wdg_lfont   = "";
+  reformal_wdg_lsize   = "";
+  reformal_wdg_color   = "#92000a";
+  reformal_wdg_bcolor  = "#516683";
+  reformal_wdg_tcolor  = "#FFFFFF";
+  reformal_wdg_align   = "right";
+  reformal_wdg_charset = "utf-8";
+  reformal_wdg_waction = 0;
+  reformal_wdg_vcolor  = "#9FCE54";
+  reformal_wdg_cmline  = "#E0E0E0";
+  reformal_wdg_glcolor  = "#105895";
+  reformal_wdg_tbcolor  = "#FFFFFF";
+
+  reformal_wdg_bimage = "bb8ab11ba9cb812959fa944ed9cef119.png";
+
+%script{:language => "JavaScript", :src => "http://reformal.ru/tab6.js?charset=utf-8", :type => "text/javascript"}
+%noscript
+  %a{:href => "http://poshstore.reformal.ru"} PoshStore feedback
+  %a{:href => "http://reformal.ru"}
+    %img{:src => "http://reformal.ru/i/logo.gif"}/
