@@ -3,7 +3,7 @@ class Admin::ExpensesController < Admin::AdminController
   # GET /expenses
   # GET /expenses.xml
   def index
-    @expenses = Expense.all
+    @expenses = Expense.order("created_at desc")
 
     respond_to do |format|
       format.html # index.html.erb
