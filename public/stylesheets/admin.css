@@ -228,3 +228,9 @@ tr.major {
 tr.green {
     color: green;
 }
+.postbox span {
+    display: block;
+}
+.postbox p {
+    color:red;
+}

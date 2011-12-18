@@ -46,3 +46,7 @@ gem 'russian'
 gem 'newrelic_rpm'
 
 gem "cancan"
+
+gem "hpricot"
+
+gem "iconv"

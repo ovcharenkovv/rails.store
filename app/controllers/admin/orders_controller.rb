@@ -1,4 +1,6 @@
 class Admin::OrdersController < Admin::AdminController
+  require 'PostBoxStatus'
+
   # GET /orders
   # GET /orders.xml
   def index
@@ -19,6 +21,13 @@ class Admin::OrdersController < Admin::AdminController
   def show
     @order = Order.find(params[:id])
     @line_items = LineItem.where(:order_id=>params[:id])
+
+    if @order.shipment_id
+      @post_box_status = PostBoxStatus.info @order.shipment_id, @order.delivery_type
+    else
+      @post_box_status = "please add shipment id"
+    end
+
 
     respond_to do |format|
       format.html # show.html.haml
