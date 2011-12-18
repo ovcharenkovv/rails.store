@@ -3,9 +3,9 @@ class Admin::OrdersController < Admin::AdminController
   # GET /orders.xml
   def index
     if (params[:status] == 'all')||(params[:status].nil?)
-      @orders = Order.paginate :page=>params[:page], :order=>'created_at',:per_page => 30
+      @orders = Order.paginate :page=>params[:page], :order=>'created_at',:per_page => 100
     else
-      @orders = Order.where(:status=>params[:status]).paginate :page=>params[:page], :order=>'created_at',:per_page => 50
+      @orders = Order.where(:status=>params[:status]).paginate :page=>params[:page], :order=>'created_at',:per_page => 100
     end
 
     respond_to do |format|
