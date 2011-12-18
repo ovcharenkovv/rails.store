@@ -9,6 +9,10 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.xml
   def index
+    if params[:post_category_slug] =='content'
+      redirect_to root_url
+      return
+    end
     @posts = @post_category.posts.find(:all ,:order=>'created_at desc').paginate :page=>params[:page], :per_page => '8'
     respond_to do |format|
       format.html # index.html.erb
