@@ -11,7 +11,7 @@
     %tr
       %td= expense.amount
       %td= expense.description
-      %td= expense.created_at
+      %td= expense.created_at.strftime("%Y-%m-%d %H:%M")
       %td
         = link_to 'Show', [:admin,expense]
         =' | '

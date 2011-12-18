@@ -11,9 +11,9 @@
     %th shipment_id
     %th Order date:
     -#%th Pay type
-    %th Status
+    %th
   - @orders.each do |order|
-    %tr
+    %tr{:class => priority_class(order.updated_at,params[:status])}
       %td= link_to order.id, admin_order_path(order)
       %td= link_to order.name, admin_order_path(order)
       %td= order.telephone
@@ -21,7 +21,7 @@
       %td= order.address
       %td= order.delivery_type
       %td= order.shipment_id
-      %td= order.created_at
+      %td= order.created_at.strftime("%Y-%m-%d %H:%M")
       -#%td= order.pay_type
       %td= link_to order.status.to_s, edit_admin_order_path(order)
 %p= will_paginate @orders
