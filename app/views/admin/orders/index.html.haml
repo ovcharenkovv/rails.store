@@ -21,7 +21,7 @@
       %td= order.address
       %td= order.delivery_type
       %td= order.shipment_id
-      %td= order.created_at.strftime("%Y-%m-%d %H:%M")
+      %td= order.created_at.strftime("%Y-%m-%d %a %H:%M")
       -#%td= order.pay_type
       %td= link_to order.status.to_s, edit_admin_order_path(order)
 %p= will_paginate @orders
