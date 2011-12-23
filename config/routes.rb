@@ -1,6 +1,6 @@
 Store::Application.routes.draw do
 
-  devise_for :users do
+  devise_for :users, :controllers => { :registrations => "registrations" } do
     get "/login" => "devise/sessions#new"
     get "/logout" => "devise/sessions#destroy"
   end
