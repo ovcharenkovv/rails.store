@@ -50,5 +50,9 @@ class Order < ActiveRecord::Base
     end
   end
 
+  def self.order_sum order
+    order.line_items.to_a.sum { |item| item.total_price }
+  end
+
 end
 

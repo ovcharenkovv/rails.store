@@ -39,10 +39,13 @@ class Admin::OrdersController < Admin::AdminController
   def update
     @order = Order.find(params[:id])
 
+    prev_order_status= @order.status
+    current_order_status = params[:order][:status]
+
     respond_to do |format|
       if @order.update_attributes(params[:order])
         flash[:notice] = 'Order was successfully updated.'
-#        format.html { redirect_to admin_orders_path(:status=>'new')}
+        Notifier.order_status_change(@order).deliver if current_order_status != prev_order_status  && current_order_status != 'new'
         format.html { redirect_to admin_order_path(@order)}
         format.xml  { head :ok }
       else

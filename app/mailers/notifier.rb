@@ -1,14 +1,6 @@
 class Notifier < ActionMailer::Base
   default :from => "poshstoreua@gmail.com"
 
-
-
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.notifier.order_received.subject
-  #
-
   def order_received(order)
     @order = order
     mail :to => @order.email, :subject => 'Заказ на Posh Store'
@@ -44,6 +36,10 @@ class Notifier < ActionMailer::Base
   def product_admin2_send(product,action)
     @product = product
     mail :to => 'lavrovanna@yandex.ru', :subject => action =='create' ? 'Добавлен новый товар' : 'Отредактирован товар'
+  end
+  def order_status_change(order)
+    @order = order
+    mail :to => @order.email, :subject => 'Статус Вашего заказа'
   end
 
 end
