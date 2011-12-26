@@ -9,7 +9,7 @@ class Order < ActiveRecord::Base
   validates :telephone,:presence => true
 
   validates :email,    :format => {:with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i},
-                        :presence => true
+            :presence => true
 
 
 #  validates :address,  :presence => true,
@@ -38,6 +38,16 @@ class Order < ActiveRecord::Base
 
   def self.wages(from,to)
     where("created_at BETWEEN '#{from}' AND '#{to}'").where(:status=>'success')
+  end
+
+  def self.search(params)
+    if params[:search]
+      where('name LIKE ? OR telephone LIKE ? OR address LIKE ? OR shipment_id LIKE ?', "%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%").paginate :page=>params[:page], :order=>'created_at desc',:per_page => 100
+    elsif (params[:status] == 'all')||(params[:status].nil?)
+      paginate :page=>params[:page], :order=>'created_at desc',:per_page => 100
+    else
+      where(:status=>params[:status]).paginate :page=>params[:page], :order=>'created_at desc',:per_page => 100
+    end
   end
 
 end
