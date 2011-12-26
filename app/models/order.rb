@@ -42,7 +42,7 @@ class Order < ActiveRecord::Base
 
   def self.search(params)
     if params[:search]
-      where('name LIKE ? OR telephone LIKE ? OR address LIKE ? OR shipment_id LIKE ?', "%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%").paginate :page=>params[:page], :order=>'created_at desc',:per_page => 100
+      where('id LIKE ? OR name LIKE ? OR telephone LIKE ? OR address LIKE ? OR shipment_id LIKE ?', "%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%").paginate :page=>params[:page], :order=>'created_at desc',:per_page => 100
     elsif (params[:status] == 'all')||(params[:status].nil?)
       paginate :page=>params[:page], :order=>'created_at desc',:per_page => 100
     else
