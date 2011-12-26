@@ -2,17 +2,16 @@
 -case @order.status
   -when 'payment_waiting'
     %h3 Ваш заказ № #{@order.id} переведен в статус: Ожидает оплату.
-    %p Сума к оплате
     -if @order.pay_type == Order::PAYMENT_TYPES[0]
       %p Оплатить можно в любом терменале или отделении Приват Банка по карточному счету 4405885814110604 имя ОВЧАРЕНКО ВЛАДИМИР ВЛАДИМИРОВИЧ
-      %p К оплате #{Order.order_sum(@order)} грн. за изделия + #{Order::DELIVERY_PRICE} грн. за доставку = #{Order.order_sum(@order)+Order::DELIVERY_PRICE }
+      %p К оплате: #{Order.order_sum(@order)} грн (стоимость изделий) + #{Order::DELIVERY_PRICE} грн (доставка) = <strong>#{Order.order_sum(@order)+Order::DELIVERY_PRICE } грн.</strong>
     %br
   -when 'paid'
     %h3 Ваш заказ № #{@order.id} переведен в статус: Оплачено.
     %p В ближайшее время товар будет отправлен.
     %br
   -when 'sent'
-    %h3 Ваш заказ № #{@order.id} переведен в статус: Отправленно.
+    %h3 Ваш заказ № #{@order.id} переведен в статус: Отправлено.
     %p Номер товарно-транспортной накладной <strong>#{@order.shipment_id}</strong>
     -if @order.delivery_type == Order::DELIVERY_TYPES[0]
       %p Отслежевать статус посылки можна по #{link_to'ссылке здесь','http://novaposhta.ua/frontend/tracking?en='+@order.shipment_id}
@@ -21,7 +20,7 @@
     %br
   -when 'success'
     %h3 Ваш заказ № #{@order.id} переведен в статус: Порядок.
-    %p Очень рады что Вы совершили покупки в нашем магазине, Надеемся что Вам все понравилось.
+    %p Очень рады что Вы совершили покупки в нашем магазине, надеемся что Вам все понравилось.
     %p В категории #{link_to 'Новинки', 'http://poshstore.com.ua/home/new'} следите за новыми поступлениями.
     %br
   -when 'refused'
@@ -30,4 +29,4 @@
   -when 'closed'
     %h3 Ваш заказ № #{@order.id} переведен в статус: Закрыт.
     %br
-%p С уважением колектив #{link_to 'PoshStore',root_url}
+%p С уважением коллектив #{link_to 'PoshStore',root_url}
