@@ -33,6 +33,10 @@
       %br
       = f.text_field :author_price
     .field
+      = f.label "Статус товара"
+      %br
+      = f.select :status, Product::PRODUCT_STATUS, :prompt => 'Есть в наличии'
+    .field
       = f.label "Описание товара (чем больше тем лучше)"
       %br
       = f.text_area :description
