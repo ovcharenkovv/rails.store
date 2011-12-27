@@ -8,7 +8,7 @@ class Admin::DashboardController < Admin::AdminController
     to = params[:to].to_datetime.to_formatted_s(:db) unless params[:to].blank?
     if !from.nil? && !to.nil?
       products = Product.between_date_created(from,to)
-      bundle = BundleProductsPicture.do products, "/home/ovcharenkovv/www/store/public/system/images/"
+      bundle = BundleProductsPicture.do products, "/var/www/poshstore/current/public/system/images/"
       if !bundle.nil?
         send_file bundle.path, :type => 'application/zip', :disposition => 'attachment', :filename => "pictures.zip"
         bundle.close
