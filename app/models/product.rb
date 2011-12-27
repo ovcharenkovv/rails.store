@@ -91,7 +91,7 @@ class Product < ActiveRecord::Base
   end
 
   def self.between_date_created(from,to)
-    where("created_at BETWEEN '#{from}' AND '#{to}'")
+    where("created_at BETWEEN '#{from}' AND '#{to}'").where(:published=>true)
   end
 
 
