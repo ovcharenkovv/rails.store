@@ -1,1 +1,10 @@
-4405885814110604 ОВЧАРЕНКО ВЛАДИМИР ВЛАДИМИРОВИЧ
+.credit_card_info
+  4405885814110604 ОВЧАРЕНКО ВЛАДИМИР ВЛАДИМИРОВИЧ
+
+%br
+.download_pictures
+  %h3 Select date range
+  - form_tag get_picture_path, :method => 'get' do
+    = text_field_tag :from, params[:from]
+    = text_field_tag :to, params[:to]
+    = submit_tag "Download", :name => nil

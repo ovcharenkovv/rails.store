@@ -32,6 +32,7 @@ Store::Application.routes.draw do
 
   end
   match 'admin' => 'admin/dashboard#index'
+  match 'admin/get_picture' => 'admin/dashboard#get_picture', :as=>"get_picture"
 
   match '/home/:slug' => 'home#show'
 

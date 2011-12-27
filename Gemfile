@@ -50,3 +50,5 @@ gem "cancan"
 gem "hpricot"
 
 gem "iconv"
+
+gem "rubyzip"
