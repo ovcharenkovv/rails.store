@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111212174130) do
+ActiveRecord::Schema.define(:version => 20111228204725) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -112,6 +112,7 @@ ActiveRecord::Schema.define(:version => 20111212174130) do
     t.string   "shipment_id"
     t.text     "note"
     t.decimal  "spent",         :precision => 10, :scale => 0
+    t.text     "description"
   end
 
   create_table "post_categories", :force => true do |t|
