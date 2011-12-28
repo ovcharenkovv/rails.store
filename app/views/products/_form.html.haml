@@ -25,9 +25,12 @@
       %br
       = f.file_field :image, :style=>"color:#630; background:#ffc none; font-size:120%; font-family:Courier,monospace; font-weight:bold;"
     .field
-      = f.label "Заголовок изделие (уникальное поле )"
+      = f.label "Заголовок (уникальное длина 45 симв.) Желательно включать название категории"
       %br
-      = f.text_field :title
+      -if params[:action]=='new'
+        = f.text_field :title, :value =>@category.name+' '
+      -else
+        = f.text_field :title
     .field
       = f.label "Цена автора (без наценки)"
       %br
