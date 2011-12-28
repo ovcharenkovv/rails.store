@@ -330,14 +330,14 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 .content_wrap .content .new .product, .content_wrap .content .top .product {
     float: left;
-    height: 240px;
+    height: 255px;
     padding: 0 7px;
     position: relative;
     width: 210px !important;
 }
 .content_wrap .content .product {
     float: left;
-    height: 237px;
+    height: 258px;
     padding: 7px 7px 0;
     position: relative;
     width: 210px;
@@ -345,7 +345,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .content_wrap .content .product .body{
     overflow: hidden;
     width: 210px;
-    height: 230px;
+    height: 248px;
     margin: 5px 0 0;
     -moz-box-shadow: 0 0 4px #888;
     -webkit-box-shadow: 0 0 4px#888;
@@ -368,15 +368,21 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .content_wrap .content .product .title h4 {
     display: block;
     font-size: 14px;
-    height: 22px;
     margin: 0 5px;
-    overflow: hidden;
+}
+.content_wrap .content .product .author {
+    color:#666666;
+    text-decoration:none;
+}
+.content_wrap .content .product .author:hover {
+    text-decoration:underline;
+    color:#990000;
 }
 .content_wrap .content .product .author h5 {
     font-size: 11px;
+    line-height: 22px;
     margin: 0 5px;
-    text-decoration: underline;
-    color:#666666;
+
 }
 .content_wrap .content .product .price {
     color: #666666;
@@ -384,6 +390,9 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     font-size: 21px;
     margin: 0 5px;
     text-align: right;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
 }
 .content_wrap .content .random ul {
     margin:15px;
@@ -1138,7 +1147,7 @@ post_body .r728x90 {
 .bx-captions{text-align:center;font-size:12px;padding:7px 0;color:#666;}
 .bx-auto{text-align:center;padding-top:15px;}
 .bx-auto a{color:#666;font-size:12px;}
-.bx-wrapper{margin:0 10px;width:670px !important;height: 280px !important;}
+.bx-wrapper{margin:0 10px;width:670px !important;height: 290px !important;}
 .bx-window{width:670px !important;}
 .bx-prev{background:url("../images/arrow.png") no-repeat scroll 0 0 transparent;display:block;height:72px;left:-22px !important;overflow:hidden;text-indent:-1000px;top:80px;width:22px;}
 .bx-next{background:url("../images/arrow.png") no-repeat scroll -22px 0 transparent;display:block;height:72px;overflow:hidden;right:-22px !important;text-indent:-1000px;top:80px;width:22px;}

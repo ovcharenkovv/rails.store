@@ -41,7 +41,7 @@ class Product < ActiveRecord::Base
 
   validates :title,       :presence => true,
             :uniqueness => true,
-            :length => {:minimum => 3, :maximum => 25}
+            :length => {:minimum => 3, :maximum => 45}
   validates :category_id, :author_id, :author_price, :presence => true
   validates_numericality_of :author_price, :greater_than_or_equal_to => 10, :less_than_or_equal_to => 300
   validates_attachment_presence :image
