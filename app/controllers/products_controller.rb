@@ -109,7 +109,6 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.update_attributes(params[:product])
-        notify_us params[:action]
         format.html { redirect_to category_products_path }
       else
         format.html { render :action => "edit" }
