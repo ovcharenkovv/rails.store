@@ -1132,6 +1132,8 @@ post_body .r728x90 {
 /***********************************************************************************************************************/
 /***********************************************************************************************************************/
 /***********************************************************************************************************************/
+#vk_comments {margin: 15px 0;}
+
 .bx-next{position:absolute;top:40%;right:-50px;z-index:999;width:30px;height:30px;text-indent:-999999px;background:url(/images/bx_images/gray_next.png) no-repeat 0 -30px;}
 .bx-prev{position:absolute;top:40%;left:-50px;z-index:999;width:30px;height:30px;text-indent:-999999px;background:url(/images/bx_images/gray_prev.png) no-repeat 0 -30px;}
 .bx-pager a{background: url("../images/skins/winter/sexy-paginator.png") no-repeat scroll 0 0 transparent;color: #FFFFFF; display: inline-block; font-size: 1px; height: 10px; margin: 0 3px; text-indent: -100px; width: 10px;}
