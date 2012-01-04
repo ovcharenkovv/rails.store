@@ -38,6 +38,7 @@
               = render "categories/list"
             .masters
               = render "authors/list"
+          -if params[:controller]!='home'
             .banners
               = render "layouts/banners"
         .content
