@@ -18,10 +18,9 @@
   .field
     = f.label :master
     = f.text_field :master
-  -if params[:action]=='edit'
-    .field
-      = f.label :slug
-      = f.text_field :slug
+  .field
+    = f.label :slug
+    = f.text_field :slug
   .field
     = f.label :can_comment
     = f.check_box :can_comment

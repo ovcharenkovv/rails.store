@@ -4,7 +4,7 @@ class Post < ActiveRecord::Base
             :uniqueness => true
   acts_as_commentable
 
-  before_create :create_slug
+#  before_create :create_slug
 
   def to_param
     slug
