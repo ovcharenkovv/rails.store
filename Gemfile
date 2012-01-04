@@ -52,3 +52,8 @@ gem "hpricot"
 gem "iconv"
 
 gem "rubyzip"
+
+gem "net-sftp", "~> 2.0.5"
+
+gem "backup"
+
