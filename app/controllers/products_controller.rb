@@ -96,7 +96,7 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        notify_us params[:action]
+        #notify_us params[:action]
         format.html { redirect_to category_products_path }
       else
         format.html { render :action => "new" }
