@@ -1,8 +1,6 @@
 class Admin::OrdersController < Admin::AdminController
   require 'PostBoxStatus'
 
-  # GET /orders
-  # GET /orders.xml
   def index
     @orders = Order.search(params)
 
@@ -12,8 +10,6 @@ class Admin::OrdersController < Admin::AdminController
     end
   end
 
-  # GET /orders/1
-  # GET /orders/1.xml
   def show
     @order = Order.find(params[:id])
     @line_items = LineItem.where(:order_id=>params[:id])
@@ -52,6 +48,16 @@ class Admin::OrdersController < Admin::AdminController
         format.html { render :action => "edit" }
         format.xml  { render :xml => @order.errors, :status => :unprocessable_entity }
       end
+    end
+  end
+
+  def destroy
+    @order = Order.find(params[:id])
+    @order.destroy
+
+    respond_to do |format|
+      format.html { redirect_to(admin_orders_url) }
+      format.xml  { head :ok }
     end
   end
 

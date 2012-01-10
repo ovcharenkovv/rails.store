@@ -73,3 +73,4 @@
   .actions
     = f.submit
     = link_to "Cancel", :back, :class=>"cancel"
+    = link_to 'DESTROY', admin_order_path(@order), :confirm => 'Are you sure?', :method => :delete, :class=>"cancel",:style =>"float:right; margin-right:0px;"

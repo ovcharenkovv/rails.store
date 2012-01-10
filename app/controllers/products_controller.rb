@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
     if params[:per_page]
       @per_page = params[:per_page]
     else
-      @per_page = 24
+      @per_page = 33
     end
 
     if params[:sort]=='popularity'
