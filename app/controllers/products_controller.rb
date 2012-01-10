@@ -35,7 +35,6 @@ class ProductsController < ApplicationController
   end
 
   def notify_us(action)
-    Notifier.product_admin1_send(@product,action).deliver
     Notifier.product_admin2_send(@product,action).deliver
   end
 
