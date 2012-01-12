@@ -1,8 +1,9 @@
-%h3= t('banners.title')
-%ul.banners_list
-  %li
-    =link_to  "http://pokupki.ck.ua/" ,:target=>"_blank" do
-      = image_tag "/images/banner1.jpg", :alt=>"Сайт Совместных Покупок", :title=>"Сайт Совместных Покупок"
-  %li
-    =link_to  "http://pomelochi.com/" ,:target=>"_blank" do
-      = image_tag "/images/pomelochi.jpg", :alt=>"Приятные мелочи", :title=>"Приятные мелочи"
+-cache 'banners' do
+  %h3= t('banners.title')
+  %ul.banners_list
+    %li
+      =link_to  "http://pokupki.ck.ua/" ,:target=>"_blank" do
+        = image_tag "/images/banner1.jpg", :alt=>"Сайт Совместных Покупок", :title=>"Сайт Совместных Покупок"
+    %li
+      =link_to  "http://pomelochi.com/" ,:target=>"_blank" do
+        = image_tag "/images/pomelochi.jpg", :alt=>"Приятные мелочи", :title=>"Приятные мелочи"

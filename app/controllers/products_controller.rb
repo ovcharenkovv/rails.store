@@ -60,8 +60,8 @@ class ProductsController < ApplicationController
     session[:product_category_id]=params[:category_id]
 
     @product = @category.products.find(params[:id])
-    @comment = @product.comments.build
-    @product.comments.pop
+    #@comment = @product.comments.build
+    #@product.comments.pop
 
     if @product.published?
       @product.inc_click

@@ -1,7 +1,8 @@
 - @posts.each do |post|
-  %h3=link_to post.title, short_post_url(@post_category,post)
-  .post_body=raw post.short_body
-  %p= link_to 'Читать дальше >>', short_post_url(@post_category,post)
-  = render :partial => "posts/post_footer", :locals => { :post => post }
+  -cache "post_id_#{post.id.to_s}" do
+    %h3=link_to post.title, short_post_url(@post_category,post)
+    .post_body=raw post.short_body
+    %p= link_to 'Читать дальше >>', short_post_url(@post_category,post)
+    = render :partial => "posts/post_footer", :locals => { :post => post }
 = will_paginate @posts ,:previous_label=>"« Назад ", :next_label=>" Вперед »"  
 

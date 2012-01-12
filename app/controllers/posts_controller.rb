@@ -13,7 +13,7 @@ class PostsController < ApplicationController
       redirect_to root_url
       return
     end
-    @posts = @post_category.posts.find(:all ,:order=>'created_at desc').paginate :page=>params[:page], :per_page => '8'
+    @posts = @post_category.posts.find(:all ,:order=>'created_at desc').paginate :page=>params[:page], :per_page => '3'
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @posts }
@@ -24,8 +24,6 @@ class PostsController < ApplicationController
   # GET /posts/1.xml
   def show
     @post = @post_category.posts.find_by_slug!(params[:post_slug])
-    @comment = @post.comments.build
-    @post.comments.pop
 
     respond_to do |format|
       format.html # show.html.erb
