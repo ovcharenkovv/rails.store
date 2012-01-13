@@ -43,9 +43,9 @@
   .border
     = link_to @product.image.url(:large), :id => "light_box" do
       = image_tag(@product.image.url(:medium) , :alt => @product.category.name+' '+@product.title, :title => @product.title ) unless @product.image.nil?
-    -if can? :update, @product
-      .actions
-        = link_to "",edit_category_product_path(@product.category_id,@product),:class=>"edit", :title=>"Редактировать."
+    -#-if can? :update, @product
+    -#  .actions
+    -#    = link_to "",edit_category_product_path(@product.category_id,@product),:class=>"edit", :title=>"Редактировать."
 
   .important
     %b=t('products.price')

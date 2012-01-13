@@ -68,7 +68,7 @@ class Product < ActiveRecord::Base
     #where('products.id = line_items.product_id and line_items.order_id is not null').group('count(products.id)').limit(quantity)
     find_by_sql("SELECT products.*
                 FROM products, line_items
-                WHERE products.id = line_items.product_id AND line_items.order_id is not null
+                WHERE products.id = line_items.product_id AND line_items.order_id is not null AND products.published = true
                 GROUP BY products.id
                 ORDER BY count(product_id) desc
                 LIMIT #{quantity};")

@@ -1,7 +1,7 @@
 -@products.each do |product|
   .product
-    -cache(product.id.to_s, :expires_in => 10.days) do
-      .body
+    .body
+      -cache(product.id.to_s, :expires_in => 2.days) do
         = link_to category_product_path(product.category_id,product) , :class => "img" do
           = image_tag product.image.url(:thumb),  :alt => product.category.name+' '+product.title, :title => product.title
         = link_to category_product_path(product.category_id,product) , :class => "title" do
@@ -9,9 +9,9 @@
         = link_to author_products_path(product.author_id) , :class => "author" do
           %h5=product.author.name
         %span.price= product.price.to_s+" Грн."
-      -if can? :update, product
-        .actions
-          = link_to "",edit_category_product_path(product.category_id,product),:class=>"edit", :title=>"Редактировать."
+    -if can? :update, product
+      .actions
+        = link_to "",edit_category_product_path(product.category_id,product),:class=>"edit", :title=>"Редактировать."
 
 
 = will_paginate @products ,:previous_label=>"« Назад ", :next_label=>" Вперед »"
