@@ -6,8 +6,6 @@
 
 User-Agent: *
 Disallow: /carts/
-Disallow: /content/
-Disallow: /content/happy
 
 Sitemap: http://poshstore.com.ua/sitemap_index.xml.gz
 

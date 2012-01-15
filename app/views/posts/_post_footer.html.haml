@@ -3,9 +3,10 @@
     .published
       %span=Russian::strftime(post.created_at, "%d %B %Y" )
     .vcard.author.full
-      %a.fn.nickname.url{:href => "#", :title => "Автор текста"}
-        .ico
-        %span=post.master
+      = raw post.master
+      -#%a.fn.nickname.url{:href => "#", :title => "Автор текста"}
+      -#  .ico
+      -#  %span= raw post.master
     .share_links
       %a.twitter{:href => "http://twitter.com/intent/tweet?text=#{post.title}+#{short_post_url(post.post_category,post)}+%23poshstore", :target => "_blank", :title => "Опубликовать ссылку на пост в Twitter"}
       %a.vkontakte{:href => "http://vkontakte.ru/share.php?url=#{short_post_url(post.post_category,post)}", :onclick => "window.open(this.href, 'Опубликовать ссылку на пост в Вконтакте', 'width=800,height=300'); return false", :title => "Опубликовать ссылку на пост в ВКонтакте"}
