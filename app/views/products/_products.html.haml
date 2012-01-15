@@ -1,7 +1,7 @@
 -@products.each do |product|
   .product
     .body
-      -cache(product.id.to_s, :expires_in => 2.days) do
+      -cache("product_thumb_"+product.id.to_s, :expires_in => 1.day) do
         = link_to category_product_path(product.category_id,product) , :class => "img" do
           = image_tag product.image.url(:thumb),  :alt => product.category.name+' '+product.title, :title => product.title
         = link_to category_product_path(product.category_id,product) , :class => "title" do
