@@ -10,18 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111228204725) do
-
-  create_table "articles", :force => true do |t|
-    t.string   "title"
-    t.string   "meta_k"
-    t.string   "meta_d"
-    t.text     "body"
-    t.string   "slug"
-    t.integer  "views"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(:version => 20111212174130) do
 
   create_table "authors", :force => true do |t|
     t.string   "name"
@@ -46,7 +35,7 @@ ActiveRecord::Schema.define(:version => 20111228204725) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "parent_id"
+    t.integer  "parent_id",   :default => 0
     t.integer  "ordering"
   end
 
@@ -56,7 +45,7 @@ ActiveRecord::Schema.define(:version => 20111228204725) do
     t.string   "user_email",       :limit => 50, :default => ""
     t.text     "comment"
     t.integer  "rating"
-    t.integer  "published",                      :default => 0
+    t.boolean  "published",                      :default => false
     t.integer  "commentable_id"
     t.string   "commentable_type"
     t.integer  "user_id"
@@ -68,20 +57,6 @@ ActiveRecord::Schema.define(:version => 20111228204725) do
   add_index "comments", ["commentable_id"], :name => "index_comments_on_commentable_id"
   add_index "comments", ["commentable_type"], :name => "index_comments_on_commentable_type"
   add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
-
-  create_table "custom_orders", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.string   "email"
-    t.string   "phone"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "author_id"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-  end
 
   create_table "expenses", :force => true do |t|
     t.decimal  "amount",      :precision => 10, :scale => 0
@@ -112,7 +87,6 @@ ActiveRecord::Schema.define(:version => 20111228204725) do
     t.string   "shipment_id"
     t.text     "note"
     t.decimal  "spent",         :precision => 10, :scale => 0
-    t.text     "description"
   end
 
   create_table "post_categories", :force => true do |t|

@@ -61,7 +61,7 @@ class ProductsController < ApplicationController
     @product = @category.products.find(params[:id])
 
     if @product.published?
-      @product.inc_click
+      #@product.inc_click
 
       respond_to do |format|
         format.html # show.html.haml
