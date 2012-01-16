@@ -417,7 +417,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .content_wrap .content .random ul li a img{
     width: 125px;
 }
-.content_wrap .content #products .product .actions{
+.content_wrap .content .product .actions{
     height: 32px;
     position: absolute;
     right: 12px;
@@ -431,7 +431,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     top: 275px;
     width: 34px;
 }
-.content_wrap .content #products .product .actions .edit,
+.content_wrap .content .product .actions .edit,
 .content .border .actions .edit{
     display: block;
     float: left;
@@ -441,7 +441,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     margin: 0 5px 0 0;
     border: 1px solid transparent;
 }
-.content_wrap .content #products .product .actions .edit:hover,
+.content_wrap .content .product .actions .edit:hover,
 .content .border .actions .edit:hover
 {
     opacity: 0.6;

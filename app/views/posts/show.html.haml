@@ -1,4 +1,5 @@
 - content_for :custom_css_js do
+  = render "layouts/add_favorite"
   %script{:src => "http://userapi.com/js/api/openapi.js?34", :type => "text/javascript"}
   :javascript
     VK.init({apiId: 2665924, onlyWidgets: true});

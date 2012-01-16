@@ -1,9 +1,11 @@
-- content_for :custom_css_js do
+-content_for :custom_css_js do
   = javascript_include_tag "application"
-
-%h1
-  -if params[:author_id]
-    ='Работы мастера'
-  =@category.name
-= render 'nav_panel'
-= render 'q'
+-if !current_user
+  -cache "category#{params[:category_id]}_author#{params[:author_id]}_page#{params[:page]}_sort#{params[:sort]}" do
+    %h1=params[:author_id]? "Работы мастера #{@category.name.to_s}" : @category.name.to_s
+    = render 'nav_panel'
+    = render 'products'
+-else
+  %h1=params[:author_id]? "Работы мастера #{@category.name.to_s}" : @category.name.to_s
+  = render 'nav_panel'
+  = render 'products'

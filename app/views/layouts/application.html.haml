@@ -19,7 +19,6 @@
     %meta{:content => "97f67c8e02f425f6a608e1a8", :name => "verify-reformal"}/
     = csrf_meta_tag
     = yield :custom_css_js
-    = render "layouts/add_favorite"
   %body
     .wrap
       .header
@@ -33,14 +32,20 @@
         = render "carts/header_cart"
       .content_wrap
         .sidebar
-          -cache 'sidebar' do
-            .categories
-              = render "categories/list"
-            .masters
-              = render "authors/list"
-          -if params[:controller]!='home'
-            .banners
-              = render "layouts/banners"
+          -if params[:controller]=='home'
+            -cache 'sidebar' do
+              .categories
+                = render "categories/list"
+              .masters
+                = render "authors/list"
+          -else
+            -cache 'sidebar_with_banners' do
+              .categories
+                = render "categories/list"
+              .masters
+                = render "authors/list"
+              .banners
+                = render "layouts/banners"
         .content
           = yield
         .footer
