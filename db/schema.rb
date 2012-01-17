@@ -10,7 +10,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111212174130) do
+ActiveRecord::Schema.define(:version => 20120117072725) do
+
+  create_table "articles", :force => true do |t|
+    t.string   "title"
+    t.string   "meta_k"
+    t.string   "meta_d"
+    t.text     "body"
+    t.string   "slug"
+    t.integer  "views"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "authors", :force => true do |t|
     t.string   "name"
@@ -35,9 +46,11 @@ ActiveRecord::Schema.define(:version => 20111212174130) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "parent_id",   :default => 0
+    t.integer  "parent_id"
     t.integer  "ordering"
   end
+
+  add_index "categories", ["parent_id"], :name => "index_categories_on_parent_id"
 
   create_table "comments", :force => true do |t|
     t.string   "title",            :limit => 50, :default => ""
@@ -45,7 +58,7 @@ ActiveRecord::Schema.define(:version => 20111212174130) do
     t.string   "user_email",       :limit => 50, :default => ""
     t.text     "comment"
     t.integer  "rating"
-    t.boolean  "published",                      :default => false
+    t.integer  "published",                      :default => 0
     t.integer  "commentable_id"
     t.string   "commentable_type"
     t.integer  "user_id"
@@ -57,6 +70,20 @@ ActiveRecord::Schema.define(:version => 20111212174130) do
   add_index "comments", ["commentable_id"], :name => "index_comments_on_commentable_id"
   add_index "comments", ["commentable_type"], :name => "index_comments_on_commentable_type"
   add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
+
+  create_table "custom_orders", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "email"
+    t.string   "phone"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "author_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
 
   create_table "expenses", :force => true do |t|
     t.decimal  "amount",      :precision => 10, :scale => 0
@@ -73,6 +100,10 @@ ActiveRecord::Schema.define(:version => 20111212174130) do
     t.integer  "quantity",   :default => 1
     t.integer  "order_id"
   end
+
+  add_index "line_items", ["cart_id"], :name => "index_line_items_on_cart_id"
+  add_index "line_items", ["order_id"], :name => "index_line_items_on_order_id"
+  add_index "line_items", ["product_id"], :name => "index_line_items_on_product_id"
 
   create_table "orders", :force => true do |t|
     t.string   "name"
@@ -113,6 +144,8 @@ ActiveRecord::Schema.define(:version => 20111212174130) do
     t.datetime "updated_at"
   end
 
+  add_index "posts", ["post_category_id"], :name => "index_posts_on_post_category_id"
+
   create_table "products", :force => true do |t|
     t.string   "title"
     t.text     "description"
@@ -131,6 +164,9 @@ ActiveRecord::Schema.define(:version => 20111212174130) do
     t.decimal  "author_price",       :precision => 10, :scale => 0
     t.boolean  "published",                                         :default => true
   end
+
+  add_index "products", ["author_id"], :name => "index_products_on_author_id"
+  add_index "products", ["category_id"], :name => "index_products_on_category_id"
 
   create_table "reports", :force => true do |t|
     t.string   "name"
@@ -155,6 +191,7 @@ ActiveRecord::Schema.define(:version => 20111212174130) do
     t.string   "role"
   end
 
+  add_index "users", ["author_id"], :name => "index_users_on_author_id"
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
