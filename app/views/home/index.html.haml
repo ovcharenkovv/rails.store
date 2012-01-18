@@ -23,7 +23,7 @@
 -cache 'home_products' do
   -@top_products = Product.find_top_products(9)
   -@new_products = Product.find_new_products(9)
-  -@random_products = Product.find_random_products(25,@top_products+@new_products)
+  -@random_products = Product.find_random_products(30,@top_products+@new_products)
   .top
     %h3=link_to "Хиты продаж" , 'home/top'
     #top_products
