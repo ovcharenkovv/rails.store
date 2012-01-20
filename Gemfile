@@ -2,9 +2,6 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.3'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
 # gem 'ruby-debug'
 # gem 'ruby-debug19'
@@ -14,6 +11,13 @@ gem 'rails', '3.0.3'
 # gem 'nokogiri'
 
 #gem 'acts-as-taggable-on'
+
+group :production do
+  gem 'newrelic_rpm'
+end
+
+group :development do
+end
 
 gem 'mysql'
 
@@ -43,8 +47,6 @@ gem 'i18n' , '0.5.0'
 
 gem 'russian'
 
-gem 'newrelic_rpm'
-
 gem "cancan"
 
 gem "hpricot"
@@ -56,4 +58,3 @@ gem "rubyzip"
 gem "net-sftp", "~> 2.0.5"
 
 gem "backup"
-
