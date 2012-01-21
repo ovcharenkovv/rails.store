@@ -35,6 +35,7 @@ class OrdersController < ApplicationController
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
         Notifier.order_received(@order).deliver
+        Notifier.order_send(@order).deliver
         format.html { redirect_to('/content/happy', :notice => 'Пасибки за заказ') }
         format.xml { render :xml => @order, :status => :created,
                             :location => @order }
