@@ -19,7 +19,7 @@
           = image_tag product.image.url(:small), :class=> product.published ? 'images' : 'kill'
       %td= product.title
       %td= product.description.to_s[0..100]
-      %td= product.author.name
+      %td= product.author.name if product.author
       %td= product.click_count
       %td= number_to_currency(product.price, :unit => "", :separator => ",", :delimiter => " ", :format => "%n %u" )
 %p= will_paginate @products

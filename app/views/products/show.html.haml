@@ -60,7 +60,7 @@
   .product_description
     %p
       %b=t('products.master')
-      = link_to @product.author.name.to_s , author_products_path(@product.author)
+      = link_to @product.author.name.to_s, author_products_path(@product.author) if @product.author
     %p
       %b=t('products.status')
       = @product.status.to_s
