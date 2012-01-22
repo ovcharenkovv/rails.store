@@ -523,7 +523,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     font: bold 33px/55px verdana;
 }
 .wrap .important .add_to_cart {
-     background: url("../images/skins/winter/by_button_on_cart.png") no-repeat scroll 0 0 transparent;
+    background: url("../images/skins/winter/by_button_on_cart.png") no-repeat scroll 0 0 transparent;
     border: medium none;
     color: white;
     cursor: pointer;
@@ -548,6 +548,22 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 .share a:hover {
     opacity:0.7;
+}
+.nav_product {
+    margin: 0 0 20px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+.nav_product .previous_product {
+    display: block;
+    float: left;
+    font-size: 12px;
+}
+.nav_product .next_product {
+    display: block;
+    float: right;
+    font-size: 12px;
 }
 /**********************************************************************************************************************/
 /*******************************************cart_table*********************************************************/

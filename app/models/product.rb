@@ -1,5 +1,6 @@
 require 'paperclip_processors/watermark'
 class Product < ActiveRecord::Base
+
   PRODUCT_STATUS = ["Есть в наличии","Под заказ" ]
   belongs_to :category
   belongs_to :author
@@ -101,6 +102,14 @@ class Product < ActiveRecord::Base
     else
       self.price =  self.author_price+(self.author_price*0.35)
     end
+  end
+
+  def self.next_product id,category_id
+    where(:published => true).where(:category_id => category_id).where("id < #{id}").last
+  end
+
+  def self.previous_product id,category_id
+    where(:published => true).where(:category_id => category_id).where("id > #{id}").first
   end
 
   private
