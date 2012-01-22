@@ -1,9 +1,25 @@
 %span.left_co=raw"© #{ link_to "poshstore.com.ua", :root}, 2012.</br>Все права сохранены"
 %span.right_co=raw"По всем вопросам обращайтесь по адресу:&nbsp;#{mail_to "poshstoreua@gmail.com"}</br>или по телефону (093) 45 48 455"
 .footer_banners
+  / Yandex.Metrika informer
+  %a{:href => "http://metrika.yandex.ru/stat/?id=5037694&from=informer", :rel => "nofollow", :target => "_blank"}
+    %img{:alt => "Яндекс.Метрика", :onclick => "try{Ya.Metrika.informer({i:this,id:5037694,type:0,lang:'ru'});return false}catch(e){}", :src => "//bs.yandex.ru/informer/5037694/1_0_535353FF_333333FF_1_pageviews", :style => "width:80px; height:15px; border:0;", :title => "Яндекс.Метрика: данные за сегодня (просмотры)"}/
+  / /Yandex.Metrika informer
+  / Yandex.Metrika counter
   %div{:style => "display:none;"}
     :javascript
-      (function(w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter5037694 = new Ya.Metrika({id:5037694}); } catch(e) { } }); })(window, "yandex_metrika_callbacks");%script{:defer => "defer", :src => "//mc.yandex.ru/metrika/watch.js", :type => "text/javascript"}
+      (function(w, c) {
+          (w[c] = w[c] || []).push(function() {
+              try {
+                  w.yaCounter5037694 = new Ya.Metrika({id:5037694,
+                          clickmap:true,
+                          trackLinks:true, webvisor:true});
+              }
+              catch(e) { }
+          });
+      })(window, "yandex_metrika_callbacks");
+  %script{:defer => "defer", :src => "//mc.yandex.ru/metrika/watch.js", :type => "text/javascript"}
   %noscript
     %div
       %img{:alt => "", :src => "//mc.yandex.ru/watch/5037694", :style => "position:absolute; left:-9999px;"}/
+  / /Yandex.Metrika counter
