@@ -50,7 +50,7 @@ class ProductsController < ApplicationController
   def show
     session[:product_category_id]=params[:category_id]
     @product = @category.products.where(:published => true).find(params[:id])
-    fresh_when :last_modified => @product.updated_at.utc
+    fresh_when(:etag => [@product,@current_cart.line_items.count])
   end
 
   def new
