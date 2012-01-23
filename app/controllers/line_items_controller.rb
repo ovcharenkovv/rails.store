@@ -1,26 +1,4 @@
 class LineItemsController < ApplicationController
-  # GET /line_items
-  # GET /line_items.xml
-  def index
-    @line_items = LineItem.all
-
-    respond_to do |format|
-      format.html # index.html.haml
-      format.xml  { render :xml => @line_items }
-    end
-  end
-
-  # GET /line_items/1
-  # GET /line_items/1.xml
-  def show
-    @line_item = LineItem.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.haml
-      format.xml  { render :xml => @line_item }
-    end
-  end
-
   # GET /line_items/new
   # GET /line_items/new.xml
   def new
@@ -32,10 +10,6 @@ class LineItemsController < ApplicationController
     end
   end
 
-  # GET /line_items/1/edit
-  def edit
-    @line_item = LineItem.find(params[:id])
-  end
 
   # POST /line_items
   # POST /line_items.xml

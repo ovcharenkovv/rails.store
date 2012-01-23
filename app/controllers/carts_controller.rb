@@ -1,19 +1,4 @@
 class CartsController < ApplicationController
-
-  # GET /carts
-  # GET /carts.xml
-  def index
-    @carts = Cart.all
-
-    respond_to do |format|
-      format.html # index.html.haml
-      format.xml  { render :xml => @carts }
-    end
-  end
-
-  # GET /carts/1
-  # GET /carts/1.xml
-
   def show
     begin
       @cart = Cart.find(params[:id])
@@ -31,9 +16,6 @@ class CartsController < ApplicationController
       end
     end
   end
-
-  # GET /carts/new
-  # GET /carts/new.xml
   def new
     @cart = Cart.new
 
@@ -41,11 +23,6 @@ class CartsController < ApplicationController
       format.html # new.html.haml
       format.xml  { render :xml => @cart }
     end
-  end
-
-  # GET /carts/1/edit
-  def edit
-    @cart = Cart.find(params[:id])
   end
 
   # POST /carts

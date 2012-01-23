@@ -41,34 +41,16 @@ class ProductsController < ApplicationController
 
   def index
     if params[:category_id]
-      @products = Product.includes(:author).includes(:category).where(:category_id => @categories,:published => true).search(params[:q]).paginate :page=>params[:page], :order=>@sort, :per_page => @per_page
+      @products = Product.includes(:author).includes(:category).where(:category_id => @categories,:published => true).paginate :page=>params[:page], :order=>@sort, :per_page => @per_page
     elsif params[:author_id]
-      @products = Product.includes(:author).includes(:category).where(:author_id => @categories , :published => true).search(params[:q]).paginate :page=>params[:page], :order=>@sort, :per_page => @per_page
+      @products = Product.includes(:author).includes(:category).where(:author_id => @categories , :published => true).paginate :page=>params[:page], :order=>@sort, :per_page => @per_page
     end
-
-
-    #@products = Product.search(params[:q],params[:category_id],@categories,@sort,params[:page],@per_page)
-
-    #if params[:category_id]
-    #  @products = Product.includes(:author).includes(:category).where(:category_id => @categories,:published => true).paginate :page=>params[:page], :order=>@sort, :per_page => @per_page
-    #elsif params[:author_id]
-    #  @products = Product.includes(:author).includes(:category).where(:author_id => @categories , :published => true).paginate :page=>params[:page], :order=>@sort, :per_page => @per_page
-    #end
   end
 
   def show
     session[:product_category_id]=params[:category_id]
-    @product = @category.products.find(params[:id])
-
-    if @product.published?
-      #@product.inc_click
-      respond_to do |format|
-        format.html # show.html.haml
-        format.xml  { render :xml => @product }
-      end
-    else
-      redirect_to root_path
-    end
+    @product = @category.products.where(:published => true).find(params[:id])
+    fresh_when :last_modified => @product.updated_at.utc
   end
 
   def new
