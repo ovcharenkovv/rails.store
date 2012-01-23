@@ -515,28 +515,31 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .wrap .important .share{
     color: #000;
     font: 14px/30px verdana;
-    margin: 98px 0 0;
+    margin: 177px 0 0;
 }
 .wrap .important .price {
     color: #990000;
     display: block;
     font: bold 33px/55px verdana;
 }
-.wrap .important .add_to_cart {
+.wrap .add_to_cart {
     background: url("../images/skins/winter/by_button_on_cart.png") no-repeat scroll 0 0 transparent;
     border: medium none;
     color: white;
     cursor: pointer;
     font-size: 23px;
     height: 70px;
-    margin: 15px auto 0;
+    /*margin: 15px auto 0;*/
     outline: medium none;
     overflow: hidden;
     padding: -31px 0 0 15px;
     text-align: center;
     width: 171px;
+    position: absolute;
+    right: 90px;
+    top: 230px;
 }
-.wrap .important .add_to_cart:hover {
+.wrap .add_to_cart:hover {
     opacity: 0.7;
 }
 .wrap .product_description {
