@@ -19,7 +19,7 @@ end
 group :development do
 end
 
-gem 'mysql'
+gem 'mysql2', '< 0.3'
 
 gem 'jquery-rails'
 
