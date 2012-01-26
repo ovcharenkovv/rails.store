@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module Indexer
   
   def self.sortalize(array)

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module PostBoxStatus
 
   def PostBoxStatus.info post_id, post_type

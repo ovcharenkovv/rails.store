@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CatsController < ActionController::Base
   
   before_filter :find_commentable

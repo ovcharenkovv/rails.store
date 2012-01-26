@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module Paperclip
   class Watermark < Processor
     # Handles watermarking of images that are uploaded.

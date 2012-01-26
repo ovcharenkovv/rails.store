@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Gift < ActiveRecord::Base
   
   set_primary_key :custom_primary_key

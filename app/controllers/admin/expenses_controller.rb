@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Admin::ExpensesController < Admin::AdminController
 
   # GET /expenses

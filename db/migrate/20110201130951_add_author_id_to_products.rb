@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddAuthorIdToProducts < ActiveRecord::Migration
   def self.up
     add_column :products, :author_id, :integer

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CombineItemsInCart < ActiveRecord::Migration
   def self.up
     # replace multiple items for a single product in a cart with a single item

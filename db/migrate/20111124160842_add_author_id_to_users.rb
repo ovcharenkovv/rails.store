@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddAuthorIdToUsers < ActiveRecord::Migration
   def self.up
     add_column :users, :author_id, :integer

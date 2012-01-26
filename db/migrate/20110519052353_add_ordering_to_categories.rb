@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddOrderingToCategories < ActiveRecord::Migration
   def self.up
     add_column :categories, :ordering, :integer

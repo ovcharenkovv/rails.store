@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module OrdersHelper
   def priority_class order_date, status
 

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddFullnameAndEmailAndPhoneAndCityAndAddressToAuthor < ActiveRecord::Migration
   def self.up
     add_column :authors, :fullname, :string

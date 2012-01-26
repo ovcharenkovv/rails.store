@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module BundleProductsPicture
   require 'rubygems'
   require 'zip/zip'

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class PostCategory < ActiveRecord::Base
   has_many :posts
   validates :name, :presence => true,

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddPriceToProduct < ActiveRecord::Migration
   def self.up
     add_column :products, :price, :decimal

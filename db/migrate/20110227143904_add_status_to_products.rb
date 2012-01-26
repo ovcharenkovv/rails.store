@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddStatusToProducts < ActiveRecord::Migration
   def self.up
     add_column :products, :status, :string, :default => 'Есть в наличии'

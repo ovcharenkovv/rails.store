@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Admin::CategoriesController < Admin::AdminController
   cache_sweeper :category_sweeper, :only => [:create, :update, :destroy]
 

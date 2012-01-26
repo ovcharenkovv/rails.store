@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CartsController < ApplicationController
   def show
     begin

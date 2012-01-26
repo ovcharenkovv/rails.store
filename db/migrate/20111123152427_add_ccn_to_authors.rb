@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddCcnToAuthors < ActiveRecord::Migration
   def self.up
     add_column :authors, :ccn, :string

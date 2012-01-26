@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CategorySweeper < ActionController::Caching::Sweeper
   observe Category
 

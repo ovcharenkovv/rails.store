@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddShipmentIdToOrders < ActiveRecord::Migration
   def self.up
     add_column :orders, :shipment_id, :string

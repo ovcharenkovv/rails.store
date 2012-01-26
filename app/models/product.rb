@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'paperclip_processors/watermark'
 class Product < ActiveRecord::Base
 

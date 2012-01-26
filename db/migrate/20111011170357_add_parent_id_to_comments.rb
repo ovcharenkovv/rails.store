@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddParentIdToComments < ActiveRecord::Migration
   def self.up
     add_column :comments, :parent_id, :integer

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Admin::DashboardController < Admin::AdminController
   require 'BundleProductsPicture'
   def index

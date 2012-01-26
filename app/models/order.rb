@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Order < ActiveRecord::Base
   PAYMENT_TYPES = ["Перевод на карту Приватбанка","Наложеный платеж" ]
   DELIVERY_TYPES = ["Новая почта - 20 грн.","Укрпочта - 20 грн.","Автолюкс - 20 грн." ]

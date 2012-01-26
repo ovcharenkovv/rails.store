@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddOrderIdToLineItem < ActiveRecord::Migration
   def self.up
     add_column :line_items, :order_id, :integer

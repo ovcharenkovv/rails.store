@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Company < ActiveRecord::Base
 
   belongs_to :owner, :foreign_key => 'owner_id', :class_name => 'User'

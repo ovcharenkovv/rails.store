@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddCategoryIdToProducts < ActiveRecord::Migration
   def self.up
     add_column :products, :category_id, :integer

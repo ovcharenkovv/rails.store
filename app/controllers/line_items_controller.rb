@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class LineItemsController < ApplicationController
   # GET /line_items/new
   # GET /line_items/new.xml

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Admin::AuthorsController < Admin::AdminController
   cache_sweeper :author_sweeper, :only => [:create, :update, :destroy]
 

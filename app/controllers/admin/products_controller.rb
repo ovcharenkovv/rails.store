@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Admin::ProductsController < Admin::AdminController
 
   cache_sweeper :product_sweeper, :only => [:create, :update, :destroy]

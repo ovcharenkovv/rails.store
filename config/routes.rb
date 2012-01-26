@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 Store::Application.routes.draw do
 
   devise_for :users, :controllers => { :registrations => "registrations" } do

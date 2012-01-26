@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class UserSweeper < ActionController::Caching::Sweeper
   # This sweeper is going to keep an eye on the Product model
   observe User

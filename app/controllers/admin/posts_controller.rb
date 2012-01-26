@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Admin::PostsController < Admin::AdminController
   before_filter :get_category
 

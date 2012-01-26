@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddQuantityToLineItem < ActiveRecord::Migration
   def self.up
     add_column :line_items, :quantity, :integer, :default => 1

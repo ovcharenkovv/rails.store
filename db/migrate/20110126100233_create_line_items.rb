@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateLineItems < ActiveRecord::Migration
   def self.up
     create_table :line_items do |t|

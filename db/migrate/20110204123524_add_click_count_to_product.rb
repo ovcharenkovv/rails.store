@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddClickCountToProduct < ActiveRecord::Migration
   def self.up
     add_column :products, :click_count, :integer

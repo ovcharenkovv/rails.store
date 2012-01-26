@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Admin::PostCategoriesController < Admin::AdminController
   # GET /post_categories
   # GET /post_categories.xml

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddIsHotToProduct < ActiveRecord::Migration
   def self.up
     add_column :products, :is_hot, :boolean

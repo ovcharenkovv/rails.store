@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddStatusToOrders < ActiveRecord::Migration
   def self.up
     add_column :orders, :status, :string, :default => 'new'
