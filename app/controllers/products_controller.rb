@@ -1,6 +1,8 @@
 # -*- encoding : utf-8 -*-
 class ProductsController < ApplicationController
 
+  uses_tiny_mce
+
   cache_sweeper :product_sweeper, :only => [:create, :update, :destroy]
 
   before_filter :get_category_or_author , :init_params

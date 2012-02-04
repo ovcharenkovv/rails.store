@@ -755,7 +755,7 @@ form.button_to .empty_cart:hover{
 .happy_form textarea {
     border: 1px solid #646464;
     border-radius: 3px 3px 3px 3px;
-    height: 80px;
+    height: 130px;
     padding: 5px;
     width: 500px;
 }
