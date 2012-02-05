@@ -3,6 +3,7 @@ module PostBoxStatus
   def PostBoxStatus.info post_id, post_type
     require 'net/http'
     require 'uri'
+    require 'iconv'
     if post_type == 'Укрпочта - 20 грн.'
       page = Hpricot(Net::HTTP.get(URI.parse("http://80.91.187.254:8080/servlet/SMCSearch2?lang=ua&barcode=#{post_id}".strip)))
       response = page.search("//center//div//div") if !page.nil?
