@@ -15,7 +15,7 @@ module PostBoxStatus
 
     if post_type == 'Новая почта - 20 грн.'
       page = Hpricot(Net::HTTP.get(URI.parse("http://novaposhta.ua/frontend/tracking?en=#{post_id}".strip)))
-      response = page.search("//td[@class='stdText']//span") if !page.nil?
+      response = page.search("//div[@id='main_content']//table//td[@class='stdText']") if !page.nil?
       result = Iconv.conv("UTF8", "CP1251", response.to_s)
       #ec = Encoding::Converter.new "Windows-1251","UTF-8",:invalid=>:replace,:undef=>:replace,:replace=>""
       #result = ec.convert response.to_s
