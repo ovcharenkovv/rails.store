@@ -39,13 +39,11 @@
               .masters
                 = render "authors/list"
           -else
-            -cache 'sidebar_with_banners' do
+            -cache 'sidebar_full' do
               .categories
                 = render "categories/list"
               .masters
-                = render "authors/list"
-              .banners
-                = render "layouts/banners"
+                = render "authors/list_full"
         .content
           = yield
         .footer

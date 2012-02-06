@@ -1,4 +1,4 @@
 %h3="ТОП Мастеров:"
 %ul
-  - Author.top_masters(35).each do |author|
+  - Author.top_masters(100).each do |author|
     %li=link_to author.name, author_products_path(author)
