@@ -14,7 +14,9 @@ class ProductsController < ApplicationController
       @per_page = 33
     end
 
-    if params[:sort]=='popularity'
+    if params[:sort]=='date'
+      @sort = 'created_at desc'
+    elsif params[:sort]=='popularity'
       @sort = 'click_count desc'
     elsif params[:sort]=='price'
       @sort = 'price'

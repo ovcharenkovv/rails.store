@@ -3,11 +3,11 @@
     = link_to "Добавить товар",new_category_product_path(@category),:class=>"red", :style=>"margin: 0 280px 0 0;"
   Сортировать по:
   - if params[:category_id]
-    = link_to "Цене", category_products_path(@category, :sort => "price", :per_page => params[:per_page] ), :class=>params[:sort]=='price' ? "selected":"normal"
-    = link_to "Популярности", category_products_path(@category, :sort => "popularity", :per_page => params[:per_page] ), :class=>params[:sort]=='popularity' ? "selected":"normal"
+    = link_to " Цене ", category_products_path(@category, :sort => "price", :per_page => params[:per_page] ), :class=>params[:sort]=='price' ? "selected":"normal"
+    = link_to " Дате ", category_products_path(@category, :sort => "date", :per_page => params[:per_page] ), :class=>params[:sort]=='date' ? "selected":"normal"
     =# render "products/per_page"
   - elsif params[:author_id]
-    = link_to "Цене", author_products_path(@category, :sort => "price", :per_page =>params[:per_page] ), :class=>params[:sort]=='price' ? "selected":"normal"
-    = link_to "Популярности", author_products_path(@category, :sort => "popularity", :per_page =>params[:per_page] ), :class=>params[:sort]=='popularity' ? "selected":"normal"
+    = link_to " Цене ", author_products_path(@category, :sort => "price", :per_page =>params[:per_page] ), :class=>params[:sort]=='price' ? "selected":"normal"
+    = link_to " Дате ", author_products_path(@category, :sort => "date", :per_page =>params[:per_page] ), :class=>params[:sort]=='date' ? "selected":"normal"
     =# render "products/per_page"
 
