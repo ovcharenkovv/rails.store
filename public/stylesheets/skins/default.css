@@ -545,9 +545,13 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .wrap .product_description {
     clear: both;
     padding: 15px 10px;
+    overflow: hidden;
 }
 .wrap .product_description p{
     margin: 0 0 10px;
+}
+.wrap .product_description table{
+    width: 100%!important;
 }
 .share a:hover {
     opacity:0.7;
