@@ -48,13 +48,15 @@ class Product < ActiveRecord::Base
   validates_numericality_of :author_price, :greater_than_or_equal_to => 10, :less_than_or_equal_to => 300
   validates_attachment_presence :image
 
-  def self.search(q)
-    if q
-      where('products.title LIKE :q OR products.id = :q  ',{:q => "#{q}%"})
+  def self.search(params)
+    if params[:search]
+      where('title LIKE ?', "%#{params[:search]}%").paginate :page=>params[:page], :order=>'created_at desc',:per_page => 60
     else
-      scoped
+      nil
     end
   end
+
+
 
   def inc_click
     if self.click_count

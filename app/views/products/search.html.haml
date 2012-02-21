@@ -1,0 +1,11 @@
+-content_for :custom_css_js do
+  = javascript_include_tag "application"
+
+%h1="Искать товары здесь:"
+
+-form_tag search_products_path, :method => 'get' do
+  .search_box
+    = text_field_tag :search, params[:search], {:class=>"sexy_input search_input"}
+    = submit_tag "Искать", :name => nil, :class=>"sexy_button"
+
+= render 'products' if !@products.nil?

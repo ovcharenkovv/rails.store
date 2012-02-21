@@ -97,4 +97,8 @@ class ProductsController < ApplicationController
     end
   end
 
+  def search
+    @products = Product.search(params)
+  end
+
 end

@@ -717,7 +717,7 @@ form.button_to .empty_cart:hover{
     opacity: 0.9;
 }
 
-.happy_form .actions input, .happy_form .actions a.cancel {
+.happy_form .actions input, .happy_form .actions a.cancel, .sexy_button {
     display:block;
     float:left;
     margin:0 15px 0 0;
@@ -730,7 +730,16 @@ form.button_to .empty_cart:hover{
     font-weight:bold;
     color:#565656;
     cursor:pointer;
-    padding:5px 10px 6px 7px; /* Links */
+    padding:5px 10px 4px 7px; /* Links */
+}
+.search_input {
+    float: left;
+    margin: 0 20px 0 5px;
+    width: 554px !important;
+}
+.search_box {
+    margin: 15px 0 10px;
+    overflow: hidden;
 }
 .happy_form .actions a.cancel {
     border:1px solid red;
@@ -751,7 +760,7 @@ form.button_to .empty_cart:hover{
     font-size: 15px;
     line-height: 25px;
 }
-.happy_form input[type=text], .happy_form input[type=email], .happy_form input[type=password]{
+.happy_form input[type=text], .happy_form input[type=email], .happy_form input[type=password], .sexy_input{
     border: 1px solid #646464;
     border-radius: 3px 3px 3px 3px;
     padding: 5px;
