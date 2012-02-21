@@ -3,8 +3,26 @@
   %b Name:
   = @author.name
 %p
+  %b Fullname:
+  = @author.fullname
+%p
+  %b Phone:
+  = @author.phone
+%p
+  %b Email:
+  = @author.email
+%p
+  %b City:
+  = @author.city
+%p
+  %b Address:
+  = @author.address
+%p
+  %b CCN:
+  = @author.ccn
+%p
   %b Description:
   = @author.description
-= link_to 'Edit', edit_admin_author_path(@author)
-|
-\#{link_to t('layouts.application.back'), admin_authors_path}
+%br
+.actions
+  = link_to "Back", :back, :class=>"cancel"

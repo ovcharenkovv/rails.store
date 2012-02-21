@@ -40,7 +40,7 @@
         -product = Product.find(li.product_id)
         %td=link_to product.title, admin_category_product_path(product.category.id,product)
         %td=li.quantity
-        %td=product.author.name
+        %td=link_to product.author.name, admin_author_path(product.author.id)
         %td=product.category.name
         %td=product.price*li.quantity
         %td=product.author_price*li.quantity unless product.author_price.nil?
