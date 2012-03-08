@@ -269,3 +269,6 @@ tr.green {
 .postbox p {
     color:red;
 }
+.postbox div {
+    display: none;
+}
