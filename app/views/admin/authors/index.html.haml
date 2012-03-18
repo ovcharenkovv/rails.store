@@ -1,9 +1,11 @@
 %h1 Listing authors
 .rest_buttons
   = link_to 'New Author', new_admin_author_path,:class=>"cool_buton"
+  = link_to 'Edit Users', admin_users_path,:class=>"cool_buton"
 %table
   %tr
-    %th Nik
+    %th ID
+    %th Site Name
     %th Full Name
     %th Email
     %th Phone
@@ -12,6 +14,7 @@
     %th.action
   - @authors.each do |author|
     %tr
+      %td= link_to author.id, admin_author_path(author)
       %td= link_to author.name, admin_author_products_path(author)
       %td= author.fullname
       %td= author.email
@@ -20,5 +23,4 @@
       %td= author.ccn
       %th
         = link_to 'Edit', edit_admin_author_path(author)
-        = ' / '
-        = link_to 'Destroy', admin_author_path(author), :confirm => 'Are you sure?', :method => :delete
+        = link_to 'Destroy', admin_author_path(author), :confirm => 'Are you sure?', :method => :delete, :style=>'display:none;'
