@@ -266,9 +266,12 @@ tr.green {
 .postbox span {
     display: block;
 }
-.postbox p {
+.postbox b {
+    color: #000000;
+}
+.postbox p, .postbox {
     color:red;
 }
-.postbox div {
+.postbox div, .postbox form  {
     display: none;
 }

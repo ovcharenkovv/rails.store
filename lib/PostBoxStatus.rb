@@ -16,11 +16,9 @@ module PostBoxStatus
       end
 
       if post_type == 'Новая почта - 20 грн.'
-        page = Hpricot(Net::HTTP.get(URI.parse("http://restricted.novaposhta.ua/public/tracking/?en=#{post_id}".strip)))
-        response = page if !page.nil?
-        result = Iconv.conv("UTF8", "CP1251", response.to_s)
-        #ec = Encoding::Converter.new "Windows-1251","UTF-8",:invalid=>:replace,:undef=>:replace,:replace=>""
-        #result = ec.convert response.to_s
+        uri = URI('http://91.220.203.10/site_services/tracking/tracking.php?lang=ua')
+        response = Net::HTTP.post_form(uri, 'en' => post_id, 'max' => '50')
+        result = Iconv.conv("UTF8", "CP1251", response.body.to_s)
       end
     rescue Exception => result
     end

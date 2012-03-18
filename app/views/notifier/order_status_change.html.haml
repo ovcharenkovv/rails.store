@@ -14,7 +14,7 @@
     %h3 Ваш заказ № #{@order.id} переведен в статус: Отправлено.
     %p Номер товарно-транспортной накладной <strong>#{@order.shipment_id}</strong>
     -if @order.delivery_type == Order::DELIVERY_TYPES[0]
-      %p Отслежевать статус посылки можна по #{link_to'ссылке здесь','http://restricted.novaposhta.ua/public/tracking/?en='+@order.shipment_id}
+      %p Отслежевать статус посылки можна по #{link_to'ссылке здесь','http://novaposhta.ua/frontend/tracking'}
     -elsif @order.delivery_type == Order::DELIVERY_TYPES[1]
       %p Отслежевать статус посылки можна по #{link_to'ссылке здесь','http://80.91.187.254:8080/servlet/SMCSearch2?lang=ua&barcode='+@order.shipment_id}
     %br
