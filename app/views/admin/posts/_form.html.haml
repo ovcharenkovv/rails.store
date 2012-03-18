@@ -33,7 +33,7 @@
     = f.text_area :short_body
   .field
     = f.label :body
-    = f.text_area :body
+    = f.text_area :body,:class => "mceEditor"
   .actions
     = f.submit 'Save'
     = link_to "Cancel", :back, :class=>"cancel"
