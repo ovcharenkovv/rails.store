@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120117072725) do
+ActiveRecord::Schema.define(:version => 20120322110406) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -53,6 +52,20 @@ ActiveRecord::Schema.define(:version => 20120117072725) do
 
   add_index "categories", ["parent_id"], :name => "index_categories_on_parent_id"
 
+  create_table "ckeditor_assets", :force => true do |t|
+    t.string   "data_file_name",                  :null => false
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.integer  "assetable_id"
+    t.string   "assetable_type",    :limit => 30
+    t.string   "type",              :limit => 30
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
+  add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
+
   create_table "comments", :force => true do |t|
     t.string   "title",            :limit => 50, :default => ""
     t.string   "user_name",        :limit => 50, :default => ""
@@ -85,6 +98,22 @@ ActiveRecord::Schema.define(:version => 20120117072725) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
   end
+
+  create_table "delayed_jobs", :force => true do |t|
+    t.integer  "priority",   :default => 0
+    t.integer  "attempts",   :default => 0
+    t.text     "handler"
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.string   "queue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
 
   create_table "expenses", :force => true do |t|
     t.decimal  "amount",      :precision => 10, :scale => 0
@@ -143,6 +172,7 @@ ActiveRecord::Schema.define(:version => 20120117072725) do
     t.string   "slug"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "published",        :default => true
   end
 
   add_index "posts", ["post_category_id"], :name => "index_posts_on_post_category_id"

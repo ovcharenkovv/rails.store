@@ -11,11 +11,11 @@ class PostsController < ApplicationController
       redirect_to root_url
       return
     end
-    @posts = @post_category.posts.find(:all ,:order=>'created_at desc').paginate :page=>params[:page], :per_page => '5'
+    @posts = @post_category.posts.where(:published=>true).find(:all ,:order=>'created_at desc').paginate :page=>params[:page], :per_page => '5'
     fresh_when(:etag => [@posts,@current_cart,@current_cart.line_items])
   end
   def show
-    @post = @post_category.posts.find_by_slug!(params[:post_slug])
+    @post = @post_category.posts.where(:published=>true).find_by_slug!(params[:post_slug])
     fresh_when(:etag => [@post,@current_cart,@current_cart.line_items])
   end
 end

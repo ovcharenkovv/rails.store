@@ -31,6 +31,8 @@ gem 'will_paginate', '>= 3.0.pre'
 
 gem 'paperclip', "~> 2.3"
 
+gem 'ckeditor'
+
 gem 'recaptcha', :require => 'recaptcha/rails'
 
 gem 'acts_as_tree'

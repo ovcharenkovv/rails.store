@@ -1,5 +1,9 @@
 # -*- encoding : utf-8 -*-
 Store::Application.routes.draw do
+  namespace :ckeditor do
+    resources :pictures, :only => [:index, :create, :destroy]
+    resources :attachment_files, :only => [:index, :create, :destroy]
+  end
 
   devise_for :users, :controllers => { :registrations => "registrations" } do
     get "/login" => "devise/sessions#new"
