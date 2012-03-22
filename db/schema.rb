@@ -99,22 +99,6 @@ ActiveRecord::Schema.define(:version => 20120322110406) do
     t.datetime "image_updated_at"
   end
 
-  create_table "delayed_jobs", :force => true do |t|
-    t.integer  "priority",   :default => 0
-    t.integer  "attempts",   :default => 0
-    t.text     "handler"
-    t.text     "last_error"
-    t.datetime "run_at"
-    t.datetime "locked_at"
-    t.datetime "failed_at"
-    t.string   "locked_by"
-    t.string   "queue"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
-
   create_table "expenses", :force => true do |t|
     t.decimal  "amount",      :precision => 10, :scale => 0
     t.string   "description"
@@ -202,6 +186,22 @@ ActiveRecord::Schema.define(:version => 20120322110406) do
   create_table "reports", :force => true do |t|
     t.string   "name"
     t.string   "param"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tiny_prints", :force => true do |t|
+    t.string   "image_file_name"
+    t.string   "image_file_size"
+    t.string   "image_content_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tiny_videos", :force => true do |t|
+    t.string   "original_file_name"
+    t.string   "original_file_size"
+    t.string   "original_content_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
