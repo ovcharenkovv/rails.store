@@ -3,7 +3,7 @@ db/*.sqlite3
 config/database.yml
 public/sitemap1.xml.gz
 public/sitemap_index.xml.gz
-public/system/images/*
+public/system/*
 log/*.log
 tmp/**/*
 .idea/*
