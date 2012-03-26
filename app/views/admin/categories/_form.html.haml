@@ -8,6 +8,10 @@
         - @category.errors.full_messages.each do |msg|
           %li= msg
   .field
+    = f.label :dealers_only
+    %br/
+    = f.check_box :dealers_only
+  .field
     = f.label :name
     %br/
     = f.text_field :name
@@ -15,6 +19,14 @@
     = f.label :ordering
     %br/
     = f.text_field :ordering
+  .field
+    = f.label :margin
+    %br/
+    = f.text_field :margin
+  .field
+    = f.label :min_margin
+    %br/
+    = f.text_field :min_margin
   .field
     = f.label :description
     %br/

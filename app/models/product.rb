@@ -101,9 +101,9 @@ class Product < ActiveRecord::Base
 
   def generate_price
     if self.author_price < 45
-      self.price =  self.author_price+15
+      self.price =  self.author_price+self.category.min_margin
     else
-      self.price =  self.author_price+(self.author_price*0.35)
+      self.price =  self.author_price+(self.author_price*(self.category.margin.to_f/100))
     end
   end
 

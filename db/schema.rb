@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120322110406) do
+ActiveRecord::Schema.define(:version => 20120326082221) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -48,6 +48,9 @@ ActiveRecord::Schema.define(:version => 20120322110406) do
     t.datetime "updated_at"
     t.integer  "parent_id"
     t.integer  "ordering"
+    t.integer  "margin",       :default => 35
+    t.integer  "min_margin",   :default => 15
+    t.boolean  "dealers_only", :default => false
   end
 
   add_index "categories", ["parent_id"], :name => "index_categories_on_parent_id"

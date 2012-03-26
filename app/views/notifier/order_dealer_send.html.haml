@@ -1,0 +1,15 @@
+%h1 Customer made the order:
+%p
+  Name         :#{@order.name}
+  %br
+  Phone        :#{@order.telephone}
+  %br
+  Email        :#{@order.email}
+  %br
+  Address      :#{@order.address}
+  %br
+  Pay_type     :#{@order.pay_type}
+  %br
+  Delivery_type:#{@order.delivery_type}
+%p Customer ordered the following items:
+%p= render :template => 'line_items/_mail_line_item',:locals => { :line_items  => @order.line_items  }

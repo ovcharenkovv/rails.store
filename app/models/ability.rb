@@ -8,6 +8,10 @@ class Ability
         can :update, Product, :author_id => user.author_id
         can :create, Product
       end
+      if user.role?(:dealer)
+        can :update, Product, :author_id => user.author_id
+        can :create, Product
+      end
     end
 
     # Define abilities for the passed in user here. For example:

@@ -8,9 +8,10 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :author_id, :role
+
   belongs_to :author
 
-  ROLES = %w[admin author user]
+  ROLES = %w[author dealer user]
 
   def role?(base_role)
     role.present? && ROLES.index(base_role.to_s) <= ROLES.index(role)
