@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 
   belongs_to :author
 
-  ROLES = %w[author dealer user]
+  ROLES = %w[author dealer user admin]
 
   def role?(base_role)
     role.present? && ROLES.index(base_role.to_s) <= ROLES.index(role)
