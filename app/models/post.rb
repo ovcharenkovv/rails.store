@@ -1,7 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Post < ActiveRecord::Base
   belongs_to :post_category
-  validates :title, :presence => true,
+  validates :slug, :presence => true,
             :uniqueness => true
   acts_as_commentable
 
