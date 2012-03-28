@@ -1,9 +1,16 @@
 - @posts.each do |post|
-  -cache "shot_post_id_#{post.id.to_s}" do
+  -if !current_user
+    -cache "shot_post_id_#{post.id.to_s}" do
+      %h3=link_to post.title, short_post_url(@post_category,post)
+      .post_body=raw post.short_body
+      %br
+      %p= link_to 'Читать дальше >>', short_post_url(@post_category,post)
+      = render :partial => "posts/post_footer", :locals => { :post => post }
+  -else
     %h3=link_to post.title, short_post_url(@post_category,post)
     .post_body=raw post.short_body
     %br
     %p= link_to 'Читать дальше >>', short_post_url(@post_category,post)
     = render :partial => "posts/post_footer", :locals => { :post => post }
-= will_paginate @posts ,:previous_label=>"« Назад ", :next_label=>" Вперед »"  
+= will_paginate @posts ,:previous_label=>"« Назад ", :next_label=>" Вперед »"
 
