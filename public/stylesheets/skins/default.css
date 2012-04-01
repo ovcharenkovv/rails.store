@@ -232,7 +232,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .content_wrap .sidebar .categories .has_children ul li {
     border: none;
     display: block;
-    padding: 0px 10px;
+    padding: 0 0 0 10px;
 }
 .content_wrap .sidebar .categories .has_children ul li a {
     color:#58331D;
