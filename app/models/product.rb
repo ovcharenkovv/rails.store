@@ -2,7 +2,7 @@
 require 'paperclip_processors/watermark'
 class Product < ActiveRecord::Base
 
-  PRODUCT_STATUS = ["Есть в наличии","Под заказ" ]
+  PRODUCT_STATUS = ["Есть в наличии", "Под заказ"]
   belongs_to :category
   belongs_to :author
 
@@ -11,26 +11,26 @@ class Product < ActiveRecord::Base
 
   has_attached_file :image,
                     :styles => {
-                        :small=>{
-                            :geometry       => "125x94#",
-                            :quality        => "40"
+                        :small => {
+                            :geometry => "125x94#",
+                            :quality => "40"
                         },
-                        :thumb =>{
-                            :geometry       => "200x150#",
-                            :quality        => "50",
+                        :thumb => {
+                            :geometry => "200x150#",
+                            :quality => "50",
                         },
-                        :medium =>{
-                            :processors     => [:watermark],
-                            :geometry       => "400x300#",
-                            :quality        => "85",
+                        :medium => {
+                            :processors => [:watermark],
+                            :geometry => "400x300#",
+                            :quality => "85",
                             :watermark_path => Rails.root.join('public/images/watermark_medium.png'),
-                            :position       => "SouthEast"
+                            :position => "SouthEast"
                         },
-                        :large=>{
-                            :processors     => [:watermark],
-                            :geometry       => "800X600#",
+                        :large => {
+                            :processors => [:watermark],
+                            :geometry => "800X600#",
                             :watermark_path => Rails.root.join('public/images/watermark_large.png'),
-                            :position       => "SouthEast"
+                            :position => "SouthEast"
 
                         }
                     }
@@ -41,7 +41,7 @@ class Product < ActiveRecord::Base
   before_create :generate_price
   before_save :generate_price
 
-  validates :title,       :presence => true,
+  validates :title, :presence => true,
             :uniqueness => true,
             :length => {:minimum => 3, :maximum => 45}
   validates :category_id, :author_id, :author_price, :presence => true
@@ -50,12 +50,11 @@ class Product < ActiveRecord::Base
 
   def self.search(params)
     if params[:search]
-      where('title LIKE ?', "%#{params[:search]}%").where('published is true').paginate :page=>params[:page], :order=>'created_at desc',:per_page => 60
+      where('title LIKE ?', "%#{params[:search]}%").where('published is true').paginate :page => params[:page], :order => 'created_at desc', :per_page => 60
     else
       nil
     end
   end
-
 
 
   def inc_click
@@ -67,9 +66,6 @@ class Product < ActiveRecord::Base
   end
 
   def self.find_top_products(quantity)
-    #find(:all,:limit => quantity, :order => 'click_count desc')
-    #includes(:author).includes(:category).where(:published => true).order("click_count desc").limit(quantity)
-    #where('products.id = line_items.product_id and line_items.order_id is not null').group('count(products.id)').limit(quantity)
     find_by_sql("SELECT products.*
                 FROM products, line_items
                 WHERE products.id = line_items.product_id AND line_items.order_id is not null AND products.published = true
@@ -82,7 +78,7 @@ class Product < ActiveRecord::Base
     includes(:author).includes(:category).where(:published => true).order("created_at desc").limit(quantity)
   end
 
-  def self.find_random_products (quantity,except)
+  def self.find_random_products (quantity, except)
     includes(:author).includes(:category).where(:published => true).where(["id NOT IN (?)", except]).order("RAND()").limit(quantity)
   end
 
@@ -90,28 +86,28 @@ class Product < ActiveRecord::Base
     includes(:author).includes(:category).where(:published => true).where(["is_hot == (?)", '1']).limit(quantity).order("created_at desc")
   end
 
-  def self.find_see_also_products(quantity,category,except)
-    includes(:author).includes(:category).where( :category_id=>category,:published => true ).where(["id NOT IN (?)", except]).limit(quantity).order("RAND()")
+  def self.find_see_also_products(quantity, category, except)
+    includes(:author).includes(:category).where(:category_id => category, :published => true).where(["id NOT IN (?)", except]).limit(quantity).order("RAND()")
   end
 
-  def self.between_date_created(from,to)
-    where("created_at BETWEEN '#{from}' AND '#{to}'").where(:published=>true)
+  def self.between_date_created(from, to)
+    where("created_at BETWEEN '#{from}' AND '#{to}'").where(:published => true)
   end
 
 
   def generate_price
     if self.author_price < 45
-      self.price =  self.author_price+self.category.min_margin
+      self.price = self.author_price+self.category.min_margin
     else
-      self.price =  self.author_price+(self.author_price*(self.category.margin.to_f/100))
+      self.price = self.author_price+(self.author_price*(self.category.margin.to_f/100))
     end
   end
 
-  def self.next_product id,category_id
+  def self.next_product id, category_id
     where(:published => true).where(:category_id => category_id).where("id < #{id}").last
   end
 
-  def self.previous_product id,category_id
+  def self.previous_product id, category_id
     where(:published => true).where(:category_id => category_id).where("id > #{id}").first
   end
 
