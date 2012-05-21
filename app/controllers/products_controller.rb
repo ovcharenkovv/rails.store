@@ -2,28 +2,28 @@
 class ProductsController < ApplicationController
 
   uses_tiny_mce(:options => {:theme => 'advanced',
-  :browsers => %w{msie gecko},
-  :theme_advanced_toolbar_location => "top",
-  :theme_advanced_toolbar_align => "left",
-  :theme_advanced_resizing => true,
-  :theme_advanced_resize_horizontal => false,
-  :paste_auto_cleanup_on_paste => true,
-  :theme_advanced_buttons1 => %w{bold italic underline separator bullist numlist  separator fullscreen cleanup code separator undo redo separator pastetext pasteword },
-  :theme_advanced_buttons2 => [],
-  :theme_advanced_buttons3 => [],
-  :language => :ru,
-  :plugins => %w{contextmenu paste fullscreen }},
-  :only => [:new, :create, :edit, :update])
+                             :browsers => %w{msie gecko},
+                             :theme_advanced_toolbar_location => "top",
+                             :theme_advanced_toolbar_align => "left",
+                             :theme_advanced_resizing => true,
+                             :theme_advanced_resize_horizontal => false,
+                             :paste_auto_cleanup_on_paste => true,
+                             :theme_advanced_buttons1 => %w{bold italic underline separator bullist numlist  separator fullscreen cleanup code separator undo redo separator pastetext pasteword },
+                             :theme_advanced_buttons2 => [],
+                             :theme_advanced_buttons3 => [],
+                             :language => :ru,
+                             :plugins => %w{contextmenu paste fullscreen }},
+                :only => [:new, :create, :edit, :update])
 
   cache_sweeper :product_sweeper, :only => [:create, :update, :destroy]
 
-  before_filter :get_category_or_author , :init_params
+  before_filter :get_category_or_author, :init_params
 
   def init_params
     if params[:per_page]
       @per_page = params[:per_page]
     else
-      @per_page = 33
+      @per_page = 51
     end
 
     if params[:sort]=='date'
@@ -52,15 +52,15 @@ class ProductsController < ApplicationController
   end
 
   def notify_us(action)
-    Notifier.product_admin2_send(@product,action).deliver
+    Notifier.product_admin2_send(@product, action).deliver
   end
 
 
   def index
     if params[:category_id]
-      @products = Product.includes(:author).includes(:category).where(:category_id => @categories,:published => true).paginate :page=>params[:page], :order=>@sort, :per_page => @per_page
+      @products = Product.includes(:author).includes(:category).where(:category_id => @categories, :published => true).paginate :page => params[:page], :order => @sort, :per_page => @per_page
     elsif params[:author_id]
-      @products = Product.includes(:author).includes(:category).where(:author_id => @categories , :published => true).paginate :page=>params[:page], :order=>@sort, :per_page => @per_page
+      @products = Product.includes(:author).includes(:category).where(:author_id => @categories, :published => true).paginate :page => params[:page], :order => @sort, :per_page => @per_page
     end
   end
 
@@ -75,7 +75,7 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.haml
-      format.xml  { render :xml => @product }
+      format.xml { render :xml => @product }
     end
   end
 
