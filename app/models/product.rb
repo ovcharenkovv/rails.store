@@ -65,11 +65,11 @@ class Product < ActiveRecord::Base
     end
   end
 
-  def self.find_top_products(quantity)
+  def self.find_top_products(quantity, month_before)
     find_by_sql("SELECT products.*
                 FROM products, line_items
                 WHERE products.id = line_items.product_id AND line_items.order_id is not null AND products.published = true
-                AND  products.created_at BETWEEN DATE_SUB(now(), INTERVAL 3 MONTH) AND now()
+                AND  products.created_at BETWEEN DATE_SUB(now(), INTERVAL #{month_before} MONTH) AND now()
                 GROUP BY products.id
                 ORDER BY count(product_id) desc
                 LIMIT #{quantity};")

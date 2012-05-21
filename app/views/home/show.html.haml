@@ -2,16 +2,16 @@
   -case params[:slug]
     -when 'top'
       -@title="Топ продаваемых товаров"
-      -@products = Product.find_top_products(39)
+      -@products = Product.find_top_products(51,3)
     -when 'new'
       -@title="Новинки"
-      -@products = Product.find_new_products(39)
+      -@products = Product.find_new_products(51)
     -when 'rnd'
       -@title="Витрина"
-      -@products = Product.find_random_products(39,'')
+      -@products = Product.find_random_products(51,'')
     -else
       -@product_title=""
-      -@products = Product.find_new_products(39)
+      -@products = Product.find_new_products(51)
 
   %h1
     =link_to "Главная", root_path
