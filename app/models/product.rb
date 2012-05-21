@@ -69,6 +69,7 @@ class Product < ActiveRecord::Base
     find_by_sql("SELECT products.*
                 FROM products, line_items
                 WHERE products.id = line_items.product_id AND line_items.order_id is not null AND products.published = true
+                AND  products.created_at BETWEEN DATE_SUB(now(), INTERVAL 3 MONTH) AND now()
                 GROUP BY products.id
                 ORDER BY count(product_id) desc
                 LIMIT #{quantity};")
