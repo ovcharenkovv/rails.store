@@ -1,7 +1,7 @@
 # -*- encoding : utf-8 -*-
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  before_filter  :get_current_cart
+  before_filter :get_current_cart
   layout "application"
 
   rescue_from CanCan::AccessDenied do |exception|
@@ -10,7 +10,10 @@ class ApplicationController < ActionController::Base
   end
 
   def get_current_cart
-    @current_cart = current_cart
+    if !session[:cart_id].nil?
+      @current_cart = current_cart
+    end
+
   end
 
   private

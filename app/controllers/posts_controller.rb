@@ -13,11 +13,11 @@ class PostsController < ApplicationController
       return
     end
     @posts = @post_category.posts.where(:published => true).find(:all, :order => 'created_at desc').paginate :page => params[:page], :per_page => '7'
-    fresh_when(:etag => [@posts, @current_cart, @current_cart.line_items])
+    fresh_when(:etag => [@posts, @current_cart])
   end
 
   def show
     @post = @post_category.posts.where(:published => true).find_by_slug!(params[:post_slug])
-    fresh_when(:etag => [@post, @current_cart, @current_cart.line_items])
+    fresh_when(:etag => [@post, @current_cart])
   end
 end
