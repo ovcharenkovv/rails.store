@@ -1917,3 +1917,7 @@ post_body .r728x90 {
 .product_description img {
     display: none !important;
 }
+
+.hidden {
+    display: none;
+}
