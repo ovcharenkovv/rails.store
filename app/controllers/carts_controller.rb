@@ -66,6 +66,7 @@ class CartsController < ApplicationController
     current_cart.line_items.destroy_all
     current_cart.destroy
     session[:cart_id] = nil
+    session[:referer] = nil
     respond_to do |format|
       format.html { redirect_to(root_path) }
       format.xml { head :ok }

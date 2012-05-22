@@ -37,6 +37,7 @@ class OrdersController < ApplicationController
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
+        session[:referer] = nil
         Notifier.order_received(@order).deliver
 
 

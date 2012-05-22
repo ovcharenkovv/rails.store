@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   end
 
   def save_referer
-    unless session['referer']
+    if !session[:referer].nil?
       session['referer'] = request.env["HTTP_REFERER"] || 'none'
     end
   end
