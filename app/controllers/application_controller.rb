@@ -1,7 +1,7 @@
 # -*- encoding : utf-8 -*-
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  before_filter :get_current_cart
+  before_filter :get_current_cart, :save_referer
   layout "application"
 
   rescue_from CanCan::AccessDenied do |exception|
@@ -15,6 +15,13 @@ class ApplicationController < ActionController::Base
     end
 
   end
+
+  def save_referer
+    unless session['referer']
+      session['referer'] = request.env["HTTP_REFERER"] || 'none'
+    end
+  end
+
 
   private
 

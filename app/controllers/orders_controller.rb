@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.haml
-      format.xml  { render :xml => "opa" }
+      format.xml { render :xml => "opa" }
     end
   end
 
@@ -31,6 +31,8 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(params[:order])
     @order.add_line_items_from_cart(current_cart)
+    @order.save_referer(session[:referer])
+
     respond_to do |format|
       if @order.save
         Cart.destroy(session[:cart_id])
@@ -38,8 +40,7 @@ class OrdersController < ApplicationController
         Notifier.order_received(@order).deliver
 
 
-
-        if @order.line_items.find_all{ |line_item| line_item.product.category.dealers_only == true }.size != 0
+        if @order.line_items.find_all { |line_item| line_item.product.category.dealers_only == true }.size != 0
           Notifier.order_dealer_send(@order).deliver
         else
           Notifier.order_send(@order).deliver
