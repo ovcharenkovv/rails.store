@@ -5,7 +5,7 @@ module PostBoxStatus
     require 'uri'
     require 'iconv'
     begin
-      if post_type == 'Укрпочта - 20 грн.'
+      if post_type == 'Укрпочта - 23 грн.'
 
         page = Hpricot(Net::HTTP.get(URI.parse("http://80.91.187.254:8080/servlet/SMCSearch2?lang=ua&barcode=#{post_id}".strip)))
         response = page.search("//center//div//div") if !page.nil?
@@ -15,7 +15,7 @@ module PostBoxStatus
         end
       end
 
-      if post_type == 'Новая почта - 20 грн.'
+      if post_type == 'Новая почта - 23 грн.'
         uri = URI('http://91.220.203.10/site_services/tracking/tracking.php?lang=ua')
         response = Net::HTTP.post_form(uri, 'en' => post_id, 'max' => '50')
         result = Iconv.conv("UTF8", "CP1251", response.body.to_s)
