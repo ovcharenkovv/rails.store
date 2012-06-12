@@ -8,6 +8,10 @@
         - @author.errors.full_messages.each do |msg|
           %li= msg
   .field
+    = f.label :published
+    %br/
+    = f.check_box :published
+  .field
     = f.label :name
     %br/
     = f.text_field :name
