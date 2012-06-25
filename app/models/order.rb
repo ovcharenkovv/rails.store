@@ -60,6 +60,13 @@ class Order < ActiveRecord::Base
     self.referer = referer unless referer == "null"
   end
 
+  def self.update_sales_counts order
+    order.line_items.each do |li|
+      li.product.author.update_sales_count
+    end
+
+  end
+
 
 end
 

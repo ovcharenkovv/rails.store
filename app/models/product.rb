@@ -38,8 +38,8 @@ class Product < ActiveRecord::Base
   acts_as_commentable
 
   before_destroy :ensure_not_referenced_by_any_line_item
-  before_create :generate_price
-  before_save :generate_price
+  before_create :generate_price, :save_product_count
+  before_save :generate_price, :save_product_count
 
   validates :title, :presence => true,
             :uniqueness => true,
@@ -102,6 +102,22 @@ class Product < ActiveRecord::Base
     else
       self.price = self.author_price+(self.author_price*(self.category.margin.to_f/100))
     end
+  end
+
+  def self.author_products_count author_id
+    where(:author_id => author_id, :published => true).count
+  end
+
+  def self.author_sales_count author_id
+
+    #includes(:line_items).where(:author_id => author_id, :published => true).where("line_items.order_id IS NOT NULL").count(:author_id)
+    find_by_sql("SELECT count(products.author_id)
+                 FROM products, line_items
+                 WHERE products.id = line_items.product_id AND line_items.order_id IS NOT NULL AND products.published = TRUE AND products.author_id =  #{author_id};")
+  end
+
+  def save_product_count
+    self.author.update_product_count
   end
 
   def self.next_product id, category_id
