@@ -71,7 +71,9 @@ class ProductsController < ApplicationController
 
   def new
     @product = @category.products.new
+    4.times { @product.uploads.build }
     authorize! :create, @product
+
 
     respond_to do |format|
       format.html # new.html.haml
@@ -81,6 +83,7 @@ class ProductsController < ApplicationController
 
   def edit
     @product = @category.products.find(params[:id])
+    4.times { @product.uploads.build }
     authorize! :update, @product
   end
 

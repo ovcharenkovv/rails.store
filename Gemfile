@@ -45,7 +45,7 @@ gem 'tiny_mce'
 
 gem 'acts_as_commentable'
 
-gem 'i18n' , '0.5.0'
+gem 'i18n', '0.5.0'
 
 gem 'russian'
 

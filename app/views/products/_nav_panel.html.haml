@@ -1,10 +1,13 @@
+- content_for :custom_css_js do
+  = stylesheet_link_tag 'bootstrap.min'
+
 %p.product_nav
   -if current_user && (params[:category_id]) && (can? :create, Product) && (@category.children.count <=1)
     -case current_user.role.to_s
       -when 'dealer'
-        = link_to "Добавить товар",new_category_product_path(@category), :class=>"add_product"
+        = link_to "Добавить товар",new_category_product_path(@category), :class=>"btn btn-success add_product"
       -when 'author'
-        = link_to "Добавить товар",new_category_product_path(@category), :class=>"add_product" if @category.dealers_only == false
+        = link_to "Добавить товар",new_category_product_path(@category), :class=>"btn btn-success add_product" if @category.dealers_only == false
 
   Сортировать по:
   - if params[:category_id]

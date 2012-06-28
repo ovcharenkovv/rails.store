@@ -7,3 +7,4 @@ public/system/*
 log/*.log
 tmp/**/*
 .idea/*
+test/*

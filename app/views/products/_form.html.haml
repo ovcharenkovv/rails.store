@@ -1,3 +1,9 @@
+- content_for :custom_css_js do
+  = stylesheet_link_tag 'bootstrap.min'
+
+  -#= javascript_include_tag "jquery.easing-1.3.pack"
+
+
 .happy_form
   = form_for [@category,@product], :html => { :multipart => true } do |f|
     - if @product.errors.any?
@@ -11,40 +17,61 @@
     -if params[:action]=='edit'
       .field
         = f.label "Внимание, убрав галочку и нажав 'Сохранить' товар удалится !"
-        %br
+        
         = f.check_box :published
       .field
         = f.label "Категория"
-        %br
+        
         = f.collection_select :category_id, Category.without_children, :id, :name
-      %br
+      
       = image_tag @product.image.url(:thumb)
 
-    .field
-      = f.label "Картинка  (размер 800х600 или 400х300)"
-      %br
+    .field.main
+      = f.label "Главная Фотография  (размер 800х600 или 400х300)"
+      
       = f.file_field :image, :style=>"color:#630; background:#ffc none; font-size:120%; font-family:Courier,monospace; font-weight:bold;"
+
+    .field.uploads
+      = f.label "Дополнительные фотографии любого размера"
+      =f.fields_for :uploads do |upload|
+        -if upload.object.new_record?
+          %p
+            =upload.file_field :photo
+
+    -if params[:action]=='edit'
+      .field.uploads_photo
+        = f.label "Отметьте галочкой фото которые удалятся после сохранения"
+        = f.fields_for :uploads do |upload|
+          - unless upload.object.new_record?
+            .thumb
+              = f.label "Удалить ?"
+              = upload.check_box :_destroy
+              %br
+              = image_tag(upload.object.photo.url(:thumb))
+
+
     .field
-      = f.label "Заголовок (уникальное длина 45 симв.) Желательно включать название категории"
-      %br
+      = f.label "Заголовок (уникальное длина 45 символов)"
+      
       -if params[:action]=='new'
         = f.text_field :title, :value =>@category.name+' '
       -else
         = f.text_field :title
     .field
       = f.label "Цена автора (без наценки)"
-      %br
+      
       = f.text_field :author_price
     .field
       = f.label "Статус товара"
-      %br
+      
       = f.select :status, Product::PRODUCT_STATUS, :prompt => 'Есть в наличии'
+
     .field
       = f.label "Описание товара (чем больше тем лучше)"
-      %br
+      
       = f.text_area :description, :class => "mceEditor"
 
     =hidden_field_tag 'product[author_id]', current_user.is_admin? ? '2' : current_user.author.id
     .actions
-      = f.submit "Сохранить"
-      = link_to "Отмена", :back, :class=>"cancel"
+      = f.submit "Сохранить", :class=>"btn btn-success"
+      = link_to "Отмена", :back, :class=>"btn btn-danger"
