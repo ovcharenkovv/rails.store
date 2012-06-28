@@ -44,8 +44,8 @@
         = f.fields_for :uploads do |upload|
           - unless upload.object.new_record?
             .thumb
-              = f.label "Удалить ?"
               = upload.check_box :_destroy
+              = f.label "Удалить ?"
               %br
               = image_tag(upload.object.photo.url(:thumb))
 

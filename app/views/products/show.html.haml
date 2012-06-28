@@ -60,7 +60,7 @@
       -if can? :update, @product
         .actions
           = link_to "",edit_category_product_path(@product.category_id,@product),:class=>"edit", :title=>"Редактировать."
-    -if @product.uploads.count > 1
+    -if @product.uploads.count >= 1
       .other_photo
         -@product.uploads.take(4).each do |upload|
           .photo_wrap
