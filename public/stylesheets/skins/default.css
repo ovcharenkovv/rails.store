@@ -1353,6 +1353,7 @@ post_body .r728x90 {
     right: -41px;
     top: -33px;
     width: 124px;
+    z-index: 1;
 }
 
 .bottom_bant {
@@ -1404,21 +1405,42 @@ post_body .r728x90 {
     line-height: 25px;
 }
 
+#products_search {
+    margin: 0;
+}
+
+#products_search .hidden {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    cursor: pointer;
+    display: block;
+    height: 25px;
+    text-indent: -10000px;
+    width: 25px;
+}
+
 #products_search .s_wrap {
-    background: url("../images/serch_input.jpg") no-repeat scroll left top transparent;
+    background: url("../../images/serch_input.jpg") no-repeat scroll left top transparent;
     display: block;
     height: 25px;
     position: absolute;
     right: 20px;
     top: 21px;
     width: 183px;
+    z-index: 2;
+    overflow: hidden;
 }
 
 #products_search .s_wrap .input {
     border: medium none;
-    margin: 4px;
     width: 150px;
     float: left;
+    height: 16px;
+    margin: 4px;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+
 }
 
 .footer_banners {

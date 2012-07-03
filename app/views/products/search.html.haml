@@ -1,11 +1,19 @@
 -content_for :custom_css_js do
-  = javascript_include_tag "application"
+  = stylesheet_link_tag 'bootstrap.min'
+  %script{:src => "http://jzaefferer.github.com/jquery-validation/jquery.validate.js", :type => "text/javascript"}
+
+  :javascript
+    $("#search_form").validate({
+      rules: {
+        "search": {required: true, minlength: 6}
+      }
+    });
 
 %h1="Искать товары здесь:"
 
--form_tag search_products_path, :method => 'get' do
+-form_tag search_products_path, :method => 'get', :id=>'search_form' do
   .search_box
     = text_field_tag :search, params[:search], {:class=>"sexy_input search_input"}
-    = submit_tag "Искать", :name => nil, :class=>"sexy_button"
+    = submit_tag "Искать", :name => nil, :class=>"btn btn-success"
 
 = render 'products' if !@products.nil?
