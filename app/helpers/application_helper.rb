@@ -2,15 +2,16 @@
 module ApplicationHelper
   def meta_title(param)
     ret=""
-    if param[:controller]=='products'
+    if param[:controller]=='products' && param[:action]=='show'
       if param[:id] && !param[:cart_id]
         ret += Product.find(param[:id]).title.to_s
         ret += ' - '
         ret += Product.find(param[:id]).price.to_s+' грн.'
         ret += ' '
+        ret += ' Купить в интернет магазине. '
       end
     end
-    if param[:category_id]
+    if param[:category_id] && param[:action]!='show'
       ret += Category.find(param[:category_id]).name.to_s
       ret += ' '
     end
@@ -29,7 +30,7 @@ module ApplicationHelper
       ret += ' '
     end
 
-    ret += 'Купить в интернет магазине, PoshStore - магазин изделий ручной работы, handmade бижутериии, авторские работы.'
+    ret += 'PoshStore - интернет магазин изделий ручной работы, бижутериии, авторских работ, хенд мейд, хендмейд, handmade.'
 
     ret
   end
