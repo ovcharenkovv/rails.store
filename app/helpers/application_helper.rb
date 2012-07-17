@@ -21,8 +21,8 @@ module ApplicationHelper
       ret += ' в интернет магазине.'
     end
     if param[:author_id]
+      ret += 'Работы мастера '
       ret += Author.find(param[:author_id]).name.to_s
-      ret += ' '
     end
 
     if param[:post_slug]
@@ -42,8 +42,8 @@ module ApplicationHelper
   def meta_keywords(param)
     ret=""
 
-    if param[:controller]=='home'
-      ret += 'купить, купить в интернет магазине, интернет-магазин, ручная работа, бижутерия, hand made, handmade, хенд мейд, аксессуары, полимерная, декупаж'
+    if param[:controller]=='home' || param[:author_id]
+      ret += 'купить, купить в интернет магазине, интернет-магазин, украшения, изделия, ручная работа, бижутерия, hand made, handmade, хенд мейд, аксессуары, полимерная, декупаж'
     end
 
     if param[:controller]=='products' && param[:action]=='show'
@@ -91,10 +91,14 @@ module ApplicationHelper
         ret += 'PoshStore - интернет магазин украшений ручной работы.'
       end
 
-      if param[:controller]=='products' && param[:action]=='index'
+      if param[:category_id] && param[:action]!='show'
         ret += 'Здесь можно купить '
-        ret += Category.find(param[:category_id]).name.mb_chars.downcase.to_s
+        ret += Category.find(param[:category_id]).name
         ret += ', хендмейд, handmade, украшения, и многое другое'
+      end
+      if param[:author_id]
+        ret += 'Работы мастера '
+        ret += Author.find(param[:author_id]).name
       end
 
       if param[:controller]=='products' && param[:action]=='show'
