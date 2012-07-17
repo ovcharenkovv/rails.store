@@ -54,10 +54,6 @@ module ApplicationHelper
         ret += 'продажа '
         ret += Product.find(param[:id]).title.to_s
         ret += ', '
-        ret += Category.find(param[:category_id]).name
-        ret += ' '
-        ret += Product.find(param[:id]).title.to_s
-        ret += ', '
         ret += 'интернет магазин, доставка '
       end
     end
