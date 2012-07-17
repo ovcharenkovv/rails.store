@@ -32,14 +32,17 @@
       });
 
     });
+    var addthis_config = {"data_track_addressbar":true};
+  %script{:src => "http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f809f0f36c080df", :type => "text/javascript"}
+
 
     function share42(f,u,t){if(!u)u=location.href;if(!t)t=document.title;u=encodeURIComponent(u);t=encodeURIComponent(t);var s=new Array('#" onclick="window.open(\'http://vkontakte.ru/share.php?url='+u+'\', \'_blank\', \'scrollbars=0, resizable=1, menubar=0, left=200, top=200, width=554, height=421, toolbar=0, status=0\');return false" title="Поделиться В Контакте"','http://www.odnoklassniki.ru/dk?st.cmd=addShare&st._surl='+u+'&title='+t+'" title="Добавить в Одноклассники"','http://twitter.com/share?text='+t+'&url='+u+'" title="Добавить в Twitter"','http://www.facebook.com/sharer.php?u='+u+'&t='+t+'" title="Поделиться в Facebook"','http://connect.mail.ru/share?url='+u+'&title='+t+'" title="Поделиться в Моем Мире@Mail.Ru"');for(i=0;i<s.length;i++)document.write('<a style="display:inline-block;width:24px;height:24px;margin:0 7px 0 0;background:url(http://'+f+'icons.png) -'+24*i+'px 0" href="'+s[i]+'" target="_blank"></a>')}
 
 =button_to 'КУПИТЬ &raquo;'.html_safe, line_items_path(:product_id => @product.id), {:class=>"add_to_cart"}
 -cache("product_#{@category.id}_#{@product.id}") do
   %h1
-    =link_to @product.category.name.to_s, category_products_path(@product.category)
-    =" / "
+    -#=link_to @product.category.name.to_s, category_products_path(@product.category)
+    -#=" "
     = @product.title
   .nav_product
     -if previous_product = Product.previous_product(@product.id,@product.category_id)
@@ -49,7 +52,7 @@
   .photo_box
     .border
       = link_to @product.image.url(:large), :id => "light_box" , :rel=>"example_group" do
-        = image_tag(@product.image.url(:medium) , :alt => @product.category.name+' '+@product.title, :title => @product.title ) unless @product.image.nil?
+        = image_tag(@product.image.url(:medium) , :alt => 'фото ' + @product.title, :title => 'фото '+ @product.title ) unless @product.image.nil?
       -if can? :update, @product
         .actions
           = link_to "",edit_category_product_path(@product.category_id,@product),:class=>"edit", :title=>"Редактировать."
@@ -58,26 +61,31 @@
         -@product.uploads.take(4).each do |upload|
           .photo_wrap
             = link_to upload.photo.url(:original), :class => "light_box_small", :rel=>"example_group" do
-              = image_tag(upload.photo.url(:thumb))
+              = image_tag(upload.photo.url(:thumb) , :alt => @product.title+' фото', :title => @product.title+' фото')
 
   .important
-    %b=t('products.price')
+    %b='Цена'
     %span.price= @product.price.to_s+' грн.'
-    .share
-      Поделится с друзями:
-      %br
-      :javascript
-        share42('poshstore.com.ua/images/')
+    .addthis_toolbox.addthis_default_style
+      %a.addthis_button_vk
+      %a.addthis_button_twitter
+      %a.addthis_button_facebook
+      %a.addthis_button_favorites
+      %a.addthis_button_compact
+      %a.addthis_counter.addthis_bubble_style
   .product_description
     %p
-      %b=t('products.master')
+      %b='Мастер:'
       = link_to @product.author.name.to_s, author_products_path(@product.author) if @product.author
     %p
-      %b=t('products.status')
+      %b='Категория:'
+      =link_to @product.category.name.to_s, category_products_path(@product.category)
+    %p
+      %b='Статус:'
       = @product.status.to_s
     -if @product.description.length > 5
       %p
-        %b=t('products.description')
+        %b='Описание:'
         = raw @product.description
   .top
     %h3=t('products.see_also_products')

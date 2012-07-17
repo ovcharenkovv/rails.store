@@ -370,8 +370,8 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     display: block;
     border-bottom: 1px solid #666666;
     color: #000000;
-    font-size: 22px;
-    padding: 20px 10px 15px;
+    font-size: 20px;
+    padding: 20px 10px 10px 0;
     margin: 0 0 10px;
 }
 
@@ -380,7 +380,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     border-bottom: 1px solid #666666;
     color: #000000;
     font-size: 22px;
-    padding: 20px 10px 15px;
+    padding: 20px 10px 15px 0;
     margin: 0 0 10px;
 }
 
@@ -601,7 +601,8 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 /**********************************************************************************************************************/
 .wrap .photo_box {
     float: left;
-    width: 410px;
+    width: 408px;
+    margin: 0 0 0 3px;
 }
 
 .other_photo {
@@ -666,7 +667,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     height: 280px;
     padding: 15px 0 0;
     text-align: center;
-    width: 240px;
+    width: 277px;
 }
 
 .wrap .important .share {
@@ -675,28 +676,31 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     margin: 177px 0 0;
 }
 
+.addthis_toolbox {
+    margin: 210px auto 0;
+    width: 140px;
+}
+
 .wrap .important .price {
     color: #990000;
     display: block;
-    font: bold 33px/55px verdana;
+    font: bold 28px/55px verdana;
 }
 
 .wrap .add_to_cart {
-    background: url("../../images/skins/default/by_button_on_cart.png") no-repeat scroll 0 0 transparent;
+    background: url("../../images/skins/default/by_button_on_cart_.png") no-repeat scroll 0 0 transparent;
     border: medium none;
     color: white;
     cursor: pointer;
-    font-size: 23px;
-    height: 70px;
-    /*margin: 15px auto 0;*/
+    font-size: 19px;
+    height: 57px;
     outline: medium none;
     overflow: hidden;
-    padding: -31px 0 0 15px;
-    text-align: center;
-    width: 171px;
     position: absolute;
-    right: 90px;
-    top: 230px;
+    right: 91px;
+    text-align: center;
+    top: 210px;
+    width: 137px;
 }
 
 .wrap .add_to_cart:hover {
@@ -705,7 +709,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 
 .wrap .product_description {
     clear: both;
-    padding: 15px 10px;
+    padding: 15px 10px 0 0;
     overflow: hidden;
 }
 
