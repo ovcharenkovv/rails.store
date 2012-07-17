@@ -2,7 +2,7 @@
   .product
     .body
       = link_to category_product_path(product.category_id,product) , :class => "img" do
-        = image_tag product.image.url(:thumb), :alt => product.category.name+' '+product.title, :title => 'handmade '+product.category.name
+        = image_tag product.image.url(:thumb), :alt => 'фото '+product.title.mb_chars.downcase.to_s, :title => 'фото '+product.category.name
       = link_to category_product_path(product.category_id,product) , :class => "title" do
         %h4= product.title.to_s
       = link_to author_products_path(product.author_id) , :class => "author" do

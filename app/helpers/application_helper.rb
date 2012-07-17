@@ -87,9 +87,13 @@ module ApplicationHelper
       ret += 'Здесь вы найдете мастер-классы по изготовлению '
       ret += Post.find_by_slug!(params[:post_slug]).title
     else
+      if param[:controller]=='home'
+        ret += 'PoshStore - интернет магазин украшений ручной работы.'
+      end
+
       if param[:controller]=='products' && param[:action]=='index'
         ret += 'Здесь можно купить '
-        ret += Category.find(param[:category_id]).name
+        ret += Category.find(param[:category_id]).name.mb_chars.downcase.to_s
         ret += ', хендмейд, handmade, украшения, и многое другое'
       end
 
@@ -99,9 +103,9 @@ module ApplicationHelper
           if product.description.length > 100
             ret += strip_tags(Product.find(param[:id]).description.to_s)[0..250]
           else
-            ret += Category.find(param[:category_id]).name.to_s
-            ret += 'Здесь можно купить '
             ret += Product.find(param[:id]).title.to_s
+            ret +=' Покупки с удовольствием. Категория: '
+            ret += Category.find(param[:category_id]).name.to_s
           end
         end
       end
