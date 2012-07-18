@@ -16,10 +16,10 @@
   = @order.pay_type
 %p
   %b Delivery_type:
-  = @order.delivery_type
+  %span.red= @order.delivery_type
 %p
   %b Note:
-  = @order.note
+  %span.green= @order.note
 %p
   %b Referer:
   = @order.referer
@@ -27,6 +27,9 @@
   %b PostBox Info
   %br
   =raw@post_box_status
+%br
+%h4
+  %b 4405885814110604 ОВЧАРЕНКО ВЛАДИМИР ВЛАДИМИРОВИЧ
 %br
 %p
   %b Products Are:
