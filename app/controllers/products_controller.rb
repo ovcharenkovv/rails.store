@@ -23,7 +23,7 @@ class ProductsController < ApplicationController
     if params[:per_page]
       @per_page = params[:per_page]
     else
-      @per_page = 33
+      @per_page = 24
     end
 
     if params[:sort]=='date'

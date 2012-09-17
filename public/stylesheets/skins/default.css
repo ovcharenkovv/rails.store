@@ -615,7 +615,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     height: 70px;
     overflow: hidden;
     float: left;
-    margin: 0 14px 0 0;
+    margin: 0 12px 0 0;
     border: 1px solid #DDDDDD;
     -moz-box-shadow: 0 0 5px #888;
     -webkit-box-shadow: 0 0 5px #888;
