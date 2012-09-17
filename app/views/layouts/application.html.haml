@@ -32,7 +32,7 @@
         = render "carts/header_cart"
       .content_wrap
         .sidebar
-          -if params[:controller]=='home'
+          -if (params[:controller]=='home') || ((params[:controller]=='products')&&(params[:action]=='show'))
             -cache 'sidebar' do
               .categories
                 = render "categories/list"
