@@ -6,8 +6,30 @@
       container : '.content',
       item: '.product',
       pagination: '.content .pagination',
-      next: '.next_page',
-      loader: '<img src="/images/loader.gif" style="display: block; margin: 0 auto;"/>'
+      next: '.next_page'
+    });
+
+    jQuery(document).ready(function(){
+
+        // fade in #back-top
+        jQuery(function () {
+            jQuery(window).scroll(function () {
+                if (jQuery(this).scrollTop() > 1500) {
+                    jQuery('#back-top').fadeIn();
+                } else {
+                    jQuery('#back-top').fadeOut();
+                }
+            });
+
+            // scroll body to 0px on click
+            jQuery('#back-top a').click(function () {
+                jQuery('body,html').animate({
+                    scrollTop: 0
+                }, 1200);
+                return false;
+            });
+        });
+
     });
 
 
@@ -21,7 +43,11 @@
     %h1=params[:author_id]? "Работы мастера #{@category.name.to_s}" : @category.name.to_s
     = render 'nav_panel'
     = render 'products'
+    %p#back-top{:style=>'display: none;'}
+      %span=link_to ('','#top')
 -else
   %h1=params[:author_id]? "Работы мастера #{@category.name.to_s}" : @category.name.to_s
   = render 'nav_panel'
   = render 'products'
+  %p#back-top{:style=>'display: none;'}
+    %span=link_to ('','#top')
