@@ -1,16 +1,56 @@
+- content_for :custom_css_js do
+  = javascript_include_tag "jquery.ias.min"
+
+  :javascript
+    jQuery.ias({
+      container : '.content',
+      item: '.post_item',
+      pagination: '.content .pagination',
+      next: '.next_page',
+      loader: '',
+      tresholdMargin: -500
+
+    });
+
+    jQuery(document).ready(function(){
+
+        // fade in #back-top
+        jQuery(function () {
+            jQuery(window).scroll(function () {
+                if (jQuery(this).scrollTop() > 1500) {
+                    jQuery('#back-top').fadeIn();
+                } else {
+                    jQuery('#back-top').fadeOut();
+                }
+            });
+
+            // scroll body to 0px on click
+            jQuery('#back-top a').click(function () {
+                jQuery('body,html').animate({
+                    scrollTop: 0
+                }, 1200);
+                return false;
+            });
+        });
+
+    });
 - @posts.each do |post|
   -if !current_user
     -cache "shot_post_id_#{post.id.to_s}" do
+      .post_item
+        %h3=link_to post.title, short_post_url(@post_category,post)
+        .post_body=raw post.short_body
+        %br
+        %p= link_to 'Читать дальше >>', short_post_url(@post_category,post)
+        = render :partial => "posts/post_footer", :locals => { :post => post }
+  -else
+    .post_item
       %h3=link_to post.title, short_post_url(@post_category,post)
       .post_body=raw post.short_body
       %br
       %p= link_to 'Читать дальше >>', short_post_url(@post_category,post)
       = render :partial => "posts/post_footer", :locals => { :post => post }
-  -else
-    %h3=link_to post.title, short_post_url(@post_category,post)
-    .post_body=raw post.short_body
-    %br
-    %p= link_to 'Читать дальше >>', short_post_url(@post_category,post)
-    = render :partial => "posts/post_footer", :locals => { :post => post }
+%p#back-top{:style=>'display: none;'}
+  %span=link_to ('','#top')
 = will_paginate @posts ,:previous_label=>"« Назад ", :next_label=>" Вперед »"
 
