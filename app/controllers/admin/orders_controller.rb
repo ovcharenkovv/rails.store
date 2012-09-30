@@ -15,11 +15,11 @@ class Admin::OrdersController < Admin::AdminController
     @order = Order.find(params[:id])
     @line_items = LineItem.where(:order_id => params[:id])
 
-    if @order.shipment_id
-      @post_box_status = PostBoxStatus.info @order.shipment_id, @order.delivery_type
-    else
-      @post_box_status = "please add shipment id"
-    end
+    #if @order.shipment_id
+    #  @post_box_status = PostBoxStatus.info @order.shipment_id, @order.delivery_type
+    #else
+    #  @post_box_status = "please add shipment id"
+    #end
 
 
     respond_to do |format|
@@ -66,6 +66,23 @@ class Admin::OrdersController < Admin::AdminController
       format.html { redirect_to(admin_orders_url) }
       format.xml { head :ok }
     end
+  end
+
+  def postbox
+    @order = Order.find(params[:id])
+
+
+    if @order.shipment_id
+      @post_box_status = PostBoxStatus.info @order.shipment_id, @order.delivery_type
+    else
+      @post_box_status = "please add shipment id"
+    end
+
+    respond_to do |format|
+      format.xml { render :xml => @post_box_status }
+      format.html { render :json => @post_box_status }
+    end
+
   end
 
 end

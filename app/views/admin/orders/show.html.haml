@@ -23,10 +23,11 @@
 %p
   %b Referer:
   = @order.referer
-%div.postbox
-  %b PostBox Info
-  %br
-  =raw@post_box_status
+%br
+=link_to 'Get Post Status', postbox_path(@order) ,:class=>"get-postbox"
+#postbox
+  =image_tag 'ajax-loader.gif', :id => 'loading'
+
 %br
 %h4
   %b 4405885814110604 ОВЧАРЕНКО ВЛАДИМИР ВЛАДИМИРОВИЧ

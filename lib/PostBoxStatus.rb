@@ -16,9 +16,17 @@ module PostBoxStatus
       end
 
       if post_type == 'Новая почта - 23 грн.'
-        uri = URI('http://91.220.203.10/site_services/tracking/tracking.php?lang=ua')
+        uri = URI('http://novaposhta.com.ua/frontend/tracking/ua')
         response = Net::HTTP.post_form(uri, 'en' => post_id, 'max' => '50')
-        result = Iconv.conv("UTF8", "CP1251", response.body.to_s)
+        doc = Hpricot(response.body) if !response.nil?
+
+        parse_result = doc.search("//div//div")
+
+        result = String.new
+        for i in 3..3
+          result += "<p style='color:red;'>#{parse_result[i].inner_html}</p>" if !parse_result[i].nil?
+        end
+        #result = Iconv.conv("UTF8", "CP1251", response.body.to_s)
       end
     rescue Exception => result
     end

@@ -47,6 +47,7 @@ Store::Application.routes.draw do
   match '/:post_category_slug' => 'posts#index', :as => :short_cat_posts
 
   match '/:post_category_slug' => 'posts#index', :as => :short_cat_posts
+  match '/admin/postbox/:id' => 'admin/orders#postbox', :as => :postbox
 
 
   root :to => 'home#index'

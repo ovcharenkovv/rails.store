@@ -333,3 +333,13 @@ tr.green {
 .postbox div, .postbox form {
     display: none;
 }
+
+#loading, .mob-div, #login-box, .p-text_align_center form, .b-newpost, #postbox b, #postbox .p-text_align_center  {
+    display: none;
+}
+#postbox {
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
+}
+
+#newsBlock {display: none;}
