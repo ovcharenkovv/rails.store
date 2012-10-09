@@ -2,6 +2,18 @@
 class Author < ActiveRecord::Base
   has_many :products, :dependent => :delete_all
   has_one :user
+  has_attached_file :avatar,
+                    :styles => {
+                        :thumb => {
+                            :geometry => "150x150#",
+                            :quality => "50",
+                        },
+                        :medium => {
+                            :geometry => "300x300#",
+                            :quality => "85",
+                        }
+                    }
+  validates_attachment_presence :avatar
 
   validates :name, :presence => true
   validates :name, :uniqueness => true
