@@ -2055,3 +2055,33 @@ post_body .r728x90 {
     padding-top: 10px !important;
     text-align: center;
 }
+
+.author_profile_snippet {
+    border-bottom: 1px solid #d3d3d3;
+    overflow: hidden;
+}
+.ava_wrap{
+    float: left;
+    height: 145px;
+    margin: 15px 25px 30px 5px;
+    overflow: hidden;
+    width: 145px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    border-radius: 10px;
+    -moz-box-shadow: 0 0 4px #888;
+    -webkit-box-shadow: 0 0 4px #888;
+    box-shadow: 0 0 4px #888;
+}
+.profile_description{
+    overflow: hidden;
+    margin: 20px 20px 20px 0;
+}
+.profile_description h4 {
+    margin: 0 0 10px;
+    color: #000000;
+}
+.profile_description .text {
+  font-size: 13px;
+}

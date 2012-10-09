@@ -43,13 +43,21 @@
 
 -if !current_user
   -cache "category#{params[:category_id]}_author#{params[:author_id]}_page#{params[:page]}_sort#{params[:sort]}" do
-    %h1=params[:author_id]? "Работы мастера #{@category.name.to_s}" : @category.name.to_s
+    -if params[:author_id]
+      %h1="Работы мастера #{@category.name.to_s}"
+      = render :partial => "authors/profile_description_snippet", :locals => { :author => @category }
+    -else
+      %h1=@category.name.to_s
     = render 'nav_panel'
     = render 'products'
     %p#back-top{:style=>'display: none;'}
       %span=link_to ('','#top')
 -else
-  %h1=params[:author_id]? "Работы мастера #{@category.name.to_s}" : @category.name.to_s
+  -if params[:author_id]
+    %h1="Работы мастера #{@category.name.to_s}"
+    = render :partial => "authors/profile_description_snippet", :locals => { :author => @category }
+  -else
+    %h1=@category.name.to_s
   = render 'nav_panel'
   = render 'products'
   %p#back-top{:style=>'display: none;'}

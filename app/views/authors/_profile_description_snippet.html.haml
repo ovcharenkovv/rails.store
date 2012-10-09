@@ -1,0 +1,7 @@
+-if author.publish_profile
+  .author_profile_snippet
+    .ava_wrap
+      = image_tag(author.avatar.url(:thumb) , :alt => 'фото ' + author.name, :title => 'фото '+ author.fullname ) unless author.avatar.nil?
+    .profile_description
+      %h4=author.fullname
+      .text=author.profile_description
