@@ -1,4 +1,4 @@
--if author.publish_profile
+-if author.publish_profile && author.profile_description.to_s.length > 10
   .author_profile_snippet
     .ava_wrap
       = image_tag(author.avatar.url(:thumb) , :alt => 'фото ' + author.name, :title => 'фото '+ author.fullname ) unless author.avatar.nil?
