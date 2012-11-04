@@ -1,0 +1,17 @@
+%p Будем признательны, если вы оставите отзыв о выбранном вами изделии на его странице:
+
+%table
+- line_items.each do |line_item|
+  %tr
+    %td.pic
+      = image_tag "http://poshstore.com.ua"+(line_item.product.image.url(:thumb)), :alt=>""
+    %td.title
+      = link_to(line_item.product.title.to_s, "http://poshstore.com.ua"+category_product_path(line_item.product.category,line_item.product).to_s)
+      ="("
+      = line_item.product.category.name
+      =")"
+      ="("
+      = line_item.product.author.name
+      =")"
+
+%p Самые активные, у нас получают приятные скидки и подарки!

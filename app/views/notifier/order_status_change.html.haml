@@ -8,7 +8,7 @@
     %br
   -when 'paid'
     %h3 Ваш заказ № #{@order.id} переведен в статус: Оплачено.
-    %p В ближайшее время товар будет отправлен.
+    %p В ближайшее время товар будет отправлен и мы сообщим вам данные для отслеживания посылки.
     %br
   -when 'sent'
     %h3 Ваш заказ № #{@order.id} переведен в статус: Отправлено.
@@ -21,6 +21,9 @@
   -when 'success'
     %h3 Ваш заказ № #{@order.id} переведен в статус: Порядок.
     %p Очень рады что Вы совершили покупки в нашем магазине, надеемся что Вам все понравилось.
+    %p= render :template => 'line_items/_feed_bak',:locals => { :line_items  => @order.line_items  }
+
+    %p Именно для вас мы придумали систему  #{link_to 'скидок','http://poshstore.com.ua/content/discount'}
     %p В категории #{link_to 'Новинки', 'http://poshstore.com.ua/home/new'} следите за новыми поступлениями.
     %p А #{link_to 'здесь', 'http://vk.com/poshstoreua'} и #{link_to 'здесь', 'http://vk.com/poshstore'}  мы Вконтакте, давайте дружить.
     %br
@@ -30,4 +33,4 @@
   -when 'closed'
     %h3 Ваш заказ № #{@order.id} переведен в статус: Закрыт.
     %br
-%p С уважением коллектив #{link_to 'PoshStore',root_url}
+%p С уважением, коллектив #{link_to 'PoshStore',root_url}
