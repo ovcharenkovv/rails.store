@@ -43,6 +43,7 @@
       %th Price
       %th Author Price
       %th Wages
+      %th Actions
     - @line_items.each do |li|
       %tr
         -product = Product.find(li.product_id)
@@ -56,6 +57,7 @@
         -@tsum = @tsum.to_i+product.price*li.quantity.to_i
         -if !product.author_price.nil?
           -@asum =@asum.to_i+product.author_price*li.quantity.to_i
+        %td= button_to 'DELETE', admin_line_item_path(li), :method => :delete, :confirm => 'Are you sure?', :class=>"remove"
     %tr
       %td{:colspan => "4",:style=>"border:0px!important;"}
       %td.green=@tsum.to_i
