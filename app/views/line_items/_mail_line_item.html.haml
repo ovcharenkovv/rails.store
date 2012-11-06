@@ -1,7 +1,9 @@
 %table
 - line_items.each do |line_item|
+  %br
   %tr
     %td.pic
+      %br
       = image_tag "http://poshstore.com.ua"+(line_item.product.image.url(:thumb)), :alt=>""
     %td.title
       = link_to(line_item.product.title.to_s, "http://poshstore.com.ua"+category_product_path(line_item.product.category,line_item.product).to_s)
