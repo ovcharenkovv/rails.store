@@ -41,8 +41,6 @@
 =button_to 'КУПИТЬ &raquo;'.html_safe, line_items_path(:product_id => @product.id), {:class=>"add_to_cart"}
 -cache("product_#{@category.id}_#{@product.id}") do
   %h1
-    -#=link_to @product.category.name.to_s, category_products_path(@product.category)
-    -#=" "
     = @product.title
   .nav_product
     -if previous_product = Product.previous_product(@product.id,@product.category_id)
@@ -66,6 +64,7 @@
   .important
     %b='Цена'
     %span.price= @product.price.to_s+' грн.'
+    %span.ru_price= "~ #{(@product.price*4.5).round} руб."
     .addthis_toolbox.addthis_default_style
       %a.addthis_button_vk
       %a.addthis_button_twitter

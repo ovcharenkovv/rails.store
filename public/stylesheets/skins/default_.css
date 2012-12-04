@@ -1,12 +1,13 @@
 html {
-    background: url("../../images/skins/christmas/top_stripe_bg.jpg") repeat-x scroll left top #333;
+    background: url("../../images/skins/default/top_stripe_bg.png") repeat-x scroll left top #666;
 }
 
 body {
-    padding:0 0 12px;
+    padding: 0 0 12px;
     width: 100%;
     height: 100%;
     margin: 8px 0 0;
+    background: url("../../images/bg3.jpg") top center repeat-x;
     background: url("../../images/skins/christmas/main_bg.jpg") top center repeat-x;
     font-family: 'Verdana', sans-serif;
 }
@@ -907,7 +908,7 @@ form.button_to .empty_cart:hover {
     color: #FFFFFF;
     cursor: pointer;
     display: block;
-    font-size: 20px;
+    font: 20px verdana;
     height: 52px;
     margin: 0 212px;
     outline: medium none;
@@ -1360,13 +1361,15 @@ post_body .r728x90 {
 /*******************************************FOOTER*********************************************************************/
 /**********************************************************************************************************************/
 .top_bant {
-    background: url("../../images/skins/christmas/top_bant.png") no-repeat scroll left bottom transparent;
-    height: 128px;
+    background: url("../../images/skins/default/top_bant.png") no-repeat scroll left bottom transparent;
+    height: 115px;
     position: absolute;
-    right: -33px;
-    top: -12px;
-    width: 94px;
+    right: -41px;
+    top: -33px;
+    width: 124px;
+    z-index: 1;
 }
+
 .bottom_bant {
     background: url("../../images/bottom_bant.png") no-repeat scroll left bottom transparent;
     bottom: -42px;

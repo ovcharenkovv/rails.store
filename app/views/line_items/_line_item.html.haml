@@ -6,9 +6,6 @@
       = link_to(image_tag(line_item.product.image.url(:thumb)), line_item.product.image.url(:large), :id => "light_box") unless line_item.product.image.nil?
     %td.title
       = link_to(line_item.product.title.to_s,category_product_path(line_item.product.category,line_item.product))
-      ="("
-      = line_item.product.category.name
-      =")"
     %td.quantity
       = line_item.quantity.to_s+" шт."
     %td.item_price

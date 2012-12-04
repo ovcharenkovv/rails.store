@@ -34,7 +34,7 @@
 %table.cart_table
   %tr.theader
     %th.foto=t('carts.cart.foto')
-    %th=t('carts.cart.name')
+    %th="Название"
     %th=t('carts.cart.quantity')
     %th.price=t('carts.cart.price')
     %th
@@ -48,6 +48,7 @@
   %span.total_text=t('carts.cart.total')
   %span#total_price=@cart.total_price.to_s
   %span.total_text=" грн."
+  %span#total_price_ru="~ #{(@cart.total_price*4.5).round} руб."
 .button_area
   = link_to t('carts.cart.continue'), category_products_path(session[:product_category_id]), :class=>"back"
   = button_to t('carts.cart.empty'), @cart, :method => :delete, :confirm => 'Are you sure?', :class=>"empty_cart"
