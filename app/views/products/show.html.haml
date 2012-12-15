@@ -42,11 +42,6 @@
 -cache("product_#{@category.id}_#{@product.id}") do
   %h1
     = @product.title
-  .nav_product
-    -if previous_product = Product.previous_product(@product.id,@product.category_id)
-      =link_to "« #{previous_product.title.to_s}", category_product_path(previous_product.category, previous_product),:class=>"previous_product"
-    -if next_product = Product.next_product(@product.id,@product.category_id)
-      =link_to "#{next_product.title.to_s} »", category_product_path(next_product.category, next_product),:class=>"next_product"
   .photo_box
     .border
       = link_to @product.image.url(:large), :id => "light_box" , :rel=>"example_group" do
