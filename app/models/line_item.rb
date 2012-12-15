@@ -8,4 +8,12 @@ class LineItem < ActiveRecord::Base
     product.price * quantity
   end
 
+  def inc
+    self.update_attribute(:quantity, self.quantity += 1)
+  end
+
+  def dec
+    self.update_attribute(:quantity, self.quantity -= 1)
+  end
+
 end

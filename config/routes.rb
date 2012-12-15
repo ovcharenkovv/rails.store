@@ -49,6 +49,9 @@ Store::Application.routes.draw do
   match '/:post_category_slug' => 'posts#index', :as => :short_cat_posts
   match '/admin/postbox/:id' => 'admin/orders#postbox', :as => :postbox
 
+  match '/admin/line_items/inc/:id' => 'admin/line_items#inc', :as => :admin_line_item_inc
+  match '/admin/line_items/dec/:id' => 'admin/line_items#dec', :as => :admin_line_item_dec
+
 
   root :to => 'home#index'
 

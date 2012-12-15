@@ -47,7 +47,13 @@
         %tr
           -product = Product.find(li.product_id)
           %td=link_to product.title, admin_category_product_path(product.category.id,product)
-          %td=li.quantity
+          %td
+            %strong=li.quantity
+            = ' ('
+            =link_to 'inc', admin_line_item_inc_path(li)
+            = '/'
+            =link_to 'dec', admin_line_item_dec_path(li)
+            = ') '
           %td=product.author.name
           %td=product.category.name
           %td=product.price*li.quantity
