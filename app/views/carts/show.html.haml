@@ -1,10 +1,7 @@
-- content_for :custom_css_js do
-  -#= stylesheet_link_tag 'jquery.fancybox-1.3.4_c'
-  -#= stylesheet_link_tag "bx_styles_c"
-
+- content_for :custom_css do
   = stylesheet_link_tag 'bootstrap/bootstrap.min'
 
-  -#= javascript_include_tag "jquery-1.4.3.min"
+- content_for :custom_js do
   = javascript_include_tag "jquery.fancybox-1.3.4.pack"
   = javascript_include_tag "jquery.mousewheel-3.0.4.pack"
   = javascript_include_tag "jquery.easing-1.3.pack"
@@ -17,17 +14,6 @@
         'easingIn' : 'easeOutBack',
         'easingOut' : 'easeInBack'
       });
-      /*
-      var delivery_price = parseInt($("#shipment_price").html());
-      var cart_price = parseInt($("#total_price").html());
-      $("#total_price").html(delivery_price+cart_price);
-
-      $("#shipment_button").change(function(){
-        var delivery_price = parseInt($(this).val());
-        $("#shipment_price").html(delivery_price);
-        $("#total_price").html(delivery_price+cart_price);
-      });
-      */
     });
 
 %h1.cart_title=t('carts.cart.title')

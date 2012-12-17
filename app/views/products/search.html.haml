@@ -1,5 +1,7 @@
--content_for :custom_css_js do
+-content_for :custom_css do
   = stylesheet_link_tag 'bootstrap.min'
+
+-content_for :custom_js do
   %script{:src => "http://jzaefferer.github.com/jquery-validation/jquery.validate.js", :type => "text/javascript"}
 
   :javascript

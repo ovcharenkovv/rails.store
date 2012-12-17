@@ -7,18 +7,15 @@
     %title=meta_title(params)
     %meta{:name => "keywords",    :content => meta_keywords(params)}
     %meta{:name => "description", :content => meta_description(params)}
-    = stylesheet_link_tag "skins/default"
-    =# stylesheet_link_tag :all
-    =# javascript_include_tag :defaults
     %link{:href => "/favicon.ico", :rel => "icon", :type => "image/x-icon"}
     %link{:href => "/favicon.ico", :rel => "shortcut icon", :type => "image/x-icon"}
-    %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js", :type => "text/javascript"}
     %meta{:name=>"yandex-verification", :content=>"6f54cc299f439f71"}
     %meta{:name=>"yandex-verification", :content=>"6498203c1ef19b1d"}
     %meta{:content => "vC-2kwBjQ1ltjfSaJNBz2O1ScxV8QUvD9HvuOhk421I", :name => "google-site-verification"}
-    %meta{:content => "97f67c8e02f425f6a608e1a8", :name => "verify-reformal"}/
+    %meta{:content => "97f67c8e02f425f6a608e1a8", :name => "verify-reformal"}
+    = stylesheet_link_tag "skins/default"
     = csrf_meta_tag
-    = yield :custom_css_js
+    = yield :custom_css
   %body
     .wrap
       .header
@@ -50,4 +47,6 @@
           = render "layouts/footer"
         .top_bant
         .bottom_bant
+%script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js", :type => "text/javascript"}
+= yield :custom_js
 =render "layouts/analytics"

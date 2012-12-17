@@ -1,25 +1,23 @@
-- content_for :custom_css_js do
-  -#= stylesheet_link_tag "bx_styles_c"
-  -#= javascript_include_tag "jquery-1.4.3.min"
+- content_for :custom_js do
   = javascript_include_tag "jquery.bxSlider.min"
-
   :javascript
-    $(document).ready(function(){
-      $('#top_products').bxSlider({
-        speed: 300,
-        pager: true,
-        auto: true
+     $(document).ready(function(){
+       $('#top_products').bxSlider({
+         speed: 300,
+         pager: true,
+         auto: true
 
-      });
-    });
+       });
+     });
 
-  :javascript
-    $(document).ready(function(){
-      $('#new_products').bxSlider({
-        speed: 100,
-        pager: true
-      });
-    });
+   :javascript
+     $(document).ready(function(){
+       $('#new_products').bxSlider({
+         speed: 100,
+         pager: true
+       });
+     });
+
 -cache 'home_products' do
   -@top_products = Product.find_top_products(6,3)
   -@new_products = Product.find_new_products(6)

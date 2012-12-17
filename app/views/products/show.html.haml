@@ -1,19 +1,11 @@
-- content_for :custom_css_js do
+- content_for :custom_js do
   %script{:src => "http://userapi.com/js/api/openapi.js?34", :type => "text/javascript"}
   :javascript
     VK.init({apiId: 2665924, onlyWidgets: true});
-  -#= stylesheet_link_tag 'jquery.fancybox-1.3.4_c'
-  -#= stylesheet_link_tag "bx_styles_c"
-  -#= stylesheet_link_tag "jquery-ui-1.8.11.custom"
-
-  -#= javascript_include_tag "jquery-1.4.3.min"
   = javascript_include_tag "jquery.bxSlider.min"
   = javascript_include_tag "jquery.fancybox-1.3.4.pack"
   = javascript_include_tag "jquery.mousewheel-3.0.4.pack"
   = javascript_include_tag "jquery.easing-1.3.pack"
-  =# javascript_include_tag "jquery-1.5.1.min"
-  =# javascript_include_tag "jquery.fancybox-1.3.4"
-  =# javascript_include_tag "jquery-ui-1.8.11.custom.min"
 
   :javascript
     $(document).ready(function() {
@@ -35,8 +27,6 @@
     var addthis_config = {"data_track_addressbar":true};
   %script{:src => "http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f809f0f36c080df", :type => "text/javascript"}
 
-
-    function share42(f,u,t){if(!u)u=location.href;if(!t)t=document.title;u=encodeURIComponent(u);t=encodeURIComponent(t);var s=new Array('#" onclick="window.open(\'http://vkontakte.ru/share.php?url='+u+'\', \'_blank\', \'scrollbars=0, resizable=1, menubar=0, left=200, top=200, width=554, height=421, toolbar=0, status=0\');return false" title="Поделиться В Контакте"','http://www.odnoklassniki.ru/dk?st.cmd=addShare&st._surl='+u+'&title='+t+'" title="Добавить в Одноклассники"','http://twitter.com/share?text='+t+'&url='+u+'" title="Добавить в Twitter"','http://www.facebook.com/sharer.php?u='+u+'&t='+t+'" title="Поделиться в Facebook"','http://connect.mail.ru/share?url='+u+'&title='+t+'" title="Поделиться в Моем Мире@Mail.Ru"');for(i=0;i<s.length;i++)document.write('<a style="display:inline-block;width:24px;height:24px;margin:0 7px 0 0;background:url(http://'+f+'icons.png) -'+24*i+'px 0" href="'+s[i]+'" target="_blank"></a>')}
 
 =button_to 'КУПИТЬ &raquo;'.html_safe, line_items_path(:product_id => @product.id), {:class=>"add_to_cart"}
 -cache("product_#{@category.id}_#{@product.id}") do
