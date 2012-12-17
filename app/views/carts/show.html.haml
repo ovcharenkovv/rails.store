@@ -2,6 +2,7 @@
   -#= stylesheet_link_tag 'jquery.fancybox-1.3.4_c'
   -#= stylesheet_link_tag "bx_styles_c"
 
+  = stylesheet_link_tag 'bootstrap/bootstrap.min'
 
   -#= javascript_include_tag "jquery-1.4.3.min"
   = javascript_include_tag "jquery.fancybox-1.3.4.pack"
@@ -31,6 +32,11 @@
 
 %h1.cart_title=t('carts.cart.title')
 -#.red Poshstore берет отпуск с 21го по 30е апреля, заказы будут обработаны 30.04. Мы Вас любим!
+%section#alerts
+  .alert.alert-error
+    %strong Увага! У зв'язку зі складними погодними умовами виникли затримки доставки вантажу!
+    Особливу увагу слід звернути на наступні напрямки: АР Крим, Київ, Луганськ, Миколаїв, Одеса, Сєвєродонецьк
+
 %table.cart_table
   %tr.theader
     %th.foto=t('carts.cart.foto')
