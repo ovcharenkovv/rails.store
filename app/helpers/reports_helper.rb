@@ -26,8 +26,8 @@ module ReportsHelper
     orders.each do |order|
       order.line_items.each do |line_item|
         @products_count += 1
-        @products_price_sum += line_item.product.price unless line_item.product.nil?
-        @products_author_price_sum += line_item.product.author_price unless line_item.product.nil?
+        @products_price_sum += (line_item.product.price*line_item.quantity) unless line_item.product.nil?
+        @products_author_price_sum += (line_item.product.author_price*line_item.quantity) unless line_item.product.nil?
       end
       @orders_count += 1
       @products_price_sum += Order::DELIVERY_PRICE
