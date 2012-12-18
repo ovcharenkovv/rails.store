@@ -53,7 +53,7 @@ class Product < ActiveRecord::Base
 
   def self.search(params)
     if params[:search]
-      where('title LIKE ?', "%#{params[:search]}%").where('published is true').paginate :page => params[:page], :order => 'created_at desc', :per_page => 33
+      where('title LIKE ?', "%#{params[:search]}%").where('published is true').paginate :page => params[:page], :order => 'created_at desc', :per_page => 42
     else
       nil
     end
