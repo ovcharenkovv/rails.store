@@ -1,7 +1,8 @@
-- content_for :custom_js do
+- content_for :custom_css do
   %script{:src => "http://userapi.com/js/api/openapi.js?34", :type => "text/javascript"}
   :javascript
     VK.init({apiId: 2665924, onlyWidgets: true});
+- content_for :custom_js do
   = javascript_include_tag "jquery.bxSlider.min"
   = javascript_include_tag "jquery.fancybox-1.3.4.pack"
   = javascript_include_tag "jquery.mousewheel-3.0.4.pack"
