@@ -24,6 +24,10 @@ class Notifier < ActionMailer::Base
   end
 
   def order_status_change(order)
+    card_number = Parameter.find_by_key('card-number')
+    if (card_number && card_number.value.to_s.length > 0 )
+      @card_number = card_number.value
+    end
     @order = order
     mail :to => @order.email, :subject => 'Статус Вашего заказа'
   end

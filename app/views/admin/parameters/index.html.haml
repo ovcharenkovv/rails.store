@@ -1,0 +1,19 @@
+%h1 Listing parameters
+
+%table
+  %tr
+    %th Key
+    %th Value
+    %th
+    %th
+
+  - @parameters.each do |parameter|
+    %tr
+      %td= parameter.key
+      %td= parameter.value
+      %td= link_to 'Edit', edit_admin_parameter_path(parameter)
+      %td= link_to 'Destroy', admin_parameter_path(parameter), :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Parameter', new_admin_parameter_path

@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Key:
+  = @parameter.key
+%p
+  %b Value:
+  = @parameter.value
+
+= link_to 'Edit', edit_admin_parameter_path(@parameter)
+\|
+= link_to 'Back', :back

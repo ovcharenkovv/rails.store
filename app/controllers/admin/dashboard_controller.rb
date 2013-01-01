@@ -2,6 +2,10 @@
 class Admin::DashboardController < Admin::AdminController
   require 'BundleProductsPicture'
   def index
+    card_number = Parameter.find_by_key('card-number')
+    if (card_number && card_number.value.to_s.length > 0 )
+      @card_number = card_number.value
+    end
   end
 
   def get_picture

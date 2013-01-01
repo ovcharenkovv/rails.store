@@ -3,7 +3,7 @@
   -when 'payment_waiting'
     %h3 Ваш заказ № #{@order.id} переведен в статус: Ожидает оплату.
     -if @order.pay_type == Order::PAYMENT_TYPES[0]
-      %p Оплатить можно в любом терменале или отделении Приват Банка по карточному счету 4405885814110604 имя ОВЧАРЕНКО ВЛАДИМИР ВЛАДИМИРОВИЧ
+      %p Оплатить можно в любом терменале или отделении Приват Банка по карточному счету #{@card_number}
       %p К оплате: #{Order.order_sum(@order)} грн (стоимость изделий) + #{Order::DELIVERY_PRICE} грн (доставка) = <strong>#{Order.order_sum(@order)+Order::DELIVERY_PRICE } грн.</strong>
     %br
   -when 'paid'

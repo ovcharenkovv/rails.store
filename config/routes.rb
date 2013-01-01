@@ -24,7 +24,7 @@ Store::Application.routes.draw do
   resources :orders, :line_items, :carts
 
   namespace :admin do
-    resources :orders, :line_items, :carts, :comments, :users, :reports, :expenses
+     resources :orders, :line_items, :carts, :comments, :users, :reports, :expenses, :parameters
     resources :authors do
       resources :products
     end

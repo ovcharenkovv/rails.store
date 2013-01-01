@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121009192011) do
+ActiveRecord::Schema.define(:version => 20130101152441) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -148,6 +148,13 @@ ActiveRecord::Schema.define(:version => 20121009192011) do
     t.text     "referer"
   end
 
+  create_table "parameters", :force => true do |t|
+    t.string   "key"
+    t.text     "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "post_categories", :force => true do |t|
     t.string   "name"
     t.text     "description"
@@ -200,22 +207,6 @@ ActiveRecord::Schema.define(:version => 20121009192011) do
   create_table "reports", :force => true do |t|
     t.string   "name"
     t.string   "param"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "tiny_prints", :force => true do |t|
-    t.string   "image_file_name"
-    t.string   "image_file_size"
-    t.string   "image_content_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "tiny_videos", :force => true do |t|
-    t.string   "original_file_name"
-    t.string   "original_file_size"
-    t.string   "original_content_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
